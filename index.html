@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Find Your Levels - Small-Cap Resistance Map</title>
+<title>Finding Your Levels — A Beginner's Guide to Reading Stocks for Long Entries</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -45,12 +45,32 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    color-scheme: light;
+    --bg: #141413;
+    --bg2: #1E1E1C;
+    --bg3: #2A2A27;
+    --card: #1E1E1C;
+    --text: #EAEAE6;
+    --text2: #A0A09A;
+    --text3: #6B6A65;
+    --border: rgba(255,255,255,0.08);
+    --border2: rgba(255,255,255,0.14);
+    --green-bg: #1B3A1E;
+    --green-text: #81C784;
+    --red-bg: #3E1212;
+    --red-text: #EF9A9A;
+    --blue-bg: #0D2744;
+    --blue-text: #90CAF9;
+    --amber-bg: #3E2100;
+    --amber-text: #FFB74D;
+    --purple-bg: #2C0D3E;
+    --purple-text: #CE93D8;
+    --teal-bg: #0D3028;
+    --teal-text: #80CBC4;
   }
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; color-scheme: light; }
+html { scroll-behavior: smooth; }
 body {
   font-family: var(--font);
   background: var(--bg);
@@ -310,20 +330,6 @@ p, .prose { font-size: 15px; color: var(--text); margin-bottom: 16px; }
 .bar-track { height: 8px; background: var(--bg3); border-radius: 4px; overflow: hidden; }
 .bar-fill { height: 100%; border-radius: 4px; transition: width 0.4s; }
 
-/* COMPACT REFERENCE */
-.level-row {
-  display: grid;
-  grid-template-columns: 150px 1fr;
-  gap: 14px;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--border);
-  font-size: 14px;
-}
-.level-row:last-child { border-bottom: none; }
-.level-name { font-weight: 600; color: var(--text); }
-.level-desc { color: var(--text2); }
-@media (max-width: 600px) { .level-row { grid-template-columns: 1fr; gap: 2px; } }
-
 /* QUIZ */
 .quiz-q {
   font-size: 15px;
@@ -377,8 +383,6 @@ p, .prose { font-size: 15px; color: var(--text); margin-bottom: 16px; }
 .sc-btn.active { background: var(--blue-bg); border-color: var(--blue); color: var(--blue-text); }
 .sc-panel { display: none; }
 .sc-panel.active { display: block; }
-.sc-panel .chart-wrap { height: 220px; }
-.sc-panel .chart-wrap canvas { height: 100% !important; }
 
 /* COMPRESSION VIS */
 .comp-vis {
@@ -403,261 +407,506 @@ p, .prose { font-size: 15px; color: var(--text); margin-bottom: 16px; }
 
 <!-- HERO -->
 <div class="hero">
-  <span class="hero-badge">Small-cap level guide</span>
-  <h1>Find Your Levels</h1>
-  <p>Find old resistance and high-volume decision areas before a small-cap stock wakes up.</p>
-</div>
-
-<div class="callout red">
-  <strong>Education only:</strong> This is not financial advice, trade alerts, or investment recommendations. Small-cap and microcap stocks can move violently on news, promotions, low float, thin liquidity, or no obvious reason at all.
+  <span class="hero-badge">Beginner-friendly guide</span>
+  <h1>Finding Your Levels</h1>
+  <p>How to read a stock's history to find meaningful support, resistance, pivot points, and compression setups — focused on going long.</p>
 </div>
 
 <!-- NAV -->
 <nav class="chapter-nav" id="chapterNav">
   <div class="chapter-nav-inner">
-    <a class="ch-link active" href="#ch1" onclick="goTo(event,'ch1')">1. Start Here</a>
-    <a class="ch-link" href="#ch2" onclick="goTo(event,'ch2')">2. Timeframes</a>
-    <a class="ch-link" href="#ch3" onclick="goTo(event,'ch3')">3. Volume</a>
-    <a class="ch-link" href="#ch4" onclick="goTo(event,'ch4')">4. Resistance</a>
-    <a class="ch-link" href="#ch5" onclick="goTo(event,'ch5')">5. Plan</a>
-    <a class="ch-link" href="#ch6" onclick="goTo(event,'ch6')">6. Practice</a>
+    <a class="ch-link active" href="#ch1" onclick="goTo(event,'ch1')">1. Reading History</a>
+    <a class="ch-link" href="#ch2" onclick="goTo(event,'ch2')">2. Support</a>
+    <a class="ch-link" href="#ch3" onclick="goTo(event,'ch3')">3. Resistance</a>
+    <a class="ch-link" href="#ch4" onclick="goTo(event,'ch4')">4. Pivot Points</a>
+    <a class="ch-link" href="#ch5" onclick="goTo(event,'ch5')">5. Volume</a>
+    <a class="ch-link" href="#ch6" onclick="goTo(event,'ch6')">6. Compression</a>
+    <a class="ch-link" href="#ch7" onclick="goTo(event,'ch7')">7. Putting It Together</a>
+    <a class="ch-link" href="#ch8" onclick="goTo(event,'ch8')">8. Practice</a>
   </div>
 </nav>
 
 <!-- ================================ -->
-<!-- CHAPTER 1: START HERE -->
+<!-- CHAPTER 1: READING HISTORY -->
 <!-- ================================ -->
 <section class="chapter" id="ch1">
   <div class="ch-num">Chapter 1</div>
-  <h2>Start Here: What We Are Looking For</h2>
-  <p class="ch-sub">For small caps, the first job is usually simple: find the old prices where sellers showed up before. Those old levels can matter again when a stock suddenly runs on news, volume, or attention.</p>
+  <h2>Reading a Stock's History</h2>
+  <p class="ch-sub">Before you can find levels, you need to know what you're looking at. Every stock chart is a story told in price and volume — here's how to read it.</p>
 
   <div class="callout blue">
-    <strong>The core idea:</strong> We are not calculating pivots from a formula. We are finding structural pivot points: places on the chart where the balance between buyers and sellers clearly shifted.
+    <strong>The core idea:</strong> Every candle on a chart represents a battle between buyers and sellers during that time period. The historical record of these battles creates "memory" — prices where something significant happened before. These prices become your levels.
   </div>
 
-  <div class="callout purple">
-    <strong>Structural pivot point:</strong> A high-volume candle can become a line in the sand. If price sold off, printed massive volume, then surged, that area can show aggressive buying. If price later returns, traders may remember that zone. If price is below a prior high-volume candle's high, that high can act as resistance until buyers prove they can reclaim it.
-  </div>
+  <h3>What to look for on any chart</h3>
+  <p>When you pull up a stock for the first time, you're looking for places where the price <strong>reacted</strong> — turned around, stalled, or exploded with volume. Those reactions leave footprints.</p>
 
-  <h3>The main clues</h3>
   <div class="card-grid">
     <div class="stat-card">
-      <div class="stat-label">Old highs</div>
-      <div class="stat-val" style="color:var(--red);">Ceilings</div>
-      <div class="stat-sub">Prior peaks where rallies stopped.</div>
+      <div class="stat-label">Swing highs</div>
+      <div class="stat-val" style="color:var(--red);">Peaks</div>
+      <div class="stat-sub">Where price topped out and reversed down</div>
     </div>
     <div class="stat-card">
-      <div class="stat-label">Big volume candles</div>
-      <div class="stat-val" style="color:var(--blue);">Pivots</div>
-      <div class="stat-sub">Where control may have shifted.</div>
+      <div class="stat-label">Swing lows</div>
+      <div class="stat-val" style="color:var(--green);">Valleys</div>
+      <div class="stat-sub">Where price bottomed and bounced up</div>
     </div>
     <div class="stat-card">
-      <div class="stat-label">Failed moves</div>
-      <div class="stat-val" style="color:var(--amber);">Supply</div>
-      <div class="stat-sub">Places where buyers got trapped before.</div>
+      <div class="stat-label">High-volume bars</div>
+      <div class="stat-val" style="color:var(--blue);">Activity</div>
+      <div class="stat-sub">Big players entered here — the price has "memory"</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Consolidation zones</div>
+      <div class="stat-val" style="color:var(--purple);">Ranges</div>
+      <div class="stat-sub">Where price traded sideways — coiled energy</div>
     </div>
   </div>
-
-  <h3>Think in zones</h3>
-  <p>A useful level is rarely one exact penny. If price rejected around $2.45, $2.50, and $2.58, mark that whole area as a zone. Small caps are noisy, so give the chart room.</p>
 
   <div class="chart-wrap">
     <canvas id="historyChart" height="260"></canvas>
-    <div class="chart-caption">Simulated chart: red circles mark old highs that could become resistance when price returns.</div>
+    <div class="chart-caption">Simulated stock chart — green circles mark swing lows (potential support), red circles mark swing highs (potential resistance)</div>
   </div>
+
+  <h3>The timeframe ladder</h3>
+  <p>The same stock looks completely different depending on your timeframe. Higher timeframes show you the "big picture" — the levels that institutions and fund managers care about. Lower timeframes show you the noise.</p>
 
   <div class="callout amber">
-    <strong>Keep it practical:</strong> The map does not predict the move. It tells you where the stock may pause, reject, squeeze through, or need extra volume.
+    <strong>Rule of thumb:</strong> Always start on the highest timeframe and work down. The weekly and daily chart set your direction. The 5-minute and 1-minute charts are only for timing your entry once you've already decided what to do. Never decide your trade from a 1-minute chart alone.
   </div>
-</section>
-
-<!-- ================================ -->
-<!-- CHAPTER 2: TIMEFRAMES -->
-<!-- ================================ -->
-<section class="chapter" id="ch2">
-  <div class="ch-num">Chapter 2</div>
-  <h2>The Timeframe Sweep</h2>
-  <p class="ch-sub">Start zoomed out and work down. The bigger the timeframe, the more visible the level is to other traders.</p>
 
   <div class="card">
-    <div class="level-row">
-      <div class="level-name">Yearly / max chart</div>
-      <div class="level-desc">Find the biggest overhead levels: prior major highs, old gap zones, reverse splits, and areas where runs died.</div>
-    </div>
-    <div class="level-row">
-      <div class="level-name">Monthly</div>
-      <div class="level-desc">Mark broad shelves and major rejection zones. These are the levels that can surprise traders who only look intraday.</div>
-    </div>
-    <div class="level-row">
-      <div class="level-name">Weekly</div>
-      <div class="level-desc">Look for repeated highs and high-volume candles from prior runs. These often become the first serious resistance zones.</div>
-    </div>
-    <div class="level-row">
-      <div class="level-name">Daily</div>
-      <div class="level-desc">Tighten the zones. Circle the biggest-volume candles and mark their highs, lows, opens, closes, and wick extremes.</div>
-    </div>
-    <div class="level-row">
-      <div class="level-name">Intraday</div>
-      <div class="level-desc">Use only after the larger map is done. Intraday levels help with timing, but they should not replace obvious overhead history.</div>
-    </div>
-  </div>
-
-  <div class="card" style="margin-bottom:20px;">
     <div class="bar-wrap">
-      <div class="bar-label"><span>Yearly / max</span><span>Major historical resistance</span></div>
+      <div class="bar-label"><span>Monthly / Yearly</span><span>Macro structure — investor-level</span></div>
       <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--purple);"></div></div>
     </div>
     <div class="bar-wrap">
-      <div class="bar-label"><span>Monthly</span><span>Big zones and old runs</span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:88%;background:var(--blue);"></div></div>
+      <div class="bar-label"><span>Weekly</span><span>Trend direction — position trades</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:85%;background:var(--blue);"></div></div>
     </div>
     <div class="bar-wrap">
-      <div class="bar-label"><span>Weekly</span><span>Repeated highs and volume shelves</span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:72%;background:var(--teal);"></div></div>
+      <div class="bar-label"><span>Daily</span><span>Key levels — swing trades</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:68%;background:var(--teal);"></div></div>
     </div>
     <div class="bar-wrap">
-      <div class="bar-label"><span>Daily</span><span>Most useful working map</span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:58%;background:var(--amber);"></div></div>
+      <div class="bar-label"><span>5-Minute</span><span>Entry timing — day trades</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:40%;background:var(--amber);"></div></div>
     </div>
-    <div class="level-row">
-      <div class="level-name">Intraday</div>
-      <div class="level-desc">Execution context after the major levels are marked.</div>
+    <div class="bar-wrap">
+      <div class="bar-label"><span>1-Minute</span><span>Micro timing — scalps only</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:20%;background:var(--red);"></div></div>
     </div>
   </div>
-
-  <div class="callout blue">
-    <strong>Workflow:</strong> Mark levels on the largest chart first, then refine them on the daily chart. If a daily level also exists on the weekly or monthly, keep it on the map.
-  </div>
+  <p class="muted small">A level that appears on the weekly chart is far more significant than one on the 5-minute chart. When both timeframes agree on a price — that's gold.</p>
 </section>
 
 <!-- ================================ -->
-<!-- CHAPTER 3: HIGH VOLUME -->
+<!-- CHAPTER 2: SUPPORT -->
 <!-- ================================ -->
-<section class="chapter" id="ch3">
-  <div class="ch-num">Chapter 3</div>
-  <h2>High-Volume Candles Matter Most</h2>
-  <p class="ch-sub">When a candle trades unusually large volume, that price area can become a structural pivot because a lot of buyers and sellers now have memory there.</p>
+<section class="chapter" id="ch2">
+  <div class="ch-num">Chapter 2</div>
+  <h2>Support — Finding the Floor</h2>
+  <p class="ch-sub">Support is where buyers step in. For going long, this is your bread and butter — the price zone where you want to buy.</p>
+
+  <div class="callout green">
+    <strong>Think of support as a floor.</strong> When you drop a ball on a floor, it bounces. That's what price does at support — it bounces back up because there are more buyers than sellers at that price. The more times it bounces, the stronger the floor. But every floor can eventually break if enough weight is applied.
+  </div>
+
+  <h3>How to identify support levels from history</h3>
+  <div class="step-list">
+    <div class="step">
+      <div class="step-dot blue">1</div>
+      <div class="step-body">
+        <h3>Find previous swing lows</h3>
+        <p>Scroll through the chart and mark every point where price made a clear "V" bottom and reversed upward. These are your first candidates. The more obvious the bounce, the stronger the level.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-dot green">2</div>
+      <div class="step-body">
+        <h3>Look for clusters (zones, not lines)</h3>
+        <p>Support isn't a single exact price — it's a zone. If you see swing lows at $48.20, $48.05, and $48.35 over several weeks, the support ZONE is roughly $48.00–$48.40. Draw a shaded area, not a precise line.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-dot amber">3</div>
+      <div class="step-body">
+        <h3>Count the touches</h3>
+        <p>Each time price visits a zone and bounces, it gains strength — up to a point. Two touches form a level. Three touches confirm it. After 4+ touches, the level may be "exhausted" and at risk of breaking.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-dot purple">4</div>
+      <div class="step-body">
+        <h3>Check the volume at each bounce</h3>
+        <p>A bounce on high volume means institutional buyers are defending that price. A bounce on low volume is weak — fewer participants care. Volume is the conviction behind the support.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-dot teal">5</div>
+      <div class="step-body">
+        <h3>Check higher timeframes</h3>
+        <p>If your daily support at $48 also appears as a weekly swing low — that level carries much more weight. Multiple timeframes agreeing = higher probability the level holds.</p>
+      </div>
+    </div>
+  </div>
 
   <div class="chart-wrap">
-    <canvas id="volChart" height="280"></canvas>
-    <div class="chart-caption">The largest volume candles often mark the areas where future reactions can happen.</div>
-  </div>
-
-  <h3>What to mark on a big-volume candle</h3>
-  <div class="card">
-    <div class="level-row">
-      <div class="level-name">High</div>
-      <div class="level-desc">The top of the candle can become resistance if price returns from below.</div>
-    </div>
-    <div class="level-row">
-      <div class="level-name">Close</div>
-      <div class="level-desc">A strong close can become a key acceptance/rejection area later.</div>
-    </div>
-    <div class="level-row">
-      <div class="level-name">Open</div>
-      <div class="level-desc">The starting price of the volume event can matter if the move fully retraces.</div>
-    </div>
-    <div class="level-row">
-      <div class="level-name">Low / wick</div>
-      <div class="level-desc">The lower extreme can become a risk line or support zone if price pulls back.</div>
-    </div>
-  </div>
-
-  <div class="callout amber">
-    <strong>Simple rule:</strong> If the candle is huge and the volume is huge, mark the full candle range. Then let the next lower timeframe help you tighten the zone.
+    <canvas id="supportChart" height="240"></canvas>
+    <div class="chart-caption">Support zone at $48–$48.40 tested three times — each bounce with increasing volume confirms the level</div>
   </div>
 
   <div class="two-col">
     <div class="callout green">
-      <strong>From below:</strong><br>
-      The high of a previous high-volume candle can be a breakout trigger. Reclaiming it suggests buyers are taking control of that old supply.
+      <strong>Strong support looks like:</strong><br>
+      • 3+ clear bounces from the same zone<br>
+      • High volume on each bounce<br>
+      • Visible on daily AND weekly charts<br>
+      • Near a round number ($50, $100)<br>
+      • Recent (within last 6 months)
     </div>
     <div class="callout red">
-      <strong>From above:</strong><br>
-      The same zone can become support if price pulls back and holds. If it fails, the reclaim may have been a trap.
+      <strong>Weak support looks like:</strong><br>
+      • Only 1 touch — could be random<br>
+      • Low volume — nobody cares about this level<br>
+      • Only visible on 1-min or 5-min charts<br>
+      • Very old (1+ year ago) — market has changed<br>
+      • 5+ touches — floor is getting tired
     </div>
   </div>
 </section>
 
 <!-- ================================ -->
-<!-- CHAPTER 4: RESISTANCE -->
+<!-- CHAPTER 3: RESISTANCE -->
 <!-- ================================ -->
-<section class="chapter" id="ch4">
-  <div class="ch-num">Chapter 4</div>
-  <h2>Resistance on Small-Cap Runners</h2>
-  <p class="ch-sub">When a small cap is suddenly up on news or unusual activity, old resistance matters because trapped holders, prior buyers, and short-term traders may sell into those zones.</p>
+<section class="chapter" id="ch3">
+  <div class="ch-num">Chapter 3</div>
+  <h2>Resistance — Knowing the Ceiling</h2>
+  <p class="ch-sub">Resistance is where sellers step in. For long trades, resistance is your profit target — and the barrier price needs to break for the next leg higher.</p>
+
+  <div class="callout red">
+    <strong>Think of resistance as a ceiling.</strong> When you throw a ball at a ceiling, it comes back down. Resistance is the price where selling pressure overwhelms buying pressure. Understanding resistance tells you where to take profits and where the stock needs to prove itself.
+  </div>
+
+  <h3>Finding resistance from historical data</h3>
+  <p>The process mirrors finding support — but you're looking for swing highs (peaks) instead of lows.</p>
+
+  <ul class="check-list">
+    <li><span class="ck ck-r"></span><strong>Previous swing highs</strong> — every peak where price reversed is a potential ceiling on the next rally</li>
+    <li><span class="ck ck-r"></span><strong>All-time high (ATH)</strong> — the ultimate resistance level. First break above ATH is significant</li>
+    <li><span class="ck ck-r"></span><strong>Gap-down origins</strong> — if the stock gapped down from $65, the $65 area is resistance on any recovery</li>
+    <li><span class="ck ck-a"></span><strong>Round numbers</strong> — $50, $100, $200 act as psychological resistance. Traders set sell orders here</li>
+    <li><span class="ck ck-b"></span><strong>Moving averages from above</strong> — if price is below the 200-day MA, the MA itself becomes overhead resistance</li>
+  </ul>
 
   <div class="chart-wrap">
     <canvas id="resistChart" height="240"></canvas>
-    <div class="chart-caption">Old highs and failed breakout areas can become overhead resistance when a stock wakes up again.</div>
+    <div class="chart-caption">Resistance zone at $55 — price attempts to break through multiple times before finally clearing it on volume</div>
   </div>
 
-  <h3>Resistance levels to prioritize</h3>
-  <ul class="check-list">
-    <li><span class="ck ck-r"></span><strong>Prior major highs</strong> from the yearly, monthly, weekly, and daily charts.</li>
-    <li><span class="ck ck-r"></span><strong>High-volume candle highs</strong> where the stock previously failed or reversed.</li>
-    <li><span class="ck ck-a"></span><strong>Gap-down origins</strong> where a previous selloff started.</li>
-    <li><span class="ck ck-b"></span><strong>Round numbers</strong> such as $1, $2, $2.50, $5, and $10.</li>
-    <li><span class="ck ck-p"></span><strong>Old consolidation shelves</strong> where price spent time before breaking down.</li>
-  </ul>
-
-  <div class="callout amber">
-    <strong>When a level breaks:</strong> A clean break through old resistance on real volume can turn that zone into a reference point. If the stock cannot hold above it, that failure is useful information too.
+  <h3>Role reversal — the key concept</h3>
+  <div class="callout purple">
+    <strong>When resistance breaks, it becomes support.</strong> This is one of the most reliable patterns in trading. The old ceiling becomes the new floor. Why? Traders who sold at resistance now see the breakout and regret selling — they become buyers at that level on any pullback. Meanwhile, new buyers who missed the breakout are waiting to buy the "dip" back to the breakout level. This role reversal is your highest-probability long entry.
   </div>
 </section>
 
 <!-- ================================ -->
-<!-- CHAPTER 5: PLAN -->
+<!-- CHAPTER 4: PIVOT POINTS -->
+<!-- ================================ -->
+<section class="chapter" id="ch4">
+  <div class="ch-num">Chapter 4</div>
+  <h2>Pivot Points — Math-Based Levels</h2>
+  <p class="ch-sub">Unlike support and resistance drawn from visual chart reading, pivot points are calculated from the previous period's data. They give you objective, pre-market levels — no guesswork.</p>
+
+  <div class="callout blue">
+    <strong>Why pivots matter:</strong> Thousands of professional traders and algorithms use the same pivot formulas. Because so many participants watch these levels, they become self-fulfilling — price reacts to them because everyone expects it to. This is why math-based levels work even though they seem "made up."
+  </div>
+
+  <h3>The standard pivot formula</h3>
+  <p>You need three numbers from the <strong>previous period</strong>: the High (H), Low (L), and Close (C). For day trading, use yesterday's data. For swing trading, use last week's data.</p>
+
+  <div class="formula">
+    <div><strong>PP</strong> = (H + L + C) / 3 <span class="label">← Pivot Point (the center of gravity)</span></div>
+    <br>
+    <div><strong>R1</strong> = (2 × PP) − L <span class="label">← First resistance above</span></div>
+    <div><strong>R2</strong> = PP + (H − L) <span class="label">← Second resistance</span></div>
+    <div><strong>R3</strong> = H + 2 × (PP − L) <span class="label">← Third resistance (extreme)</span></div>
+    <br>
+    <div><strong>S1</strong> = (2 × PP) − H <span class="label">← First support below</span></div>
+    <div><strong>S2</strong> = PP − (H − L) <span class="label">← Second support</span></div>
+    <div><strong>S3</strong> = L − 2 × (H − PP) <span class="label">← Third support (extreme)</span></div>
+  </div>
+
+  <h3>Try it yourself</h3>
+  <div class="card">
+    <p class="muted small" style="margin-bottom: 14px;">Enter the previous day's (or week's) High, Low, and Close to calculate all pivot levels:</p>
+    <div class="calc-row">
+      <span class="calc-label">High</span>
+      <input class="calc-input" id="cH" type="number" value="155.00" step="0.01" oninput="calcPivots()">
+      <span class="calc-label">Low</span>
+      <input class="calc-input" id="cL" type="number" value="148.50" step="0.01" oninput="calcPivots()">
+      <span class="calc-label">Close</span>
+      <input class="calc-input" id="cC" type="number" value="152.75" step="0.01" oninput="calcPivots()">
+    </div>
+    <div id="pivotResults" style="margin-top: 16px;"></div>
+  </div>
+
+  <h3>How to use pivots for going long</h3>
+  <div class="two-col">
+    <div class="callout green">
+      <strong>Bullish scenario:</strong> Price opens above the Pivot Point (PP). The stock has a bullish bias for the day. Look for pullbacks to PP as buying opportunities. Your profit targets are R1 and R2.
+    </div>
+    <div class="callout amber">
+      <strong>Caution scenario:</strong> Price opens below PP. The stock has a bearish bias. Pivot support levels (S1, S2) become potential bounce zones — but you're buying against the current. Wait for price to reclaim PP before going long with confidence.
+    </div>
+  </div>
+
+  <div class="callout teal">
+    <strong>Power move:</strong> When a pivot level (S1, S2, PP) coincides with a swing-based support level from your chart reading, you have double confirmation. A calculated pivot landing in the same zone as a historical bounce is one of the strongest setups you can find.
+  </div>
+</section>
+
+<!-- ================================ -->
+<!-- CHAPTER 5: VOLUME -->
 <!-- ================================ -->
 <section class="chapter" id="ch5">
   <div class="ch-num">Chapter 5</div>
-  <h2>Build the Simple Plan</h2>
-  <p class="ch-sub">Once the major levels are marked, the plan is just a ranked list of zones above and below current price.</p>
+  <h2>Volume — The Truth Detector</h2>
+  <p class="ch-sub">Price tells you what happened. Volume tells you if it matters. Volume is the single most important confirmation tool for judging whether a level is real.</p>
 
-  <div class="card">
-    <h3 style="margin-bottom: 16px;">The workflow</h3>
+  <div class="callout blue">
+    <strong>Volume = conviction.</strong> When 10 million shares trade at a price level, that price is "remembered" by the market — 10 million positions are anchored there. When 100,000 shares trade, hardly anyone cares. Every level you find should be validated by volume before you trust it.
+  </div>
+
+  <div class="chart-wrap">
+    <canvas id="volChart" height="280"></canvas>
+    <div class="chart-caption">Price (blue line) vs volume bars — notice how the biggest volume spikes align with major price reversals</div>
+  </div>
+
+  <h3>The four volume rules for going long</h3>
+
+  <div class="card" style="margin-bottom: 20px;">
     <div class="step-list">
       <div class="step">
-        <div class="step-dot purple">1</div>
+        <div class="step-dot green">1</div>
         <div class="step-body">
-          <h3>Start on the largest chart</h3>
-          <p>Mark the obvious overhead levels first: old highs, huge-volume candles, gap-down starts, and failed runs.</p>
+          <h3>Bounces need volume to be trusted</h3>
+          <p>When price hits your support level, look at the volume bar on that candle. Above-average volume on the bounce = real buyers defending the level. Below-average = a weak bounce that may fail on the next test.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-dot blue">2</div>
         <div class="step-body">
-          <h3>Work down to weekly and daily</h3>
-          <p>Refine the zones and remove levels that are too far away to matter today.</p>
+          <h3>Breakouts need volume to be real</h3>
+          <p>If a stock breaks above resistance on 2× or more average volume — that's a real breakout. If it breaks on below-average volume, expect it to fail and come back down. This single rule will save you from most false breakout traps.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-dot amber">3</div>
+        <div class="step-body">
+          <h3>Declining volume in a downtrend = sellers giving up</h3>
+          <p>If a stock is pulling back toward your support level and each down-candle has less volume than the last — sellers are running out of steam. This "volume dry-up" at support is a bullish sign that the pullback is almost done.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-dot red">4</div>
+        <div class="step-body">
+          <h3>Volume climax = possible exhaustion</h3>
+          <p>A massive spike (5×–10× normal) after an extended drop can signal a "selling climax" — everyone who wanted to sell has sold. This often marks the bottom. BUT — don't catch knives. Wait for a bounce candle with volume to confirm.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Volume profile — seeing where the action happened</h3>
+  <p>Volume profile shows you how much volume traded at <strong>each price level</strong>, not just each time period. It reveals the market's "fair value" and where the biggest players are positioned.</p>
+
+  <div class="chart-wrap">
+    <canvas id="vpChart2" height="280"></canvas>
+    <div class="chart-caption">Volume profile — the widest bar is the Point of Control (POC), the price with the most traded volume. It acts as a powerful magnet and support/resistance level.</div>
+  </div>
+
+  <div class="card-grid">
+    <div class="stat-card">
+      <div class="stat-label">POC</div>
+      <div class="stat-val" style="color:var(--purple);">Magnet</div>
+      <div class="stat-sub">Strongest S/R — most traded price</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">HVN</div>
+      <div class="stat-val" style="color:var(--blue);">Sticky</div>
+      <div class="stat-sub">High volume areas = strong support</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">LVN</div>
+      <div class="stat-val" style="color:var(--amber);">Fast travel</div>
+      <div class="stat-sub">Low volume gaps = price moves quickly here</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ -->
+<!-- CHAPTER 6: COMPRESSION / EXPANSION -->
+<!-- ================================ -->
+<section class="chapter" id="ch6">
+  <div class="ch-num">Chapter 6</div>
+  <h2>Compression & Expansion</h2>
+  <p class="ch-sub">This is where setups are born. When a stock compresses into a tight range, it's building energy — like a coiled spring. The eventual expansion (breakout) can be explosive. Learning to spot this cycle gives you entries before the big move.</p>
+
+  <div class="callout purple">
+    <strong>The compression-expansion cycle:</strong> Markets alternate between two states — tight ranges (compression) and big moves (expansion). You make money during expansion. You get chopped up during compression. The key is recognizing which phase you're in and positioning for the transition.
+  </div>
+
+  <h3>What compression looks like</h3>
+  <div class="chart-wrap">
+    <canvas id="compressionChart" height="260"></canvas>
+    <div class="chart-caption">Compression phase: candles get smaller, range tightens, volume declines — then an expansion breakout on surging volume</div>
+  </div>
+
+  <div class="card">
+    <h3>Signs a stock is compressing</h3>
+    <ul class="check-list">
+      <li><span class="ck ck-p"></span><strong>Range is narrowing</strong> — each swing high is lower and each swing low is higher, squeezing price into a tighter wedge</li>
+      <li><span class="ck ck-p"></span><strong>Candle bodies are shrinking</strong> — daily candles that were $3 wide are now $0.80. The stock is "quiet"</li>
+      <li><span class="ck ck-p"></span><strong>Volume is declining</strong> — fewer people trading means indecision. Nobody wants to make the first move</li>
+      <li><span class="ck ck-p"></span><strong>Moving averages are flattening and converging</strong> — the 20 EMA and 50 SMA get close together</li>
+      <li><span class="ck ck-p"></span><strong>Bollinger Bands are squeezing</strong> — if you use them, the bands narrow visibly during compression</li>
+    </ul>
+  </div>
+
+  <h3>Common compression patterns</h3>
+  <div class="scenario-btns">
+    <button class="sc-btn active" onclick="selSc(this,'sc-tri')">Ascending triangle</button>
+    <button class="sc-btn" onclick="selSc(this,'sc-wedge')">Falling wedge</button>
+    <button class="sc-btn" onclick="selSc(this,'sc-flag')">Bull flag</button>
+    <button class="sc-btn" onclick="selSc(this,'sc-flat')">Flat base</button>
+  </div>
+
+  <div id="sc-tri" class="sc-panel active">
+    <div class="card">
+      <h3>Ascending triangle <span class="tag tag-g">Bullish</span></h3>
+      <div class="chart-wrap">
+        <canvas id="triChart" height="200"></canvas>
+      </div>
+      <p>Flat resistance on top, rising support from below. Each pullback makes a higher low — buyers are getting more aggressive. The stock is being "squeezed" into the resistance. When it breaks above on volume, the move is often equal to the height of the triangle.</p>
+      <div class="callout green">
+        <strong>Long entry:</strong> Buy on a candle close above the flat resistance line with volume 1.5×+ average. Stop goes below the most recent higher low. Target = breakout point + height of the triangle.
+      </div>
+    </div>
+  </div>
+
+  <div id="sc-wedge" class="sc-panel">
+    <div class="card">
+      <h3>Falling wedge <span class="tag tag-g">Bullish</span></h3>
+      <div class="chart-wrap">
+        <canvas id="wedgeChart" height="200"></canvas>
+      </div>
+      <p>Both support and resistance are declining — but support is declining slower. The range is narrowing downward, but selling momentum is weakening. This pattern within a longer-term uptrend is very bullish — it's just a healthy pullback compressing before the next leg up.</p>
+      <div class="callout green">
+        <strong>Long entry:</strong> Buy on a break above the upper trendline of the wedge. Confirmation: volume expands on the breakout candle. Stop below the wedge low.
+      </div>
+    </div>
+  </div>
+
+  <div id="sc-flag" class="sc-panel">
+    <div class="card">
+      <h3>Bull flag <span class="tag tag-g">Bullish</span></h3>
+      <div class="chart-wrap">
+        <canvas id="flagChart" height="200"></canvas>
+      </div>
+      <p>A sharp move up (the "pole") followed by a small, orderly pullback that drifts lower on declining volume (the "flag"). This is a pause, not a reversal — strong holders are keeping their shares while weak hands take small profits. When the flag breaks upward, it often produces a move equal to the pole.</p>
+      <div class="callout green">
+        <strong>Long entry:</strong> Buy when price breaks above the top of the flag channel. Volume should pick up. Stop below the flag low. Target = flag breakout + length of the pole.
+      </div>
+    </div>
+  </div>
+
+  <div id="sc-flat" class="sc-panel">
+    <div class="card">
+      <h3>Flat base / tight consolidation <span class="tag tag-g">Bullish</span></h3>
+      <div class="chart-wrap">
+        <canvas id="flatChart" height="200"></canvas>
+      </div>
+      <p>Price trades in a very tight range — often less than 5% top to bottom — for several weeks. Volume dries up. This is like a stock "resting" after a move. Institutions are holding and not selling (or it would drop). When it breaks out, it often runs hard because so little supply exists above the base.</p>
+      <div class="callout green">
+        <strong>Long entry:</strong> Buy on a break above the top of the range with a volume surge. These can be the most explosive breakouts because so much energy has been stored in the compression. Stop just below the base floor.
+      </div>
+    </div>
+  </div>
+
+  <h3>The expansion — what happens after compression</h3>
+  <div class="callout teal">
+    <strong>How to judge if the breakout is real:</strong><br><br>
+    <strong>Volume is the #1 tell.</strong> A compression breakout on 2×+ average volume is genuine. On low volume — it's likely a fake that will snap back into the range. Wait for the volume to confirm before committing capital.<br><br>
+    <strong>The first pullback after a real breakout is your safest entry.</strong> If you missed the initial break, don't chase. Wait for price to pull back to the broken resistance (now support) and buy the retest. This gives you a tighter stop and a lower-risk entry.
+  </div>
+
+  <div class="two-col">
+    <div class="stat-card">
+      <div class="stat-label">Average compression duration</div>
+      <div class="stat-val">2–6 weeks</div>
+      <div class="stat-sub">Shorter = quick pop. Longer = bigger move.</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Volume during compression</div>
+      <div class="stat-val">-40–60%</div>
+      <div class="stat-sub">Volume typically drops 40–60% from prior move</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ -->
+<!-- CHAPTER 7: PUTTING IT TOGETHER -->
+<!-- ================================ -->
+<section class="chapter" id="ch7">
+  <div class="ch-num">Chapter 7</div>
+  <h2>Putting It All Together</h2>
+  <p class="ch-sub">Here's the complete workflow — from opening a chart to entering a long trade. This is your repeatable process.</p>
+
+  <div class="card">
+    <h3 style="margin-bottom: 16px;">The long trade workflow</h3>
+    <div class="step-list">
+      <div class="step">
+        <div class="step-dot purple">1</div>
+        <div class="step-body">
+          <h3>Weekly chart — determine the trend</h3>
+          <p>Is the stock making higher highs and higher lows? Is it above its 50-week moving average? If yes, you have permission to look for long entries. If the weekly trend is down, skip this stock.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-dot blue">2</div>
+        <div class="step-body">
+          <h3>Daily chart — find your levels</h3>
+          <p>Mark swing highs (resistance), swing lows (support), and any pivot points. Look for the nearest support zone below current price and the nearest resistance above. Is price in a compression pattern?</p>
         </div>
       </div>
       <div class="step">
         <div class="step-dot green">3</div>
         <div class="step-body">
-          <h3>Circle the biggest volume candles</h3>
-          <p>Use those candles to decide which levels deserve the most attention.</p>
+          <h3>Check volume at your levels</h3>
+          <p>Do your support levels have high-volume bounces? Did resistance break on high volume? Is volume declining during compression? Volume validates (or invalidates) every level you've drawn.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-dot amber">4</div>
         <div class="step-body">
-          <h3>Rank the nearest resistance</h3>
-          <p>Know the next two or three overhead zones before thinking about entry or continuation.</p>
+          <h3>Calculate your trade</h3>
+          <p>Entry price (at support or on a breakout). Stop loss (below the level — this is non-negotiable). Target (next resistance above). Does the math give you at least 2:1 reward-to-risk? If not, skip it.</p>
         </div>
       </div>
       <div class="step">
-        <div class="step-dot red">5</div>
+        <div class="step-dot teal">5</div>
         <div class="step-body">
-          <h3>Watch the reaction</h3>
-          <p>At the level, look for rejection, pause, heavy selling, clean break, or reclaim. The reaction matters more than the line.</p>
+          <h3>Wait for confirmation, then execute</h3>
+          <p>At support: wait for a bullish candle (hammer, engulfing). On breakout: wait for a candle close above with volume. Don't jump the gun — confirmation saves you from traps.</p>
         </div>
       </div>
     </div>
   </div>
 
   <h3>Level quality scorecard</h3>
-  <p>Use this to decide which old levels matter most:</p>
+  <p>Before you trade any level, score it. Check every factor that applies:</p>
 
   <div class="card">
     <div id="scorecard"></div>
@@ -673,40 +922,56 @@ p, .prose { font-size: 15px; color: var(--text); margin-bottom: 16px; }
     </div>
   </div>
 
-  <h3>Risk management</h3>
+  <h3>Risk management — the rules that keep you alive</h3>
   <div class="card-grid">
     <div class="stat-card">
       <div class="stat-label">Risk per trade</div>
-      <div class="stat-val">1-2%</div>
-      <div class="stat-sub">Of account equity, often less for volatile small caps.</div>
+      <div class="stat-val">1–2%</div>
+      <div class="stat-sub">Of your total account — never more</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">Minimum R:R</div>
       <div class="stat-val">2 : 1</div>
-      <div class="stat-sub">Only works if the target is realistic and liquid.</div>
+      <div class="stat-sub">Target at least 2× your risk</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">Daily stop</div>
-      <div class="stat-val">Set it</div>
-      <div class="stat-sub">Know when you are done before emotions take over.</div>
+      <div class="stat-val">3%</div>
+      <div class="stat-sub">Max daily loss — walk away</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Win rate needed</div>
+      <div class="stat-val">~40%</div>
+      <div class="stat-sub">At 2:1 R:R, 40% wins = profitable</div>
     </div>
   </div>
 
   <div class="callout amber">
     <strong>Position sizing formula:</strong><br>
-    Shares = Account risk dollars / (Entry price - Stop price)<br><br>
-    Example: $25,000 account, risk 1% = $250. Entry at $4.50, stop at $4.25. Shares = $250 / $0.25 = 1,000 shares.<br><br>
-    The stop distance controls the size. If the spread or liquidity makes the stop unrealistic, skip the trade.
+    Shares = (Account risk $) / (Entry price − Stop price)<br><br>
+    Example: $25,000 account, risk 1% = $250. Entry at $50, stop at $49. Shares = $250 / $1.00 = 250 shares.<br><br>
+    Your stop distance always determines your position size — never the other way around. This is the single most important habit in trading.
   </div>
+
+  <h3>Common beginner mistakes</h3>
+  <ul class="check-list">
+    <li><span class="ck ck-r"></span><strong>Moving your stop to "give it room"</strong> — if the level breaks, you were wrong. Accept the small loss.</li>
+    <li><span class="ck ck-r"></span><strong>Buying before confirmation</strong> — "it looks like it will bounce" is not a trade signal. Wait for the bounce candle.</li>
+    <li><span class="ck ck-r"></span><strong>Ignoring the weekly trend</strong> — buying support in a stock that's in a clear weekly downtrend is fighting the current.</li>
+    <li><span class="ck ck-r"></span><strong>Chasing breakouts</strong> — buying 5% above the breakout level because you "missed it." Wait for the pullback retest.</li>
+    <li><span class="ck ck-r"></span><strong>No plan before entry</strong> — if you don't know your stop and target before you click buy, you're gambling, not trading.</li>
+    <li><span class="ck ck-a"></span><strong>Trading every level</strong> — selectivity is your edge. Trade only A-grade setups (score 7+).</li>
+    <li><span class="ck ck-g"></span><strong>The fix: Journal every trade</strong> — write down WHY you entered, your levels, the result, and what you learned. This is how you improve.</li>
+  </ul>
 </section>
 
 <!-- ================================ -->
-<!-- CHAPTER 6: PRACTICE -->
+<!-- CHAPTER 8: PRACTICE -->
 <!-- ================================ -->
-<section class="chapter" id="ch6">
-  <div class="ch-num">Chapter 6</div>
-  <h2>Practice Lab</h2>
-  <p class="ch-sub">Practice the same questions you should ask when a small cap is suddenly active.</p>
+<section class="chapter" id="ch8">
+  <div class="ch-num">Chapter 8</div>
+  <h2>Practice — Test Your Knowledge</h2>
+  <p class="ch-sub">Work through these scenarios to solidify the concepts. Each question presents a real-world trading situation.</p>
 
   <div class="card">
     <div id="quizArea"></div>
@@ -714,34 +979,36 @@ p, .prose { font-size: 15px; color: var(--text); margin-bottom: 16px; }
 </section>
 
 <div class="footer">
-  <p>This guide is for educational purposes only. Trading involves significant risk of loss. Never trade with money you can't afford to lose. Paper trade first and understand broker requirements before actively day trading.</p>
+  <p>This guide is for educational purposes only. Trading involves significant risk of loss. Never trade with money you can't afford to lose. Always paper trade first.</p>
 </div>
 
 </div><!-- end container -->
 
 <script>
+// ===== NAV =====
 function goTo(e, id) {
   e.preventDefault();
   document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
 }
-
 const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      document.querySelectorAll('.ch-link').forEach(link => link.classList.remove('active'));
-      const active = document.querySelector(`.ch-link[href="#${entry.target.id}"]`);
-      if (active) active.classList.add('active');
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      document.querySelectorAll('.ch-link').forEach(l => l.classList.remove('active'));
+      const link = document.querySelector(`.ch-link[href="#${e.target.id}"]`);
+      if (link) link.classList.add('active');
     }
   });
 }, { threshold: 0.15, rootMargin: '-60px 0px -60% 0px' });
-document.querySelectorAll('.chapter').forEach(chapter => observer.observe(chapter));
+document.querySelectorAll('.chapter').forEach(ch => observer.observe(ch));
 
-const tc = 'rgba(0,0,0,0.45)';
-const gc = 'rgba(0,0,0,0.06)';
-const lineCol = '#1565C0';
-const greenLine = '#2D8C3C';
-const redLine = '#C62828';
-const amberLine = '#E65100';
+// ===== CHART THEME =====
+const dk = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const tc = dk ? 'rgba(255,255,255,0.6)' : 'rgba(0,0,0,0.45)';
+const gc = dk ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.06)';
+const lineCol = dk ? '#90CAF9' : '#1565C0';
+const greenLine = dk ? '#81C784' : '#2D8C3C';
+const redLine = dk ? '#EF9A9A' : '#C62828';
+const purpleLine = dk ? '#CE93D8' : '#6A1B9A';
 
 function baseOpts(extra = {}) {
   return {
@@ -755,102 +1022,232 @@ function baseOpts(extra = {}) {
   };
 }
 
-function makeCharts() {
-  if (!window.Chart) return;
-
-  const historyCtx = document.getElementById('historyChart');
-  if (historyCtx) {
-    const data = [1.20,1.35,1.52,1.48,1.40,1.72,2.10,2.45,2.38,2.12,1.90,1.72,1.88,2.05,2.32,2.58,2.51,2.24,2.02,1.82,1.70,1.92,2.16,2.42,2.36,2.18,1.98,1.86,2.08,2.34,2.62,2.54,2.28,2.06,1.95,2.22,2.50,2.85,3.12,2.90];
-    const highs = [7, 15, 30, 38];
-    new Chart(historyCtx, {
-      type: 'line',
-      data: {
-        labels: data.map(() => ''),
-        datasets: [{
-          data,
-          borderColor: lineCol,
-          borderWidth: 2,
-          tension: 0.32,
-          pointRadius: data.map((_, i) => highs.includes(i) ? 6 : 0),
-          pointBackgroundColor: data.map((_, i) => highs.includes(i) ? redLine : 'transparent'),
-          pointBorderColor: data.map((_, i) => highs.includes(i) ? redLine : 'transparent'),
-          fill: false
-        }]
-      },
-      options: baseOpts()
-    });
+// ===== CH1: HISTORY CHART =====
+(function() {
+  const ctx = document.getElementById('historyChart');
+  const labels = [];
+  const data = [];
+  let p = 45;
+  for (let i = 0; i < 60; i++) {
+    labels.push('');
+    p += (Math.random() - 0.48) * 2.5;
+    if (p < 38) p = 38 + Math.random();
+    if (p > 60) p = 60 - Math.random();
+    data.push(Math.round(p * 100) / 100);
   }
+  const swingLows = [8, 22, 41];
+  const swingHighs = [15, 33, 52];
+  const pointBg = data.map((_, i) => {
+    if (swingLows.includes(i)) return greenLine;
+    if (swingHighs.includes(i)) return redLine;
+    return 'transparent';
+  });
+  const pointR = data.map((_, i) => (swingLows.includes(i) || swingHighs.includes(i)) ? 6 : 0);
 
-  const volumeCtx = document.getElementById('volChart');
-  if (volumeCtx) {
-    const price = [1.10,1.14,1.18,1.25,1.36,1.58,1.82,2.20,2.04,1.86,1.70,1.55,1.62,1.78,2.05,2.42,2.70,2.48,2.20,2.02,1.92,2.08,2.36,2.72,3.05];
-    const vol = [0.2,0.3,0.4,0.5,0.8,1.2,2.8,7.4,5.6,2.4,1.1,0.7,0.6,0.9,1.8,4.9,8.2,3.4,1.7,1.0,0.8,1.4,2.7,5.2,6.6];
-    const colors = vol.map(v => v >= 5 ? 'rgba(198,40,40,0.58)' : v >= 2 ? 'rgba(21,101,192,0.46)' : 'rgba(0,0,0,0.14)');
-    new Chart(volumeCtx, {
-      data: {
-        labels: price.map(() => ''),
-        datasets: [
-          { type: 'line', data: price, borderColor: lineCol, borderWidth: 2, tension: 0.32, pointRadius: 0, yAxisID: 'yP', fill: false },
-          { type: 'bar', data: vol, backgroundColor: colors, yAxisID: 'yV', barPercentage: 0.72 }
-        ]
-      },
-      options: {
-        responsive: true,
-        plugins: { legend: { display: true, labels: { color: tc, font: { size: 11 }, generateLabels: () => [
-          { text: 'Price', fillStyle: lineCol, strokeStyle: lineCol, lineWidth: 2 },
-          { text: 'Volume spike', fillStyle: 'rgba(198,40,40,0.58)', strokeStyle: 'transparent', lineWidth: 0 }
-        ]}}},
-        scales: {
-          x: { ticks: { display: false }, grid: { color: gc } },
-          yP: { position: 'right', ticks: { color: tc, font: { size: 10 } }, grid: { color: gc } },
-          yV: { position: 'left', ticks: { color: tc, font: { size: 10 } }, grid: { display: false } }
-        }
-      }
-    });
-  }
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        data, borderColor: lineCol, borderWidth: 2, tension: 0.35,
+        pointRadius: pointR, pointBackgroundColor: pointBg, pointBorderColor: pointBg, fill: false
+      }]
+    },
+    options: baseOpts()
+  });
+})();
 
-  const resistCtx = document.getElementById('resistChart');
-  if (resistCtx) {
-    const data = [1.10,1.22,1.38,1.62,1.92,2.28,2.55,2.42,2.12,1.86,1.64,1.50,1.66,1.92,2.20,2.48,2.56,2.34,2.04,1.80,1.68,1.92,2.24,2.52,2.78,3.08,3.26,3.06,2.82,2.60,2.72,3.02,3.36,3.78,4.12];
-    const levelA = data.map(() => 2.55);
-    const levelB = data.map((_, i) => i > 23 ? 3.25 : null);
-    new Chart(resistCtx, {
-      type: 'line',
-      data: {
-        labels: data.map(() => ''),
-        datasets: [
-          { data, borderColor: lineCol, borderWidth: 2, tension: 0.32, pointRadius: 0, fill: false },
-          { data: levelA, borderColor: redLine, borderWidth: 2, borderDash: [6,4], pointRadius: 0, fill: false },
-          { data: levelB, borderColor: amberLine, borderWidth: 2, borderDash: [6,4], pointRadius: 0, fill: false, spanGaps: false }
-        ]
-      },
-      options: { ...baseOpts({ plugins: { legend: { display: true, labels: { color: tc, font: { size: 11 }, generateLabels: () => [
-        { text: 'Price', fillStyle: lineCol, strokeStyle: lineCol, lineWidth: 2 },
-        { text: 'Old high-volume pivot', fillStyle: redLine, strokeStyle: redLine, lineWidth: 2, lineDash: [6,4] },
-        { text: 'Next resistance', fillStyle: amberLine, strokeStyle: amberLine, lineWidth: 2, lineDash: [6,4] }
-      ]}}}}) }
-    });
-  }
+// ===== CH2: SUPPORT CHART =====
+(function() {
+  const ctx = document.getElementById('supportChart');
+  const labels = Array.from({length: 40}, (_, i) => '');
+  const d = [50,49.5,49,48.8,48.2,48.1,48.3,49,49.8,50.5,51,51.5,51.2,50.5,49.8,49.2,48.5,48.1,48.0,48.4,49.2,50,50.8,51.2,51.8,51.5,50.8,50,49.3,48.6,48.2,48.3,48.8,49.5,50.2,50.8,51.5,52,52.5,53];
+  const sup = Array(40).fill(48.1);
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        { data: d, borderColor: lineCol, borderWidth: 2, tension: 0.35, pointRadius: 0, fill: false },
+        { data: sup, borderColor: greenLine, borderWidth: 2, borderDash: [6,4], pointRadius: 0, fill: false }
+      ]
+    },
+    options: { ...baseOpts({ plugins: { legend: { display: true, labels: { color: tc, font: { size: 11 }, generateLabels: () => [
+      { text: 'Price', fillStyle: lineCol, strokeStyle: lineCol, lineWidth: 2 },
+      { text: 'Support zone', fillStyle: greenLine, strokeStyle: greenLine, lineWidth: 2, lineDash: [6,4] }
+    ]}}}}) }
+  });
+})();
+
+// ===== CH3: RESISTANCE CHART =====
+(function() {
+  const ctx = document.getElementById('resistChart');
+  const labels = Array.from({length: 40}, () => '');
+  const d = [50,51,52,53,54,54.5,55,54.8,54,53,52.5,53,54,54.8,55.1,54.6,53.5,52.8,53.5,54.2,55,54.5,53.8,54,54.8,55.2,55.8,56.5,57,57.5,58,57.5,56.8,55.5,55.1,55.8,56.5,57,57.8,58.5];
+  const res = d.map((_, i) => i < 26 ? 55 : null);
+  const newSup = d.map((_, i) => i >= 26 ? 55 : null);
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        { data: d, borderColor: lineCol, borderWidth: 2, tension: 0.35, pointRadius: (c) => c.dataIndex === 26 ? 6 : 0, pointBackgroundColor: greenLine, fill: false },
+        { data: res, borderColor: redLine, borderWidth: 2, borderDash: [6,4], pointRadius: 0, fill: false, spanGaps: false },
+        { data: newSup, borderColor: greenLine, borderWidth: 2, borderDash: [6,4], pointRadius: 0, fill: false, spanGaps: false }
+      ]
+    },
+    options: { ...baseOpts({ plugins: { legend: { display: true, labels: { color: tc, font: { size: 11 }, generateLabels: () => [
+      { text: 'Price', fillStyle: lineCol, strokeStyle: lineCol, lineWidth: 2 },
+      { text: 'Resistance', fillStyle: redLine, strokeStyle: redLine, lineWidth: 2, lineDash: [6,4] },
+      { text: 'New support (role reversal)', fillStyle: greenLine, strokeStyle: greenLine, lineWidth: 2, lineDash: [6,4] }
+    ]}}}}) }
+  });
+})();
+
+// ===== CH4: PIVOT CALC =====
+function calcPivots() {
+  const H = parseFloat(document.getElementById('cH').value) || 0;
+  const L = parseFloat(document.getElementById('cL').value) || 0;
+  const C = parseFloat(document.getElementById('cC').value) || 0;
+  const PP = (H + L + C) / 3;
+  const R1 = 2 * PP - L, S1 = 2 * PP - H;
+  const R2 = PP + (H - L), S2 = PP - (H - L);
+  const R3 = H + 2 * (PP - L), S3 = L - 2 * (H - PP);
+  const levels = [
+    { n: 'R3', v: R3, c: 'var(--red-text)' },
+    { n: 'R2', v: R2, c: 'var(--red-text)' },
+    { n: 'R1', v: R1, c: 'var(--red-text)' },
+    { n: 'PP', v: PP, c: 'var(--blue-text)' },
+    { n: 'S1', v: S1, c: 'var(--green-text)' },
+    { n: 'S2', v: S2, c: 'var(--green-text)' },
+    { n: 'S3', v: S3, c: 'var(--green-text)' }
+  ];
+  document.getElementById('pivotResults').innerHTML = levels.map(l =>
+    `<div class="pivot-row"><span class="pivot-name">${l.n}</span><span class="pivot-val" style="color:${l.c}">$${l.v.toFixed(2)}</span></div>`
+  ).join('');
 }
-makeCharts();
+calcPivots();
 
+// ===== CH5: VOLUME CHART =====
+(function() {
+  const ctx = document.getElementById('volChart');
+  const labels = ['','','','','','','','','','','','','','','','','','','','','','','','',''];
+  const price = [50,51,52,53,52,51,50,49,48,47.5,48.5,50,51,52,53,54,55,54,53,52,51,52,54,55.5,57];
+  const vol = [1.2,1.0,1.3,1.1,0.8,0.9,1.5,2.0,3.8,4.5,3.2,1.8,1.4,1.6,2.1,2.8,3.5,1.2,0.9,0.8,1.0,1.5,2.2,3.0,4.0];
+  const volCol = vol.map(v => v >= 3.5 ? (dk ? 'rgba(239,154,154,0.7)' : 'rgba(198,40,40,0.6)') : v >= 2 ? (dk ? 'rgba(144,202,249,0.6)' : 'rgba(21,101,192,0.5)') : (dk ? 'rgba(160,160,154,0.3)' : 'rgba(0,0,0,0.15)'));
+  new Chart(ctx, {
+    data: {
+      labels,
+      datasets: [
+        { type: 'line', data: price, borderColor: lineCol, borderWidth: 2, tension: 0.35, pointRadius: 0, yAxisID: 'yP', fill: false },
+        { type: 'bar', data: vol, backgroundColor: volCol, yAxisID: 'yV', barPercentage: 0.7 }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: true, labels: { color: tc, font: { size: 11 }, generateLabels: () => [
+        { text: 'Price', fillStyle: lineCol, strokeStyle: lineCol, lineWidth: 2 },
+        { text: 'Volume (M)', fillStyle: dk ? 'rgba(144,202,249,0.6)' : 'rgba(21,101,192,0.5)', strokeStyle: 'transparent', lineWidth: 0 }
+      ]}}},
+      scales: {
+        x: { ticks: { display: false }, grid: { color: gc } },
+        yP: { position: 'right', ticks: { color: tc, font: { size: 10 } }, grid: { color: gc } },
+        yV: { position: 'left', ticks: { color: tc, font: { size: 10 } }, grid: { display: false } }
+      }
+    }
+  });
+})();
+
+// ===== CH5: VOLUME PROFILE =====
+(function() {
+  const ctx = document.getElementById('vpChart2');
+  const prices = ['$145','$146','$147','$148','$149','$150','$151','$152','$153','$154','$155'];
+  const vols = [0.3,0.7,1.1,2.8,4.2,5.8,4.9,2.5,1.4,0.8,0.4];
+  const cols = vols.map((v, i) => i === 5 ? (dk ? 'rgba(206,147,216,0.85)' : 'rgba(106,27,154,0.8)') : v >= 4 ? (dk ? 'rgba(144,202,249,0.65)' : 'rgba(21,101,192,0.65)') : v >= 2 ? (dk ? 'rgba(144,202,249,0.4)' : 'rgba(21,101,192,0.4)') : (dk ? 'rgba(160,160,154,0.25)' : 'rgba(0,0,0,0.12)'));
+  new Chart(ctx, {
+    type: 'bar',
+    data: { labels: prices, datasets: [{ data: vols, backgroundColor: cols, borderRadius: 3 }] },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { ticks: { color: tc, font: { size: 10 } }, grid: { color: gc }, title: { display: true, text: 'Volume (millions)', color: tc, font: { size: 11 } } },
+        y: { ticks: { color: tc, font: { size: 11 } }, grid: { color: gc } }
+      }
+    }
+  });
+})();
+
+// ===== CH6: COMPRESSION CHART =====
+(function() {
+  const ctx = document.getElementById('compressionChart');
+  const d = [50,51,49.5,50.8,49.8,50.5,50,50.3,49.9,50.2,50,50.1,49.95,50.05,50,50,50.1,50,50.05,50.02,50.01,50.5,51.2,52,53,54.5,55.5,57];
+  const vol = [2.0,1.8,1.9,1.5,1.4,1.3,1.1,1.0,0.9,0.8,0.7,0.6,0.55,0.5,0.5,0.45,0.4,0.4,0.35,0.35,0.3,1.5,2.8,3.5,4.2,4.8,3.5,3.0];
+  const labels = d.map(() => '');
+  const volCol = vol.map((v, i) => i >= 21 ? (dk ? 'rgba(129,199,132,0.65)' : 'rgba(45,140,60,0.55)') : (dk ? 'rgba(160,160,154,0.25)' : 'rgba(0,0,0,0.12)'));
+  new Chart(ctx, {
+    data: {
+      labels,
+      datasets: [
+        { type: 'line', data: d, borderColor: lineCol, borderWidth: 2, tension: 0.3, pointRadius: 0, yAxisID: 'yP', fill: false },
+        { type: 'bar', data: vol, backgroundColor: volCol, yAxisID: 'yV', barPercentage: 0.6 }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: true, labels: { color: tc, font: { size: 11 }, generateLabels: () => [
+        { text: 'Price', fillStyle: lineCol, strokeStyle: lineCol, lineWidth: 2 },
+        { text: 'Volume', fillStyle: dk ? 'rgba(160,160,154,0.4)' : 'rgba(0,0,0,0.2)', strokeStyle: 'transparent' }
+      ]}}},
+      scales: {
+        x: { ticks: { display: false }, grid: { color: gc } },
+        yP: { position: 'right', ticks: { color: tc, font: { size: 10 } }, grid: { color: gc } },
+        yV: { position: 'left', ticks: { color: tc, font: { size: 10 } }, grid: { display: false } }
+      }
+    }
+  });
+})();
+
+// ===== CH6: PATTERN CHARTS =====
+function patternChart(id, data, line2) {
+  const ctx = document.getElementById(id);
+  if (!ctx) return;
+  const labels = data.map(() => '');
+  const ds = [{ data, borderColor: lineCol, borderWidth: 2, tension: 0.3, pointRadius: 0, fill: false }];
+  if (line2) ds.push({ data: line2.d, borderColor: line2.c, borderWidth: 1.5, borderDash: [5,4], pointRadius: 0, fill: false });
+  new Chart(ctx, { type: 'line', data: { labels, datasets: ds }, options: baseOpts() });
+}
+patternChart('triChart', [48,49,50,51,52,51,49.5,50,51.5,52.5,53,52,50.5,51,52,53,52.5,51,51.5,52.5,53,53.5,54.5,55.5,56.5],
+  { d: Array(25).fill(53), c: redLine });
+patternChart('wedgeChart', [55,54,53.5,53,52.5,53,52.5,52,51.5,52,51.5,51,50.8,51.2,50.8,50.5,51,51.5,52.5,53.5,54.5,55.5,56.5,57.5,58.5]);
+patternChart('flagChart', [42,44,46,48,50,52,54,53.5,53,52.5,52,51.5,51,50.5,50.5,51,51.5,52,53,54.5,56,57.5,59,60,61]);
+patternChart('flatChart', [48,50,52,54,55,55.2,55.1,54.8,55,55.3,55.1,54.9,55,55.2,55.1,54.8,55,55.5,56.5,57.5,58.5,59.5,60.5,61,62]);
+
+// ===== SCENARIOS =====
+function selSc(btn, id) {
+  document.querySelectorAll('.sc-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.sc-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(id).classList.add('active');
+}
+
+// ===== SCORECARD =====
 const scoreItems = [
-  'Level comes from yearly, monthly, weekly, or daily chart history',
-  'Level is connected to one of the biggest-volume candles',
-  'The high of that candle is clear resistance from below',
-  'The candle range marks a clean structural pivot zone',
-  'Price previously rejected, stalled, or reversed there',
-  'The level appears on more than one timeframe',
-  'The level is close enough to matter for the current move',
-  'The stock has enough liquidity to trade around the level',
-  'There is a clear invalidation point if the level fails',
-  'The next target/resistance is mapped before entry'
+  'Clear swing high or swing low at this price',
+  'Tested 2–3 times with clear reactions',
+  'Above-average volume on each reaction',
+  'Visible on the daily chart (not just intraday)',
+  'Confirmed by a higher timeframe (weekly/monthly)',
+  'Near a round or psychological number',
+  'Coincides with a calculated pivot point',
+  'Volume profile shows an HVN or POC here',
+  'Aligns with a key moving average (50/200 MA)',
+  'Recent — formed within the last 6 months'
 ];
 
 function buildScorecard() {
-  const scorecard = document.getElementById('scorecard');
-  if (!scorecard) return;
-  scorecard.innerHTML = scoreItems.map((item, i) =>
+  document.getElementById('scorecard').innerHTML = scoreItems.map((item, i) =>
     `<label style="display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);cursor:pointer;">
       <input type="checkbox" id="sc${i}" onchange="updateScore()" style="margin-top:3px;flex-shrink:0;width:18px;height:18px;accent-color:var(--green);">
       <span style="font-size:14px;line-height:1.5;">${item}</span>
@@ -860,87 +1257,120 @@ function buildScorecard() {
 }
 
 function updateScore() {
-  let total = 0;
-  scoreItems.forEach((_, i) => { if (document.getElementById('sc' + i)?.checked) total++; });
-  const pct = Math.round(total / scoreItems.length * 100);
-  document.getElementById('totalScore').textContent = total + ' / ' + scoreItems.length;
+  let t = 0;
+  scoreItems.forEach((_, i) => { if (document.getElementById('sc' + i)?.checked) t++; });
+  const pct = Math.round(t / 10 * 100);
+  document.getElementById('totalScore').textContent = t + ' / 10';
   const bar = document.getElementById('scoreBar');
   bar.style.width = pct + '%';
   bar.style.background = pct >= 70 ? 'var(--green)' : pct >= 40 ? 'var(--amber)' : 'var(--red)';
-  const verdict = document.getElementById('scoreVerdict');
-  verdict.textContent = pct >= 70 ? 'High-priority structural pivot. Watch the reaction closely.' :
-    pct >= 40 ? 'Useful level, but wait for confirmation.' :
-    'Low-priority level. Keep looking for cleaner history or volume.';
+  const v = document.getElementById('scoreVerdict');
+  v.textContent = pct >= 70 ? 'A-grade level — high conviction, trade with normal position size' :
+    pct >= 40 ? 'B-grade level — tradable but reduce size and expect less reliability' :
+    'C-grade level — skip this trade. Wait for better confluence.';
 }
 buildScorecard();
 
+// ===== QUIZ =====
 const questions = [
   {
-    q: 'Your teacher says pivot, but not the formula kind. What are they usually pointing to?',
+    q: 'You find a swing low at $48.20 on the daily chart. The same area ($48.00–$48.50) is also a weekly support zone. What does this tell you?',
     opts: [
-      'A calculated value from high, low, and close',
-      'A structural level where price and volume show that control shifted',
-      "Only today's first green candle",
-      'Any random whole-dollar price'
+      'The level is weak because it appears on two charts',
+      'This is multi-timeframe confluence — a high-quality support level',
+      'You should only trust the daily chart level',
+      'Weekly levels don\'t matter for day trading'
     ],
     correct: 1,
-    fb: 'This guide uses structural pivot points: chart levels where buyers and sellers clearly fought, often around unusually high volume.'
+    fb: 'When the same price zone shows up as significant on multiple timeframes, it dramatically increases the probability of a reaction. This is multi-timeframe confluence — the foundation of professional-grade level analysis. A daily level confirmed by the weekly chart is one of the strongest setups you can trade.'
   },
   {
-    q: 'You find the highest-volume daily candle from an old run. What should you mark first?',
+    q: 'A stock breaks above resistance at $55 — but the volume on the breakout candle is only 60% of average daily volume. What do you do?',
     opts: [
-      'Only the candle color',
-      'The high, low, open, close, and wick range of that candle',
-      'Only the next day candle',
-      'Nothing unless the candle is from today'
+      'Buy immediately — a breakout is a breakout',
+      'Wait and watch — low-volume breakouts frequently fail. Look for it to either pull back to $55 with volume or prove itself over 2–3 more candles',
+      'Short the stock immediately',
+      'Volume doesn\'t matter for breakouts'
     ],
     correct: 1,
-    fb: 'The full candle range can matter, but the high is especially important when price is coming from below.'
+    fb: 'Low-volume breakouts are the most common trap in trading. Without institutional participation (which shows up as above-average volume), the breakout lacks conviction. Most low-volume breaks above resistance reverse within 1–3 candles. Wait for either a volume-confirmed retest or continued price action above the level before committing.'
   },
   {
-    q: 'A small cap is running into the high of a prior high-volume candle. Why can that high act as resistance?',
+    q: 'A stock has been trading in a tight 3% range for 4 weeks with declining volume. What phase is this?',
     opts: [
-      'It proves buyers already control the stock',
-      'It may be a trapped-liquidity area where old holders and sellers react',
-      'Because all highs are identical',
-      'Because formulas make it important'
+      'The stock is dying — sell it',
+      'This is random noise with no pattern',
+      'Compression — the stock is building energy for an expansion move. Watch for a breakout on volume.',
+      'This always means the stock will drop'
+    ],
+    correct: 2,
+    fb: 'A tight range with declining volume is textbook compression. The market is in equilibrium — buyers and sellers are balanced. This "coiled spring" state reliably precedes an expansion (big move). The direction isn\'t guaranteed, but a breakout above the range on 2×+ volume is a strong long signal. These compressed bases often produce the biggest runs.'
+  },
+  {
+    q: 'You\'re long a stock at $50 with a stop at $49. Your account is $20,000 and you risk 1% per trade. How many shares should you buy?',
+    opts: [
+      '400 shares ($20,000 / $50)',
+      '200 shares (risk $200 / $1.00 stop distance)',
+      '100 shares (play it safe)',
+      '500 shares (be aggressive)'
     ],
     correct: 1,
-    fb: 'High volume means many shares changed hands. When price returns, prior buyers, sellers, and shorts may all react around that zone.'
+    fb: 'Position sizing is determined by your stop distance, not by how much stock you can afford. Risk = 1% of $20,000 = $200. Stop distance = $50 - $49 = $1.00. Shares = $200 / $1.00 = 200 shares. This ensures you lose exactly $200 (1%) if stopped out. The stop distance always controls your size — this is the most important risk management rule in trading.'
   },
   {
-    q: 'What makes a structural pivot stronger?',
+    q: 'A support level at $100 has been tested 5 times over 3 months with each bounce getting smaller. What is likely happening?',
     opts: [
-      'It is visible only on the 1-minute chart',
-      'It appears on a larger timeframe and lines up with a high-volume reaction',
-      'It has no volume nearby',
-      'It is far away from current price'
+      'The support is getting stronger with each test',
+      'The support is weakening — each smaller bounce means fewer buyers remain, and the level is at high risk of breaking',
+      'Five tests means it\'s unbreakable',
+      'The number of tests doesn\'t matter'
     ],
     correct: 1,
-    fb: 'Larger timeframe visibility plus high volume usually makes the level more meaningful.'
+    fb: 'This is support exhaustion. Each test "uses up" some of the buying interest at that level. When bounces get progressively smaller, it means the pool of buyers is shrinking. Think of it as a floor getting weaker with each impact. After 4–5 tests with diminishing bounces, be very cautious buying support — the floor often gives way on the next test. Instead, wait to see if it holds or look for a different setup.'
   },
   {
-    q: 'A stock clears a prior high-volume candle high with strong volume and then holds above it. What changed?',
+    q: 'You see an ascending triangle pattern: flat resistance at $60, with higher lows forming underneath (58, 58.50, 59, 59.20). Volume is declining in the pattern. What are you watching for?',
     opts: [
-      'The old resistance may now become a reference level for buyers',
-      'The chart no longer has risk',
-      'The level should be deleted immediately',
-      'The move must continue forever'
+      'Sell at $60 resistance since it keeps holding',
+      'A break and close above $60 on increased volume — this would be your long entry',
+      'Buy at $58 since that\'s the bottom of the pattern',
+      'Ascending triangles are bearish patterns'
     ],
-    correct: 0,
-    fb: 'A reclaim can show buyers taking control, but it still needs risk management and the next resistance mapped.'
+    correct: 1,
+    fb: 'The ascending triangle is a bullish compression pattern. The higher lows show buyers getting more aggressive, while resistance remains fixed. Declining volume confirms compression. The entry is a break above $60 with a volume surge — this confirms the pattern has resolved upward. Your stop goes below the most recent higher low ($59.20 area) and your target is the breakout price plus the height of the triangle ($60 + ($60 - $58) = $62).'
+  },
+  {
+    q: 'A stock gaps down from $70 to $62 on earnings. Over the next two months, it slowly climbs back toward $70. As it approaches $70, what should you expect?',
+    opts: [
+      'It will fly right through since the gap was a long time ago',
+      '$70 will likely act as resistance — many investors bought at $70 before the gap and will sell to "break even," creating selling pressure at that level',
+      'Gaps don\'t create any levels',
+      '$70 is now support'
+    ],
+    correct: 1,
+    fb: 'Gap levels are powerful resistance. Investors who held through the earnings gap from $70 to $62 have been underwater for months. As price returns to $70 — their breakeven point — many will sell to escape the position with no loss. This "supply" of sell orders makes $70 a significant resistance level. For a long trade, you want to see a decisive break above $70 on strong volume, then ideally buy the retest of $70 as new support.'
+  },
+  {
+    q: 'Your checklist shows: ✓ Daily swing low, ✓ Weekly support, ✓ High volume bounce, ✓ 200-day MA nearby, ✓ Pivot S1 aligns, ✓ Round number ($100). What\'s this level\'s quality?',
+    opts: [
+      'Average — most levels have this many factors',
+      'Exceptional — 6 confluent factors make this an A+ level with very high probability of a strong reaction',
+      'Too many factors means they cancel each other out',
+      'You still need 10+ factors to be confident'
+    ],
+    correct: 1,
+    fb: 'Six independent methods all pointing to the same price zone is rare and extremely bullish for a long setup. Each factor draws from a different analytical framework — price structure, higher timeframe confirmation, volume, a major moving average, calculated pivots, and psychology. When this many methods converge, the probability of a meaningful bounce is very high. This is the kind of setup professional traders wait for — trade it with full conviction and proper risk management.'
   }
 ];
 
 let currentQ = 0;
 function buildQuiz() {
   const area = document.getElementById('quizArea');
-  if (!area) return;
   if (currentQ >= questions.length) {
     area.innerHTML = `<div style="text-align:center;padding:20px 0;">
-      <h3 style="margin-bottom:8px;">Module complete</h3>
-      <p class="muted">Next step: open a real daily or weekly chart, find the biggest-volume candles, and mark their structural pivot zones.</p>
-      <button class="quiz-next show" onclick="currentQ=0;buildQuiz();" style="margin-top:12px;">Start over</button>
+      <h3 style="margin-bottom:8px;">Module complete!</h3>
+      <p class="muted">You've worked through all the core concepts. The next step: pull up a real chart and practice finding levels, scoring them, and identifying compression setups before risking real money.</p>
+      <button class="quiz-next show" onclick="currentQ=0;buildQuiz();" style="margin-top:12px;">↩ Start over</button>
     </div>`;
     return;
   }
@@ -950,20 +1380,19 @@ function buildQuiz() {
     <div class="quiz-q">${q.q}</div>
     ${q.opts.map((o, i) => `<button class="quiz-opt" id="qo${i}" onclick="answerQuiz(${i})">${o}</button>`).join('')}
     <div class="quiz-fb" id="qfb"></div>
-    <button class="quiz-next" id="qnx" onclick="currentQ++;buildQuiz();">${currentQ + 1 < questions.length ? 'Next question' : 'See results'}</button>
+    <button class="quiz-next" id="qnx" onclick="currentQ++;buildQuiz();">${currentQ + 1 < questions.length ? 'Next question →' : 'See results'}</button>
   `;
 }
-
 function answerQuiz(idx) {
   const q = questions[currentQ];
-  document.querySelectorAll('.quiz-opt').forEach((button, i) => {
-    button.disabled = true;
-    if (i === q.correct) button.classList.add('correct');
-    else if (i === idx) button.classList.add('wrong');
+  document.querySelectorAll('.quiz-opt').forEach((b, i) => {
+    b.disabled = true;
+    if (i === q.correct) b.classList.add('correct');
+    else if (i === idx) b.classList.add('wrong');
   });
-  const feedback = document.getElementById('qfb');
-  feedback.className = 'quiz-fb show ' + (idx === q.correct ? 'ok' : 'no');
-  feedback.textContent = (idx === q.correct ? 'Correct. ' : 'Not quite. ') + q.fb;
+  const fb = document.getElementById('qfb');
+  fb.className = 'quiz-fb show ' + (idx === q.correct ? 'ok' : 'no');
+  fb.textContent = (idx === q.correct ? '✓ Correct. ' : '✗ Not quite. ') + q.fb;
   document.getElementById('qnx').classList.add('show');
 }
 buildQuiz();
