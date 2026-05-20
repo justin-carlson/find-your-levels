@@ -1,1132 +1,2050 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Find Your Levels — A Small-Cap Trader's Guide to Reading Charts</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root {
-  --bg: #FAFAF7;
-  --bg2: #F1F0EB;
-  --bg3: #E8E7E2;
-  --card: #FFFFFF;
-  --text: #1A1A18;
-  --text2: #6B6A65;
-  --text3: #9E9D98;
-  --border: rgba(0,0,0,0.08);
-  --border2: rgba(0,0,0,0.14);
-  --green: #2D8C3C;
-  --green-bg: #E8F5E9;
-  --green-text: #1B5E20;
-  --red: #C62828;
-  --red-bg: #FFEBEE;
-  --red-text: #B71C1C;
-  --blue: #1565C0;
-  --blue-bg: #E3F2FD;
-  --blue-text: #0D47A1;
-  --amber: #E65100;
-  --amber-bg: #FFF3E0;
-  --amber-text: #BF360C;
-  --purple: #6A1B9A;
-  --purple-bg: #F3E5F5;
-  --purple-text: #4A148C;
-  --teal: #00695C;
-  --teal-bg: #E0F2F1;
-  --teal-text: #004D40;
-  --font: 'DM Sans', -apple-system, sans-serif;
-  --mono: 'JetBrains Mono', monospace;
-  --radius: 10px;
-  --radius-lg: 14px;
-}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Find Your Levels — A Small-Cap Trader's Guide to Reading Charts
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #fafaf7;
+        --bg2: #f1f0eb;
+        --bg3: #e8e7e2;
+        --card: #ffffff;
+        --text: #1a1a18;
+        --text2: #6b6a65;
+        --text3: #9e9d98;
+        --border: rgba(0, 0, 0, 0.08);
+        --border2: rgba(0, 0, 0, 0.14);
+        --green: #2d8c3c;
+        --green-bg: #e8f5e9;
+        --green-text: #1b5e20;
+        --red: #c62828;
+        --red-bg: #ffebee;
+        --red-text: #b71c1c;
+        --blue: #1565c0;
+        --blue-bg: #e3f2fd;
+        --blue-text: #0d47a1;
+        --amber: #e65100;
+        --amber-bg: #fff3e0;
+        --amber-text: #bf360c;
+        --purple: #6a1b9a;
+        --purple-bg: #f3e5f5;
+        --purple-text: #4a148c;
+        --teal: #00695c;
+        --teal-bg: #e0f2f1;
+        --teal-text: #004d40;
+        --font: "DM Sans", -apple-system, sans-serif;
+        --mono: "JetBrains Mono", monospace;
+        --radius: 10px;
+        --radius-lg: 14px;
+      }
 
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--font);
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+      }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: var(--font);
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-}
+      .container {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
 
-.container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+      /* HERO */
+      .hero {
+        padding: 60px 0 32px;
+        text-align: center;
+      }
+      .hero-badge {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 4px 14px;
+        border-radius: 20px;
+        background: var(--blue-bg);
+        color: var(--blue-text);
+        margin-bottom: 20px;
+      }
+      .hero h1 {
+        font-size: clamp(28px, 5vw, 42px);
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 12px;
+        letter-spacing: -0.02em;
+      }
+      .hero p {
+        font-size: 17px;
+        color: var(--text2);
+        max-width: 580px;
+        margin: 0 auto;
+      }
 
-/* HERO */
-.hero { padding: 60px 0 32px; text-align: center; }
-.hero-badge {
-  display: inline-block;
-  font-size: 11px; font-weight: 600;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  padding: 4px 14px; border-radius: 20px;
-  background: var(--blue-bg); color: var(--blue-text);
-  margin-bottom: 20px;
-}
-.hero h1 {
-  font-size: clamp(28px, 5vw, 42px);
-  font-weight: 600; line-height: 1.2;
-  margin-bottom: 12px; letter-spacing: -0.02em;
-}
-.hero p {
-  font-size: 17px; color: var(--text2);
-  max-width: 580px; margin: 0 auto;
-}
+      /* PART HEADER */
+      .part-header {
+        margin: 56px 0 32px;
+        padding: 24px 28px;
+        background: var(--bg2);
+        border-radius: var(--radius-lg);
+        border-left: 4px solid var(--blue);
+      }
+      .part-header .part-num {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--blue-text);
+        margin-bottom: 6px;
+      }
+      .part-header h2 {
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        margin-bottom: 6px;
+      }
+      .part-header p {
+        font-size: 14px;
+        color: var(--text2);
+        margin: 0;
+      }
 
-/* PART HEADER */
-.part-header {
-  margin: 56px 0 32px;
-  padding: 24px 28px;
-  background: var(--bg2);
-  border-radius: var(--radius-lg);
-  border-left: 4px solid var(--blue);
-}
-.part-header .part-num {
-  font-size: 12px; font-weight: 600;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--blue-text); margin-bottom: 6px;
-}
-.part-header h2 {
-  font-size: 22px; font-weight: 600;
-  letter-spacing: -0.01em; margin-bottom: 6px;
-}
-.part-header p { font-size: 14px; color: var(--text2); margin: 0; }
+      /* NAV */
+      .chapter-nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        padding: 0;
+        margin-bottom: 8px;
+      }
+      .chapter-nav-inner {
+        display: flex;
+        gap: 0;
+        justify-content: center;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .chapter-nav-inner::-webkit-scrollbar {
+        display: none;
+      }
+      .ch-link {
+        flex-shrink: 0;
+        font-size: 13px;
+        font-weight: 500;
+        padding: 14px 16px;
+        color: var(--text3);
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        transition:
+          color 0.2s,
+          border-color 0.2s;
+        white-space: nowrap;
+      }
+      .ch-link:hover {
+        color: var(--text);
+      }
+      .ch-link.active {
+        color: var(--text);
+        border-bottom-color: var(--blue);
+      }
+      .ch-link .ch-pre {
+        color: var(--text3);
+        font-weight: 600;
+        margin-right: 6px;
+      }
+      .ch-part-label {
+        flex-shrink: 0;
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text3);
+        padding: 0 12px;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+      }
+      .ch-part-label.p2 {
+        color: var(--teal-text);
+      }
+      .ch-nav-sep {
+        width: 1px;
+        flex-shrink: 0;
+        background: var(--border);
+        margin: 10px 4px;
+      }
 
-/* NAV */
-.chapter-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
-  padding: 0; margin-bottom: 8px;
-}
-.chapter-nav-inner {
-  display: flex; gap: 0;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-.chapter-nav-inner::-webkit-scrollbar { display: none; }
-.ch-link {
-  flex-shrink: 0;
-  font-size: 13px; font-weight: 500;
-  padding: 14px 16px;
-  color: var(--text3); text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: color 0.2s, border-color 0.2s;
-  white-space: nowrap;
-}
-.ch-link:hover { color: var(--text); }
-.ch-link.active { color: var(--text); border-bottom-color: var(--blue); }
-.ch-link .ch-pre { color: var(--text3); font-weight: 600; margin-right: 6px; }
+      /* CHAPTER */
+      .chapter {
+        margin-bottom: 80px;
+        scroll-margin-top: 60px;
+        padding-top: 40px;
+        border-top: 1.5px solid var(--border2);
+      }
+      .chapter h2 {
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin-bottom: 10px;
+      }
+      #m1 {
+        border-top: none;
+        padding-top: 24px;
+      }
+      #m2 h2,
+      #m5 h2 {
+        font-size: 22px;
+        font-weight: 600;
+        border-left: none;
+        padding-left: 0;
+      }
+      #m2 .ch-sub,
+      #m5 .ch-sub {
+        padding-left: 0;
+      }
+      .chapter .ch-sub {
+        font-size: 15px;
+        color: var(--text2);
+        margin-bottom: 28px;
+        padding-left: 16px;
+      }
 
-/* CHAPTER */
-.chapter {
-  margin-bottom: 64px;
-  scroll-margin-top: 72px;
-}
-.ch-num {
-  font-size: 12px; font-weight: 600;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--text3); margin-bottom: 6px;
-}
-.chapter h2 {
-  font-size: 26px; font-weight: 600;
-  letter-spacing: -0.01em; margin-bottom: 8px;
-}
-.chapter .ch-sub {
-  font-size: 15px; color: var(--text2); margin-bottom: 28px;
-}
+      h3 {
+        font-size: 17px;
+        font-weight: 600;
+        margin: 28px 0 8px;
+        color: var(--text);
+      }
+      h4 {
+        font-size: 14px;
+        font-weight: 600;
+        margin: 16px 0 6px;
+        color: var(--text);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+      p,
+      .prose {
+        font-size: 15px;
+        color: var(--text);
+        margin-bottom: 16px;
+      }
+      .muted {
+        color: var(--text2);
+      }
+      .small {
+        font-size: 13px;
+      }
+      em {
+        font-style: italic;
+        color: var(--text2);
+      }
 
-h3 {
-  font-size: 17px; font-weight: 600;
-  margin: 24px 0 8px; color: var(--text);
-}
-h4 {
-  font-size: 14px; font-weight: 600;
-  margin: 16px 0 6px; color: var(--text);
-  text-transform: uppercase; letter-spacing: 0.06em;
-}
-p, .prose { font-size: 15px; color: var(--text); margin-bottom: 16px; }
-.muted { color: var(--text2); }
-.small { font-size: 13px; }
-em { font-style: italic; color: var(--text2); }
+      /* CARDS */
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 24px;
+        margin-bottom: 20px;
+      }
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 14px;
+        margin-bottom: 24px;
+      }
+      .stat-card {
+        background: var(--bg2);
+        border-radius: var(--radius);
+        padding: 16px;
+      }
+      .stat-label {
+        font-size: 12px;
+        color: var(--text3);
+        margin-bottom: 4px;
+        font-weight: 500;
+      }
+      .stat-val {
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+      .stat-sub {
+        font-size: 12px;
+        color: var(--text2);
+        margin-top: 2px;
+        line-height: 1.4;
+      }
 
-/* CARDS */
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 24px; margin-bottom: 20px;
-}
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 14px; margin-bottom: 24px;
-}
-.stat-card { background: var(--bg2); border-radius: var(--radius); padding: 16px; }
-.stat-label { font-size: 12px; color: var(--text3); margin-bottom: 4px; font-weight: 500; }
-.stat-val { font-size: 22px; font-weight: 600; letter-spacing: -0.02em; }
-.stat-sub { font-size: 12px; color: var(--text2); margin-top: 2px; line-height: 1.4; }
+      /* CALLOUTS */
+      .callout {
+        border-left: 3px solid;
+        padding: 16px 20px;
+        border-radius: 0 var(--radius) var(--radius) 0;
+        margin-bottom: 20px;
+        font-size: 14px;
+        line-height: 1.65;
+      }
+      .callout strong {
+        font-weight: 600;
+      }
+      .callout.green {
+        border-color: var(--green);
+        background: var(--green-bg);
+        color: var(--green-text);
+      }
+      .callout.red {
+        border-color: var(--red);
+        background: var(--red-bg);
+        color: var(--red-text);
+      }
+      .callout.blue {
+        border-color: var(--blue);
+        background: var(--blue-bg);
+        color: var(--blue-text);
+      }
+      .callout.amber {
+        border-color: var(--amber);
+        background: var(--amber-bg);
+        color: var(--amber-text);
+      }
+      .callout.purple {
+        border-color: var(--purple);
+        background: var(--purple-bg);
+        color: var(--purple-text);
+      }
+      .callout.teal {
+        border-color: var(--teal);
+        background: var(--teal-bg);
+        color: var(--teal-text);
+      }
 
-/* CALLOUTS */
-.callout {
-  border-left: 3px solid;
-  padding: 16px 20px;
-  border-radius: 0 var(--radius) var(--radius) 0;
-  margin-bottom: 20px;
-  font-size: 14px; line-height: 1.65;
-}
-.callout strong { font-weight: 600; }
-.callout.green { border-color: var(--green); background: var(--green-bg); color: var(--green-text); }
-.callout.red { border-color: var(--red); background: var(--red-bg); color: var(--red-text); }
-.callout.blue { border-color: var(--blue); background: var(--blue-bg); color: var(--blue-text); }
-.callout.amber { border-color: var(--amber); background: var(--amber-bg); color: var(--amber-text); }
-.callout.purple { border-color: var(--purple); background: var(--purple-bg); color: var(--purple-text); }
-.callout.teal { border-color: var(--teal); background: var(--teal-bg); color: var(--teal-text); }
+      /* TWO COL */
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 20px;
+      }
+      @media (max-width: 600px) {
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+      }
 
-/* TWO COL */
-.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
-@media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+      /* STEPS */
+      .step-list {
+        margin-bottom: 24px;
+      }
+      .step {
+        display: flex;
+        gap: 16px;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .step:last-child {
+        border-bottom: none;
+      }
+      .step-dot {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 2px;
+      }
+      .step-dot.blue {
+        background: var(--blue-bg);
+        color: var(--blue-text);
+      }
+      .step-dot.green {
+        background: var(--green-bg);
+        color: var(--green-text);
+      }
+      .step-dot.amber {
+        background: var(--amber-bg);
+        color: var(--amber-text);
+      }
+      .step-dot.purple {
+        background: var(--purple-bg);
+        color: var(--purple-text);
+      }
+      .step-dot.teal {
+        background: var(--teal-bg);
+        color: var(--teal-text);
+      }
+      .step-dot.red {
+        background: var(--red-bg);
+        color: var(--red-text);
+      }
+      .step-body h3 {
+        font-size: 15px;
+        margin: 0 0 4px;
+      }
+      .step-body p {
+        font-size: 14px;
+        color: var(--text2);
+        margin-bottom: 0;
+      }
 
-/* STEPS */
-.step-list { margin-bottom: 24px; }
-.step {
-  display: flex; gap: 16px;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--border);
-}
-.step:last-child { border-bottom: none; }
-.step-dot {
-  width: 32px; height: 32px; min-width: 32px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 14px; font-weight: 600;
-  margin-top: 2px;
-}
-.step-dot.blue { background: var(--blue-bg); color: var(--blue-text); }
-.step-dot.green { background: var(--green-bg); color: var(--green-text); }
-.step-dot.amber { background: var(--amber-bg); color: var(--amber-text); }
-.step-dot.purple { background: var(--purple-bg); color: var(--purple-text); }
-.step-dot.teal { background: var(--teal-bg); color: var(--teal-text); }
-.step-dot.red { background: var(--red-bg); color: var(--red-text); }
-.step-body h3 { font-size: 15px; margin: 0 0 4px; }
-.step-body p { font-size: 14px; color: var(--text2); margin-bottom: 0; }
+      /* CHECKLIST */
+      .check-list {
+        list-style: none;
+        margin-bottom: 20px;
+      }
+      .check-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 14px;
+        margin-bottom: 10px;
+        line-height: 1.5;
+      }
+      .ck {
+        width: 18px;
+        height: 18px;
+        min-width: 18px;
+        border-radius: 50%;
+        margin-top: 2px;
+      }
+      .ck-g {
+        background: var(--green);
+      }
+      .ck-r {
+        background: var(--red);
+      }
+      .ck-b {
+        background: var(--blue);
+      }
+      .ck-a {
+        background: var(--amber);
+      }
+      .ck-p {
+        background: var(--purple);
+      }
+      .ck-t {
+        background: var(--teal);
+      }
+      .ck-x {
+        background: var(--text3);
+      }
 
-/* CHECKLIST */
-.check-list { list-style: none; margin-bottom: 20px; }
-.check-list li {
-  display: flex; align-items: flex-start; gap: 10px;
-  font-size: 14px; margin-bottom: 10px; line-height: 1.5;
-}
-.ck { width: 18px; height: 18px; min-width: 18px; border-radius: 50%; margin-top: 2px; }
-.ck-g { background: var(--green); }
-.ck-r { background: var(--red); }
-.ck-b { background: var(--blue); }
-.ck-a { background: var(--amber); }
-.ck-p { background: var(--purple); }
-.ck-t { background: var(--teal); }
-.ck-x { background: var(--text3); }
+      /* VISUAL PLACEHOLDER (text-based "chart" description) */
+      .visual {
+        background: var(--bg2);
+        border: 1px dashed var(--border2);
+        border-radius: var(--radius);
+        padding: 20px 22px;
+        margin-bottom: 20px;
+      }
+      .visual-label {
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text3);
+        margin-bottom: 8px;
+      }
+      .visual-title {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: var(--text);
+      }
+      .visual p {
+        font-size: 13px;
+        color: var(--text2);
+        margin-bottom: 8px;
+        line-height: 1.6;
+      }
+      .visual p:last-child {
+        margin-bottom: 0;
+      }
+      .visual .visual-note {
+        font-size: 12px;
+        color: var(--text3);
+        font-style: italic;
+        margin-top: 8px;
+      }
 
-/* VISUAL PLACEHOLDER (text-based "chart" description) */
-.visual {
-  background: var(--bg2);
-  border: 1px dashed var(--border2);
-  border-radius: var(--radius);
-  padding: 20px 22px;
-  margin-bottom: 20px;
-}
-.visual-label {
-  font-size: 11px; font-weight: 600;
-  text-transform: uppercase; letter-spacing: 0.1em;
-  color: var(--text3); margin-bottom: 8px;
-}
-.visual-title { font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--text); }
-.visual p { font-size: 13px; color: var(--text2); margin-bottom: 8px; line-height: 1.6; }
-.visual p:last-child { margin-bottom: 0; }
-.visual .visual-note { font-size: 12px; color: var(--text3); font-style: italic; margin-top: 8px; }
+      /* TAGS */
+      .tag {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 600;
+        padding: 2px 10px;
+        border-radius: 4px;
+        margin-left: 6px;
+      }
+      .tag-g {
+        background: var(--green-bg);
+        color: var(--green-text);
+      }
+      .tag-r {
+        background: var(--red-bg);
+        color: var(--red-text);
+      }
+      .tag-b {
+        background: var(--blue-bg);
+        color: var(--blue-text);
+      }
+      .tag-a {
+        background: var(--amber-bg);
+        color: var(--amber-text);
+      }
+      .tag-p {
+        background: var(--purple-bg);
+        color: var(--purple-text);
+      }
 
-/* TAGS */
-.tag {
-  display: inline-block;
-  font-size: 11px; font-weight: 600;
-  padding: 2px 10px; border-radius: 4px;
-  margin-left: 6px;
-}
-.tag-g { background: var(--green-bg); color: var(--green-text); }
-.tag-r { background: var(--red-bg); color: var(--red-text); }
-.tag-b { background: var(--blue-bg); color: var(--blue-text); }
-.tag-a { background: var(--amber-bg); color: var(--amber-text); }
-.tag-p { background: var(--purple-bg); color: var(--purple-text); }
+      /* QUIZ */
+      .quiz-q {
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 14px;
+        line-height: 1.5;
+      }
+      .quiz-opt {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 12px 16px;
+        margin-bottom: 8px;
+        font-size: 14px;
+        font-family: var(--font);
+        border: 1px solid var(--border2);
+        border-radius: var(--radius);
+        background: var(--card);
+        color: var(--text);
+        cursor: pointer;
+        transition:
+          background 0.15s,
+          border-color 0.15s;
+      }
+      .quiz-opt:hover {
+        background: var(--bg2);
+      }
+      .quiz-opt.correct {
+        background: var(--green-bg);
+        border-color: var(--green);
+        color: var(--green-text);
+      }
+      .quiz-opt.wrong {
+        background: var(--red-bg);
+        border-color: var(--red);
+        color: var(--red-text);
+      }
+      .quiz-fb {
+        font-size: 14px;
+        padding: 14px 18px;
+        border-radius: var(--radius);
+        margin-top: 10px;
+        display: none;
+        line-height: 1.6;
+      }
+      .quiz-fb.show {
+        display: block;
+      }
+      .quiz-fb.ok {
+        background: var(--green-bg);
+        color: var(--green-text);
+      }
+      .quiz-fb.no {
+        background: var(--red-bg);
+        color: var(--red-text);
+      }
+      .quiz-next {
+        margin-top: 14px;
+        padding: 10px 20px;
+        border: 1px solid var(--border2);
+        border-radius: var(--radius);
+        background: transparent;
+        font-size: 14px;
+        font-family: var(--font);
+        color: var(--text);
+        cursor: pointer;
+        display: none;
+      }
+      .quiz-next.show {
+        display: inline-block;
+      }
+      .quiz-next:hover {
+        background: var(--bg2);
+      }
 
-/* QUIZ */
-.quiz-q { font-size: 15px; font-weight: 500; margin-bottom: 14px; line-height: 1.5; }
-.quiz-opt {
-  display: block; width: 100%; text-align: left;
-  padding: 12px 16px; margin-bottom: 8px;
-  font-size: 14px; font-family: var(--font);
-  border: 1px solid var(--border2);
-  border-radius: var(--radius);
-  background: var(--card); color: var(--text);
-  cursor: pointer;
-  transition: background 0.15s, border-color 0.15s;
-}
-.quiz-opt:hover { background: var(--bg2); }
-.quiz-opt.correct { background: var(--green-bg); border-color: var(--green); color: var(--green-text); }
-.quiz-opt.wrong { background: var(--red-bg); border-color: var(--red); color: var(--red-text); }
-.quiz-fb {
-  font-size: 14px;
-  padding: 14px 18px;
-  border-radius: var(--radius);
-  margin-top: 10px;
-  display: none; line-height: 1.6;
-}
-.quiz-fb.show { display: block; }
-.quiz-fb.ok { background: var(--green-bg); color: var(--green-text); }
-.quiz-fb.no { background: var(--red-bg); color: var(--red-text); }
-.quiz-next {
-  margin-top: 14px; padding: 10px 20px;
-  border: 1px solid var(--border2); border-radius: var(--radius);
-  background: transparent; font-size: 14px; font-family: var(--font);
-  color: var(--text); cursor: pointer; display: none;
-}
-.quiz-next.show { display: inline-block; }
-.quiz-next:hover { background: var(--bg2); }
+      /* SCENARIO BUTTONS */
+      .scenario-btns {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
+      .sc-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+        font-weight: 500;
+        border: 1px solid var(--border2);
+        border-radius: var(--radius);
+        background: transparent;
+        cursor: pointer;
+        font-family: var(--font);
+        color: var(--text);
+        transition: all 0.15s;
+      }
+      .sc-btn:hover {
+        background: var(--bg2);
+      }
+      .sc-btn.active {
+        background: var(--blue-bg);
+        border-color: var(--blue);
+        color: var(--blue-text);
+      }
+      .sc-panel {
+        display: none;
+      }
+      .sc-panel.active {
+        display: block;
+      }
 
-/* SCENARIO BUTTONS */
-.scenario-btns { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
-.sc-btn {
-  padding: 8px 16px; font-size: 13px; font-weight: 500;
-  border: 1px solid var(--border2); border-radius: var(--radius);
-  background: transparent; cursor: pointer; font-family: var(--font);
-  color: var(--text); transition: all 0.15s;
-}
-.sc-btn:hover { background: var(--bg2); }
-.sc-btn.active { background: var(--blue-bg); border-color: var(--blue); color: var(--blue-text); }
-.sc-panel { display: none; }
-.sc-panel.active { display: block; }
+      /* BAR METER */
+      .bar-track {
+        height: 8px;
+        background: var(--bg3);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .bar-fill {
+        height: 100%;
+        border-radius: 4px;
+        transition: width 0.4s;
+      }
 
-/* BAR METER */
-.bar-track { height: 8px; background: var(--bg3); border-radius: 4px; overflow: hidden; }
-.bar-fill { height: 100%; border-radius: 4px; transition: width 0.4s; }
-
-/* FOOTER + DISCLAIMER */
-.footer {
-  text-align: center;
-  padding: 40px 0 60px;
-  border-top: 1px solid var(--border);
-  color: var(--text3);
-  font-size: 13px;
-}
-.disclaimer {
-  font-size: 12px;
-  color: var(--text3);
-  background: var(--bg2);
-  border-radius: var(--radius);
-  padding: 16px 20px;
-  margin-top: 40px;
-  line-height: 1.6;
-}
-.disclaimer a { color: var(--text2); text-decoration: underline; }
-</style>
-</head>
-<body>
-
-<div class="container">
-<div class="hero">
-  <span class="hero-badge">Beginner-friendly · Small-cap focus</span>
-  <h1>Find Your Levels</h1>
-  <p>A practical guide for reading small-cap charts: learn the psychology behind price, then build a repeatable level map you can use before every session.</p>
-</div>
-</div>
-
-<nav class="chapter-nav" id="chapterNav">
-  <div class="container">
-    <div class="chapter-nav-inner">
-      <a class="ch-link active" href="#m1" onclick="goTo(event,'m1')"><span class="ch-pre">1</span>How Price Moves</a>
-      <a class="ch-link" href="#m2" onclick="goTo(event,'m2')"><span class="ch-pre">2</span>The Footprints</a>
-      <a class="ch-link" href="#m3" onclick="goTo(event,'m3')"><span class="ch-pre">3</span>Setups &amp; Patterns</a>
-      <a class="ch-link" href="#m4" onclick="goTo(event,'m4')"><span class="ch-pre">4</span>The Level Map</a>
-      <a class="ch-link" href="#m5" onclick="goTo(event,'m5')"><span class="ch-pre">5</span>Planning the Trade</a>
-      <a class="ch-link" href="#m6" onclick="goTo(event,'m6')"><span class="ch-pre">6</span>Practice Lab</a>
+      /* FOOTER + DISCLAIMER */
+      .footer {
+        text-align: center;
+        padding: 40px 0 60px;
+        border-top: 1px solid var(--border);
+        color: var(--text3);
+        font-size: 13px;
+      }
+      .disclaimer {
+        font-size: 12px;
+        color: var(--text3);
+        background: var(--bg2);
+        border-radius: var(--radius);
+        padding: 16px 20px;
+        margin-top: 40px;
+        line-height: 1.6;
+      }
+      .disclaimer a {
+        color: var(--text2);
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="hero">
+        <span class="hero-badge">Beginner-friendly · Small-cap focus</span>
+        <h1>Find Your Levels</h1>
+        <p>
+          A practical guide for reading small-cap charts: learn the psychology
+          behind price, then build a repeatable level map you can use before
+          every session.
+        </p>
+      </div>
     </div>
-  </div>
-</nav>
 
-<div class="container">
-
-<!-- PART 1 -->
-<div class="part-header">
-  <div class="part-num">Part 1</div>
-  <h2>Learn to Read the Chart</h2>
-  <p>The psychology behind the candles — who bought, who sold, who's trapped, and why price reacts at certain prices but ignores others.</p>
-</div>
-
-<!-- MODULE 1 -->
-<section class="chapter" id="m1">
-  <div class="ch-num">Module 1</div>
-  <h2>How Price Moves (and Why It Stops)</h2>
-  <p class="ch-sub">Before you can find levels, you need to understand what creates them. Every level on a chart is the residue of a fight between buyers and sellers — and the prices the market remembers.</p>
-
-  <div class="callout blue">
-    <strong>The core idea:</strong> Every candle is a record of a battle. When one side overwhelms the other, price moves. When they're balanced, price stalls. The prices where something significant happened don't get forgotten — the market reacts there again.
-  </div>
-
-  <h3>Price only does three things</h3>
-  <p>At any moment on any timeframe, a stock is in one of three states. Identifying which one comes first, before any other analysis.</p>
-
-  <div class="card-grid">
-    <div class="stat-card">
-      <div class="stat-label">Uptrend</div>
-      <div class="stat-val" style="color:var(--green);">Higher highs</div>
-      <div class="stat-sub">Buyers in control — each pullback is shallower than the last</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-label">Downtrend</div>
-      <div class="stat-val" style="color:var(--red);">Lower lows</div>
-      <div class="stat-sub">Sellers in control — each rally fails earlier than the last</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-label">Sideways</div>
-      <div class="stat-val" style="color:var(--purple);">Range</div>
-      <div class="stat-sub">Balance — both sides matched until something breaks the tie</div>
-    </div>
-  </div>
-
-  <div class="visual">
-    <div class="visual-label">Chart goes here</div>
-    <div class="visual-title">A single stock cycling through all three states</div>
-    <p>Three connected segments on one chart: an uptrend (rising series of higher highs and higher lows), flattening into a sideways range, then breaking down into a downtrend (lower highs, lower lows).</p>
-    <p class="visual-note">Goal: show the learner that "trend" isn't permanent — it's the current state, and it changes.</p>
-  </div>
-
-  <h3>Price memory: why levels exist at all</h3>
-  <p>A "level" is just a price the market remembers. If lots of shares changed hands at $3.20 — or a stock topped out there twice — that price now carries weight. Traders who got in at $3.20 are watching. Shorts who got trapped above $3.20 are waiting to cover. New buyers who missed the move want a second chance to enter near it.</p>
-  <p>The chart isn't drawing imaginary lines. It's recording who committed money at which prices, and how they're going to behave when price returns there.</p>
-
-  <div class="callout teal">
-    <strong>What price does at a level — the vocabulary:</strong><br>
-    <strong>Bounce</strong> — price touches the level and reverses.<br>
-    <strong>Rejection</strong> — price approaches but never reaches, then turns away.<br>
-    <strong>Break</strong> — price pushes through cleanly on volume.<br>
-    <strong>Reclaim</strong> — price breaks a level, fails, and comes back through (often the highest-probability move).<br>
-    <strong>Failed breakout</strong> — price breaks on weak volume, then snaps back into the range, trapping the late buyers.
-  </div>
-
-  <h3>Zones vs exact lines &mdash; and why small caps are different</h3>
-  <p>On most charts, a "level" is a zone — a range of a few cents or even dollars where buyers and sellers fought, not a precise line. But small caps behave differently, and you need to know why.</p>
-
-  <div class="two-col">
-    <div class="visual">
-      <div class="visual-label">Chart — large-cap</div>
-      <div class="visual-title">Wide support zone (e.g. $148.00–$148.50)</div>
-      <p>Price oscillating into a shaded horizontal band that's clearly thicker than the candles themselves. Multiple bounces happen anywhere inside the band — not at one exact price.</p>
-      <p class="visual-note">Institutional orders fill across a range. With deep liquidity, levels are fuzzy by nature.</p>
-    </div>
-    <div class="visual">
-      <div class="visual-label">Chart — small-cap</div>
-      <div class="visual-title">Exact line at $3.00 acting as a hard wall</div>
-      <p>Price touching $3.00 to the penny multiple times — wicks tag exactly $3.00 and reverse. One sharp dashed line, not a band.</p>
-      <p class="visual-note">Thin float, few participants. A single price can be a precise trigger.</p>
-    </div>
-  </div>
-
-  <div class="callout amber">
-    <strong>Beginner default:</strong> draw zones, not lines. But know that small caps often respect <em>exact</em> prices in a way large caps don't — especially round numbers ($3.00, $5.00), premarket highs, and high-of-day. When liquidity is thin, the level is sharp.
-  </div>
-
-  <h3>Levels are scenarios, not predictions</h3>
-  <div class="callout purple">
-    A level doesn't <em>guarantee</em> a reaction. It tells you <strong>where to pay attention</strong>. Good traders don't predict — they plan. They mark the levels, decide in advance what they'll do if price bounces, breaks, or rejects, and then wait for the market to show its hand.
-  </div>
-</section>
-
-<!-- MODULE 2 -->
-<section class="chapter" id="m2">
-  <div class="ch-num">Module 2</div>
-  <h2>The Footprints: Supply, Demand &amp; Volume</h2>
-  <p class="ch-sub">Support, resistance, supply, demand, and volume are not five separate topics. They're five lenses on one question: where did real money commit, and what does that mean for what happens next?</p>
-
-  <div class="callout blue">
-    <strong>One mental model:</strong> when you see a strong move out of a flat area, that flat area is where a side built up enough firepower to overwhelm the other. The flat area becomes a <em>zone</em>. The volume during that fight tells you how serious it was.
-  </div>
-
-  <h3>Demand zones &amp; supply zones</h3>
-  <p>These are the evolved version of support and resistance. Instead of just marking "the floor" and "the ceiling," you're marking <em>the base from which a move launched</em>. That base is where buyers (or sellers) loaded up before they took over.</p>
-
-  <div class="two-col">
-    <div class="callout green">
-      <strong>Demand zone &mdash; Drop, Base, Rally (DBR)</strong><br><br>
-      Price drops, pauses in a tight base, then rallies hard. That base is a demand zone — aggressive buyers absorbed all the selling and launched price higher. When price returns to that zone, buyers often defend it again.
-    </div>
-    <div class="callout red">
-      <strong>Supply zone &mdash; Rally, Base, Drop (RBD)</strong><br><br>
-      Price rallies, pauses in a tight base, then drops hard. That base is a supply zone — aggressive sellers absorbed buying and launched price lower. Returning to that zone usually meets renewed selling.
-    </div>
-  </div>
-
-  <div class="visual">
-    <div class="visual-label">Chart goes here</div>
-    <div class="visual-title">DBR and RBD on the same chart</div>
-    <p>Left side: a rally up, a small flat base (highlight as a red supply zone), then a sharp drop. Right side: that drop continues into a tight base at the bottom (highlight as a green demand zone), then a sharp rally back up.</p>
-    <p class="visual-note">The "base" is what's marked — not the high or low of the entire move.</p>
-  </div>
-
-  <h3>Fresh zones vs tested zones</h3>
-  <p>A zone is strongest the <strong>first</strong> time price returns to it. Every visit consumes some of the orders sitting there. After 3–4 tests, the zone is "exhausted" — most of the buyers (or sellers) have already filled, and the level usually breaks.</p>
-
-  <ul class="check-list">
-    <li><span class="ck ck-g"></span><strong>Fresh zone:</strong> never been retested since the launch. Highest probability.</li>
-    <li><span class="ck ck-b"></span><strong>Tested once:</strong> still strong — orders remain.</li>
-    <li><span class="ck ck-a"></span><strong>Tested 2–3 times:</strong> weakening. Each bounce smaller than the last is the tell.</li>
-    <li><span class="ck ck-r"></span><strong>4+ tests:</strong> exhausted — expect the break, not the bounce.</li>
-    <li><span class="ck ck-x"></span><strong>Cleanly broken:</strong> no longer matters as the original level (but may flip to the opposite side — see role reversal below).</li>
-  </ul>
-
-  <h3>Volume: the weight behind the level</h3>
-  <p>Volume tells you how many people are anchored at a price. A level formed on 10 million shares carries far more weight than one formed on 100,000. When you scan a chart, you're not just looking at price — you're looking for the candles where the most shares changed hands.</p>
-
-  <div class="visual">
-    <div class="visual-label">Chart goes here</div>
-    <div class="visual-title">Price with volume bars below</div>
-    <p>Standard combo chart: price line on top, volume histogram beneath. A few volume bars are dramatically taller than the rest — those tall bars should align visually with the prices that later become reaction points.</p>
-    <p class="visual-note">The biggest-volume candles mark where institutional money committed — those prices become structural pivots.</p>
-  </div>
-
-  <div class="card">
-    <h4>The four volume rules</h4>
-    <div class="step-list">
-      <div class="step">
-        <div class="step-dot green">1</div>
-        <div class="step-body">
-          <h3>Bounces need volume to be trusted</h3>
-          <p>A bounce off support on above-average volume = real buyers defending. A bounce on dry volume = a weak reflex that often fails the next test.</p>
+    <nav class="chapter-nav" id="chapterNav">
+      <div class="container">
+        <div class="chapter-nav-inner">
+          <a class="ch-link active" href="#m1" onclick="goTo(event, 'm1')"
+            >The Psychology</a
+          >
+          <a class="ch-link" href="#m3" onclick="goTo(event, 'm3')"
+            >Setting Your Levels</a
+          >
+          <a class="ch-link" href="#m4" onclick="goTo(event, 'm4')"
+            >Setups &amp; Planning</a
+          >
         </div>
       </div>
-      <div class="step">
-        <div class="step-dot blue">2</div>
-        <div class="step-body">
-          <h3>Breakouts need volume to be real</h3>
-          <p>A clean break of resistance on 2×+ average volume is genuine. A break on dry volume is usually a trap — expect it to come back into the range.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-dot amber">3</div>
-        <div class="step-body">
-          <h3>Volume dry-up at a level = decision coming</h3>
-          <p>When volume fades inside a tight range near a key level, the market is in equilibrium. The next volume surge often picks the direction.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-dot red">4</div>
-        <div class="step-body">
-          <h3>Climax volume = potential exhaustion</h3>
-          <p>A massive spike (5×–10× normal) after an extended move can signal a blowoff top or selling climax. Don't catch knives — wait for the reversal candle on volume to confirm.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+    </nav>
 
-  <h3>Structural pivots: the level experienced traders care about</h3>
-  <p>A structural pivot isn't a formula — it's a price where power shifted hands. You find it by isolating the highest-volume candles on the daily and weekly chart and asking, "what price was that candle?"</p>
+    <div class="container">
+      <!-- PART 1 -->
+      <!-- MODULE 1 -->
+      <section class="chapter" id="m1">
+        <h2>The Psychology</h2>
 
-  <div class="callout teal">
-    <strong>Why a high-volume candle becomes a pivot:</strong><br><br>
-    <strong>1. Trapped liquidity</strong> — millions of shares changed hands; large buyers will defend that price.<br>
-    <strong>2. Market memory</strong> — when price returns, shorts cover and new buyers step in because they remember what happened last time.<br>
-    <strong>3. Breakout trigger</strong> — getting above the <em>high</em> of the biggest-volume candle flips the stock's posture from bearish to bullish.
-  </div>
+        <p class="ch-sub">
+          Every chart tells a story. Before you can find the levels that matter,
+          you need to understand what creates them — and why the market keeps
+          returning to the same prices again and again.
+        </p>
 
-  <p>This is what's happening when an experienced trader says <em>"I like this above $3.28"</em> — they're not guessing. There's a structural pivot at $3.28 from a high-volume candle, and clearing it shifts the chart's posture.</p>
+        <p>
+          Imagine you're watching a tug-of-war. Buyers are pulling in one
+          direction, sellers in the other. Most of the time one side is winning
+          — price trends. Occasionally they're evenly matched — price stalls.
+          And at certain prices, something significant happened: one side
+          overwhelmed the other so decisively that the market remembers it.
+          Those prices don't disappear from charts. Traders who were there
+          remember. Algorithms are calibrated to them. And when price returns,
+          the same forces often replay.
+        </p>
 
-  <div class="card">
-    <h4>What they're really reading</h4>
-    <ul class="check-list">
-      <li><span class="ck ck-g"></span><strong>"I like it above $5.50"</strong> = structural pivot at $5.50; above it the bias flips bullish.</li>
-      <li><span class="ck ck-r"></span><strong>"Too many rejections at $4"</strong> = supply at $4 keeps winning; sellers haven't been absorbed.</li>
-      <li><span class="ck ck-b"></span><strong>"Could squeeze if it clears HOD"</strong> = shorts above the high-of-day would have to cover, fueling more buying.</li>
-      <li><span class="ck ck-a"></span><strong>"I don't like the volume here"</strong> = weak participation; the move lacks conviction.</li>
-    </ul>
-  </div>
+        <p>
+          That's what a level is. Not a line drawn on a chart — a price where
+          the market has memory. Finding those prices, and understanding what
+          the market is likely to do when it touches them, is the foundation of
+          everything in this guide.
+        </p>
 
-  <h3>Role reversal: floors become ceilings (and vice versa)</h3>
-  <div class="callout purple">
-    When resistance breaks cleanly on volume, it often becomes support on the pullback. The traders who sold near it regret selling; new buyers waiting for a "second chance" step in. The opposite is true for broken support — old buyers underwater there will sell into any bounce just to break even.<br><br>
-    Role reversal isn't automatic. It needs <strong>volume on the break</strong> and a clean retest. A weak break that limps through isn't a role reversal — it's likely a fakeout.
-  </div>
-</section>
+        <h3>Price only does three things</h3>
+        <p>
+          At any moment on any timeframe, a stock is in one of three states.
+          Identifying which one comes first, before any other analysis.
+        </p>
 
-<!-- MODULE 3 -->
-<section class="chapter" id="m3">
-  <div class="ch-num">Module 3</div>
-  <h2>Setups &amp; Patterns: What to Watch For</h2>
-  <p class="ch-sub">Levels tell you <em>where</em> to look. Patterns tell you <em>what</em> is developing there. A level alone is just a price on your map — a pattern forming at a level is what turns it into a potential trade.</p>
-
-  <div class="callout amber">
-    <strong>No pattern guarantees an outcome.</strong> Each pattern creates conditions that favor a move, but confirmation — volume + price action — is always required before entry. Patterns describe pressure building. Confirmation describes pressure releasing.
-  </div>
-
-  <h3>Pick a pattern to study</h3>
-  <div class="scenario-btns">
-    <button class="sc-btn active" onclick="selPat(this,'pat-comp')">Compression</button>
-    <button class="sc-btn" onclick="selPat(this,'pat-curl')">The Curl</button>
-    <button class="sc-btn" onclick="selPat(this,'pat-vwap')">VWAP Retest</button>
-    <button class="sc-btn" onclick="selPat(this,'pat-failed')">Failed Break + Reclaim</button>
-    <button class="sc-btn" onclick="selPat(this,'pat-others')">Other Patterns</button>
-  </div>
-
-  <div id="pat-comp" class="sc-panel active">
-    <div class="card">
-      <h3>Compression <span class="tag tag-p">Direction unknown</span></h3>
-      <p>A special sideways condition: range tightens, volume declines, moving averages converge. The chart looks "boring" — that's the signal. It can resolve in either direction; the breakout candle picks the side.</p>
-      <div class="visual">
-        <div class="visual-label">Chart</div>
-        <div class="visual-title">Range narrows into a tight box, then expansion</div>
-        <p>Price swings get progressively smaller, forming a narrowing wedge or rectangle. Volume bars taper down to a trickle. Then one large candle breaks decisively out of the range on a tall volume bar.</p>
-      </div>
-      <h4>Signs of compression</h4>
-      <ul class="check-list">
-        <li><span class="ck ck-p"></span>Each swing is smaller than the last — range is narrowing</li>
-        <li><span class="ck ck-p"></span>Volume is declining — fewer participants, lower conviction</li>
-        <li><span class="ck ck-p"></span>The 10, 20, and 50 EMAs are bunching together</li>
-        <li><span class="ck ck-p"></span>The stock looks boring — most traders have stopped watching</li>
-      </ul>
-      <div class="callout teal">
-        <strong>Mindset shift:</strong> Compression tells you <em>when</em> something might happen. Confirmation tells you <em>what</em>. Wait for the volume-confirmed break — and remember, a failed break followed by a reclaim is often the better trade.
-      </div>
-    </div>
-  </div>
-
-  <div id="pat-curl" class="sc-panel">
-    <div class="card">
-      <h3>The Curl <span class="tag tag-g">Bullish — building demand</span></h3>
-      <p>Different from compression in one critical way: <strong>volume is increasing, not decreasing</strong>. Buyers get more aggressive on each push at resistance. Sellers are still holding the line, but each defense burns through more supply.</p>
-      <div class="visual">
-        <div class="visual-label">Chart</div>
-        <div class="visual-title">Higher lows tightening into flat resistance</div>
-        <p>A horizontal resistance line on top. Below it, price makes a series of progressively higher lows that arc upward toward the line. Volume bars get taller with each push — the opposite of compression. The final push breaks the line on the biggest volume bar of the sequence.</p>
-      </div>
-      <h4>What to watch</h4>
-      <ul class="check-list">
-        <li><span class="ck ck-g"></span>Higher lows form — each pullback shallower than the last</li>
-        <li><span class="ck ck-g"></span>Volume increases on each push toward resistance — the tell</li>
-        <li><span class="ck ck-g"></span>Sellers' supply is being absorbed; when it runs out, the break is fast</li>
-        <li><span class="ck ck-a"></span>If volume <em>fades</em> instead of building, the curl is failing</li>
-      </ul>
-      <div class="callout green">
-        <strong>9 EMA rail:</strong> On the 1-min and 5-min charts, a stock curling along the 9 EMA — holding above it, bouncing off it on each pullback — is showing strong buyer control. The 9 EMA acts as a dynamic support rail during a curl. Pullbacks to the 20 EMA still mean trend intact but weakening. Losing the 20 EMA usually means the curl has failed.
-      </div>
-    </div>
-  </div>
-
-  <div id="pat-vwap" class="sc-panel">
-    <div class="card">
-      <h3>VWAP Retest &amp; Break <span class="tag tag-b">Intraday only</span></h3>
-      <p>VWAP (Volume Weighted Average Price) is the institutional intraday benchmark — the "fair value" for the session. How price interacts with VWAP is a setup in itself, and it resets every day.</p>
-      <div class="visual">
-        <div class="visual-label">Chart</div>
-        <div class="visual-title">Intraday price interacting with VWAP</div>
-        <p>An intraday session: price (solid line) and VWAP (dashed orange line). Three labeled moments: (1) price drops below VWAP, then pushes back above on a volume bar — a <em>reclaim</em>; (2) price rallies up to VWAP from below and bounces away — a <em>rejection</em>; (3) price pulls back to VWAP from above and resumes higher — a <em>hold</em>.</p>
-      </div>
-      <div class="step-list">
-        <div class="step">
-          <div class="step-dot green">▲</div>
-          <div class="step-body">
-            <h3>VWAP reclaim</h3>
-            <p>Stock drops below VWAP, then pushes back above on volume. Institutions are buying back at fair value — bullish.</p>
+        <div class="card-grid">
+          <div class="stat-card">
+            <div class="stat-label">Uptrend</div>
+            <div class="stat-val" style="color: var(--green)">Higher highs</div>
+            <div class="stat-sub">
+              Buyers in control — each pullback is shallower than the last
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Downtrend</div>
+            <div class="stat-val" style="color: var(--red)">Lower lows</div>
+            <div class="stat-sub">
+              Sellers in control — each rally fails earlier than the last
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Sideways</div>
+            <div class="stat-val" style="color: var(--purple)">Range</div>
+            <div class="stat-sub">
+              Balance — both sides matched until something breaks the tie
+            </div>
           </div>
         </div>
-        <div class="step">
-          <div class="step-dot red">▼</div>
-          <div class="step-body">
-            <h3>VWAP rejection</h3>
-            <p>Stock rallies up to VWAP from below and gets rejected. Sellers still in control at fair value — warning sign for longs.</p>
+
+        <div class="visual">
+          <div class="visual-label">Chart goes here</div>
+          <div class="visual-title">
+            A single stock cycling through all three states
+          </div>
+          <p>
+            Three connected segments on one chart: an uptrend (rising series of
+            higher highs and higher lows), flattening into a sideways range,
+            then breaking down into a downtrend (lower highs, lower lows).
+          </p>
+          <p class="visual-note">
+            Goal: show the learner that "trend" isn't permanent — it's the
+            current state, and it changes.
+          </p>
+        </div>
+
+        <h3>Price memory: why levels exist at all</h3>
+        <p>
+          A "level" is just a price the market remembers. If lots of shares
+          changed hands at $3.20 — or a stock topped out there twice — that
+          price now carries weight. Traders who got in at $3.20 are watching.
+          Shorts who got trapped above $3.20 are waiting to cover. New buyers
+          who missed the move want a second chance to enter near it.
+        </p>
+        <p>
+          The chart isn't drawing imaginary lines. It's recording who committed
+          money at which prices, and how they're going to behave when price
+          returns there.
+        </p>
+
+        <div class="callout teal">
+          <strong>What price does at a level — the vocabulary:</strong><br />
+          <strong>Bounce</strong> — price touches the level and reverses.<br />
+          <strong>Rejection</strong> — price approaches but never reaches, then
+          turns away.<br />
+          <strong>Break</strong> — price pushes through cleanly on volume.<br />
+          <strong>Reclaim</strong> — price breaks a level, fails, and comes back
+          through (often the highest-probability move).<br />
+          <strong>Failed breakout</strong> — price breaks on weak volume, then
+          snaps back into the range, trapping the late buyers.
+        </div>
+
+        <h3>Zones vs exact lines &mdash; and why small caps are different</h3>
+        <p>
+          On most charts, a "level" is a zone — a range of a few cents or even
+          dollars where buyers and sellers fought, not a precise line. But small
+          caps behave differently, and you need to know why.
+        </p>
+
+        <div class="two-col">
+          <div class="visual">
+            <div class="visual-label">Chart — large-cap</div>
+            <div class="visual-title">
+              Wide support zone (e.g. $148.00–$148.50)
+            </div>
+            <p>
+              Price oscillating into a shaded horizontal band that's clearly
+              thicker than the candles themselves. Multiple bounces happen
+              anywhere inside the band — not at one exact price.
+            </p>
+            <p class="visual-note">
+              Institutional orders fill across a range. With deep liquidity,
+              levels are fuzzy by nature.
+            </p>
+          </div>
+          <div class="visual">
+            <div class="visual-label">Chart — small-cap</div>
+            <div class="visual-title">
+              Exact line at $3.00 acting as a hard wall
+            </div>
+            <p>
+              Price touching $3.00 to the penny multiple times — wicks tag
+              exactly $3.00 and reverse. One sharp dashed line, not a band.
+            </p>
+            <p class="visual-note">
+              Thin float, few participants. A single price can be a precise
+              trigger.
+            </p>
           </div>
         </div>
-        <div class="step">
-          <div class="step-dot blue">━</div>
-          <div class="step-body">
-            <h3>VWAP hold</h3>
-            <p>Stock pulls back to VWAP and bounces. Buyers defending fair value — continuation signal in an uptrend.</p>
-          </div>
-        </div>
-      </div>
-      <div class="callout blue">
-        <strong>Use it as a bias filter:</strong> Above VWAP = bullish intraday bias. Below VWAP = bearish. Most professional day traders avoid going long stocks trading below VWAP.
-      </div>
-    </div>
-  </div>
 
-  <div id="pat-failed" class="sc-panel">
-    <div class="card">
-      <h3>Failed Breakout + Reclaim <span class="tag tag-g">High probability</span></h3>
-      <p>One of the highest-probability setups in trading. Price breaks a level, fails to follow through (usually on weak volume), reverses back through the level — and then runs <em>opposite</em> the failed break. The traders who got in on the first move are now trapped; their stops become fuel for the reversal.</p>
-      <div class="visual">
-        <div class="visual-label">Chart</div>
-        <div class="visual-title">A weak break above resistance fails, snaps back, runs lower</div>
-        <p>A horizontal resistance line. Price pokes above it briefly on a small-volume candle — annotate "weak volume breakout." Within a few candles it falls back below the line on a much taller volume bar — annotate "reclaim candle." Then a sustained sell-off as trapped buyers stop out.</p>
-        <p class="visual-note">The reclaim candle — not the original break — is the entry signal.</p>
-      </div>
-      <h4>The key tells</h4>
-      <ul class="check-list">
-        <li><span class="ck ck-r"></span><strong>The breakout candle has weak volume</strong> — no real participation</li>
-        <li><span class="ck ck-g"></span><strong>The reclaim candle has strong volume</strong> — traders are aggressively reversing</li>
-        <li><span class="ck ck-b"></span>Works in both directions: failed break above = bull trap; failed break below = bear trap</li>
-        <li><span class="ck ck-a"></span>The reclaim is your entry — not the original break</li>
-      </ul>
-      <div class="callout purple">
-        Most powerful when it happens at a high-confluence level on your map — a premarket high, the previous day high, a structural pivot. The more traders watching that level, the more stops sitting on the wrong side.
-      </div>
-    </div>
-  </div>
+        <div class="callout amber">
+          <strong>Beginner default:</strong> draw zones, not lines. But know
+          that small caps often respect <em>exact</em> prices in a way large
+          caps don't — especially round numbers ($3.00, $5.00), premarket highs,
+          and high-of-day. When liquidity is thin, the level is sharp.
+        </div>
 
-  <div id="pat-others" class="sc-panel">
-    <div class="card">
-      <h3>Other patterns worth recognizing</h3>
-      <div class="two-col">
-        <div class="callout green">
-          <strong>Ascending triangle</strong><br>
-          Flat resistance, rising support. The bullish cousin of the curl. Breakout on volume usually targets the height of the triangle.
+        <h3>Levels are scenarios, not predictions</h3>
+        <div class="callout purple">
+          A level doesn't <em>guarantee</em> a reaction. It tells you
+          <strong>where to pay attention</strong>. Good traders don't predict —
+          they plan. They mark the levels, decide in advance what they'll do if
+          price bounces, breaks, or rejects, and then wait for the market to
+          show its hand.
         </div>
-        <div class="callout green">
-          <strong>Bull flag</strong><br>
-          Strong move up (the pole), orderly pullback on declining volume (the flag), then continuation. Target = breakout + length of the pole.
-        </div>
-        <div class="callout green">
-          <strong>Flat base</strong><br>
-          A very tight consolidation after a move. Volume dries up. When the base breaks on volume, the move can be explosive because almost no supply sits above it.
-        </div>
+      </section>
+
+      <!-- MODULE 2 -->
+      <section class="chapter" id="m2">
+        <h2>The Footprints: Supply, Demand &amp; Volume</h2>
+        <p class="ch-sub">
+          Support, resistance, supply, demand, and volume are not five separate
+          topics. They're five lenses on one question: where did real money
+          commit, and what does that mean for what happens next?
+        </p>
+
         <div class="callout blue">
-          <strong>Opening range breakout</strong><br>
-          The first 5–15 minutes establish a range. Breaking above or below on volume often sets the tone for the rest of the session.
+          <strong>One mental model:</strong> when you see a strong move out of a
+          flat area, that flat area is where a side built up enough firepower to
+          overwhelm the other. The flat area becomes a <em>zone</em>. The volume
+          during that fight tells you how serious it was.
         </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- PART 2 -->
-<div class="part-header" style="border-left-color: var(--teal);">
-  <div class="part-num" style="color: var(--teal-text);">Part 2</div>
-  <h2>Build Your Level Map</h2>
-  <p>A repeatable workflow for marking the levels that matter on any small-cap stock — before the open, and live during the session.</p>
-</div>
+        <h3>Demand zones &amp; supply zones</h3>
+        <p>
+          These are the evolved version of support and resistance. Instead of
+          just marking "the floor" and "the ceiling," you're marking
+          <em>the base from which a move launched</em>. That base is where
+          buyers (or sellers) loaded up before they took over.
+        </p>
 
-<!-- MODULE 4 -->
-<section class="chapter" id="m4">
-  <div class="ch-num">Module 4</div>
-  <h2>The Small-Cap Level Map</h2>
-  <p class="ch-sub">This is the practical, repeatable process you follow every morning before the open and update live as the session unfolds. Five steps, top-down.</p>
+        <div class="two-col">
+          <div class="callout green">
+            <strong>Demand zone &mdash; Drop, Base, Rally (DBR)</strong
+            ><br /><br />
+            Price drops, pauses in a tight base, then rallies hard. That base is
+            a demand zone — aggressive buyers absorbed all the selling and
+            launched price higher. When price returns to that zone, buyers often
+            defend it again.
+          </div>
+          <div class="callout red">
+            <strong>Supply zone &mdash; Rally, Base, Drop (RBD)</strong
+            ><br /><br />
+            Price rallies, pauses in a tight base, then drops hard. That base is
+            a supply zone — aggressive sellers absorbed buying and launched
+            price lower. Returning to that zone usually meets renewed selling.
+          </div>
+        </div>
 
-  <div class="callout blue">
-    <strong>Why this works:</strong> Instead of learning "multi-timeframe analysis" as theory, you'll do it as a workflow. The timeframes aren't a concept to memorize — they're the order in which you build your map.
-  </div>
+        <div class="visual">
+          <div class="visual-label">Chart goes here</div>
+          <div class="visual-title">DBR and RBD on the same chart</div>
+          <p>
+            Left side: a rally up, a small flat base (highlight as a red supply
+            zone), then a sharp drop. Right side: that drop continues into a
+            tight base at the bottom (highlight as a green demand zone), then a
+            sharp rally back up.
+          </p>
+          <p class="visual-note">
+            The "base" is what's marked — not the high or low of the entire
+            move.
+          </p>
+        </div>
 
-  <h3>The five-step mapping process</h3>
-  <div class="step-list">
-    <div class="step">
-      <div class="step-dot purple">1</div>
-      <div class="step-body">
-        <h3>Historical levels (daily / weekly / monthly)</h3>
-        <p>Open the daily chart, look back 6–12 months. Find the highest-volume candles and mark those prices. Identify swing highs (supply) and swing lows (demand). Note structural pivots — the candles where power shifted. Switch to weekly; do the same. Weekly levels carry more weight than daily.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-dot blue">2</div>
-      <div class="step-body">
-        <h3>Recent structure (daily)</h3>
-        <p>Mark the most recent levels that intraday traders watch: previous day high (PDH), previous day low (PDL), previous close, any gap zones, recent consolidation ranges. These are the levels most likely to be tested in the next session. Also mark the <strong>200 EMA on the daily</strong> — the institutional line in the sand.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-dot amber">3</div>
-      <div class="step-body">
+        <h3>Fresh zones vs tested zones</h3>
+        <p>
+          A zone is strongest the <strong>first</strong> time price returns to
+          it. Every visit consumes some of the orders sitting there. After 3–4
+          tests, the zone is "exhausted" — most of the buyers (or sellers) have
+          already filled, and the level usually breaks.
+        </p>
+
+        <ul class="check-list">
+          <li>
+            <span class="ck ck-g"></span><strong>Fresh zone:</strong> never been
+            retested since the launch. Highest probability.
+          </li>
+          <li>
+            <span class="ck ck-b"></span><strong>Tested once:</strong> still
+            strong — orders remain.
+          </li>
+          <li>
+            <span class="ck ck-a"></span
+            ><strong>Tested 2–3 times:</strong> weakening. Each bounce smaller
+            than the last is the tell.
+          </li>
+          <li>
+            <span class="ck ck-r"></span><strong>4+ tests:</strong> exhausted —
+            expect the break, not the bounce.
+          </li>
+          <li>
+            <span class="ck ck-x"></span><strong>Cleanly broken:</strong> no
+            longer matters as the original level (but may flip to the opposite
+            side — see role reversal below).
+          </li>
+        </ul>
+
+        <h3>Volume: the weight behind the level</h3>
+        <p>
+          Volume tells you how many people are anchored at a price. A level
+          formed on 10 million shares carries far more weight than one formed on
+          100,000. When you scan a chart, you're not just looking at price —
+          you're looking for the candles where the most shares changed hands.
+        </p>
+
+        <div class="visual">
+          <div class="visual-label">Chart goes here</div>
+          <div class="visual-title">Price with volume bars below</div>
+          <p>
+            Standard combo chart: price line on top, volume histogram beneath. A
+            few volume bars are dramatically taller than the rest — those tall
+            bars should align visually with the prices that later become
+            reaction points.
+          </p>
+          <p class="visual-note">
+            The biggest-volume candles mark where institutional money committed
+            — those prices become structural pivots.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>The four volume rules</h4>
+          <div class="step-list">
+            <div class="step">
+              <div class="step-dot green">1</div>
+              <div class="step-body">
+                <h3>Bounces need volume to be trusted</h3>
+                <p>
+                  A bounce off support on above-average volume = real buyers
+                  defending. A bounce on dry volume = a weak reflex that often
+                  fails the next test.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-dot blue">2</div>
+              <div class="step-body">
+                <h3>Breakouts need volume to be real</h3>
+                <p>
+                  A clean break of resistance on 2×+ average volume is genuine.
+                  A break on dry volume is usually a trap — expect it to come
+                  back into the range.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-dot amber">3</div>
+              <div class="step-body">
+                <h3>Volume dry-up at a level = decision coming</h3>
+                <p>
+                  When volume fades inside a tight range near a key level, the
+                  market is in equilibrium. The next volume surge often picks
+                  the direction.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-dot red">4</div>
+              <div class="step-body">
+                <h3>Climax volume = potential exhaustion</h3>
+                <p>
+                  A massive spike (5×–10× normal) after an extended move can
+                  signal a blowoff top or selling climax. Don't catch knives —
+                  wait for the reversal candle on volume to confirm.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Structural pivots: the level experienced traders care about</h3>
+        <p>
+          A structural pivot isn't a formula — it's a price where the balance of
+          power between buyers and sellers radically shifted. You find it by
+          isolating the highest-volume candles on the daily and weekly chart.
+          Those candles are institutional footprints. Here's exactly why they
+          become critical levels:
+        </p>
+
+        <div class="step-list">
+          <div class="step">
+            <div class="step-dot blue">1</div>
+            <div class="step-body">
+              <h3>Trapped liquidity</h3>
+              <p>
+                High volume means a massive number of shares changed hands at
+                that price. If a stock sold off, hit a level, printed a
+                huge-volume candle, and then surged upward — large buyers
+                stepped in and defended that price aggressively. Those buyers
+                are still anchored there, and they'll defend it again.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-dot teal">2</div>
+            <div class="step-body">
+              <h3>Market memory</h3>
+              <p>
+                When price eventually drifts back to that high-volume level, the
+                market remembers what happened. Short-sellers cover their
+                positions there because they don't want to fight that large
+                buyer again. New buyers step in because they missed the first
+                move and want in near the same price. The level attracts
+                activity precisely because it already proved itself.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-dot green">3</div>
+            <div class="step-body">
+              <h3>The breakout trigger</h3>
+              <p>
+                When a stock is trading below a previous high-volume candle's
+                high, that level acts as overhead resistance. Getting above it —
+                on volume — proves that buyers are fully back in control. It
+                pivots the stock from a bearish or consolidating posture into a
+                bullish one. This is the mechanism behind most momentum moves.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          This is what's happening when an experienced trader says
+          <em>"I like this above $3.28"</em> — they're not guessing. There's a
+          structural pivot at $3.28 from a high-volume candle, and clearing it
+          on volume shifts the chart's posture from sellers-in-control to
+          buyers-in-control.
+        </p>
+
+        <div class="card">
+          <h4>What they're really reading</h4>
+          <ul class="check-list">
+            <li>
+              <span class="ck ck-g"></span
+              ><strong>"I like it above $5.50"</strong> = structural pivot at
+              $5.50; above it the bias flips bullish.
+            </li>
+            <li>
+              <span class="ck ck-r"></span
+              ><strong>"Too many rejections at $4"</strong> = supply at $4 keeps
+              winning; sellers haven't been absorbed.
+            </li>
+            <li>
+              <span class="ck ck-b"></span
+              ><strong>"Could squeeze if it clears HOD"</strong> = shorts above
+              the high-of-day would have to cover, fueling more buying.
+            </li>
+            <li>
+              <span class="ck ck-a"></span
+              ><strong>"I don't like the volume here"</strong> = weak
+              participation; the move lacks conviction.
+            </li>
+          </ul>
+        </div>
+
+        <h3>Role reversal: floors become ceilings (and vice versa)</h3>
+        <div class="callout purple">
+          When resistance breaks cleanly on volume, it often becomes support on
+          the pullback. The traders who sold near it regret selling; new buyers
+          waiting for a "second chance" step in. The opposite is true for broken
+          support — old buyers underwater there will sell into any bounce just
+          to break even.<br /><br />
+          Role reversal isn't automatic. It needs
+          <strong>volume on the break</strong> and a clean retest. A weak break
+          that limps through isn't a role reversal — it's likely a fakeout.
+        </div>
+      </section>
+
+      <!-- PART 2 -->
+      <!-- MODULE 3 -->
+      <section class="chapter ch-teal" id="m3">
+        <h2>Setting Your Levels</h2>
+        <p class="ch-sub">
+          With small caps, you don't pick tomorrow's stocks today. A stock hits
+          your scanner — unusual volume, a catalyst, a sharp move — and you have
+          seconds to minutes to figure out if there's a setup worth trading.
+          This module is about how to read that chart fast, find the levels that
+          matter, and track new ones as they form in real time.
+        </p>
+
+        <div class="callout blue">
+          <strong>The scanner is your starting point.</strong> You're not
+          planning in advance — you're responding. A stock appears, you pull up
+          the chart, and you work through its history to find meaningful levels.
+          Then you use those as guides as price moves. Most small caps sell off
+          by end of day; you're trading the momentum, not owning the stock.
+        </div>
+
+        <h3>The historical read</h3>
+        <p>
+          The moment a stock hits your scanner, pull up the daily chart. Not
+          every small cap has meaningful history — some are fresh runners with
+          little track record. But when the history is there, it matters. Look
+          for:
+        </p>
+        <ul class="check-list">
+          <li>
+            <span class="ck ck-b"></span><strong>High-volume candles</strong> —
+            the biggest volume bars on the daily or weekly chart. Those prices
+            are structural pivots where power shifted. Mark them.
+          </li>
+          <li>
+            <span class="ck ck-b"></span
+            ><strong>Major swing highs and swing lows</strong> — prior supply
+            zones where the stock topped out, and demand zones where it launched
+            from.
+          </li>
+          <li>
+            <span class="ck ck-b"></span><strong>Psychological levels</strong> —
+            whole and half dollars ($3.00, $3.50, $4.00). Thin-float stocks
+            often stall or reverse at these to the penny.
+          </li>
+          <li>
+            <span class="ck ck-b"></span><strong>200 EMA on the daily</strong> —
+            is the stock above or below it? Above = long-term bullish posture.
+            Below = you're trading against the trend, which raises the bar for
+            any long.
+          </li>
+        </ul>
+        <p>
+          These historical levels are guides, not guarantees. They're prices
+          where the stock has memory — where reactions are more likely than
+          elsewhere on the chart.
+        </p>
+
+        <h3>Recent structure</h3>
+        <p>
+          Once you have the historical picture, zoom into the recent daily bars
+          and mark what other active traders are watching:
+        </p>
+        <ul class="check-list">
+          <li>
+            <span class="ck ck-a"></span
+            ><strong>Previous day high (PDH)</strong> — one of the most-watched
+            intraday levels. A clean break above it with volume attracts
+            momentum buyers.
+          </li>
+          <li>
+            <span class="ck ck-a"></span
+            ><strong>Previous day low (PDL)</strong> — losing it often
+            accelerates selling. Below PDL = sellers were in control yesterday
+            and may be again.
+          </li>
+          <li>
+            <span class="ck ck-a"></span><strong>Previous close</strong> —
+            gap-ups and gap-downs are measured from here. The size and nature of
+            the gap tells you something about conviction.
+          </li>
+          <li>
+            <span class="ck ck-a"></span
+            ><strong>Recent consolidation ranges</strong> — where price spent
+            the most time recently. These zones are loaded with unfilled orders
+            on both sides.
+          </li>
+        </ul>
+
         <h3>Premarket levels</h3>
-        <p>Once premarket trading starts, mark the premarket high and premarket low. Note the gap size relative to prior close. Identify the news catalyst (if any) and the price levels it created. Premarket high is often the first level tested at the open.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-dot teal">4</div>
-      <div class="step-body">
-        <h3>Session levels (live)</h3>
-        <p>Once the regular session opens, the live levels start forming: opening range high/low (first 5–15 min), VWAP, high-of-day, low-of-day, and the 9/20 EMAs on the 1-min and 5-min charts. Add psychological levels — whole and half dollars ($3.00, $3.50) — and any halt levels for small-cap runners.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-dot green">5</div>
-      <div class="step-body">
+        <p>
+          Many small-cap runners move significantly in premarket on news or
+          unusual activity. If the stock has been active before the open, two
+          levels matter immediately:
+        </p>
+        <ul class="check-list">
+          <li>
+            <span class="ck ck-g"></span><strong>Premarket high (PMH)</strong> —
+            typically the first significant level tested at the open. A break
+            above it on volume signals strong continuation. A rejection signals
+            distribution.
+          </li>
+          <li>
+            <span class="ck ck-g"></span><strong>Premarket low (PML)</strong> —
+            losing this level at the open is an early warning sign for longs.
+          </li>
+        </ul>
+        <p>
+          Also note the catalyst and where the gap landed. A $2.50 stock that
+          opens at $4.00 on a press release has a clear reference point — the
+          gap itself, and the prior close below, are both significant levels.
+        </p>
+
+        <h3>Live levels as the session unfolds</h3>
+        <p>
+          These form after the open. You track them in real time and add them to
+          your map as they appear — they can't be marked in advance:
+        </p>
+        <ul class="check-list">
+          <li>
+            <span class="ck ck-g"></span
+            ><strong>Opening range high / low (ORH / ORL)</strong> — the high
+            and low of the first 5–15 minutes. A break above ORH or below ORL
+            often sets the direction for the session.
+          </li>
+          <li>
+            <span class="ck ck-g"></span><strong>VWAP</strong> — the intraday
+            benchmark. Above = buyers in control. Below = sellers. A
+            volume-confirmed reclaim is bullish; a rejection from below is
+            bearish.
+          </li>
+          <li>
+            <span class="ck ck-g"></span
+            ><strong>High-of-day / Low-of-day (HOD / LOD)</strong> — the
+            most-watched levels in real time. Breaking HOD is the most common
+            momentum trigger in small caps.
+          </li>
+          <li>
+            <span class="ck ck-a"></span><strong>Halt levels</strong> — when an
+            LULD halt occurs, mark where it happened. Price on the resume often
+            uses that level as reference.
+          </li>
+          <li>
+            <span class="ck ck-b"></span
+            ><strong>9 EMA &amp; 20 EMA (1-min / 5-min)</strong> — dynamic trend
+            rails, not fixed levels. Covered below.
+          </li>
+        </ul>
+
         <h3>Rank by confluence</h3>
-        <p>Most stocks have 20+ levels on the map. You can't trade them all. Look for the prices where multiple factors agree — a structural pivot that's <em>also</em> a round number and <em>also</em> the previous day high. Mark your top 3–5. Those are the levels you actually watch.</p>
+        <p>
+          Between historical levels, recent structure, premarket, and live
+          levels, your map can get crowded fast. Narrow it down: look for prices
+          where multiple independent factors agree. A structural pivot that's
+          <em>also</em> the previous day high and <em>also</em> a round number
+          carries far more weight than any of those alone.
+        </p>
+
+        <div class="callout teal">
+          <strong>Confluence in practice:</strong> A stock running hard
+          approaches $5.00. That's a round number, the previous day high, and
+          the high of a major-volume candle from months ago. Three independent
+          factors pointing at one price. That's not coincidence — that's where
+          you pay the most attention.
+        </div>
+
+        <div class="visual">
+          <div class="visual-label">Chart goes here</div>
+          <div class="visual-title">
+            A small-cap chart with the full level map drawn on it
+          </div>
+          <p>
+            A daily small-cap chart with horizontal lines layered: a thick line
+            for the 200 EMA, dashed lines for PDH/PDL, premarket high/low, a
+            structural pivot tagged to a high-volume candle, and a round-number
+            line at $3.00. The top 3 "confluence" levels are highlighted in a
+            different color.
+          </p>
+          <p class="visual-note">
+            The goal: show the messy reality of a real level map, then how
+            confluence narrows it down to a few prices that matter.
+          </p>
+        </div>
+
+        <h3>The 200 EMA on the daily &mdash; the line in the sand</h3>
+        <div class="callout purple">
+          A stock trading <strong>at or above</strong> the 200 EMA on the daily
+          is in a long-term bullish posture. Below it = long-term downtrend, and
+          any long is fighting the current. Many funds and algorithms use the
+          200 EMA as a benchmark, so it acts as significant support or
+          resistance on the daily chart. Treat it as a baseline filter: if a
+          small cap is well below the 200 EMA, your bar for taking a long should
+          be much higher.
+        </div>
+
+        <h3>Trading the trend: 9 EMA &amp; 20 EMA</h3>
+        <p>
+          When a stock is in a momentum move, it will often <em>respect</em> the
+          9 and 20 EMAs on the 1-min and 5-min charts — each pullback finds
+          support at these moving averages before continuing higher. A stock
+          consistently doing this is one of the clearest bullish signals on the
+          intraday chart. It tells you buyers are in control and actively
+          defending the trend.
+        </p>
+
+        <div class="callout green">
+          <strong>The core read:</strong> As long as the stock is pulling back
+          to the 9 or 20 EMA and bouncing — not breaking through — the trend is
+          intact. You trade with it, not against it. The moment it stops
+          respecting those levels, the trend is weakening and caution is
+          warranted.
+        </div>
+
+        <div class="two-col">
+          <div class="callout green">
+            <strong>Holding above the 9 EMA</strong><br />
+            Strong trend. Buyers in full control. Each pullback to the 9 holds
+            and continues higher — the most bullish intraday signal.
+          </div>
+          <div class="callout amber">
+            <strong>Pulling back to the 20 EMA and bouncing</strong><br />
+            Trend intact but losing some steam. Still a continuation signal —
+            buyers are defending, just at a deeper level.
+          </div>
+          <div class="callout red">
+            <strong>Breaking below the 20 EMA</strong><br />
+            The trend has likely flipped. Step aside on longs and wait for the
+            stock to reclaim the 20 EMA on volume before re-engaging.
+          </div>
+          <div class="callout blue">
+            <strong>9 EMA above 20 EMA</strong><br />
+            Short-term bullish posture confirmed. When the 9 crosses below the
+            20, sellers have taken over — wait for the cross to flip back.
+          </div>
+        </div>
+
+        <h3>Small-cap specific risks</h3>
+        <p>
+          Small caps amplify everything — including the ways a perfectly good
+          setup can blow up.
+        </p>
+        <ul class="check-list">
+          <li>
+            <span class="ck ck-r"></span
+            ><strong>Wide spreads &amp; thin liquidity</strong> — price can blow
+            through a level without ever giving a clean reaction. Slippage on
+            entry and stop-outs can be brutal.
+          </li>
+          <li>
+            <span class="ck ck-r"></span><strong>LULD halts</strong> — a halt
+            can gap price right past your stop. Position size has to account for
+            this.
+          </li>
+          <li>
+            <span class="ck ck-a"></span><strong>Float rotation</strong> — on
+            small-cap runners, the entire float can change hands in a day.
+            Yesterday's levels may not matter at all.
+          </li>
+          <li>
+            <span class="ck ck-a"></span><strong>Dilution risk</strong> —
+            offerings can dump fresh supply onto the market at any price,
+            killing a setup instantly.
+          </li>
+          <li>
+            <span class="ck ck-p"></span><strong>Promotion risk</strong> —
+            promoted tickers create artificial demand that disappears as soon as
+            the promotion ends.
+          </li>
+        </ul>
+      </section>
+
+      <!-- PART 3 -->
+      <!-- MODULE 4 -->
+      <section class="chapter ch-purple" id="m4">
+        <h2>Setups &amp; Patterns</h2>
+        <p class="ch-sub">
+          Levels tell you <em>where</em> to look. Patterns tell you
+          <em>what</em> is developing there. A level alone is just a price on
+          your map — a pattern forming at a level is what turns it into a
+          potential trade.
+        </p>
+
+        <div class="callout amber">
+          <strong>No pattern guarantees an outcome.</strong> Each creates
+          conditions that favor a move, but confirmation — volume + price action
+          — is always required before entry. Patterns describe pressure
+          building. Confirmation describes pressure releasing.
+        </div>
+
+        <h3>Pick a pattern to study</h3>
+        <div class="scenario-btns">
+          <button class="sc-btn active" onclick="selPat(this, 'pat-comp')">
+            Compression
+          </button>
+          <button class="sc-btn" onclick="selPat(this, 'pat-curl')">
+            The Curl
+          </button>
+          <button class="sc-btn" onclick="selPat(this, 'pat-vwap')">
+            VWAP Retest
+          </button>
+          <button class="sc-btn" onclick="selPat(this, 'pat-failed')">
+            Failed Break + Reclaim
+          </button>
+          <button class="sc-btn" onclick="selPat(this, 'pat-others')">
+            Other Patterns
+          </button>
+        </div>
+
+        <div id="pat-comp" class="sc-panel active">
+          <div class="card">
+            <h3>
+              Compression <span class="tag tag-p">Direction unknown</span>
+            </h3>
+            <p>
+              A special sideways condition: range tightens, volume declines,
+              moving averages converge. The chart looks "boring" — that's the
+              signal. It can resolve in either direction; the breakout candle
+              picks the side.
+            </p>
+            <div class="visual">
+              <div class="visual-label">Chart</div>
+              <div class="visual-title">
+                Range narrows into a tight box, then expansion
+              </div>
+              <p>
+                Price swings get progressively smaller, forming a narrowing
+                wedge or rectangle. Volume bars taper down to a trickle. Then
+                one large candle breaks decisively out of the range on a tall
+                volume bar.
+              </p>
+            </div>
+            <h4>Signs of compression</h4>
+            <ul class="check-list">
+              <li>
+                <span class="ck ck-p"></span>Each swing is smaller than the last
+                — range is narrowing
+              </li>
+              <li>
+                <span class="ck ck-p"></span>Volume is declining — fewer
+                participants, lower conviction
+              </li>
+              <li>
+                <span class="ck ck-p"></span>The 10, 20, and 50 EMAs are
+                bunching together
+              </li>
+              <li>
+                <span class="ck ck-p"></span>The stock looks boring — most
+                traders have stopped watching
+              </li>
+            </ul>
+            <div class="callout teal">
+              <strong>Mindset shift:</strong> Compression tells you
+              <em>when</em> something might happen. Confirmation tells you
+              <em>what</em>. Wait for the volume-confirmed break — and remember,
+              a failed break followed by a reclaim is often the better trade.
+            </div>
+          </div>
+        </div>
+
+        <div id="pat-curl" class="sc-panel">
+          <div class="card">
+            <h3>
+              The Curl <span class="tag tag-g">Bullish — building demand</span>
+            </h3>
+            <p>
+              Different from compression in one key way:
+              <strong>volume is increasing, not decreasing</strong>. Buyers get
+              more aggressive on each push at resistance. Sellers are still
+              holding the line, but each defense burns through more supply.
+            </p>
+            <div class="visual">
+              <div class="visual-label">Chart</div>
+              <div class="visual-title">
+                Higher lows tightening into flat resistance
+              </div>
+              <p>
+                A horizontal resistance line on top. Below it, price makes a
+                series of progressively higher lows that arc upward toward the
+                line. Volume bars get taller with each push — the opposite of
+                compression. The final push breaks the line on the biggest
+                volume bar of the sequence.
+              </p>
+            </div>
+            <h4>What to watch</h4>
+            <ul class="check-list">
+              <li>
+                <span class="ck ck-g"></span>Higher lows form — each pullback
+                shallower than the last
+              </li>
+              <li>
+                <span class="ck ck-g"></span>Volume increases on each push
+                toward resistance — the tell
+              </li>
+              <li>
+                <span class="ck ck-g"></span>Sellers' supply is being absorbed;
+                when it runs out, the break is fast
+              </li>
+              <li>
+                <span class="ck ck-a"></span>If volume <em>fades</em> instead of
+                building, the curl is failing
+              </li>
+            </ul>
+            <div class="callout green">
+              <strong>9 EMA rail:</strong> A stock curling along the 9 EMA —
+              holding above it, bouncing off it on each pullback — is showing
+              strong buyer control. Pullbacks to the 20 EMA mean trend intact
+              but weakening. Losing the 20 EMA usually means the curl has
+              failed.
+            </div>
+          </div>
+        </div>
+
+        <div id="pat-vwap" class="sc-panel">
+          <div class="card">
+            <h3>
+              VWAP Retest &amp; Break
+              <span class="tag tag-b">Intraday only</span>
+            </h3>
+            <p>
+              VWAP is the institutional intraday benchmark — the "fair value"
+              for the session. How price interacts with it is a setup in itself,
+              and it resets every day.
+            </p>
+            <div class="visual">
+              <div class="visual-label">Chart</div>
+              <div class="visual-title">
+                Intraday price interacting with VWAP
+              </div>
+              <p>
+                An intraday session: price (solid line) and VWAP (dashed orange
+                line). Three labeled moments: (1) price drops below VWAP, then
+                pushes back above on a volume bar — a <em>reclaim</em>; (2)
+                price rallies up to VWAP from below and bounces away — a
+                <em>rejection</em>; (3) price pulls back to VWAP from above and
+                resumes higher — a <em>hold</em>.
+              </p>
+            </div>
+            <div class="step-list">
+              <div class="step">
+                <div class="step-dot green">▲</div>
+                <div class="step-body">
+                  <h3>VWAP reclaim</h3>
+                  <p>
+                    Stock drops below VWAP, then pushes back above on volume.
+                    Buyers stepping in at fair value — bullish.
+                  </p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-dot red">▼</div>
+                <div class="step-body">
+                  <h3>VWAP rejection</h3>
+                  <p>
+                    Stock rallies up to VWAP from below and gets rejected.
+                    Sellers still in control at fair value — warning for longs.
+                  </p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-dot blue">━</div>
+                <div class="step-body">
+                  <h3>VWAP hold</h3>
+                  <p>
+                    Stock pulls back to VWAP and bounces. Buyers defending fair
+                    value — continuation signal in an uptrend.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="callout blue">
+              <strong>Bias filter:</strong> Above VWAP = bullish intraday bias.
+              Below VWAP = bearish. Most active traders avoid going long stocks
+              trading below VWAP.
+            </div>
+          </div>
+        </div>
+
+        <div id="pat-failed" class="sc-panel">
+          <div class="card">
+            <h3>
+              Failed Breakout + Reclaim
+              <span class="tag tag-g">High probability</span>
+            </h3>
+            <p>
+              Price breaks a level on weak volume, fails to follow through,
+              reverses back — and then runs opposite the failed break. The
+              traders who got in on the first move are now trapped; their
+              stop-outs become fuel for the reversal.
+            </p>
+            <div class="visual">
+              <div class="visual-label">Chart</div>
+              <div class="visual-title">
+                A weak break above resistance fails, snaps back, runs lower
+              </div>
+              <p>
+                A horizontal resistance line. Price pokes above it briefly on a
+                small-volume candle — "weak volume breakout." Within a few
+                candles it falls back below the line on a much taller volume bar
+                — "reclaim candle." Then a sustained move as trapped buyers stop
+                out.
+              </p>
+              <p class="visual-note">
+                The reclaim candle — not the original break — is the entry
+                signal.
+              </p>
+            </div>
+            <h4>The key tells</h4>
+            <ul class="check-list">
+              <li>
+                <span class="ck ck-r"></span
+                ><strong>The breakout candle has weak volume</strong> — no real
+                participation
+              </li>
+              <li>
+                <span class="ck ck-g"></span
+                ><strong>The reclaim candle has strong volume</strong> — traders
+                are aggressively reversing
+              </li>
+              <li>
+                <span class="ck ck-b"></span>Works in both directions: failed
+                break above = bull trap; failed break below = bear trap
+              </li>
+              <li>
+                <span class="ck ck-a"></span>The reclaim is your entry — not the
+                original break
+              </li>
+            </ul>
+            <div class="callout purple">
+              Most powerful at a high-confluence level — premarket high,
+              previous day high, structural pivot. The more traders watching
+              that level, the more stops sitting on the wrong side.
+            </div>
+          </div>
+        </div>
+
+        <div id="pat-others" class="sc-panel">
+          <div class="card">
+            <h3>Other patterns worth recognizing</h3>
+            <div class="two-col">
+              <div class="callout green">
+                <strong>Ascending triangle</strong><br />
+                Flat resistance, rising support. The bullish cousin of the curl.
+                Breakout on volume usually targets the height of the triangle.
+              </div>
+              <div class="callout green">
+                <strong>Bull flag</strong><br />
+                Strong move up (the pole), orderly pullback on declining volume
+                (the flag), then continuation on volume.
+              </div>
+              <div class="callout green">
+                <strong>Flat base</strong><br />
+                Tight consolidation after a move. Volume dries up. When the base
+                breaks on volume the move can be explosive — almost no supply
+                above it.
+              </div>
+              <div class="callout blue">
+                <strong>Opening range breakout</strong><br />
+                The first 5–15 minutes establish a range. Breaking above or
+                below on volume often sets the tone for the session.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODULE 5 -->
+      <section class="chapter ch-purple" id="m5">
+        <h2>Planning the Trade</h2>
+        <p class="ch-sub">
+          The level map shows you where to look. The plan turns it into an
+          action — with defined risk. At every level on your map, you should
+          know what you'd do in each of five scenarios <em>before</em> the
+          session starts.
+        </p>
+
+        <div class="callout blue">
+          <strong>Pre-plan every scenario.</strong> When you're staring at a
+          fast-moving small cap, you don't have time to think — you only have
+          time to execute. The thinking happens before the open. The session is
+          just execution of the plan.
+        </div>
+
+        <h3>The five scenarios at every level</h3>
+        <div class="step-list">
+          <div class="step">
+            <div class="step-dot green">1</div>
+            <div class="step-body">
+              <h3>Bounce</h3>
+              <p>
+                Price touches the level and reverses. Buy at demand, sell at
+                supply. Entry: bullish confirmation candle (hammer, engulfing,
+                volume reversal). Stop: just beyond the level.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-dot blue">2</div>
+            <div class="step-body">
+              <h3>Break</h3>
+              <p>
+                Price pushes through on volume. Either a breakout entry (long
+                the break) or your existing stop triggers. Entry: candle close
+                beyond the level with 1.5×+ volume. Stop: back inside the level.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-dot amber">3</div>
+            <div class="step-body">
+              <h3>Rejection</h3>
+              <p>
+                Price approaches but never reaches the level and turns away. No
+                trade — wait for the next setup. This scenario is mostly about
+                <em>not</em> doing anything.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-dot purple">4</div>
+            <div class="step-body">
+              <h3>Reclaim</h3>
+              <p>
+                Price breaks the level, fails, comes back through. Often the
+                highest-probability move on the chart. Entry: the reclaim candle
+                on volume. Stop: just back below (or above) the reclaim.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-dot red">5</div>
+            <div class="step-body">
+              <h3>Failed breakout</h3>
+              <p>
+                Price breaks on weak volume and snaps back — a trap. The trap
+                itself becomes the next setup (the reclaim in the opposite
+                direction). Don't fight it; flip with it once volume confirms.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h3>Entry &amp; invalidation</h3>
+        <div class="callout teal">
+          <strong>Entry trigger:</strong> the specific thing that has to happen
+          for you to click buy — a candle close, a volume spike, a reclaim of a
+          level. Without a trigger, you'll enter too early on hope.<br /><br />
+          <strong>Invalidation point:</strong> the price at which your thesis is
+          wrong. This becomes your stop.
+          <strong
+            >If you can't define invalidation, you don't have a trade — you have
+            a guess.</strong
+          >
+        </div>
+
+        <h3>When to skip the trade</h3>
+        <ul class="check-list">
+          <li>
+            <span class="ck ck-r"></span>Reward-to-risk is below 2:1 — the math
+            is against you
+          </li>
+          <li>
+            <span class="ck ck-r"></span>No volume confirmation on the entry
+            trigger
+          </li>
+          <li>
+            <span class="ck ck-r"></span>You're trading against the daily 200
+            EMA / weekly trend
+          </li>
+          <li>
+            <span class="ck ck-r"></span>You can't define a clean invalidation
+            point
+          </li>
+          <li>
+            <span class="ck ck-a"></span>You're trying to make back a previous
+            loss — emotional trades are losing trades
+          </li>
+          <li>
+            <span class="ck ck-a"></span>The level is exhausted (4+ tests)
+          </li>
+        </ul>
+      </section>
+
+      <div class="disclaimer">
+        <strong>Educational only.</strong> This resource is for education and
+        does not provide financial advice, trade alerts, or investment
+        recommendations. Trading small-cap and microcap stocks involves high
+        volatility, low liquidity, wide spreads, sudden halts, promotional
+        activity, dilution risk, and the possibility of losing all capital. Day
+        trading is extremely risky. Pattern day trader rules may apply.
+        Understand your broker's requirements before actively trading.<br /><br />
+        References:
+        <a
+          href="https://www.finra.org/investors/investing/investment-products/stocks/day-trading"
+          target="_blank"
+          rel="noopener"
+          >FINRA — Day trading</a
+        >
+        ·
+        <a
+          href="https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/investor-2"
+          target="_blank"
+          rel="noopener"
+          >SEC — Microcap risk</a
+        >
+        ·
+        <a
+          href="https://www.sec.gov/investor/alerts/daytrading.pdf"
+          target="_blank"
+          rel="noopener"
+          >SEC — Day trading margin (PDF)</a
+        >
+      </div>
+
+      <div class="footer">
+        <p>
+          Find Your Levels — v2 · A small-cap trader's guide to reading charts.
+        </p>
       </div>
     </div>
-  </div>
 
-  <div class="visual">
-    <div class="visual-label">Chart goes here</div>
-    <div class="visual-title">A small-cap chart with the full level map drawn on it</div>
-    <p>A daily small-cap chart with horizontal lines layered: a thick line for the 200 EMA, dashed lines for PDH/PDL, premarket high/low, a structural pivot tagged to a high-volume candle, and a round-number line at $3.00. The top 3 "confluence" levels are highlighted in a different color.</p>
-    <p class="visual-note">The goal: show the messy reality of a real level map, then how confluence narrows it down to a few prices that matter.</p>
-  </div>
+    <script>
+      function goTo(e, id) {
+        e.preventDefault();
+        document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+      }
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              document
+                .querySelectorAll(".ch-link")
+                .forEach((l) => l.classList.remove("active"));
+              const link = document.querySelector(
+                `.ch-link[href="#${e.target.id}"]`,
+              );
+              if (link) link.classList.add("active");
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: "-72px 0px -60% 0px" },
+      );
+      document
+        .querySelectorAll(".chapter")
+        .forEach((ch) => observer.observe(ch));
 
-  <h3>The 200 EMA on the daily &mdash; the line in the sand</h3>
-  <div class="callout purple">
-    A stock trading <strong>at or above</strong> the 200 EMA on the daily is in a long-term bullish posture. Below it = long-term downtrend, and any long is fighting the current. Many funds and algorithms use the 200 EMA as a benchmark, so it acts as significant support or resistance on the daily chart. Treat it as a baseline filter: if a small cap is well below the 200 EMA, your bar for taking a long should be much higher.
-  </div>
+      function selPat(btn, id) {
+        document
+          .querySelectorAll("#m3 .sc-btn")
+          .forEach((b) => b.classList.remove("active"));
+        document
+          .querySelectorAll("#m3 .sc-panel")
+          .forEach((p) => p.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById(id).classList.add("active");
+      }
 
-  <h3>9 EMA &amp; 20 EMA on the intraday &mdash; the trend rails</h3>
-  <p>Unlike the levels above, the 9 and 20 EMAs aren't fixed lines — they move with price. Think of them as <em>rails</em> the price is sliding along, not walls it bounces off.</p>
-
-  <div class="two-col">
-    <div class="callout green">
-      <strong>Holding above the 9 EMA (1-min / 5-min)</strong><br>
-      Strong intraday trend. Aggressive buyers in control. Each pullback to the 9 holds and rips.
-    </div>
-    <div class="callout amber">
-      <strong>Pulling back to the 20 EMA and bouncing</strong><br>
-      Trend intact but weakening. Still a continuation signal, but reduce size.
-    </div>
-    <div class="callout red">
-      <strong>Losing the 20 EMA</strong><br>
-      Intraday trend has flipped. Be cautious with longs — or step aside.
-    </div>
-    <div class="callout blue">
-      <strong>9 EMA above 20 EMA</strong><br>
-      Short-term bullish posture. A cross of 9 under 20 = sellers have taken control. Wait for the cross to flip back before reloading.
-    </div>
-  </div>
-
-  <h3>Small-cap specific risks</h3>
-  <p>Small caps amplify everything — including the ways a perfectly good setup can blow up.</p>
-  <ul class="check-list">
-    <li><span class="ck ck-r"></span><strong>Wide spreads &amp; thin liquidity</strong> — price can blow through a level without ever giving a clean reaction. Slippage on entry and stop-outs can be brutal.</li>
-    <li><span class="ck ck-r"></span><strong>LULD halts</strong> — a halt can gap price right past your stop. Position size has to account for this.</li>
-    <li><span class="ck ck-a"></span><strong>Float rotation</strong> — on small-cap runners, the entire float can change hands in a day. Yesterday's levels may not matter at all.</li>
-    <li><span class="ck ck-a"></span><strong>Dilution risk</strong> — offerings can dump fresh supply onto the market at any price, killing a setup instantly.</li>
-    <li><span class="ck ck-p"></span><strong>Promotion risk</strong> — promoted tickers create artificial demand that disappears as soon as the promotion ends.</li>
-  </ul>
-</section>
-
-<!-- MODULE 5 -->
-<section class="chapter" id="m5">
-  <div class="ch-num">Module 5</div>
-  <h2>Planning the Trade</h2>
-  <p class="ch-sub">The level map shows you where to look. The plan turns it into an action — with defined risk. At every level on your map, you should know what you'd do in each of five scenarios <em>before</em> the session starts.</p>
-
-  <div class="callout blue">
-    <strong>Pre-plan every scenario.</strong> When you're staring at a fast-moving small cap, you don't have time to think — you only have time to execute. The thinking happens before the open. The session is just execution of the plan.
-  </div>
-
-  <h3>The five scenarios at every level</h3>
-  <div class="step-list">
-    <div class="step">
-      <div class="step-dot green">1</div>
-      <div class="step-body">
-        <h3>Bounce</h3>
-        <p>Price touches the level and reverses. Buy at demand, sell at supply. Entry: bullish confirmation candle (hammer, engulfing, volume reversal). Stop: just beyond the level.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-dot blue">2</div>
-      <div class="step-body">
-        <h3>Break</h3>
-        <p>Price pushes through on volume. Either a breakout entry (long the break) or your existing stop triggers. Entry: candle close beyond the level with 1.5×+ volume. Stop: back inside the level.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-dot amber">3</div>
-      <div class="step-body">
-        <h3>Rejection</h3>
-        <p>Price approaches but never reaches the level and turns away. No trade — wait for the next setup. This scenario is mostly about <em>not</em> doing anything.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-dot purple">4</div>
-      <div class="step-body">
-        <h3>Reclaim</h3>
-        <p>Price breaks the level, fails, comes back through. Often the highest-probability move on the chart. Entry: the reclaim candle on volume. Stop: just back below (or above) the reclaim.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-dot red">5</div>
-      <div class="step-body">
-        <h3>Failed breakout</h3>
-        <p>Price breaks on weak volume and snaps back — a trap. The trap itself becomes the next setup (the reclaim in the opposite direction). Don't fight it; flip with it once volume confirms.</p>
-      </div>
-    </div>
-  </div>
-
-  <h3>Entry &amp; invalidation</h3>
-  <div class="callout teal">
-    <strong>Entry trigger:</strong> the specific thing that has to happen for you to click buy — a candle close, a volume spike, a reclaim of a level. Without a trigger, you'll enter too early on hope.<br><br>
-    <strong>Invalidation point:</strong> the price at which your thesis is wrong. This becomes your stop. <strong>If you can't define invalidation, you don't have a trade — you have a guess.</strong>
-  </div>
-
-  <h3>Position sizing &mdash; let the stop set the size</h3>
-  <p>The most important habit in trading: your stop distance determines your position size, not the other way around. You decide what you're willing to lose <em>first</em>, then size the trade so that's what you lose if you're stopped out.</p>
-
-  <div class="callout blue">
-    <strong>Shares</strong> = (Account risk $) ÷ (Entry − Stop)<br><br>
-    Example: $20,000 account, 1% risk = $200. Entry $3.20, stop $3.05 → $200 ÷ $0.15 = <strong>~1,333 shares.</strong> Your stop distance always controls your size — never the other way around.
-  </div>
-
-  <h3>The four risk rules</h3>
-  <div class="card-grid">
-    <div class="stat-card">
-      <div class="stat-label">Risk per trade</div>
-      <div class="stat-val">1–2%</div>
-      <div class="stat-sub">Of total account — never more</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-label">Minimum R:R</div>
-      <div class="stat-val">2 : 1</div>
-      <div class="stat-sub">Target at least 2× your stop distance</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-label">Daily max loss</div>
-      <div class="stat-val">3%</div>
-      <div class="stat-sub">Hit it = walk away for the day</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-label">Win rate at 2:1</div>
-      <div class="stat-val">~40%</div>
-      <div class="stat-sub">Above this, you're profitable</div>
-    </div>
-  </div>
-
-  <h3>When to skip the trade</h3>
-  <ul class="check-list">
-    <li><span class="ck ck-r"></span>Reward-to-risk is below 2:1 — the math is against you</li>
-    <li><span class="ck ck-r"></span>No volume confirmation on the entry trigger</li>
-    <li><span class="ck ck-r"></span>You're trading against the daily 200 EMA / weekly trend</li>
-    <li><span class="ck ck-r"></span>You can't define a clean invalidation point</li>
-    <li><span class="ck ck-a"></span>You're trying to make back a previous loss — emotional trades are losing trades</li>
-    <li><span class="ck ck-a"></span>The level is exhausted (4+ tests)</li>
-  </ul>
-</section>
-
-<!-- MODULE 6 -->
-<section class="chapter" id="m6">
-  <div class="ch-num">Module 6</div>
-  <h2>Practice Lab</h2>
-  <p class="ch-sub">Concepts only stick once you've used them. Score a level, then work through the quiz — each question is a real scenario built from the modules above.</p>
-
-  <h3>Level quality scorecard</h3>
-  <p>Before you trade any level, score it. The more boxes you check, the higher the confluence — and the more conviction you can carry into the trade.</p>
-
-  <div class="card">
-    <div id="scorecard"></div>
-    <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border);">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-        <span style="font-weight: 600;">Level quality score</span>
-        <span id="totalScore" style="font-family: var(--mono); font-weight: 600; font-size: 18px;">0 / 10</span>
-      </div>
-      <div class="bar-track" style="height: 10px;">
-        <div class="bar-fill" id="scoreBar" style="width:0%; background: var(--red);"></div>
-      </div>
-      <p id="scoreVerdict" class="muted small" style="margin-top: 8px;"></p>
-    </div>
-  </div>
-
-  <h3>Knowledge check</h3>
-  <div class="card">
-    <div id="quizArea"></div>
-  </div>
-</section>
-
-<div class="disclaimer">
-  <strong>Educational only.</strong> This resource is for education and does not provide financial advice, trade alerts, or investment recommendations. Trading small-cap and microcap stocks involves high volatility, low liquidity, wide spreads, sudden halts, promotional activity, dilution risk, and the possibility of losing all capital. Day trading is extremely risky. Pattern day trader rules may apply. Understand your broker's requirements before actively trading.<br><br>
-  References: <a href="https://www.finra.org/investors/investing/investment-products/stocks/day-trading" target="_blank" rel="noopener">FINRA — Day trading</a> · <a href="https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/investor-2" target="_blank" rel="noopener">SEC — Microcap risk</a> · <a href="https://www.sec.gov/investor/alerts/daytrading.pdf" target="_blank" rel="noopener">SEC — Day trading margin (PDF)</a>
-</div>
-
-<div class="footer">
-  <p>Find Your Levels — v2 · A small-cap trader's guide to reading charts.</p>
-</div>
-
-</div>
-
-<script>
-function goTo(e, id) {
-  e.preventDefault();
-  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-}
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      document.querySelectorAll('.ch-link').forEach(l => l.classList.remove('active'));
-      const link = document.querySelector(`.ch-link[href="#${e.target.id}"]`);
-      if (link) link.classList.add('active');
-    }
-  });
-}, { threshold: 0.15, rootMargin: '-72px 0px -60% 0px' });
-document.querySelectorAll('.chapter').forEach(ch => observer.observe(ch));
-
-function selPat(btn, id) {
-  document.querySelectorAll('#m3 .sc-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('#m3 .sc-panel').forEach(p => p.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById(id).classList.add('active');
-}
-
-const scoreItems = [
-  'Volume — formed on or anchored to a high-volume candle',
-  'Higher timeframe — visible on the daily or weekly chart',
-  'Confluence with the 200 EMA, VWAP, or a major moving average',
-  'Near a round or psychological number ($3.00, $5.00)',
-  'Structural pivot — the high or low of a power-shift candle',
-  'Fresh or only tested once — not exhausted',
-  'Aligns with previous day high, previous day low, or premarket high/low',
-  'Recent — formed within the last few months',
-  'Stock is in the right posture (above 200 EMA for longs)'
-];
-function buildScorecard() {
-  document.getElementById('scorecard').innerHTML = scoreItems.map((item, i) =>
-    `<label style="display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);cursor:pointer;">
+      const scoreItems = [
+        "Volume — formed on or anchored to a high-volume candle",
+        "Higher timeframe — visible on the daily or weekly chart",
+        "Confluence with the 200 EMA, VWAP, or a major moving average",
+        "Near a round or psychological number ($3.00, $5.00)",
+        "Structural pivot — the high or low of a power-shift candle",
+        "Fresh or only tested once — not exhausted",
+        "Aligns with previous day high, previous day low, or premarket high/low",
+        "Recent — formed within the last few months",
+        "Stock is in the right posture (above 200 EMA for longs)",
+      ];
+      function buildScorecard() {
+        document.getElementById("scorecard").innerHTML = scoreItems
+          .map(
+            (item, i) =>
+              `<label style="display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);cursor:pointer;">
       <input type="checkbox" id="sc${i}" onchange="updateScore()" style="margin-top:3px;flex-shrink:0;width:18px;height:18px;accent-color:var(--green);">
       <span style="font-size:14px;line-height:1.5;">${item}</span>
-    </label>`
-  ).join('');
-  updateScore();
-}
-function updateScore() {
-  let t = 0;
-  scoreItems.forEach((_, i) => { if (document.getElementById('sc' + i)?.checked) t++; });
-  const pct = Math.round(t / 10 * 100);
-  document.getElementById('totalScore').textContent = t + ' / 10';
-  const bar = document.getElementById('scoreBar');
-  bar.style.width = pct + '%';
-  bar.style.background = pct >= 70 ? 'var(--green)' : pct >= 40 ? 'var(--amber)' : 'var(--red)';
-  const v = document.getElementById('scoreVerdict');
-  v.textContent = pct >= 70 ? 'A-grade level — high conviction, trade with full plan and proper size.' :
-    pct >= 40 ? 'B-grade level — tradable but reduce size and demand confirmation.' :
-    'C-grade level — skip. Wait for better confluence.';
-}
-buildScorecard();
+    </label>`,
+          )
+          .join("");
+        updateScore();
+      }
+      function updateScore() {
+        let t = 0;
+        scoreItems.forEach((_, i) => {
+          if (document.getElementById("sc" + i)?.checked) t++;
+        });
+        const pct = Math.round((t / 10) * 100);
+        document.getElementById("totalScore").textContent = t + " / 10";
+        const bar = document.getElementById("scoreBar");
+        bar.style.width = pct + "%";
+        bar.style.background =
+          pct >= 70
+            ? "var(--green)"
+            : pct >= 40
+              ? "var(--amber)"
+              : "var(--red)";
+        const v = document.getElementById("scoreVerdict");
+        v.textContent =
+          pct >= 70
+            ? "A-grade level — high conviction, trade with full plan and proper size."
+            : pct >= 40
+              ? "B-grade level — tradable but reduce size and demand confirmation."
+              : "C-grade level — skip. Wait for better confluence.";
+      }
+      buildScorecard();
 
-const questions = [
-  {
-    q: 'A small-cap stock has a structural pivot at $3.28 (high of the biggest-volume candle on the daily). It\'s currently at $3.10. What\'s the most useful framing?',
-    opts: [
-      'It\'s below $3.28 so the stock is broken — avoid it',
-      'Posture is bearish below $3.28; above $3.28 the bias flips bullish. Plan a long entry on a clean reclaim with volume',
-      'Pivots from the daily don\'t matter intraday',
-      'Buy now at $3.10 because it\'s cheaper'
-    ],
-    correct: 1,
-    fb: 'The structural pivot is the price where power last shifted hands. Below it, the trapped buyers are underwater — sellers in control. Above it, the chart\'s posture flips and new buyers step in. The plan isn\'t to predict — it\'s to wait for the reclaim on volume and trade what the chart confirms.'
-  },
-  {
-    q: 'You spot a stock with higher lows tightening into a flat $2.96 resistance, and volume is INCREASING on each push. What pattern is this and what are you watching for?',
-    opts: [
-      'Compression — wait for volume to dry up further',
-      'A bear flag — short it',
-      'The Curl — watch for the break above $2.96 on a high-volume candle; buyers are escalating, sellers are being absorbed',
-      'A failed breakout — short the rejection'
-    ],
-    correct: 2,
-    fb: 'Increasing volume on each push is the key tell that separates the Curl from random chop. Buyers are getting more aggressive while sellers hold the line. When the supply at resistance is finally absorbed, the break is usually fast. Entry: candle close above $2.96 on the highest volume of the sequence.'
-  },
-  {
-    q: 'Price breaks above the premarket high at $4.10 on light volume, then immediately falls back below $4.10 on heavier volume. What should you be planning?',
-    opts: [
-      'Buy aggressively — the breakout will continue',
-      'Hold and hope',
-      'The failed break is a trap. Wait for the reclaim signal — if price goes back above $4.10 on volume, that reclaim is high-probability long. If it stays below, plan for further downside',
-      'There\'s no setup here'
-    ],
-    correct: 2,
-    fb: 'Failed breakout + reclaim is one of the highest-probability setups in trading. The weak-volume break trapped buyers; their stops below $4.10 become fuel for the next move. The trick is to wait for confirmation in either direction — never anticipate. Whichever side reclaims on volume wins.'
-  },
-  {
-    q: 'Your account is $15,000. You risk 1.5% per trade. You want to buy at $2.40 with a stop at $2.28. How many shares?',
-    opts: [
-      '6,250 shares (max your buying power)',
-      '1,875 shares ($225 risk ÷ $0.12 stop distance)',
-      '500 shares',
-      'There\'s not enough info'
-    ],
-    correct: 1,
-    fb: 'Risk dollars = 1.5% of $15,000 = $225. Stop distance = $2.40 − $2.28 = $0.12. Shares = $225 ÷ $0.12 = 1,875. Position cost = $4,500 (30% of account). The stop distance ALWAYS determines size — never the other way around. This is the single most important habit in trading.'
-  },
-  {
-    q: 'A small cap is trading below its daily 200 EMA. You see a clean intraday curl on the 5-min with VWAP reclaim. What\'s the right play?',
-    opts: [
-      'Full size — the intraday setup is clean',
-      'Skip the trade — long-term posture is bearish; you\'re fighting the current',
-      'Reduce size and demand extra confirmation — the intraday setup is real, but the higher-timeframe context is against you. Many traders skip these',
-      'Short it'
-    ],
-    correct: 2,
-    fb: 'Either skipping or reducing size is defensible. The intraday curl + VWAP reclaim is a real bullish signal, but the daily 200 EMA is the institutional line — algorithms and funds use it as a benchmark. Trading longs below the daily 200 EMA puts you in the minority. If you take it, the bar for confirmation is much higher and the size much smaller.'
-  },
-  {
-    q: 'You\'re scanning a chart and see a flat $1.50 area that\'s been tested 5 times in 6 weeks, with each bounce smaller than the last. What\'s likely happening?',
-    opts: [
-      'The level is bulletproof — five tests prove it\'s strong',
-      'Support exhaustion. Each test is consuming the orders sitting there. Smaller bounces = fewer buyers left. Expect the level to break, not bounce',
-      'The number of touches doesn\'t matter',
-      'Buy aggressively — sixth time\'s the charm'
-    ],
-    correct: 1,
-    fb: 'This is textbook level exhaustion. The first two touches form a level; the third confirms it. After 4+ tests, especially with shrinking bounces, the pool of buyers is depleted. Plan for the break, not the bounce — or take a smaller bounce trade with a very tight stop and quick profit-taking.'
-  },
-  {
-    q: 'A stock breaks above resistance at $5.00 on 3× average volume. You missed the initial entry at $5.00 and price is now at $5.30. What\'s the higher-quality entry?',
-    opts: [
-      'Chase it — buy market at $5.30',
-      'Wait for the first pullback to test $5.00 as new support — buy the retest with a stop below. Lower risk, tighter stop',
-      'Short it because it\'s gone too far',
-      'Buy at $5.30 with a stop at $4.50'
-    ],
-    correct: 1,
-    fb: 'Role reversal in action — broken resistance becomes new support on the first retest. Chasing 6% above the breakout gives you a terrible reward-to-risk. Waiting for the retest gives you a tight, defined stop just below $5.00, and the role reversal at the level confirms buyers are stepping in again. This is one of the cleanest setups in the playbook.'
-  },
-  {
-    q: 'You see a level on a small-cap with: structural pivot ✓, premarket high ✓, $3.00 round number ✓, only tested once ✓, above daily 200 EMA ✓. What\'s the conviction level?',
-    opts: [
-      'Average — all small-cap levels look like this',
-      'Five independent factors agreeing is exceptional confluence — an A-grade level worth trading with full conviction and proper risk management',
-      'Wait until you have 10 factors',
-      'Confluence is meaningless'
-    ],
-    correct: 1,
-    fb: 'When five independent analytical frameworks all point to the same price zone, you\'ve found a setup worth waiting for. Each factor draws from a different lens — structural, intraday, psychological, freshness, higher-timeframe posture. This is what traders mean when they say "I have to take this trade." Define entry, stop, target, and execute.'
-  }
-];
-let currentQ = 0;
-function buildQuiz() {
-  const area = document.getElementById('quizArea');
-  if (currentQ >= questions.length) {
-    area.innerHTML = `<div style="text-align:center;padding:20px 0;">
+      const questions = [
+        {
+          q: "A small-cap stock has a structural pivot at $3.28 (high of the biggest-volume candle on the daily). It's currently at $3.10. What's the most useful framing?",
+          opts: [
+            "It's below $3.28 so the stock is broken — avoid it",
+            "Posture is bearish below $3.28; above $3.28 the bias flips bullish. Plan a long entry on a clean reclaim with volume",
+            "Pivots from the daily don't matter intraday",
+            "Buy now at $3.10 because it's cheaper",
+          ],
+          correct: 1,
+          fb: "The structural pivot is the price where power last shifted hands. Below it, the trapped buyers are underwater — sellers in control. Above it, the chart's posture flips and new buyers step in. The plan isn't to predict — it's to wait for the reclaim on volume and trade what the chart confirms.",
+        },
+        {
+          q: "You spot a stock with higher lows tightening into a flat $2.96 resistance, and volume is INCREASING on each push. What pattern is this and what are you watching for?",
+          opts: [
+            "Compression — wait for volume to dry up further",
+            "A bear flag — short it",
+            "The Curl — watch for the break above $2.96 on a high-volume candle; buyers are escalating, sellers are being absorbed",
+            "A failed breakout — short the rejection",
+          ],
+          correct: 2,
+          fb: "Increasing volume on each push is the key tell that separates the Curl from random chop. Buyers are getting more aggressive while sellers hold the line. When the supply at resistance is finally absorbed, the break is usually fast. Entry: candle close above $2.96 on the highest volume of the sequence.",
+        },
+        {
+          q: "Price breaks above the premarket high at $4.10 on light volume, then immediately falls back below $4.10 on heavier volume. What should you be planning?",
+          opts: [
+            "Buy aggressively — the breakout will continue",
+            "Hold and hope",
+            "The failed break is a trap. Wait for the reclaim signal — if price goes back above $4.10 on volume, that reclaim is high-probability long. If it stays below, plan for further downside",
+            "There's no setup here",
+          ],
+          correct: 2,
+          fb: "Failed breakout + reclaim is one of the highest-probability setups in trading. The weak-volume break trapped buyers; their stops below $4.10 become fuel for the next move. The trick is to wait for confirmation in either direction — never anticipate. Whichever side reclaims on volume wins.",
+        },
+        {
+          q: "Your account is $15,000. You risk 1.5% per trade. You want to buy at $2.40 with a stop at $2.28. How many shares?",
+          opts: [
+            "6,250 shares (max your buying power)",
+            "1,875 shares ($225 risk ÷ $0.12 stop distance)",
+            "500 shares",
+            "There's not enough info",
+          ],
+          correct: 1,
+          fb: "Risk dollars = 1.5% of $15,000 = $225. Stop distance = $2.40 − $2.28 = $0.12. Shares = $225 ÷ $0.12 = 1,875. Position cost = $4,500 (30% of account). The stop distance ALWAYS determines size — never the other way around. This is the single most important habit in trading.",
+        },
+        {
+          q: "A small cap is trading below its daily 200 EMA. You see a clean intraday curl on the 5-min with VWAP reclaim. What's the right play?",
+          opts: [
+            "Full size — the intraday setup is clean",
+            "Skip the trade — long-term posture is bearish; you're fighting the current",
+            "Reduce size and demand extra confirmation — the intraday setup is real, but the higher-timeframe context is against you. Many traders skip these",
+            "Short it",
+          ],
+          correct: 2,
+          fb: "Either skipping or reducing size is defensible. The intraday curl + VWAP reclaim is a real bullish signal, but the daily 200 EMA is the institutional line — algorithms and funds use it as a benchmark. Trading longs below the daily 200 EMA puts you in the minority. If you take it, the bar for confirmation is much higher and the size much smaller.",
+        },
+        {
+          q: "You're scanning a chart and see a flat $1.50 area that's been tested 5 times in 6 weeks, with each bounce smaller than the last. What's likely happening?",
+          opts: [
+            "The level is bulletproof — five tests prove it's strong",
+            "Support exhaustion. Each test is consuming the orders sitting there. Smaller bounces = fewer buyers left. Expect the level to break, not bounce",
+            "The number of touches doesn't matter",
+            "Buy aggressively — sixth time's the charm",
+          ],
+          correct: 1,
+          fb: "This is textbook level exhaustion. The first two touches form a level; the third confirms it. After 4+ tests, especially with shrinking bounces, the pool of buyers is depleted. Plan for the break, not the bounce — or take a smaller bounce trade with a very tight stop and quick profit-taking.",
+        },
+        {
+          q: "A stock breaks above resistance at $5.00 on 3× average volume. You missed the initial entry at $5.00 and price is now at $5.30. What's the higher-quality entry?",
+          opts: [
+            "Chase it — buy market at $5.30",
+            "Wait for the first pullback to test $5.00 as new support — buy the retest with a stop below. Lower risk, tighter stop",
+            "Short it because it's gone too far",
+            "Buy at $5.30 with a stop at $4.50",
+          ],
+          correct: 1,
+          fb: "Role reversal in action — broken resistance becomes new support on the first retest. Chasing 6% above the breakout gives you a terrible reward-to-risk. Waiting for the retest gives you a tight, defined stop just below $5.00, and the role reversal at the level confirms buyers are stepping in again. This is one of the cleanest setups in the playbook.",
+        },
+        {
+          q: "You see a level on a small-cap with: structural pivot ✓, premarket high ✓, $3.00 round number ✓, only tested once ✓, above daily 200 EMA ✓. What's the conviction level?",
+          opts: [
+            "Average — all small-cap levels look like this",
+            "Five independent factors agreeing is exceptional confluence — an A-grade level worth trading with full conviction and proper risk management",
+            "Wait until you have 10 factors",
+            "Confluence is meaningless",
+          ],
+          correct: 1,
+          fb: 'When five independent analytical frameworks all point to the same price zone, you\'ve found a setup worth waiting for. Each factor draws from a different lens — structural, intraday, psychological, freshness, higher-timeframe posture. This is what traders mean when they say "I have to take this trade." Define entry, stop, target, and execute.',
+        },
+      ];
+      let currentQ = 0;
+      function buildQuiz() {
+        const area = document.getElementById("quizArea");
+        if (currentQ >= questions.length) {
+          area.innerHTML = `<div style="text-align:center;padding:20px 0;">
       <h3 style="margin-bottom:8px;">Module complete</h3>
       <p class="muted">You've worked through all the core concepts. The next step: pull up a real small-cap chart, build the level map using the five-step process from Module 4, and practice scoring levels before risking real money.</p>
       <button class="quiz-next show" onclick="currentQ=0;buildQuiz();" style="margin-top:12px;">↩ Start over</button>
     </div>`;
-    return;
-  }
-  const q = questions[currentQ];
-  area.innerHTML = `
+          return;
+        }
+        const q = questions[currentQ];
+        area.innerHTML = `
     <div style="font-size:12px;color:var(--text3);font-weight:600;margin-bottom:8px;">QUESTION ${currentQ + 1} OF ${questions.length}</div>
     <div class="quiz-q">${q.q}</div>
-    ${q.opts.map((o, i) => `<button class="quiz-opt" id="qo${i}" onclick="answerQuiz(${i})">${o}</button>`).join('')}
+    ${q.opts.map((o, i) => `<button class="quiz-opt" id="qo${i}" onclick="answerQuiz(${i})">${o}</button>`).join("")}
     <div class="quiz-fb" id="qfb"></div>
-    <button class="quiz-next" id="qnx" onclick="currentQ++;buildQuiz();">${currentQ + 1 < questions.length ? 'Next question →' : 'See results'}</button>
+    <button class="quiz-next" id="qnx" onclick="currentQ++;buildQuiz();">${currentQ + 1 < questions.length ? "Next question →" : "See results"}</button>
   `;
-}
-function answerQuiz(idx) {
-  const q = questions[currentQ];
-  document.querySelectorAll('.quiz-opt').forEach((b, i) => {
-    b.disabled = true;
-    if (i === q.correct) b.classList.add('correct');
-    else if (i === idx) b.classList.add('wrong');
-  });
-  const fb = document.getElementById('qfb');
-  fb.className = 'quiz-fb show ' + (idx === q.correct ? 'ok' : 'no');
-  fb.textContent = (idx === q.correct ? '✓ Correct. ' : '✗ Not quite. ') + q.fb;
-  document.getElementById('qnx').classList.add('show');
-}
-buildQuiz();
-</script>
-
-</body>
+      }
+      function answerQuiz(idx) {
+        const q = questions[currentQ];
+        document.querySelectorAll(".quiz-opt").forEach((b, i) => {
+          b.disabled = true;
+          if (i === q.correct) b.classList.add("correct");
+          else if (i === idx) b.classList.add("wrong");
+        });
+        const fb = document.getElementById("qfb");
+        fb.className = "quiz-fb show " + (idx === q.correct ? "ok" : "no");
+        fb.textContent =
+          (idx === q.correct ? "✓ Correct. " : "✗ Not quite. ") + q.fb;
+        document.getElementById("qnx").classList.add("show");
+      }
+      buildQuiz();
+    </script>
+  </body>
 </html>
