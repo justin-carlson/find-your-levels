@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Levels - Small-Cap Resistance Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root {
+  --bg: #FAFAF7;
+  --bg2: #F1F0EB;
+  --bg3: #E8E7E2;
+  --card: #FFFFFF;
+  --text: #1A1A18;
+  --text2: #6B6A65;
+  --text3: #9E9D98;
+  --border: rgba(0,0,0,0.08);
+  --border2: rgba(0,0,0,0.14);
+  --green: #2D8C3C;
+  --green-bg: #E8F5E9;
+  --green-text: #1B5E20;
+  --red: #C62828;
+  --red-bg: #FFEBEE;
+  --red-text: #B71C1C;
+  --blue: #1565C0;
+  --blue-bg: #E3F2FD;
+  --blue-text: #0D47A1;
+  --amber: #E65100;
+  --amber-bg: #FFF3E0;
+  --amber-text: #BF360C;
+  --purple: #6A1B9A;
+  --purple-bg: #F3E5F5;
+  --purple-text: #4A148C;
+  --teal: #00695C;
+  --teal-bg: #E0F2F1;
+  --teal-text: #004D40;
+  --font: 'DM Sans', -apple-system, sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+  --radius: 10px;
+  --radius-lg: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: light;
+  }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; color-scheme: light; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+
+/* HEADER */
+.hero {
+  padding: 60px 0 48px;
+  text-align: center;
+}
+.hero-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 20px;
+  background: var(--blue-bg);
+  color: var(--blue-text);
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+.hero p {
+  font-size: 17px;
+  color: var(--text2);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* NAV */
+.chapter-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 0;
+  margin-bottom: 48px;
+}
+.chapter-nav-inner {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.chapter-nav-inner::-webkit-scrollbar { display: none; }
+.ch-link {
+  flex-shrink: 0;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 14px 18px;
+  color: var(--text3);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.ch-link:hover { color: var(--text); }
+.ch-link.active { color: var(--text); border-bottom-color: var(--blue); }
+
+/* CHAPTER */
+.chapter {
+  margin-bottom: 72px;
+  scroll-margin-top: 60px;
+}
+.ch-num {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 6px;
+}
+.chapter h2 {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+.chapter .ch-sub {
+  font-size: 15px;
+  color: var(--text2);
+  margin-bottom: 28px;
+}
+
+/* SECTIONS */
+h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+p, .prose { font-size: 15px; color: var(--text); margin-bottom: 16px; }
+.muted { color: var(--text2); }
+.small { font-size: 13px; }
+
+/* CARDS */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.stat-card {
+  background: var(--bg2);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+.stat-label { font-size: 12px; color: var(--text3); margin-bottom: 4px; font-weight: 500; }
+.stat-val { font-size: 24px; font-weight: 600; letter-spacing: -0.02em; }
+.stat-sub { font-size: 12px; color: var(--text2); margin-top: 2px; }
+
+/* CALLOUT BOXES */
+.callout {
+  border-left: 3px solid;
+  padding: 16px 20px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.callout strong { font-weight: 600; }
+.callout.green { border-color: var(--green); background: var(--green-bg); color: var(--green-text); }
+.callout.red { border-color: var(--red); background: var(--red-bg); color: var(--red-text); }
+.callout.blue { border-color: var(--blue); background: var(--blue-bg); color: var(--blue-text); }
+.callout.amber { border-color: var(--amber); background: var(--amber-bg); color: var(--amber-text); }
+.callout.purple { border-color: var(--purple); background: var(--purple-bg); color: var(--purple-text); }
+.callout.teal { border-color: var(--teal); background: var(--teal-bg); color: var(--teal-text); }
+
+/* TWO COL */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+@media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+/* STEPS */
+.step-list { margin-bottom: 24px; }
+.step {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+.step:last-child { border-bottom: none; }
+.step-dot {
+  width: 32px; height: 32px; min-width: 32px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 600;
+  margin-top: 2px;
+}
+.step-dot.blue { background: var(--blue-bg); color: var(--blue-text); }
+.step-dot.green { background: var(--green-bg); color: var(--green-text); }
+.step-dot.amber { background: var(--amber-bg); color: var(--amber-text); }
+.step-dot.purple { background: var(--purple-bg); color: var(--purple-text); }
+.step-dot.teal { background: var(--teal-bg); color: var(--teal-text); }
+.step-dot.red { background: var(--red-bg); color: var(--red-text); }
+.step-body h3 { font-size: 15px; margin-bottom: 4px; }
+.step-body p { font-size: 14px; color: var(--text2); margin-bottom: 0; }
+
+/* CHECKLIST */
+.check-list { list-style: none; margin-bottom: 20px; }
+.check-list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 14px; margin-bottom: 10px; line-height: 1.5;
+}
+.ck { width: 18px; height: 18px; min-width: 18px; border-radius: 50%; margin-top: 2px; }
+.ck-g { background: var(--green); }
+.ck-r { background: var(--red); }
+.ck-b { background: var(--blue); }
+.ck-a { background: var(--amber); }
+.ck-p { background: var(--purple); }
+.ck-t { background: var(--teal); }
+.ck-x { background: var(--text3); }
+
+/* FORMULA */
+.formula {
+  background: var(--bg2);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 2;
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+.formula .label { color: var(--text3); font-size: 11px; font-family: var(--font); }
+
+/* CHART */
+.chart-wrap {
+  margin-bottom: 20px;
+  position: relative;
+}
+.chart-wrap canvas { width: 100% !important; border-radius: var(--radius); }
+.chart-caption { font-size: 12px; color: var(--text3); margin-top: 6px; }
+
+/* INTERACTIVE CALCULATOR */
+.calc-row {
+  display: flex; gap: 12px; align-items: center; margin-bottom: 10px; flex-wrap: wrap;
+}
+.calc-label { font-size: 13px; color: var(--text2); min-width: 50px; font-weight: 500; }
+.calc-input {
+  width: 100px; padding: 8px 10px;
+  font-size: 14px; font-family: var(--mono);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+  transition: border-color 0.2s;
+}
+.calc-input:focus { outline: none; border-color: var(--blue); }
+.pivot-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+.pivot-row:last-child { border-bottom: none; }
+.pivot-name { color: var(--text2); font-weight: 500; }
+.pivot-val { font-family: var(--mono); font-weight: 500; }
+
+/* TAGS */
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 4px;
+}
+.tag-g { background: var(--green-bg); color: var(--green-text); }
+.tag-r { background: var(--red-bg); color: var(--red-text); }
+.tag-b { background: var(--blue-bg); color: var(--blue-text); }
+.tag-a { background: var(--amber-bg); color: var(--amber-text); }
+.tag-p { background: var(--purple-bg); color: var(--purple-text); }
+
+/* BAR METERS */
+.bar-wrap { margin-bottom: 12px; }
+.bar-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--text2); margin-bottom: 4px; }
+.bar-track { height: 8px; background: var(--bg3); border-radius: 4px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 4px; transition: width 0.4s; }
+
+/* COMPACT REFERENCE */
+.level-row {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+.level-row:last-child { border-bottom: none; }
+.level-name { font-weight: 600; color: var(--text); }
+.level-desc { color: var(--text2); }
+@media (max-width: 600px) { .level-row { grid-template-columns: 1fr; gap: 2px; } }
+
+/* QUIZ */
+.quiz-q {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+.quiz-opt {
+  display: block; width: 100%; text-align: left;
+  padding: 12px 16px; margin-bottom: 8px;
+  font-size: 14px; font-family: var(--font);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.quiz-opt:hover { background: var(--bg2); }
+.quiz-opt.correct { background: var(--green-bg); border-color: var(--green); color: var(--green-text); }
+.quiz-opt.wrong { background: var(--red-bg); border-color: var(--red); color: var(--red-text); }
+.quiz-fb {
+  font-size: 14px;
+  padding: 14px 18px;
+  border-radius: var(--radius);
+  margin-top: 10px;
+  display: none;
+  line-height: 1.6;
+}
+.quiz-fb.show { display: block; }
+.quiz-fb.ok { background: var(--green-bg); color: var(--green-text); }
+.quiz-fb.no { background: var(--red-bg); color: var(--red-text); }
+.quiz-next {
+  margin-top: 14px; padding: 10px 20px;
+  border: 1px solid var(--border2); border-radius: var(--radius);
+  background: transparent; font-size: 14px; font-family: var(--font);
+  color: var(--text); cursor: pointer; display: none;
+}
+.quiz-next.show { display: inline-block; }
+.quiz-next:hover { background: var(--bg2); }
+
+/* SCENARIO BUTTONS */
+.scenario-btns { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.sc-btn {
+  padding: 8px 16px; font-size: 13px; font-weight: 500;
+  border: 1px solid var(--border2); border-radius: var(--radius);
+  background: transparent; cursor: pointer; font-family: var(--font);
+  color: var(--text); transition: all 0.15s;
+}
+.sc-btn:hover { background: var(--bg2); }
+.sc-btn.active { background: var(--blue-bg); border-color: var(--blue); color: var(--blue-text); }
+.sc-panel { display: none; }
+.sc-panel.active { display: block; }
+.sc-panel .chart-wrap { height: 220px; }
+.sc-panel .chart-wrap canvas { height: 100% !important; }
+
+/* COMPRESSION VIS */
+.comp-vis {
+  position: relative;
+  height: 300px;
+  margin: 20px 0;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 40px 0 60px;
+  border-top: 1px solid var(--border);
+  color: var(--text3);
+  font-size: 13px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- HERO -->
+<div class="hero">
+  <span class="hero-badge">Small-cap level guide</span>
+  <h1>Find Your Levels</h1>
+  <p>Find old resistance and high-volume decision areas before a small-cap stock wakes up.</p>
+</div>
+
+<div class="callout red">
+  <strong>Education only:</strong> This is not financial advice, trade alerts, or investment recommendations. Small-cap and microcap stocks can move violently on news, promotions, low float, thin liquidity, or no obvious reason at all.
+</div>
+
+<!-- NAV -->
+<nav class="chapter-nav" id="chapterNav">
+  <div class="chapter-nav-inner">
+    <a class="ch-link active" href="#ch1" onclick="goTo(event,'ch1')">1. Start Here</a>
+    <a class="ch-link" href="#ch2" onclick="goTo(event,'ch2')">2. Timeframes</a>
+    <a class="ch-link" href="#ch3" onclick="goTo(event,'ch3')">3. Volume</a>
+    <a class="ch-link" href="#ch4" onclick="goTo(event,'ch4')">4. Resistance</a>
+    <a class="ch-link" href="#ch5" onclick="goTo(event,'ch5')">5. Plan</a>
+    <a class="ch-link" href="#ch6" onclick="goTo(event,'ch6')">6. Practice</a>
+  </div>
+</nav>
+
+<!-- ================================ -->
+<!-- CHAPTER 1: START HERE -->
+<!-- ================================ -->
+<section class="chapter" id="ch1">
+  <div class="ch-num">Chapter 1</div>
+  <h2>Start Here: What We Are Looking For</h2>
+  <p class="ch-sub">For small caps, the first job is usually simple: find the old prices where sellers showed up before. Those old levels can matter again when a stock suddenly runs on news, volume, or attention.</p>
+
+  <div class="callout blue">
+    <strong>The core idea:</strong> We are not calculating pivots from a formula. We are finding structural pivot points: places on the chart where the balance between buyers and sellers clearly shifted.
+  </div>
+
+  <div class="callout purple">
+    <strong>Structural pivot point:</strong> A high-volume candle can become a line in the sand. If price sold off, printed massive volume, then surged, that area can show aggressive buying. If price later returns, traders may remember that zone. If price is below a prior high-volume candle's high, that high can act as resistance until buyers prove they can reclaim it.
+  </div>
+
+  <h3>The main clues</h3>
+  <div class="card-grid">
+    <div class="stat-card">
+      <div class="stat-label">Old highs</div>
+      <div class="stat-val" style="color:var(--red);">Ceilings</div>
+      <div class="stat-sub">Prior peaks where rallies stopped.</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Big volume candles</div>
+      <div class="stat-val" style="color:var(--blue);">Pivots</div>
+      <div class="stat-sub">Where control may have shifted.</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Failed moves</div>
+      <div class="stat-val" style="color:var(--amber);">Supply</div>
+      <div class="stat-sub">Places where buyers got trapped before.</div>
+    </div>
+  </div>
+
+  <h3>Think in zones</h3>
+  <p>A useful level is rarely one exact penny. If price rejected around $2.45, $2.50, and $2.58, mark that whole area as a zone. Small caps are noisy, so give the chart room.</p>
+
+  <div class="chart-wrap">
+    <canvas id="historyChart" height="260"></canvas>
+    <div class="chart-caption">Simulated chart: red circles mark old highs that could become resistance when price returns.</div>
+  </div>
+
+  <div class="callout amber">
+    <strong>Keep it practical:</strong> The map does not predict the move. It tells you where the stock may pause, reject, squeeze through, or need extra volume.
+  </div>
+</section>
+
+<!-- ================================ -->
+<!-- CHAPTER 2: TIMEFRAMES -->
+<!-- ================================ -->
+<section class="chapter" id="ch2">
+  <div class="ch-num">Chapter 2</div>
+  <h2>The Timeframe Sweep</h2>
+  <p class="ch-sub">Start zoomed out and work down. The bigger the timeframe, the more visible the level is to other traders.</p>
+
+  <div class="card">
+    <div class="level-row">
+      <div class="level-name">Yearly / max chart</div>
+      <div class="level-desc">Find the biggest overhead levels: prior major highs, old gap zones, reverse splits, and areas where runs died.</div>
+    </div>
+    <div class="level-row">
+      <div class="level-name">Monthly</div>
+      <div class="level-desc">Mark broad shelves and major rejection zones. These are the levels that can surprise traders who only look intraday.</div>
+    </div>
+    <div class="level-row">
+      <div class="level-name">Weekly</div>
+      <div class="level-desc">Look for repeated highs and high-volume candles from prior runs. These often become the first serious resistance zones.</div>
+    </div>
+    <div class="level-row">
+      <div class="level-name">Daily</div>
+      <div class="level-desc">Tighten the zones. Circle the biggest-volume candles and mark their highs, lows, opens, closes, and wick extremes.</div>
+    </div>
+    <div class="level-row">
+      <div class="level-name">Intraday</div>
+      <div class="level-desc">Use only after the larger map is done. Intraday levels help with timing, but they should not replace obvious overhead history.</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:20px;">
+    <div class="bar-wrap">
+      <div class="bar-label"><span>Yearly / max</span><span>Major historical resistance</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--purple);"></div></div>
+    </div>
+    <div class="bar-wrap">
+      <div class="bar-label"><span>Monthly</span><span>Big zones and old runs</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:88%;background:var(--blue);"></div></div>
+    </div>
+    <div class="bar-wrap">
+      <div class="bar-label"><span>Weekly</span><span>Repeated highs and volume shelves</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:72%;background:var(--teal);"></div></div>
+    </div>
+    <div class="bar-wrap">
+      <div class="bar-label"><span>Daily</span><span>Most useful working map</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:58%;background:var(--amber);"></div></div>
+    </div>
+    <div class="level-row">
+      <div class="level-name">Intraday</div>
+      <div class="level-desc">Execution context after the major levels are marked.</div>
+    </div>
+  </div>
+
+  <div class="callout blue">
+    <strong>Workflow:</strong> Mark levels on the largest chart first, then refine them on the daily chart. If a daily level also exists on the weekly or monthly, keep it on the map.
+  </div>
+</section>
+
+<!-- ================================ -->
+<!-- CHAPTER 3: HIGH VOLUME -->
+<!-- ================================ -->
+<section class="chapter" id="ch3">
+  <div class="ch-num">Chapter 3</div>
+  <h2>High-Volume Candles Matter Most</h2>
+  <p class="ch-sub">When a candle trades unusually large volume, that price area can become a structural pivot because a lot of buyers and sellers now have memory there.</p>
+
+  <div class="chart-wrap">
+    <canvas id="volChart" height="280"></canvas>
+    <div class="chart-caption">The largest volume candles often mark the areas where future reactions can happen.</div>
+  </div>
+
+  <h3>What to mark on a big-volume candle</h3>
+  <div class="card">
+    <div class="level-row">
+      <div class="level-name">High</div>
+      <div class="level-desc">The top of the candle can become resistance if price returns from below.</div>
+    </div>
+    <div class="level-row">
+      <div class="level-name">Close</div>
+      <div class="level-desc">A strong close can become a key acceptance/rejection area later.</div>
+    </div>
+    <div class="level-row">
+      <div class="level-name">Open</div>
+      <div class="level-desc">The starting price of the volume event can matter if the move fully retraces.</div>
+    </div>
+    <div class="level-row">
+      <div class="level-name">Low / wick</div>
+      <div class="level-desc">The lower extreme can become a risk line or support zone if price pulls back.</div>
+    </div>
+  </div>
+
+  <div class="callout amber">
+    <strong>Simple rule:</strong> If the candle is huge and the volume is huge, mark the full candle range. Then let the next lower timeframe help you tighten the zone.
+  </div>
+
+  <div class="two-col">
+    <div class="callout green">
+      <strong>From below:</strong><br>
+      The high of a previous high-volume candle can be a breakout trigger. Reclaiming it suggests buyers are taking control of that old supply.
+    </div>
+    <div class="callout red">
+      <strong>From above:</strong><br>
+      The same zone can become support if price pulls back and holds. If it fails, the reclaim may have been a trap.
+    </div>
+  </div>
+</section>
+
+<!-- ================================ -->
+<!-- CHAPTER 4: RESISTANCE -->
+<!-- ================================ -->
+<section class="chapter" id="ch4">
+  <div class="ch-num">Chapter 4</div>
+  <h2>Resistance on Small-Cap Runners</h2>
+  <p class="ch-sub">When a small cap is suddenly up on news or unusual activity, old resistance matters because trapped holders, prior buyers, and short-term traders may sell into those zones.</p>
+
+  <div class="chart-wrap">
+    <canvas id="resistChart" height="240"></canvas>
+    <div class="chart-caption">Old highs and failed breakout areas can become overhead resistance when a stock wakes up again.</div>
+  </div>
+
+  <h3>Resistance levels to prioritize</h3>
+  <ul class="check-list">
+    <li><span class="ck ck-r"></span><strong>Prior major highs</strong> from the yearly, monthly, weekly, and daily charts.</li>
+    <li><span class="ck ck-r"></span><strong>High-volume candle highs</strong> where the stock previously failed or reversed.</li>
+    <li><span class="ck ck-a"></span><strong>Gap-down origins</strong> where a previous selloff started.</li>
+    <li><span class="ck ck-b"></span><strong>Round numbers</strong> such as $1, $2, $2.50, $5, and $10.</li>
+    <li><span class="ck ck-p"></span><strong>Old consolidation shelves</strong> where price spent time before breaking down.</li>
+  </ul>
+
+  <div class="callout amber">
+    <strong>When a level breaks:</strong> A clean break through old resistance on real volume can turn that zone into a reference point. If the stock cannot hold above it, that failure is useful information too.
+  </div>
+</section>
+
+<!-- ================================ -->
+<!-- CHAPTER 5: PLAN -->
+<!-- ================================ -->
+<section class="chapter" id="ch5">
+  <div class="ch-num">Chapter 5</div>
+  <h2>Build the Simple Plan</h2>
+  <p class="ch-sub">Once the major levels are marked, the plan is just a ranked list of zones above and below current price.</p>
+
+  <div class="card">
+    <h3 style="margin-bottom: 16px;">The workflow</h3>
+    <div class="step-list">
+      <div class="step">
+        <div class="step-dot purple">1</div>
+        <div class="step-body">
+          <h3>Start on the largest chart</h3>
+          <p>Mark the obvious overhead levels first: old highs, huge-volume candles, gap-down starts, and failed runs.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-dot blue">2</div>
+        <div class="step-body">
+          <h3>Work down to weekly and daily</h3>
+          <p>Refine the zones and remove levels that are too far away to matter today.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-dot green">3</div>
+        <div class="step-body">
+          <h3>Circle the biggest volume candles</h3>
+          <p>Use those candles to decide which levels deserve the most attention.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-dot amber">4</div>
+        <div class="step-body">
+          <h3>Rank the nearest resistance</h3>
+          <p>Know the next two or three overhead zones before thinking about entry or continuation.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-dot red">5</div>
+        <div class="step-body">
+          <h3>Watch the reaction</h3>
+          <p>At the level, look for rejection, pause, heavy selling, clean break, or reclaim. The reaction matters more than the line.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Level quality scorecard</h3>
+  <p>Use this to decide which old levels matter most:</p>
+
+  <div class="card">
+    <div id="scorecard"></div>
+    <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border);">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+        <span style="font-weight: 600;">Level quality score</span>
+        <span id="totalScore" style="font-family: var(--mono); font-weight: 600; font-size: 18px;">0 / 10</span>
+      </div>
+      <div class="bar-track" style="height: 10px;">
+        <div class="bar-fill" id="scoreBar" style="width:0%; background: var(--red);"></div>
+      </div>
+      <p id="scoreVerdict" class="muted small" style="margin-top: 8px;"></p>
+    </div>
+  </div>
+
+  <h3>Risk management</h3>
+  <div class="card-grid">
+    <div class="stat-card">
+      <div class="stat-label">Risk per trade</div>
+      <div class="stat-val">1-2%</div>
+      <div class="stat-sub">Of account equity, often less for volatile small caps.</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Minimum R:R</div>
+      <div class="stat-val">2 : 1</div>
+      <div class="stat-sub">Only works if the target is realistic and liquid.</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Daily stop</div>
+      <div class="stat-val">Set it</div>
+      <div class="stat-sub">Know when you are done before emotions take over.</div>
+    </div>
+  </div>
+
+  <div class="callout amber">
+    <strong>Position sizing formula:</strong><br>
+    Shares = Account risk dollars / (Entry price - Stop price)<br><br>
+    Example: $25,000 account, risk 1% = $250. Entry at $4.50, stop at $4.25. Shares = $250 / $0.25 = 1,000 shares.<br><br>
+    The stop distance controls the size. If the spread or liquidity makes the stop unrealistic, skip the trade.
+  </div>
+</section>
+
+<!-- ================================ -->
+<!-- CHAPTER 6: PRACTICE -->
+<!-- ================================ -->
+<section class="chapter" id="ch6">
+  <div class="ch-num">Chapter 6</div>
+  <h2>Practice Lab</h2>
+  <p class="ch-sub">Practice the same questions you should ask when a small cap is suddenly active.</p>
+
+  <div class="card">
+    <div id="quizArea"></div>
+  </div>
+</section>
+
+<div class="footer">
+  <p>This guide is for educational purposes only. Trading involves significant risk of loss. Never trade with money you can't afford to lose. Paper trade first and understand broker requirements before actively day trading.</p>
+</div>
+
+</div><!-- end container -->
+
+<script>
+function goTo(e, id) {
+  e.preventDefault();
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      document.querySelectorAll('.ch-link').forEach(link => link.classList.remove('active'));
+      const active = document.querySelector(`.ch-link[href="#${entry.target.id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+}, { threshold: 0.15, rootMargin: '-60px 0px -60% 0px' });
+document.querySelectorAll('.chapter').forEach(chapter => observer.observe(chapter));
+
+const tc = 'rgba(0,0,0,0.45)';
+const gc = 'rgba(0,0,0,0.06)';
+const lineCol = '#1565C0';
+const greenLine = '#2D8C3C';
+const redLine = '#C62828';
+const amberLine = '#E65100';
+
+function baseOpts(extra = {}) {
+  return {
+    responsive: true,
+    plugins: { legend: { display: false }, ...extra.plugins },
+    scales: {
+      x: { ticks: { color: tc, font: { size: 10 } }, grid: { color: gc }, ...extra.x },
+      y: { ticks: { color: tc, font: { size: 10 } }, grid: { color: gc }, ...extra.y }
+    },
+    animation: { duration: 500 }
+  };
+}
+
+function makeCharts() {
+  if (!window.Chart) return;
+
+  const historyCtx = document.getElementById('historyChart');
+  if (historyCtx) {
+    const data = [1.20,1.35,1.52,1.48,1.40,1.72,2.10,2.45,2.38,2.12,1.90,1.72,1.88,2.05,2.32,2.58,2.51,2.24,2.02,1.82,1.70,1.92,2.16,2.42,2.36,2.18,1.98,1.86,2.08,2.34,2.62,2.54,2.28,2.06,1.95,2.22,2.50,2.85,3.12,2.90];
+    const highs = [7, 15, 30, 38];
+    new Chart(historyCtx, {
+      type: 'line',
+      data: {
+        labels: data.map(() => ''),
+        datasets: [{
+          data,
+          borderColor: lineCol,
+          borderWidth: 2,
+          tension: 0.32,
+          pointRadius: data.map((_, i) => highs.includes(i) ? 6 : 0),
+          pointBackgroundColor: data.map((_, i) => highs.includes(i) ? redLine : 'transparent'),
+          pointBorderColor: data.map((_, i) => highs.includes(i) ? redLine : 'transparent'),
+          fill: false
+        }]
+      },
+      options: baseOpts()
+    });
+  }
+
+  const volumeCtx = document.getElementById('volChart');
+  if (volumeCtx) {
+    const price = [1.10,1.14,1.18,1.25,1.36,1.58,1.82,2.20,2.04,1.86,1.70,1.55,1.62,1.78,2.05,2.42,2.70,2.48,2.20,2.02,1.92,2.08,2.36,2.72,3.05];
+    const vol = [0.2,0.3,0.4,0.5,0.8,1.2,2.8,7.4,5.6,2.4,1.1,0.7,0.6,0.9,1.8,4.9,8.2,3.4,1.7,1.0,0.8,1.4,2.7,5.2,6.6];
+    const colors = vol.map(v => v >= 5 ? 'rgba(198,40,40,0.58)' : v >= 2 ? 'rgba(21,101,192,0.46)' : 'rgba(0,0,0,0.14)');
+    new Chart(volumeCtx, {
+      data: {
+        labels: price.map(() => ''),
+        datasets: [
+          { type: 'line', data: price, borderColor: lineCol, borderWidth: 2, tension: 0.32, pointRadius: 0, yAxisID: 'yP', fill: false },
+          { type: 'bar', data: vol, backgroundColor: colors, yAxisID: 'yV', barPercentage: 0.72 }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: true, labels: { color: tc, font: { size: 11 }, generateLabels: () => [
+          { text: 'Price', fillStyle: lineCol, strokeStyle: lineCol, lineWidth: 2 },
+          { text: 'Volume spike', fillStyle: 'rgba(198,40,40,0.58)', strokeStyle: 'transparent', lineWidth: 0 }
+        ]}}},
+        scales: {
+          x: { ticks: { display: false }, grid: { color: gc } },
+          yP: { position: 'right', ticks: { color: tc, font: { size: 10 } }, grid: { color: gc } },
+          yV: { position: 'left', ticks: { color: tc, font: { size: 10 } }, grid: { display: false } }
+        }
+      }
+    });
+  }
+
+  const resistCtx = document.getElementById('resistChart');
+  if (resistCtx) {
+    const data = [1.10,1.22,1.38,1.62,1.92,2.28,2.55,2.42,2.12,1.86,1.64,1.50,1.66,1.92,2.20,2.48,2.56,2.34,2.04,1.80,1.68,1.92,2.24,2.52,2.78,3.08,3.26,3.06,2.82,2.60,2.72,3.02,3.36,3.78,4.12];
+    const levelA = data.map(() => 2.55);
+    const levelB = data.map((_, i) => i > 23 ? 3.25 : null);
+    new Chart(resistCtx, {
+      type: 'line',
+      data: {
+        labels: data.map(() => ''),
+        datasets: [
+          { data, borderColor: lineCol, borderWidth: 2, tension: 0.32, pointRadius: 0, fill: false },
+          { data: levelA, borderColor: redLine, borderWidth: 2, borderDash: [6,4], pointRadius: 0, fill: false },
+          { data: levelB, borderColor: amberLine, borderWidth: 2, borderDash: [6,4], pointRadius: 0, fill: false, spanGaps: false }
+        ]
+      },
+      options: { ...baseOpts({ plugins: { legend: { display: true, labels: { color: tc, font: { size: 11 }, generateLabels: () => [
+        { text: 'Price', fillStyle: lineCol, strokeStyle: lineCol, lineWidth: 2 },
+        { text: 'Old high-volume pivot', fillStyle: redLine, strokeStyle: redLine, lineWidth: 2, lineDash: [6,4] },
+        { text: 'Next resistance', fillStyle: amberLine, strokeStyle: amberLine, lineWidth: 2, lineDash: [6,4] }
+      ]}}}}) }
+    });
+  }
+}
+makeCharts();
+
+const scoreItems = [
+  'Level comes from yearly, monthly, weekly, or daily chart history',
+  'Level is connected to one of the biggest-volume candles',
+  'The high of that candle is clear resistance from below',
+  'The candle range marks a clean structural pivot zone',
+  'Price previously rejected, stalled, or reversed there',
+  'The level appears on more than one timeframe',
+  'The level is close enough to matter for the current move',
+  'The stock has enough liquidity to trade around the level',
+  'There is a clear invalidation point if the level fails',
+  'The next target/resistance is mapped before entry'
+];
+
+function buildScorecard() {
+  const scorecard = document.getElementById('scorecard');
+  if (!scorecard) return;
+  scorecard.innerHTML = scoreItems.map((item, i) =>
+    `<label style="display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);cursor:pointer;">
+      <input type="checkbox" id="sc${i}" onchange="updateScore()" style="margin-top:3px;flex-shrink:0;width:18px;height:18px;accent-color:var(--green);">
+      <span style="font-size:14px;line-height:1.5;">${item}</span>
+    </label>`
+  ).join('');
+  updateScore();
+}
+
+function updateScore() {
+  let total = 0;
+  scoreItems.forEach((_, i) => { if (document.getElementById('sc' + i)?.checked) total++; });
+  const pct = Math.round(total / scoreItems.length * 100);
+  document.getElementById('totalScore').textContent = total + ' / ' + scoreItems.length;
+  const bar = document.getElementById('scoreBar');
+  bar.style.width = pct + '%';
+  bar.style.background = pct >= 70 ? 'var(--green)' : pct >= 40 ? 'var(--amber)' : 'var(--red)';
+  const verdict = document.getElementById('scoreVerdict');
+  verdict.textContent = pct >= 70 ? 'High-priority structural pivot. Watch the reaction closely.' :
+    pct >= 40 ? 'Useful level, but wait for confirmation.' :
+    'Low-priority level. Keep looking for cleaner history or volume.';
+}
+buildScorecard();
+
+const questions = [
+  {
+    q: 'Your teacher says pivot, but not the formula kind. What are they usually pointing to?',
+    opts: [
+      'A calculated value from high, low, and close',
+      'A structural level where price and volume show that control shifted',
+      "Only today's first green candle",
+      'Any random whole-dollar price'
+    ],
+    correct: 1,
+    fb: 'This guide uses structural pivot points: chart levels where buyers and sellers clearly fought, often around unusually high volume.'
+  },
+  {
+    q: 'You find the highest-volume daily candle from an old run. What should you mark first?',
+    opts: [
+      'Only the candle color',
+      'The high, low, open, close, and wick range of that candle',
+      'Only the next day candle',
+      'Nothing unless the candle is from today'
+    ],
+    correct: 1,
+    fb: 'The full candle range can matter, but the high is especially important when price is coming from below.'
+  },
+  {
+    q: 'A small cap is running into the high of a prior high-volume candle. Why can that high act as resistance?',
+    opts: [
+      'It proves buyers already control the stock',
+      'It may be a trapped-liquidity area where old holders and sellers react',
+      'Because all highs are identical',
+      'Because formulas make it important'
+    ],
+    correct: 1,
+    fb: 'High volume means many shares changed hands. When price returns, prior buyers, sellers, and shorts may all react around that zone.'
+  },
+  {
+    q: 'What makes a structural pivot stronger?',
+    opts: [
+      'It is visible only on the 1-minute chart',
+      'It appears on a larger timeframe and lines up with a high-volume reaction',
+      'It has no volume nearby',
+      'It is far away from current price'
+    ],
+    correct: 1,
+    fb: 'Larger timeframe visibility plus high volume usually makes the level more meaningful.'
+  },
+  {
+    q: 'A stock clears a prior high-volume candle high with strong volume and then holds above it. What changed?',
+    opts: [
+      'The old resistance may now become a reference level for buyers',
+      'The chart no longer has risk',
+      'The level should be deleted immediately',
+      'The move must continue forever'
+    ],
+    correct: 0,
+    fb: 'A reclaim can show buyers taking control, but it still needs risk management and the next resistance mapped.'
+  }
+];
+
+let currentQ = 0;
+function buildQuiz() {
+  const area = document.getElementById('quizArea');
+  if (!area) return;
+  if (currentQ >= questions.length) {
+    area.innerHTML = `<div style="text-align:center;padding:20px 0;">
+      <h3 style="margin-bottom:8px;">Module complete</h3>
+      <p class="muted">Next step: open a real daily or weekly chart, find the biggest-volume candles, and mark their structural pivot zones.</p>
+      <button class="quiz-next show" onclick="currentQ=0;buildQuiz();" style="margin-top:12px;">Start over</button>
+    </div>`;
+    return;
+  }
+  const q = questions[currentQ];
+  area.innerHTML = `
+    <div style="font-size:12px;color:var(--text3);font-weight:600;margin-bottom:8px;">QUESTION ${currentQ + 1} OF ${questions.length}</div>
+    <div class="quiz-q">${q.q}</div>
+    ${q.opts.map((o, i) => `<button class="quiz-opt" id="qo${i}" onclick="answerQuiz(${i})">${o}</button>`).join('')}
+    <div class="quiz-fb" id="qfb"></div>
+    <button class="quiz-next" id="qnx" onclick="currentQ++;buildQuiz();">${currentQ + 1 < questions.length ? 'Next question' : 'See results'}</button>
+  `;
+}
+
+function answerQuiz(idx) {
+  const q = questions[currentQ];
+  document.querySelectorAll('.quiz-opt').forEach((button, i) => {
+    button.disabled = true;
+    if (i === q.correct) button.classList.add('correct');
+    else if (i === idx) button.classList.add('wrong');
+  });
+  const feedback = document.getElementById('qfb');
+  feedback.className = 'quiz-fb show ' + (idx === q.correct ? 'ok' : 'no');
+  feedback.textContent = (idx === q.correct ? 'Correct. ' : 'Not quite. ') + q.fb;
+  document.getElementById('qnx').classList.add('show');
+}
+buildQuiz();
+</script>
+
+</body>
+</html>
