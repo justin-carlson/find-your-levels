@@ -456,6 +456,66 @@
         background: var(--text3);
       }
 
+      /* CHARTING RULEBOOK — line legend */
+      .rulebook-group {
+        margin-bottom: 20px;
+      }
+      .rulebook-group:last-child {
+        margin-bottom: 0;
+      }
+      .rulebook-group + .rulebook-group {
+        padding-top: 18px;
+        border-top: 1px solid var(--border2);
+      }
+      .rulebook-group-label {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--text3);
+        margin-bottom: 14px;
+      }
+      .rulebook-row {
+        display: grid;
+        grid-template-columns: 38px max-content 1fr;
+        align-items: center;
+        column-gap: 14px;
+        row-gap: 0;
+        margin-bottom: 12px;
+        font-size: 13.5px;
+        line-height: 1.5;
+      }
+      .rulebook-row:last-child { margin-bottom: 0; }
+      .rb-line {
+        height: 2.5px;
+        border-radius: 1px;
+      }
+      .rb-solid.rb-red  { background: var(--red); }
+      .rb-solid.rb-green { background: var(--green); }
+      .rb-dashed.rb-red {
+        background: repeating-linear-gradient(to right,
+          var(--red) 0, var(--red) 5px,
+          transparent 5px, transparent 9px);
+      }
+      .rb-dashed.rb-green {
+        background: repeating-linear-gradient(to right,
+          var(--green) 0, var(--green) 5px,
+          transparent 5px, transparent 9px);
+      }
+      .rb-dashed.rb-blue {
+        background: repeating-linear-gradient(to right,
+          #42a5f5 0, #42a5f5 5px,
+          transparent 5px, transparent 9px);
+      }
+      .rb-label {
+        font-weight: 600;
+        white-space: nowrap;
+        color: var(--text1);
+      }
+      .rb-desc {
+        color: var(--text2);
+      }
+
       /* VISUAL PLACEHOLDER (text-based "chart" description) */
       .visual {
         background: var(--bg2);
@@ -1078,22 +1138,37 @@
         <p>To keep your chart readable in a fraction of a second during live trading, apply a consistent visual system based on timeframe and strength. Platforms like ThinkorSwim and TradingView support custom line styles — this is a guide, not a requirement, but following it makes live reading significantly faster.</p>
 
         <div class="card">
-          <h4>Solid Lines — Macro Walls (Weekly / Monthly)</h4>
-          <p>Reserved for your highest timeframes. These represent deep historical memory and massive institutional orders. Price will rarely slice through these on low volume.</p>
-          <ul class="check-list">
-            <li><span class="ck ck-r"></span><strong>Red Solid Line:</strong> Macro Resistance — a major historical ceiling where sellers have dumped shares.</li>
-            <li><span class="ck ck-g"></span><strong>Green Solid Line:</strong> Macro Support — a major historical floor where large buyers have stepped in.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h4>Dashed Lines — Intraday Levels (1-min / 5-min / 15-min)</h4>
-          <p>Used for shorter-term, fluid levels that form during the live session or represent dynamic trend rails. Highly reactive but easier to breach than solid macro lines.</p>
-          <ul class="check-list">
-            <li><span class="ck ck-r"></span><strong>Red Dashed:</strong> Intraday Resistance — Premarket High (PMH), High of Day (HOD).</li>
-            <li><span class="ck ck-g"></span><strong>Green Dashed:</strong> Intraday Support — Previous Day Low (PDL), early consolidation lows.</li>
-            <li><span class="ck ck-b"></span><strong>Light Blue Dashed:</strong> Daily 200 EMA — plotted on your 1-min or 5-min chart to track the long-term trend rail without switching timeframes.</li>
-          </ul>
+          <div class="rulebook-group">
+            <div class="rulebook-group-label">Macro — Weekly / Monthly</div>
+            <div class="rulebook-row">
+              <div class="rb-line rb-solid rb-red"></div>
+              <span class="rb-label">Red Solid</span>
+              <span class="rb-desc">Macro Resistance — a major historical ceiling where sellers have dumped shares.</span>
+            </div>
+            <div class="rulebook-row">
+              <div class="rb-line rb-solid rb-green"></div>
+              <span class="rb-label">Green Solid</span>
+              <span class="rb-desc">Macro Support — a major historical floor where large buyers have stepped in.</span>
+            </div>
+          </div>
+          <div class="rulebook-group">
+            <div class="rulebook-group-label">Intraday — 1-min / 5-min / 15-min</div>
+            <div class="rulebook-row">
+              <div class="rb-line rb-dashed rb-red"></div>
+              <span class="rb-label">Red Dashed</span>
+              <span class="rb-desc">Intraday Resistance — Premarket High (PMH), High of Day (HOD).</span>
+            </div>
+            <div class="rulebook-row">
+              <div class="rb-line rb-dashed rb-green"></div>
+              <span class="rb-label">Green Dashed</span>
+              <span class="rb-desc">Intraday Support — Previous Day Low (PDL), early consolidation lows.</span>
+            </div>
+            <div class="rulebook-row">
+              <div class="rb-line rb-dashed rb-blue"></div>
+              <span class="rb-label">Light Blue Dashed</span>
+              <span class="rb-desc">Daily 200 EMA — plotted on your 1-min or 5-min chart to track the long-term trend rail without switching timeframes.</span>
+            </div>
+          </div>
         </div>
 
         <div class="callout teal">
