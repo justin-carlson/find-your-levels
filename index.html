@@ -456,6 +456,32 @@
         background: var(--text3);
       }
 
+      /* LEVEL LISTS — dot + label + description grid */
+      .level-list { margin-bottom: 20px; }
+      .ll-row {
+        display: grid;
+        grid-template-columns: 10px 180px 1fr;
+        align-items: start;
+        column-gap: 12px;
+        margin-bottom: 10px;
+        font-size: 13.5px;
+        line-height: 1.5;
+      }
+      .ll-row:last-child { margin-bottom: 0; }
+      .ck-sm {
+        width: 10px;
+        height: 10px;
+        min-width: 10px;
+        border-radius: 50%;
+        margin-top: 4px;
+      }
+      .ll-label {
+        font-weight: 600;
+        white-space: nowrap;
+        color: var(--text1);
+      }
+      .ll-desc { color: var(--text2); }
+
       /* CHARTING RULEBOOK — line legend */
       .rulebook-group {
         margin-bottom: 20px;
@@ -885,30 +911,12 @@
           little track record. But when the history is there, it matters. Look
           for:
         </p>
-        <ul class="check-list">
-          <li>
-            <span class="ck ck-b"></span><strong>High-volume candles</strong> —
-            the biggest volume bars on the daily or weekly chart. Those prices
-            are structural pivots where power shifted. Mark them.
-          </li>
-          <li>
-            <span class="ck ck-b"></span
-            ><strong>Major swing highs and swing lows</strong> — prior supply
-            zones where the stock topped out, and demand zones where it launched
-            from.
-          </li>
-          <li>
-            <span class="ck ck-b"></span><strong>Psychological levels</strong> —
-            whole and half dollars ($3.00, $3.50, $4.00). Thin-float stocks
-            often stall or reverse at these to the penny.
-          </li>
-          <li>
-            <span class="ck ck-b"></span><strong>200 EMA on the daily</strong> —
-            is the stock above or below it? Above = long-term bullish posture.
-            Below = you're trading against the trend, which raises the bar for
-            any long.
-          </li>
-        </ul>
+        <div class="level-list">
+          <div class="ll-row"><span class="ck-sm ck-b"></span><span class="ll-label">High-volume candles</span><span class="ll-desc">The biggest volume bars on the daily or weekly chart. Structural pivots where power shifted — mark them.</span></div>
+          <div class="ll-row"><span class="ck-sm ck-b"></span><span class="ll-label">Swing highs & lows</span><span class="ll-desc">Prior supply zones where the stock topped out, and demand zones where it launched from.</span></div>
+          <div class="ll-row"><span class="ck-sm ck-b"></span><span class="ll-label">Psychological levels</span><span class="ll-desc">Whole and half dollars ($3.00, $3.50, $4.00). Thin-float stocks often stall or reverse at these to the penny.</span></div>
+          <div class="ll-row"><span class="ck-sm ck-b"></span><span class="ll-label">Daily 200 EMA</span><span class="ll-desc">Above it = long-term bullish posture. Below it = trading against the trend, which raises the bar for any long.</span></div>
+        </div>
         <p>
           These historical levels are guides, not guarantees. They're prices
           where the stock has memory — where reactions are more likely than
@@ -920,31 +928,12 @@
           Once you have the historical picture, zoom into the recent daily bars
           and mark what other active traders are watching:
         </p>
-        <ul class="check-list">
-          <li>
-            <span class="ck ck-a"></span
-            ><strong>Previous day high (PDH)</strong> — one of the most-watched
-            intraday levels. A clean break above it with volume attracts
-            momentum buyers.
-          </li>
-          <li>
-            <span class="ck ck-a"></span
-            ><strong>Previous day low (PDL)</strong> — losing it often
-            accelerates selling. Below PDL = sellers were in control yesterday
-            and may be again.
-          </li>
-          <li>
-            <span class="ck ck-a"></span><strong>Previous close</strong> —
-            gap-ups and gap-downs are measured from here. The size and nature of
-            the gap tells you something about conviction.
-          </li>
-          <li>
-            <span class="ck ck-a"></span
-            ><strong>Recent consolidation ranges</strong> — where price spent
-            the most time recently. These zones are loaded with unfilled orders
-            on both sides.
-          </li>
-        </ul>
+        <div class="level-list">
+          <div class="ll-row"><span class="ck-sm ck-a"></span><span class="ll-label">Previous day high (PDH)</span><span class="ll-desc">One of the most-watched intraday levels. A clean break above it with volume attracts momentum buyers.</span></div>
+          <div class="ll-row"><span class="ck-sm ck-a"></span><span class="ll-label">Previous day low (PDL)</span><span class="ll-desc">Losing it often accelerates selling. Below PDL = sellers were in control yesterday and may be again.</span></div>
+          <div class="ll-row"><span class="ck-sm ck-a"></span><span class="ll-label">Previous close</span><span class="ll-desc">Gap-ups and gap-downs are measured from here. The size and nature of the gap tells you something about conviction.</span></div>
+          <div class="ll-row"><span class="ck-sm ck-a"></span><span class="ll-label">Consolidation ranges</span><span class="ll-desc">Where price spent the most time recently. These zones are loaded with unfilled orders on both sides.</span></div>
+        </div>
 
         <h3>Premarket levels</h3>
         <p>
@@ -952,18 +941,10 @@
           unusual activity. If the stock has been active before the open, two
           levels matter immediately:
         </p>
-        <ul class="check-list">
-          <li>
-            <span class="ck ck-g"></span><strong>Premarket high (PMH)</strong> —
-            typically the first significant level tested at the open. A break
-            above it on volume signals strong continuation. A rejection signals
-            distribution.
-          </li>
-          <li>
-            <span class="ck ck-g"></span><strong>Premarket low (PML)</strong> —
-            losing this level at the open is an early warning sign for longs.
-          </li>
-        </ul>
+        <div class="level-list">
+          <div class="ll-row"><span class="ck-sm ck-g"></span><span class="ll-label">Premarket high (PMH)</span><span class="ll-desc">Typically the first significant level tested at the open. A break above it on volume signals continuation; a rejection signals distribution.</span></div>
+          <div class="ll-row"><span class="ck-sm ck-g"></span><span class="ll-label">Premarket low (PML)</span><span class="ll-desc">Losing this level at the open is an early warning sign for longs.</span></div>
+        </div>
         <p>
           Also note the catalyst and where the gap landed. A $2.50 stock that
           opens at $4.00 on a press release has a clear reference point — the
@@ -975,36 +956,13 @@
           These form after the open. You track them in real time and add them to
           your map as they appear — they can't be marked in advance:
         </p>
-        <ul class="check-list">
-          <li>
-            <span class="ck ck-g"></span
-            ><strong>Opening range high / low (ORH / ORL)</strong> — the high
-            and low of the first 5–15 minutes. A break above ORH or below ORL
-            often sets the direction for the session.
-          </li>
-          <li>
-            <span class="ck ck-g"></span><strong>VWAP</strong> — the intraday
-            benchmark. Above = buyers in control. Below = sellers. A
-            volume-confirmed reclaim is bullish; a rejection from below is
-            bearish.
-          </li>
-          <li>
-            <span class="ck ck-g"></span
-            ><strong>High-of-day / Low-of-day (HOD / LOD)</strong> — the
-            most-watched levels in real time. Breaking HOD is the most common
-            momentum trigger in small caps.
-          </li>
-          <li>
-            <span class="ck ck-a"></span><strong>Halt levels</strong> — when an
-            LULD halt occurs, mark where it happened. Price on the resume often
-            uses that level as reference.
-          </li>
-          <li>
-            <span class="ck ck-b"></span
-            ><strong>9 EMA &amp; 20 EMA (1-min / 5-min)</strong> — dynamic trend
-            rails, not fixed levels. Covered below.
-          </li>
-        </ul>
+        <div class="level-list">
+          <div class="ll-row"><span class="ck-sm ck-g"></span><span class="ll-label">ORH / ORL</span><span class="ll-desc">The high and low of the first 5–15 minutes. A break above ORH or below ORL often sets the direction for the session.</span></div>
+          <div class="ll-row"><span class="ck-sm ck-g"></span><span class="ll-label">VWAP</span><span class="ll-desc">The intraday benchmark. Above = buyers in control. Below = sellers. A volume-confirmed reclaim is bullish; a rejection from below is bearish.</span></div>
+          <div class="ll-row"><span class="ck-sm ck-g"></span><span class="ll-label">HOD / LOD</span><span class="ll-desc">The most-watched levels in real time. Breaking HOD is the most common momentum trigger in small caps.</span></div>
+          <div class="ll-row"><span class="ck-sm ck-a"></span><span class="ll-label">Halt levels</span><span class="ll-desc">When an LULD halt occurs, mark where it happened. Price on the resume often uses that level as reference.</span></div>
+          <div class="ll-row"><span class="ck-sm ck-b"></span><span class="ll-label">9 & 20 EMA</span><span class="ll-desc">Dynamic trend rails on the 1-min and 5-min charts, not fixed levels. Covered in the section below.</span></div>
+        </div>
 
         <h3>Rank by confluence</h3>
         <p>
