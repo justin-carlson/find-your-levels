@@ -213,17 +213,6 @@
         border-top: none;
         padding-top: 24px;
       }
-      #m2 h2,
-      #m5 h2 {
-        font-size: 22px;
-        font-weight: 600;
-        border-left: none;
-        padding-left: 0;
-      }
-      #m2 .ch-sub,
-      #m5 .ch-sub {
-        padding-left: 0;
-      }
       .chapter .ch-sub {
         font-size: 15px;
         color: var(--text2);
@@ -542,13 +531,18 @@
         color: var(--text2);
       }
 
-      /* VISUAL PLACEHOLDER (text-based "chart" description) */
+      /* VISUALS */
       .visual {
         background: var(--bg2);
         border: 1px dashed var(--border2);
         border-radius: var(--radius);
         padding: 20px 22px;
         margin-bottom: 20px;
+      }
+      .visual.has-chart {
+        background: #fbfbf8;
+        border-style: solid;
+        border-color: var(--border);
       }
       .visual-label {
         font-size: 11px;
@@ -578,6 +572,102 @@
         color: var(--text3);
         font-style: italic;
         margin-top: 8px;
+      }
+      .chart-svg {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-top: 14px;
+        background: #ffffff;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+      }
+      .chart-svg text {
+        font-family: var(--font);
+        font-size: 12px;
+        fill: var(--text2);
+      }
+      .chart-svg .chart-title {
+        font-size: 13px;
+        font-weight: 700;
+        fill: var(--text);
+      }
+      .chart-svg .chart-label {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      .chart-svg .label-green {
+        fill: var(--green-text);
+      }
+      .chart-svg .label-red {
+        fill: var(--red-text);
+      }
+      .chart-svg .chart-kicker {
+        font-family: var(--mono);
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        fill: var(--text3);
+      }
+      .chart-svg .price-label {
+        font-family: var(--mono);
+        font-size: 10px;
+        fill: var(--text3);
+        dominant-baseline: hanging;
+      }
+      .chart-svg .chart-tag {
+        font-family: var(--mono);
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+      }
+      .chart-svg .volume-up {
+        fill: rgba(45, 140, 60, 0.35);
+      }
+      .chart-svg .volume-down {
+        fill: rgba(198, 40, 40, 0.35);
+      }
+      .chart-svg .annotation-line {
+        fill: none;
+        stroke-width: 1.5;
+        stroke-dasharray: 4 4;
+      }
+      .chart-svg .chart-grid {
+        stroke: rgba(0, 0, 0, 0.07);
+        stroke-width: 1;
+      }
+      .chart-svg .chart-axis {
+        stroke: rgba(0, 0, 0, 0.16);
+        stroke-width: 1.2;
+      }
+      .chart-svg .candle-up,
+      .chart-svg .wick-up {
+        fill: #00a886;
+        stroke: #00a886;
+      }
+      .chart-svg .candle-down,
+      .chart-svg .wick-down {
+        fill: #f23645;
+        stroke: #f23645;
+      }
+      .chart-svg .zone-demand {
+        fill: rgba(0, 168, 134, 0.12);
+        stroke: none;
+      }
+      .chart-svg .zone-supply {
+        fill: rgba(242, 54, 69, 0.12);
+        stroke: none;
+      }
+      @media (max-width: 560px) {
+        .visual.has-chart {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+        .chart-svg {
+          min-width: 620px;
+        }
       }
 
       /* TAGS */
@@ -771,14 +861,29 @@
     <nav class="chapter-nav" id="chapterNav">
       <div class="container">
         <div class="chapter-nav-inner">
+          <span class="ch-part-label">Part 1</span>
           <a class="ch-link active" href="#m1" onclick="goTo(event, 'm1')"
-            >The Psychology</a
+            >Psychology</a
+          >
+          <a class="ch-link" href="#m2" onclick="goTo(event, 'm2')"
+            >How We Trade</a
           >
           <a class="ch-link" href="#m3" onclick="goTo(event, 'm3')"
-            >Setting Your Levels</a
+            >Price Action</a
           >
           <a class="ch-link" href="#m4" onclick="goTo(event, 'm4')"
-            >Setups &amp; Patterns</a
+            >Frontside / Backside</a
+          >
+          <a class="ch-link" href="#m5" onclick="goTo(event, 'm5')"
+            >Setting Levels</a
+          >
+          <a class="ch-link" href="#m6" onclick="goTo(event, 'm6')"
+            >Indicators</a
+          >
+          <span class="ch-nav-sep"></span>
+          <span class="ch-part-label p2">Part 2</span>
+          <a class="ch-link" href="#m7" onclick="goTo(event, 'm7')"
+            >Setups</a
           >
         </div>
       </div>
@@ -786,6 +891,12 @@
 
     <div class="container">
       <!-- PART 1 -->
+      <div class="part-header">
+        <div class="part-num">Part 1</div>
+        <h2>Finding Your Levels</h2>
+        <p>Learn to read the chart and build your level map — psychology, then trend, then levels, then the indicators that grade them. By the end you can walk up to any small-cap chart and mark the prices that matter before the next move.</p>
+      </div>
+
       <!-- MODULE 1 -->
       <section class="chapter" id="m1">
         <h2>The Psychology</h2>
@@ -837,10 +948,51 @@
         <div class="callout amber">
           <strong>These are stocks you do not want to own.</strong> We do not hold and hope. If a trade does not go your way immediately based on your structure, you cut your losses without hesitation.
         </div>
+        <div class="callout blue">
+          <strong>"Buy low, sell high" — read it correctly.</strong> Most retail does the exact opposite: they buy high out of greed and sell low out of fear, because they let emotion pick their timing. But the fix is <em>not</em> to start buying whatever looks cheap — that's how you catch a falling knife on the backside. <strong>"Low" means low risk, not low price.</strong> You buy at support you trust, with your stop just beneath it, so if you're wrong you're wrong fast and cheap. You don't chase the breakout and become the trapped top-buyer — you buy the pullback or the retest and sell into the strength, while the FOMO crowd buys from you.
+        </div>
+
+        <h3>The one question: who is trapped?</h3>
+        <p>Once the psychology above clicks, everything you've read collapses into a single question — and you ask it before every trade, at every level:</p>
+        <div class="callout teal">
+          <strong>Who is trapped here, and when will they be forced to act?</strong>
+        </div>
+        <p>Break it into its parts:</p>
+        <div class="card">
+          <div class="level-list" style="margin-bottom:0;">
+            <div class="ll-row"><span class="ck-sm ck-r"></span><span class="ll-label">Who is on the wrong side?</span><span class="ll-desc">The buyers who chased the top, or the shorts who sold the bottom.</span></div>
+            <div class="ll-row"><span class="ck-sm ck-a"></span><span class="ll-label">Where are their stops?</span><span class="ll-desc">Sitting just past the line — above resistance for the trapped shorts, below support for the trapped longs.</span></div>
+            <div class="ll-row"><span class="ck-sm ck-g"></span><span class="ll-label">When are they forced out?</span><span class="ll-desc">The instant price crosses that line and the pain becomes unbearable, or their stop simply triggers for them.</span></div>
+          </div>
+        </div>
+        <p>That forced exit <em>is</em> the explosive move. A breakout isn't random momentum and it isn't magic — it's a crowd of trapped traders all hitting their breaking point at the same price, at the same time, again and again. Their panic is the fuel. This is why we stop hunting for the prettiest pattern and start hunting for the trapped crowd.</p>
+        <div class="callout teal">
+          And it's why we mark levels at all. <strong>A level is simply the price where a trapped crowd is waiting to be forced to act.</strong> Everything else in this guide — trend, volume, the indicators, the timeframes — exists to help you answer that one question with more confidence: <em>who is trapped, and is this the moment they break?</em>
+        </div>
       </section>
 
       <!-- MODULE 2 -->
       <section class="chapter" id="m2">
+        <h2>How We Trade — Find the Rhythm</h2>
+        <p class="ch-sub">Price doesn't move in a straight line. It breathes — pushing up into resistance, pulling back to support, gathering itself, pushing again. That ebb and flow is the rhythm of every chart, and trading it well is less like predicting the future and more like jumping into a turning rope: you don't leap at a random moment, you watch the rhythm until the timing is obvious, and <em>then</em> you step in.</p>
+
+        <p>It's human nature to want in on the green candle. We're wired to chase movement — the stock is running, it feels alive, and stepping in feels like joining the winning side. That instinct isn't a flaw; it's how all of us are built, and even experienced traders feel the pull. The skill isn't killing the instinct — it's pausing for one beat to ask the questions that tell you whether this is the right moment or the wrong one. <em>Am I buying into supply — straight into a ceiling of trapped sellers waiting to get out — or am I buying off support? Are the signals actually aligned behind me — the 9 and 20 EMA, MACD, volume, VWAP — or am I reacting to a single green candle?</em> When the answers line up, you step in with conviction. When they don't, you let the rope keep turning and wait for the next pass.</p>
+
+        <p>Three principles carry it.</p>
+
+        <div class="card">
+          <p><strong>We buy support, not breakouts.</strong> Support is just a level where a trapped crowd is forced to defend — and remember the role flip: a resistance that breaks on volume and holds <em>becomes</em> support. So "support" includes those freshly flipped levels, not only old floors. We buy <em>into</em> the pullback to a level we trust, with a stop just beneath it — not up at the highs, where breakout chasers get trapped. The breakout buyer and the support buyer are looking at the same level; one is paying the high and praying, the other is buying low-risk with a clean exit.</p>
+          <p><strong>We let supporting signals build conviction.</strong> A level on its own is a reason to watch. A level with the signals lining up behind it — volume stepping in, price holding above VWAP, the 9 EMA stacking underneath, a clean rejection wick off the line — is a reason to act. The more that agree, the more we trust the entry and the more size it earns. We don't buy because price is merely <em>near</em> support; we buy because the level <em>shows</em> it's holding. Confirmation, not anticipation — that's what keeps "buy low" from turning into catching a knife.</p>
+          <p style="margin-bottom:0;"><strong>We sell into strength.</strong> We pre-mark the next level up and scale out <em>into</em> the rally as price reaches it — selling while buyers are eager and it's easy, handing our shares to the FOMO crowd instead of becoming them. Selling into strength is the disciplined inverse of the retail trap: they sell in fear at the bottom; we sell in greed-of-others at the top.</p>
+        </div>
+
+        <div class="callout teal">
+          It won't work every time — no level holds forever, which is exactly why the stop exists. You don't need every jump to land. You keep your risk small when the rhythm breaks, and you let the clean ones run. Find the rhythm, buy the pullback into trusted support, sell into the push, and let the rope come back around for the next one.
+        </div>
+      </section>
+
+      <!-- MODULE 3 -->
+      <section class="chapter" id="m3">
         <h2>Reading Price Action</h2>
         <p class="ch-sub">Before you can find levels worth trading, you need to identify who currently owns the chart. Price only does three things — and knowing which state a stock is in comes before any other analysis.</p>
 
@@ -968,53 +1120,202 @@
         <div class="callout amber">
           <strong>When these aren't present, step aside.</strong> If the stock is chopping sideways, dumping below the EMAs, or making lower highs on heavy selling volume — there is no edge. Setups fail not because the patterns are wrong, but because the trend isn't there to support them.
         </div>
-
-        <h3>Mistaking a Candle for a Trend</h3>
-        <p>The easiest way to lose capital is trading a single candle instead of the dominant trend. Imagine a stock grinding downward all morning — lower highs, lower lows. Suddenly a large green candle pops on the 1-minute chart. To an undisciplined trader it looks like a massive reversal. They buy immediately. Seconds later, the stock reverses and dumps right back down.</p>
-        <p>In a dominant downtrend, sellers are waiting at every key level to unload shares. That green candle was not a reversal — it was a temporary breath before sellers stepped back in to push price lower.</p>
-        <div class="callout amber">
-          <strong>Do not trade individual candles.</strong> Look at the larger structure first. Who owns the battlefield?
-        </div>
       </section>
 
-      <!-- PART 2 -->
-      <!-- MODULE 3 -->
-      <section class="chapter ch-teal" id="m3">
-        <h2>Setting Your Levels</h2>
-        <p class="ch-sub">
-          With small caps, you don't pick tomorrow's stocks today. A stock hits your scanner — unusual volume, a catalyst, a sharp move — and you have seconds to figure out if there's a setup worth trading. The standard chart setup is a 1-minute, 5-minute, and daily side-by-side, sometimes with a 10-second for tape speed. Your job is to read those fast, mark the levels that matter, and watch new ones form in real time.
-        </p>
+      <!-- MODULE 4 -->
+      <section class="chapter" id="m4">
+        <h2>Trading the Trend — The Frontside and the Backside</h2>
+        <p class="ch-sub">There is one mistake that drains more new accounts than any bad setup ever could: trading the backside of a move without knowing you're on it.</p>
 
-        <h3>Finding your levels</h3>
-        <p>
-          A "level" is just a price where the stock has reacted before — a spike that got rejected, a flush that found a bid, a long consolidation that finally broke. Those prices are where buyers and sellers showed up in size in the past, and they're where they're likely to show up again. Your job is to find them and mark them with a horizontal line.
-        </p>
+        <p>It sounds like it should be obvious. It isn't. The trader doesn't think, "I'm buying into a downtrend." They think, "it's green, it's going up, I'm in." They see a single rising candle and their brain fills in a trend that isn't there. Then the stock rolls right back over and they become exactly what you read about in the psychology module — a trapped buyer, holding overhead supply, praying to get out flat.</p>
+        <p>Before you trade a single level, you have to know which side of the move you're standing on.</p>
 
-        <p>
-          When a stock hits your scanner, you have time to work through the chart before the next move. Maybe it squeezed up quick, sold off, and is now coming back up — that's when you go in and mark the pivots. You're not predicting; you're preparing. If price breaks through one of your levels on volume, the next move usually accelerates. If it gets rejected at one, the reaction tells you who's in control.
-        </p>
+        <h3>Frontside vs. backside</h3>
+        <p>Every momentum move has two halves.</p>
+        <div class="two-col">
+          <div class="callout green">
+            <strong>The frontside</strong><br />
+            The first leg up — the move is young. Price is making higher highs and higher lows, riding its moving averages, expanding on volume. The trend is <em>with</em> you. This is the only side we want to be buying.
+          </div>
+          <div class="callout red">
+            <strong>The backside</strong><br />
+            What comes after the top. The move has rolled over: lower highs, lower lows, price losing its rails, the trend now pointed <em>against</em> a long. The move is exhausted. Every long taken here is fighting the dominant direction.
+          </div>
+        </div>
+        <div class="callout amber">
+          Here's the cruel part, and the reason so many people get caught: <strong>the backside is full of green candles.</strong> A stock bleeding lower off its highs still bounces. It still prints sharp green candles that look, for ten seconds, exactly like the frontside did. Those bounces are not the trend resuming — they're a breath before sellers step back in. And they are precisely where undisciplined traders pile in, right before the next leg down.
+        </div>
 
-        <p>
-          <strong>On the daily chart</strong>, scan the stock's history for the biggest reactions. Major swing highs and lows. High-volume candles where the trend turned. The previous day's high and low. The previous close. Round-number prices where thin-float stocks often stall ($3.00, $3.50, $5.00). The 200 EMA as a long-term reference. Anywhere price has visibly reacted in the past is worth a line.
-        </p>
+        <h3>A green candle is not a trend</h3>
+        <p>The single most important correction to make in a new trader's head: <strong>one green candle proves nothing.</strong> The question is never "is this candle green?" It's "what does the structure say?"</p>
+        <p>In a dominant downtrend, sellers are waiting at every level to unload. A big green 1-minute candle in that environment isn't a reversal — it's bait. To know whether you're looking at a real trend or a backside bounce, you read three things together: the <strong>structure,</strong> the <strong>EMAs,</strong> and the <strong>level.</strong> All three have to agree before you call it a trend.</p>
 
-        <p>
-          <strong>Forming live during the session</strong>, watch for the premarket high and low (PMH / PML), the opening range high and low (ORH / ORL) in the first 5–15 minutes, the high and low of day (HOD / LOD) as they extend, VWAP as the intraday benchmark, halt levels if the stock gets halted, and the 9 and 20 EMAs as moving trend rails on the 1-min and 5-min charts.
-        </p>
+        <h3>1. Structure — candle over candle</h3>
+        <p>On the frontside, the chart builds <em>candle over candle:</em> each push makes a higher high, each pullback holds a higher low, and candles close strong near their highs. The move is stacking.</p>
+        <p>On the backside, that structure inverts: lower highs, lower lows, rallies failing earlier than the last, candles closing weak or red near their lows. If the stock can't make a new high — if each green push dies sooner than the one before — the trend is already broken, no matter how the current candle looks.</p>
 
-        <p>
-          <strong>A level is usually a zone, not a line.</strong> When you see a sharp drop, a small flat base, then a sharp rally — that base is a <strong>demand zone</strong>, where buyers built up enough firepower to take over. The reverse pattern (rally, base, drop) marks a <strong>supply zone</strong>. On thin small caps these zones are often tight enough that the line and the zone are basically the same thing — price reverses to the penny. On larger caps you give yourself a wider range to work with. Either way, what you're marking is the <em>base where one side took control</em>, not the absolute high or low of the move.
-        </p>
+        <h3>2. The EMAs — your trend rails</h3>
+        <p>The 9 and 20 EMA tell you the same story mechanically.</p>
+        <p><strong>Frontside:</strong> the 9 EMA is above the 20, both are rising, price rides above the 9, and pullbacks bounce off the 9 (or the slightly deeper 20) and continue. Candles living above the 9 is the cleanest sign the trend is intact.</p>
+        <p><strong>Backside:</strong> the 9 has crossed <em>below</em> the 20 (a bearish cross), the EMAs flatten or roll over, and price is now trading <em>under</em> the 9 with candles closing below it. Critically, the EMAs have flipped roles — they're now resistance overhead, not support beneath. A green candle ticking up while the 9 and 20 are crossed and price is stuck under them is not a trend. It's a bounce into resistance.</p>
+        <div class="callout blue">
+          Read it out loud: <em>9 over 20, price over the 9, pullbacks holding</em> = frontside. <em>9 under 20, price under the 9, bounces stalling at the EMAs</em> = backside. The candle can be green either way. The EMAs don't lie.
+        </div>
+
+        <h3>3. The level — where is this happening?</h3>
+        <p>Finally, location. A frontside long happens <em>above</em> a reclaimed level and above VWAP — in clean air, where there's no trapped supply overhead. A backside bounce happens <em>below</em> a level that has already broken: the old support is now a red ceiling sitting directly above price, and VWAP is overhead too.</p>
+        <p>This is the part traders miss in the moment. The stock might genuinely be ticking up — a real green candle, real upward movement — but it's doing it <em>below a broken level, under VWAP, with the EMAs crossed against it.</em> That's not a trend. That's a trapped-buyer machine: every tick up is just carrying price closer to the wall of sellers waiting to get out flat.</p>
+
+        <h3>Which side am I on? — the read before every trade</h3>
+        <p>Before you call anything an uptrend worth buying, answer three questions:</p>
+        <div class="card">
+          <div class="level-list" style="margin-bottom:0;">
+            <div class="ll-row"><span class="ck-sm ck-b"></span><span class="ll-label">Structure</span><span class="ll-desc">Higher highs and higher lows? Is the last push <em>bigger</em> than the one before, or smaller?</span></div>
+            <div class="ll-row"><span class="ck-sm ck-b"></span><span class="ll-label">EMAs</span><span class="ll-desc">Is the 9 above the 20 and price holding above the 9 — or are they crossed with candles underneath?</span></div>
+            <div class="ll-row"><span class="ck-sm ck-b"></span><span class="ll-label">Level / VWAP</span><span class="ll-desc">Is price above a reclaimed level and above VWAP — or bouncing under a broken one?</span></div>
+          </div>
+        </div>
+        <p>Three yeses: you're on the frontside, the trend is real, and your level setups have an edge. Any nos: step aside. You're most likely looking at a bounce on the backside — and a long there doesn't just lack an edge, it actively makes <em>you</em> the overhead supply for the next trader down.</p>
+        <div class="callout purple">
+          <strong>The discipline:</strong> we trade the frontside, with the trend, in clean air. The moment the structure breaks, the 9 loses the 20, and candles close below the rails, the trend is over for us — we don't chase green candles into resistance. Knowing when <em>not</em> to be in a trade is the whole skill.
+        </div>
 
         <div class="visual">
           <div class="visual-label">Chart placeholder</div>
+          <div class="visual-title">Frontside and backside of one move</div>
+          <p>A 5-min chart of a single small-cap run, left to right: a base, then a clean frontside leg — higher highs, higher lows, price riding above a rising 9 EMA (20 EMA below it), each pullback bouncing the rails. Then a rounded top. Then the backside: the 9 crosses below the 20, price drops under both EMAs, structure turns to lower highs and lower lows. One sharp green bounce candle on the backside is circled and labeled "The Trap — green candle, no trend: 9 under 20, price under the 9, below the broken level." VWAP and the old (now-broken) support line are drawn overhead as resistance.</p>
+          <p class="visual-note">Same stock, same day. The frontside is where you trade; the backside is where new traders get trapped buying green candles into a falling tape.</p>
+        </div>
+
+        <div class="visual">
+          <div class="visual-label">Chart placeholder</div>
+          <div class="visual-title">A bounce that isn't a trend</div>
+          <p>A zoomed 1-min view: the 9 and 20 EMA clearly crossed bearishly, price pinned below both. A single large green candle pushes up toward the 9 EMA from underneath — then the very next candle rejects off the EMA and closes red. A horizontal red line (former support, now resistance) sits just above. Labeled: "Up ≠ uptrend. The candle rose into crossed EMAs and a broken level — and failed."</p>
+          <p class="visual-note">Movement is not direction. A green candle under crossed EMAs and below a level is a bounce, not a trend.</p>
+        </div>
+      </section>
+
+      <!-- MODULE 5 -->
+      <section class="chapter ch-teal" id="m5">
+        <h2>Setting Your Levels</h2>
+        <p class="ch-sub">With small caps, you don't pick tomorrow's stocks today. A stock hits your scanner — unusual volume, a catalyst, a sharp move — and you have seconds to figure out if there's a setup worth trading. The standard chart setup is a 1-minute, 5-minute, and daily side-by-side, sometimes with a 10-second for tape speed. Your job is to read those fast, mark the levels that matter, and watch new ones form in real time.</p>
+
+        <h3>Finding your levels</h3>
+        <p>A "level" is just a price where the stock has reacted before — a spike that got rejected, a flush that found a bid, a long consolidation that finally broke. Those prices are where buyers and sellers showed up in size in the past, and they're where they're likely to show up again. Your job is to find them and mark them with a horizontal line.</p>
+        <p>When a stock hits your scanner, you have time to work through the chart before the next move. Maybe it squeezed up quick, sold off, and is now coming back up — that's when you go in and mark the pivots. You're not predicting; you're preparing. If price breaks through one of your levels on volume, the next move usually accelerates. If it gets rejected at one, the reaction tells you who's in control.</p>
+        <p><strong>On the daily chart</strong>, scan the stock's history for the biggest reactions: major swing highs and lows, high-volume candles where the trend turned, the previous day's high and low, the previous close, round-number prices where thin-float stocks often stall ($3.00, $3.50, $5.00), unfilled gaps, sharp rejection wicks, and the 200 EMA as a long-term reference. Anywhere price has visibly reacted in the past is worth a line.</p>
+        <p><strong>Forming live during the session</strong>, watch for the premarket high and low (PMH / PML), the opening range high and low (ORH / ORL) in the first 5–15 minutes, the high and low of day (HOD / LOD) as they extend, VWAP as the intraday benchmark, halt levels if the stock gets halted, and the 9 and 20 EMAs as moving trend rails on the 1-min and 5-min charts.</p>
+        <div class="callout teal">
+          <strong>The two you'll mark every single day:</strong> of all of these, the premarket high and the high of day come up the most. The PMH is the bar the stock had to clear just to look strong before the bell; the HOD is the live ceiling every breakout scanner and momentum trader is watching in real time. If you draw nothing else before the open, draw those two.
+        </div>
+        <p class="muted small"><em>The 9, 20, and 200 EMA and VWAP appear here as level sources. How each one is used to confirm and strengthen a level is covered in full in the Indicators &amp; Confluence section below.</em></p>
+
+        <h3>A level is usually a zone, not a line</h3>
+        <p>When you see a sharp drop, a small flat base, then a sharp rally — that base is a <strong>demand zone</strong>, where buyers built up enough firepower to take over. The reverse pattern (rally, base, drop) marks a <strong>supply zone</strong>. On thin small caps these zones are often tight enough that the line and the zone are basically the same thing — price reverses to the penny. On larger caps you give yourself a wider range to work with. Either way, what you're marking is the <em>base where one side took control</em>, not the absolute high or low of the move.</p>
+        <div class="callout teal">
+          <strong>A note on small-cap precision.</strong> Treating levels as zones is the safe default — but don't over-widen them. On thin-float small caps you'll regularly watch a <em>single exact price</em> get respected almost to the penny, on both rejection and breakout — usually a round number, a prior-day high, or the tip of a rejection wick. When a stock has reversed at the same exact price more than once, trust that price, not a loose band around it. Zone it when you're unsure; tighten to the line the moment the stock shows you it honors one.
+        </div>
+
+        <div class="visual has-chart">
+          <div class="visual-label">Chart example</div>
           <div class="visual-title">Demand zone (DBR) and supply zone (RBD)</div>
-          <p>Left side: price drops sharply, pauses in a small flat base, then rallies hard away. The base is highlighted in green and labeled "Demand zone — Drop, Base, Rally." Right side: price rallies sharply, pauses in a small flat base, then drops hard away. The base is highlighted in red and labeled "Supply zone — Rally, Base, Drop."</p>
+          <svg class="chart-svg" viewBox="0 0 760 320" role="img" aria-labelledby="dbr-rbd-title dbr-rbd-desc" xmlns="http://www.w3.org/2000/svg">
+            <title id="dbr-rbd-title">Demand zone and supply zone chart example</title>
+            <desc id="dbr-rbd-desc">Two side-by-side candlestick charts. The left chart shows a drop, a small base highlighted as a demand zone, then a rally. The right chart shows a rally, a small base highlighted as a supply zone, then a drop.</desc>
+            <rect x="1" y="1" width="758" height="318" rx="8" fill="#ffffff" />
+            <text class="chart-title" x="40" y="34">Demand zone - Drop, Base, Rally</text>
+            <text class="chart-title" x="420" y="34">Supply zone - Rally, Base, Drop</text>
+
+            <rect x="24" y="50" width="332" height="216" rx="8" fill="#fff" stroke="rgba(0,0,0,0.08)" />
+            <rect x="404" y="50" width="332" height="216" rx="8" fill="#fff" stroke="rgba(0,0,0,0.08)" />
+
+            <g aria-hidden="true">
+              <line class="chart-grid" x1="40" y1="90" x2="340" y2="90" />
+              <line class="chart-grid" x1="40" y1="130" x2="340" y2="130" />
+              <line class="chart-grid" x1="40" y1="170" x2="340" y2="170" />
+              <line class="chart-grid" x1="40" y1="210" x2="340" y2="210" />
+              <text class="price-label" x="306" y="98">$4.10</text>
+              <text class="price-label" x="306" y="138">$3.90</text>
+              <text class="price-label" x="306" y="178">$3.70</text>
+              <text class="price-label" x="306" y="218">$3.50</text>
+
+              <line class="chart-grid" x1="420" y1="90" x2="720" y2="90" />
+              <line class="chart-grid" x1="420" y1="130" x2="720" y2="130" />
+              <line class="chart-grid" x1="420" y1="170" x2="720" y2="170" />
+              <line class="chart-grid" x1="420" y1="210" x2="720" y2="210" />
+              <text class="price-label" x="686" y="98">$4.10</text>
+              <text class="price-label" x="686" y="138">$3.90</text>
+              <text class="price-label" x="686" y="178">$3.70</text>
+              <text class="price-label" x="686" y="218">$3.50</text>
+            </g>
+
+            <rect class="zone-demand" x="128" y="158" width="82" height="38" rx="3" stroke="none" />
+            <text class="chart-label label-green" x="169" y="217" text-anchor="middle">Demand zone</text>
+
+            <line class="wick-down" x1="64" y1="78" x2="64" y2="124" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-down" x="57" y="88" width="14" height="28" />
+            <line class="wick-down" x1="82" y1="104" x2="82" y2="146" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-down" x="75" y="116" width="14" height="24" />
+            <line class="wick-down" x1="100" y1="122" x2="100" y2="172" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-down" x="93" y="132" width="14" height="34" />
+            <line class="wick-down" x1="118" y1="154" x2="118" y2="205" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-down" x="111" y="166" width="14" height="30" />
+            <line class="wick-up" x1="140" y1="156" x2="140" y2="198" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-up" x="133" y="172" width="14" height="16" />
+            <line class="wick-down" x1="158" y1="160" x2="158" y2="194" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-down" x="151" y="169" width="14" height="13" />
+            <line class="wick-up" x1="176" y1="154" x2="176" y2="192" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-up" x="169" y="164" width="14" height="20" />
+            <line class="wick-up" x1="194" y1="150" x2="194" y2="190" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-up" x="187" y="162" width="14" height="18" />
+            <line class="wick-up" x1="214" y1="130" x2="214" y2="184" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-up" x="207" y="146" width="14" height="30" />
+            <line class="wick-up" x1="232" y1="96" x2="232" y2="162" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-up" x="225" y="112" width="14" height="42" />
+            <line class="wick-up" x1="250" y1="76" x2="250" y2="132" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-up" x="243" y="88" width="14" height="34" />
+            <line class="wick-down" x1="268" y1="68" x2="268" y2="118" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-down" x="261" y="78" width="14" height="26" />
+
+            <rect class="zone-supply" x="500" y="98" width="82" height="38" rx="3" stroke="none" />
+            <text class="chart-label label-red" x="541" y="158" text-anchor="middle">Supply zone</text>
+
+            <line class="wick-up" x1="442" y1="178" x2="442" y2="222" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-up" x="435" y="190" width="14" height="24" />
+            <line class="wick-up" x1="460" y1="154" x2="460" y2="208" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-up" x="453" y="166" width="14" height="34" />
+            <line class="wick-up" x1="478" y1="124" x2="478" y2="188" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-up" x="471" y="140" width="14" height="40" />
+            <line class="wick-up" x1="496" y1="94" x2="496" y2="152" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-up" x="489" y="108" width="14" height="34" />
+            <line class="wick-down" x1="518" y1="94" x2="518" y2="138" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-down" x="511" y="104" width="14" height="24" />
+            <line class="wick-up" x1="536" y1="96" x2="536" y2="134" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-up" x="529" y="108" width="14" height="18" />
+            <line class="wick-down" x1="554" y1="98" x2="554" y2="136" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-down" x="547" y="108" width="14" height="18" />
+            <line class="wick-down" x1="572" y1="100" x2="572" y2="142" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-down" x="565" y="112" width="14" height="20" />
+            <line class="wick-down" x1="592" y1="112" x2="592" y2="168" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-down" x="585" y="124" width="14" height="34" />
+            <line class="wick-down" x1="610" y1="138" x2="610" y2="198" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-down" x="603" y="150" width="14" height="38" />
+            <line class="wick-down" x1="628" y1="170" x2="628" y2="224" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-down" x="621" y="182" width="14" height="34" />
+            <line class="wick-up" x1="646" y1="188" x2="646" y2="232" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-up" x="639" y="200" width="14" height="22" />
+          </svg>
           <p class="visual-note">What you mark is the base — not the absolute high or low of the move.</p>
         </div>
 
+        <h3>Gaps and rejection wicks</h3>
+        <p>Two specific marks deserve their own lines, because each is the record of a violent imbalance — exactly the kind of memory the crowd reacts to later.</p>
+        <p><strong>Rejection wicks.</strong> A long wick is the footprint of a fast, hard rejection: price stabbed to that extreme, hit a wall of orders, and got slammed back within seconds. The tip of a long wick is often a more important level than any nearby candle body, because it marks the exact price where one side overwhelmed the other. Mark the high of a long upper wick as resistance and the low of a long lower wick as support — the crowd remembers where it got rejected hard.</p>
+        <p><strong>Gaps.</strong> When a stock gaps — opening well above or below the prior close and leaving an empty space with no trading in between — that gap becomes a level two ways. An <em>unfilled</em> gap acts as a magnet: price tends to drift back to "fill" it, so the far edge of the gap is a target worth marking. And the gap's boundaries — the previous close on one side, the open on the other — are clean lines the whole crowd can see. On small-cap gappers, the previous close and the edges of the morning gap are some of the most-reacted-to prices of the entire day.</p>
+
+        <h3>Levels flip when broken</h3>
         <div class="callout teal">
-          <strong>Levels flip when broken.</strong> A red resistance line that's defended a stock for weeks becomes a green support line the moment price clears it on volume and holds the pullback. The trapped sellers who were defending that price are now underwater — they have to cover, which fuels the move higher. New buyers use the same line as their entry floor. The reverse is true on the way down: a long-standing support that breaks on volume becomes a ceiling on the next attempt to reclaim. <strong>The role flip is the most important mechanic on the chart</strong> — most clean trade setups happen at prices that have just changed hands.
+          A red resistance line that's defended a stock for weeks becomes a green support line the moment price clears it on volume and holds the pullback. The trapped sellers who were defending that price are now underwater — they have to cover, which fuels the move higher. New buyers use the same line as their entry floor. The reverse is true on the way down: a long-standing support that breaks on volume becomes a ceiling on the next attempt to reclaim. <strong>The role flip is the most important mechanic on the chart</strong> — most clean trade setups happen at prices that have just changed hands.
         </div>
 
         <div class="visual">
@@ -1024,9 +1325,8 @@
           <p class="visual-note">The line literally changes color the moment the role flips. The break must come on volume and hold the retest — a weak break is usually a fakeout.</p>
         </div>
 
-        <p>
-          <strong>Fresh levels are stronger than tested ones.</strong> The first time price returns to a marked level, the original orders are still sitting there waiting to react — that's the cleanest, highest-probability reaction you'll get. Each subsequent visit consumes some of those orders. By the third or fourth test, the level is exhausted — most of the buyers (or sellers) who were defending it have already filled, and the next test usually breaks straight through. A useful tell: if each bounce off a level is smaller than the last, the level is weakening and the break is coming.
-        </p>
+        <h3>Fresh levels are stronger than tested ones</h3>
+        <p>The first time price returns to a marked level, the original orders are still sitting there waiting to react — that's the cleanest, highest-probability reaction you'll get. Each subsequent visit consumes some of those orders. By the third or fourth test, the level is exhausted — most of the buyers (or sellers) who were defending it have already filled, and the next test usually breaks straight through. A useful tell: if each bounce off a level is smaller than the last, the level is weakening and the break is coming.</p>
 
         <div class="visual">
           <div class="visual-label">Chart placeholder</div>
@@ -1035,10 +1335,8 @@
           <p class="visual-note">Each test consumes orders. The shrinking bounces are the tell — by the fourth visit, the level is exhausted.</p>
         </div>
 
-        <p>
-          <strong>Look for confluence.</strong> A single line is a guess. Multiple lines stacked at the same price — a structural pivot from months ago that's <em>also</em> the previous day high and <em>also</em> a round number — is a magnet. Three independent factors pointing at the same price means three different groups of traders are all watching that exact level. That's where the biggest reactions happen, and that's where your attention should go.
-        </p>
-
+        <h3>Look for confluence</h3>
+        <p>A single line is a guess. Multiple lines stacked at the same price — a structural pivot from months ago that's <em>also</em> the previous day high and <em>also</em> a round number — is a magnet. Three independent factors pointing at the same price means three different groups of traders are all watching that exact level. That's where the biggest reactions happen, and that's where your attention should go.</p>
         <div class="callout teal">
           <strong>Confluence in practice:</strong> A stock running hard approaches $5.00. That's a round number, the previous day high, and the high of a major-volume candle from months ago. Three independent factors pointing at one price. That's not coincidence — that's where you pay the most attention.
         </div>
@@ -1050,69 +1348,10 @@
           <p class="visual-note">Three independent reasons to watch the same price = three groups of traders watching the same level. That's the magnet.</p>
         </div>
 
-        <h3>Session time zones</h3>
-        <p>Volume and behavior shift dramatically through the trading day. Knowing which window you're in tells you whether a setup is worth taking or whether the conditions are working against you.</p>
-        <div class="level-list">
-          <div class="ll-row"><span class="ck-sm ck-x"></span><span class="ll-label">Premarket</span><span class="ll-desc">4:00 – 9:30 AM ET. Thin liquidity, news-driven moves. Where overnight gaps form and PMH/PML are set. Many small-cap traders start here.</span></div>
-          <div class="ll-row"><span class="ck-sm ck-g"></span><span class="ll-label">Opening drive</span><span class="ll-desc">9:30 – 10:00 AM ET. Heaviest volume of the day. Direction often set in the first 15–30 minutes. ORH/ORL form here.</span></div>
-          <div class="ll-row"><span class="ck-sm ck-g"></span><span class="ll-label">Mid-morning</span><span class="ll-desc">10:00 – 11:30 AM ET. Cleaner setups. The trend either follows the opening direction or reverses on confluence levels.</span></div>
-          <div class="ll-row"><span class="ck-sm ck-a"></span><span class="ll-label">Lunch lull</span><span class="ll-desc">11:30 AM – 1:30 PM ET. Volume drops sharply. Fake breakouts and chop become common — many traders step back.</span></div>
-          <div class="ll-row"><span class="ck-sm ck-g"></span><span class="ll-label">Power hour</span><span class="ll-desc">3:00 – 4:00 PM ET. Volume returns. Breakouts and reversals on the day's structure as positions get closed.</span></div>
-        </div>
-
-        <h3>The 200 EMA on the daily &mdash; the line in the sand</h3>
-        <div class="callout purple">
-          A stock trading <strong>at or above</strong> the 200 EMA on the daily is in a long-term bullish posture. Below it = long-term downtrend, and any long is fighting the current. Many funds and algorithms use the 200 EMA as a benchmark, so it acts as significant support or resistance on the daily chart. Treat it as a baseline filter: if a small cap is well below the 200 EMA, your bar for taking a long should be much higher.
-        </div>
-
-        <h3>Trading the trend: 9 EMA &amp; 20 EMA</h3>
-        <p>
-          When a stock is in a momentum move, it will often <em>respect</em> the 9 and 20 EMAs on the 1-min and 5-min charts — each pullback finds support at these moving averages before continuing higher. A stock consistently doing this is one of the clearest bullish signals on the intraday chart. It tells you buyers are in control and actively defending the trend.
-        </p>
-
-        <div class="callout green">
-          <strong>The core read:</strong> As long as the stock is pulling back to the 9 or 20 EMA and bouncing — not breaking through — the trend is intact. You trade with it, not against it. The moment it stops respecting those levels, the trend is weakening and caution is warranted.
-        </div>
-
-        <div class="visual">
-          <div class="visual-label">Chart placeholder</div>
-          <div class="visual-title">A stock respecting the 9 and 20 EMA on the 5-min chart</div>
-          <p>A 5-minute chart of a small-cap stock in a clean intraday uptrend. Two moving averages plotted: the 9 EMA (faster, hugging price closely) and the 20 EMA (slower, slightly below). Three pullbacks are marked: the first pulls back to the 9 EMA and bounces; the second pulls slightly deeper to the 20 EMA and bounces; the third bounces off the 9 again. The uptrend continues through all three.</p>
-          <p class="visual-note">As long as pullbacks bounce off the 9 or 20 EMA, buyers are defending the trend. A clean close below the 20 EMA is the warning sign that the trend is breaking.</p>
-        </div>
-
-        <div class="two-col">
-          <div class="callout green">
-            <strong>Holding above the 9 EMA</strong><br />
-            Strong trend. Buyers in full control. Each pullback to the 9 holds and continues higher — the most bullish intraday signal.
-          </div>
-          <div class="callout amber">
-            <strong>Pulling back to the 20 EMA and bouncing</strong><br />
-            Trend intact but losing some steam. Still a continuation signal — buyers are defending, just at a deeper level.
-          </div>
-          <div class="callout red">
-            <strong>Breaking below the 20 EMA</strong><br />
-            The trend has likely flipped. Step aside on longs and wait for the stock to reclaim the 20 EMA on volume before re-engaging.
-          </div>
-          <div class="callout blue">
-            <strong>9 EMA above 20 EMA</strong><br />
-            Short-term bullish posture confirmed. When the 9 crosses below the 20, sellers have taken over — wait for the cross to flip back.
-          </div>
-        </div>
-
         <h3>Trend lines and channels</h3>
-        <p>
-          EMAs give you a calculated trend rail. <strong>Trend lines</strong> let you draw your own. They're useful when the trend has a clean angle that the EMAs aren't quite capturing, or when price is clearly respecting a diagonal line that connects specific pivot points. Like horizontal levels, trend lines are places where buyers or sellers keep showing up — they're just sloped instead of flat.
-        </p>
-
-        <p>
-          <strong>How to draw one.</strong> For an uptrend, connect at least two higher lows with a straight line — it rises diagonally underneath price as dynamic support. For a downtrend, connect at least two lower highs — it falls diagonally above price as dynamic resistance. Two touches gives you a candidate line; a third touch that respects it confirms the line is real. The more times price tests and respects the line, the more meaningful it is — until it weakens from over-testing, same as a horizontal level.
-        </p>
-
-        <p>
-          <strong>Channels</strong> form when you can draw a parallel line on the opposite side of price. A bullish channel = rising trend line connecting the lows + a parallel line connecting the highs above. A bearish channel = falling trend line above + parallel line below. Channels give you both edges of the move — you can buy near the bottom of an uptrend channel and watch for resistance at the top. When price breaks <em>out</em> of a channel on volume, the move usually accelerates in that direction.
-        </p>
-
+        <p>A horizontal level catches price at one fixed number; a <strong>trend line</strong> is just support or resistance drawn on a slant. They're useful when the trend has a clean angle, or when price is clearly respecting a diagonal line connecting specific pivot points. Like horizontal levels, trend lines are places where buyers or sellers keep showing up — they're just sloped instead of flat.</p>
+        <p><strong>How to draw one.</strong> For an uptrend, connect at least two higher lows with a straight line — it rises diagonally underneath price as dynamic support. For a downtrend, connect at least two lower highs — it falls diagonally above price as dynamic resistance. Two touches gives you a candidate line; a third touch that respects it confirms the line is real. The more times price tests and respects the line, the more meaningful it is — until it weakens from over-testing, same as a horizontal level.</p>
+        <p><strong>Channels</strong> form when you can draw a parallel line on the opposite side of price. A bullish channel = rising trend line connecting the lows + a parallel line connecting the highs above. A bearish channel = falling trend line above + parallel line below. Channels give you both edges of the move — you can buy near the bottom of an uptrend channel and watch for resistance at the top. When price breaks <em>out</em> of a channel on volume, the move usually accelerates in that direction.</p>
         <div class="callout amber">
           <strong>When trend lines break, the trend is changing.</strong> A clean break of an uptrend line on volume is a warning that buyers are losing control — pullbacks may no longer find support. A break of a downtrend line is the opposite signal: sellers are losing grip and a reversal may be starting. Like horizontal levels, the break needs volume to be trusted; a weak slice through usually gets reclaimed.
         </div>
@@ -1124,20 +1363,13 @@
           <p class="visual-note">A break of any of these lines on volume is the same signal as a horizontal-level break: the dynamic just changed.</p>
         </div>
 
-      </section>
-
-      <!-- PART 3 -->
-      <!-- MODULE 4 -->
-      <section class="chapter ch-purple" id="m4">
-        <h2>Setups &amp; Patterns</h2>
-        <p class="ch-sub">Once your level map is drawn, your job during the live session is to wait for price to interact with your lines. We do not chase stocks in open space. We wait for high-probability setups where risk is clearly defined and the path of least resistance is established.</p>
-
         <h3>The Charting Rulebook</h3>
-        <p>To keep your chart readable in a fraction of a second during live trading, apply a consistent visual system based on timeframe and strength. Platforms like ThinkorSwim and TradingView support custom line styles — this is a guide, not a requirement, but following it makes live reading significantly faster.</p>
-
         <div class="card">
           <div class="rulebook-group">
             <div class="rulebook-group-label">Macro — Weekly / Monthly</div>
+            <p style="font-size:14px;color:var(--text2);margin-bottom:16px;">
+              To keep your chart readable in a fraction of a second during live trading, apply a consistent visual system based on timeframe and strength. Platforms like ThinkorSwim and TradingView support custom line styles — this is a guide, not a requirement, but following it makes live reading significantly faster.
+            </p>
             <div class="rulebook-row">
               <div class="rb-line rb-solid rb-red"></div>
               <span class="rb-label">Red Solid</span>
@@ -1167,11 +1399,169 @@
               <span class="rb-desc">Daily 200 EMA — plotted on your 1-min or 5-min chart to track the long-term trend rail without switching timeframes.</span>
             </div>
           </div>
+          <div class="callout teal" style="margin-top:18px;margin-bottom:0;">
+            <strong>The active rule — changing red to green:</strong> When a stock breaks cleanly through a red resistance line on volume and then holds it on a pullback, that old ceiling has become a new floor. Change the line from red to green in real time. This trains your eye to see that the balance of power has shifted — trapped sellers are now underwater, and breakout buyers are using that line as their entry floor.
+          </div>
         </div>
 
-        <div class="callout teal">
-          <strong>The Active Rule — Changing Red to Green:</strong> When a stock breaks cleanly through a red resistance line on volume and then holds it on a pullback, that old ceiling has become a new floor. Change the line from Red to Green in real time. This trains your eye to see that the balance of power has shifted — trapped sellers are now underwater, and breakout buyers are using that line as their entry floor.
+        <h3>Building your map across timeframes</h3>
+        <p>The fastest way to lose money on a small cap is to trade the 1-minute chart blind — long off a clean intraday setup with no idea there's a macro red line sitting just overhead. The fix is a habit you run before every trade: <strong>build your map from the top down, on one stock, before you touch it.</strong> The higher timeframes tell you <em>where</em> the heavyweight levels are; the lower timeframes tell you <em>when</em> to act near them.</p>
+        <p>Run it top-down, and at each step mark both the horizontal levels and the trend line that timeframe reveals. (The prices below are illustrative — the point is the process. Swap in a real charted stock and the numbers change, but the steps don't.)</p>
+        <div class="step-list">
+          <div class="step">
+            <div class="step-dot purple">1</div>
+            <div class="step-body">
+              <h3>Monthly — the macro lines (solid)</h3>
+              <p>Zoom all the way out first. Find the prices the stock has reacted to over months: the high it spiked to and collapsed from, the long base it keeps bouncing off, the ceiling its rallies keep dying at. Mark these as your solid red and green macro lines. They don't move for weeks, and a clean break of one is a major event. Connect the rising monthly lows and you've drawn your slowest, most important trend line.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-dot blue">2</div>
+            <div class="step-body">
+              <h3>Weekly — the current chapter</h3>
+              <p>Drop down a step. The recent multi-week range, the last swing high, the breakout shelf the stock just cleared. A weekly uptrend line under the recent higher lows sits steeper than the monthly one. Now you can see the road ahead — the next real ceiling, then the macro ceiling above it.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-dot teal">3</div>
+            <div class="step-body">
+              <h3>Daily — the setup</h3>
+              <p>This is where the trade takes shape. The catalyst gap, yesterday's high and low, the previous close, the 200 EMA. Watch how the daily structure lands right on top of the weekly levels you already drew — that overlap is the first sign you've found something worth trading. A short, steep daily trend line tracks the gap.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-dot green">4</div>
+            <div class="step-body">
+              <h3>Intraday (5-min / 1-min) — execution</h3>
+              <p>Finally, the timeframe where you actually enter. The opening range high and low (dashed), VWAP, the round number acting as a magnet, the morning's higher lows forming a near-vertical intraday trend line. None of it means anything on its own — it only matters because of the map you built above it.</p>
+            </div>
+          </div>
         </div>
+        <div class="callout blue">
+          <strong>Nested trend lines.</strong> Your trend lines stack like Russian dolls: a gentle macro line on the monthly, a steeper one on the weekly and daily, a near-vertical one on the 1-minute. The intraday line breaks first and breaks often — that's normal noise, not a trend change. The trend only seriously shifts when a <em>bigger</em> line breaks. Watching which line is breaking tells you whether you're seeing a routine pullback or a real reversal.
+        </div>
+        <p><strong>Multi-timeframe confluence is the strongest signal there is.</strong> When a level shows up on more than one timeframe — the weekly breakout shelf that's <em>also</em> the daily prior-high that's <em>also</em> near VWAP and a round number — you have several different groups of traders, on several different clocks, all watching the same price. That's the magnet, and it's where you give a setup the most size and the cleanest invalidation. One timeframe agreeing is a level; three agreeing is a decision point.</p>
+        <div class="callout amber">
+          <strong>The discipline:</strong> never let a clean intraday setup talk you past a hostile higher-timeframe level. A perfect 1-minute breakout running straight into a solid red macro line is fighting the biggest crowd on the chart. Always know what's overhead on the timeframe <em>above</em> the one you're trading.
+        </div>
+
+        <div class="visual">
+          <div class="visual-label">Chart placeholder</div>
+          <div class="visual-title">One level across four timeframes</div>
+          <p>The same small-cap stock shown in four panels side by side — monthly, weekly, daily, and 1-minute — with a single price highlighted on all four. On the monthly it's a solid macro line; on the weekly it's the breakout shelf; on the daily it's the prior-day high; on the 1-minute it's where price is pressing intraday. A trend line is drawn on each panel, getting steeper as the timeframe shortens. The shared price is shaded as a "multi-timeframe confluence zone" across all four.</p>
+          <p class="visual-note">Same price, four clocks. When a level survives the zoom from monthly down to the 1-minute, that's the line worth trading around.</p>
+        </div>
+
+        <h3>Session time zones</h3>
+        <p>Volume and behavior shift dramatically through the trading day. Knowing which window you're in tells you whether a setup is worth taking or whether the conditions are working against you.</p>
+        <div class="level-list">
+          <div class="ll-row"><span class="ck-sm ck-x"></span><span class="ll-label">Premarket</span><span class="ll-desc">4:00 – 9:30 AM ET. Thin liquidity, news-driven moves. Where overnight gaps form and PMH/PML are set. Many small-cap traders start here.</span></div>
+          <div class="ll-row"><span class="ck-sm ck-g"></span><span class="ll-label">Opening drive</span><span class="ll-desc">9:30 – 10:00 AM ET. Heaviest volume of the day. Direction often set in the first 15–30 minutes. ORH/ORL form here.</span></div>
+          <div class="ll-row"><span class="ck-sm ck-g"></span><span class="ll-label">Mid-morning</span><span class="ll-desc">10:00 – 11:30 AM ET. Cleaner setups. The trend either follows the opening direction or reverses on confluence levels.</span></div>
+          <div class="ll-row"><span class="ck-sm ck-a"></span><span class="ll-label">Lunch lull</span><span class="ll-desc">11:30 AM – 1:30 PM ET. Volume drops sharply. Fake breakouts and chop become common — many traders step back.</span></div>
+          <div class="ll-row"><span class="ck-sm ck-g"></span><span class="ll-label">Power hour</span><span class="ll-desc">3:00 – 4:00 PM ET. Volume returns. Breakouts and reversals on the day's structure as positions get closed.</span></div>
+        </div>
+      </section>
+
+      <!-- MODULE 6 -->
+      <section class="chapter" id="m6">
+        <h2>Indicators &amp; Confluence — Strengthening the Signal</h2>
+        <p class="ch-sub">Your levels tell you <em>where</em> to act. Indicators tell you <em>whether to trust it.</em></p>
+
+        <p>A level on its own is a reason to pay attention. A level backed by your indicators is a reason to act. This is the part that separates a guess from a high-probability trade — and it's why we save indicators for last. We never trade an indicator by itself. An indicator firing in open space, with no level behind it, is noise. We use them for one job only: to <strong>grade the level in front of us.</strong> The more of them that line up with your line, the stronger the buy signal and the bigger the expected reaction.</p>
+        <p>Think of it as a vote count. Price arrives at one of your marked levels — that's the trigger. Each indicator that agrees is one more vote that the trapped crowd is about to act in your favor. One or two votes is a setup. A full slate is conviction. And when the votes split — price reclaims a level but the indicators disagree — that conflict is itself the signal to stand aside.</p>
+        <p>Here's what each indicator actually tells you about a level.</p>
+
+        <h3>Volume — the indicator that confirms every other one</h3>
+        <p>If price action is the steering wheel, volume is the gas pedal — and at a level, it's the difference between a real break and a fakeout. A green candle punching through a red resistance line means nothing until you check the volume beneath it. A clean break on heavy, above-average volume is the trapped crowd actually acting: shorts covering, breakout buyers flooding in, the line flipping from red to green for real. The identical break on thin, quiet volume is a trap waiting to spring — there's no force behind it, and it usually gets reclaimed.</p>
+        <div class="callout green">
+          <strong>The rule:</strong> every other signal in this section is stronger when volume agrees and worthless when it doesn't. A bounce off your level, an EMA hold, a VWAP reclaim — each one means more on a volume surge than on a sleepy tape. Volume doesn't just confirm the level; it confirms the indicators that confirm the level.
+        </div>
+
+        <h3>VWAP — the intraday line of control</h3>
+        <p>VWAP is the volume-weighted average price of the session — roughly what the average trader paid today. It resets each morning, and it draws a line in the sand: <strong>above VWAP, the average buyer is in profit and bulls control the tape; below it, the average buyer is underwater and sellers have the grip.</strong></p>
+        <p>That makes VWAP a confluence multiplier for any intraday level. A support reclaim that is <em>also</em> a VWAP reclaim is far stronger than one that happens below VWAP — you've got two groups defending the same zone at once. The cleanest long signals at a level happen when price is already holding above VWAP; a level that's still buried below VWAP is fighting the day's average seller, no matter how good the line looks.</p>
+        <div class="callout blue">
+          <strong>Anchored VWAP (level up):</strong> A standard VWAP starts at the open. An <em>anchored</em> VWAP lets you start the calculation from a specific event — the catalyst gap, a major swing low, the first big-volume candle. It shows the average cost of everyone who's traded since that moment, turning a meaningful event into a precise, dynamic level that often lines up with your horizontal lines.
+        </div>
+
+        <h3>The 9 &amp; 20 EMA — dynamic support that stacks with your level</h3>
+        <p>The 9 and 20 EMAs are moving support rails on the 1-min and 5-min charts. On their own they tell you the trend is intact as long as pullbacks keep bouncing off them. But their real power shows up when they <strong>line up with a horizontal level.</strong></p>
+        <p>When price pulls back to a marked support line and that line sits right on a rising 9 or 20 EMA, you've stacked two supports in the same spot: a static level the crowd remembers, plus a dynamic rail buyers are actively defending. That overlap is one of the cleanest buy signals on the intraday chart. If price is holding above the rising 9 EMA <em>at</em> your level, momentum and structure are pointing the same direction — the votes agree.</p>
+        <div class="two-col">
+          <div class="callout green">
+            <strong>Holding above the 9 EMA</strong><br />
+            Strong trend. Buyers in full control. Each pullback to the 9 holds and continues higher — the most bullish intraday signal.
+          </div>
+          <div class="callout amber">
+            <strong>Pulling back to the 20 EMA and bouncing</strong><br />
+            Trend intact but losing some steam. Still a continuation signal — buyers are defending, just at a deeper level.
+          </div>
+          <div class="callout red">
+            <strong>Breaking below the 20 EMA</strong><br />
+            The trend has likely flipped. Step aside on longs and wait for the stock to reclaim the 20 EMA on volume before re-engaging.
+          </div>
+          <div class="callout blue">
+            <strong>9 EMA above 20 EMA</strong><br />
+            Short-term bullish posture confirmed. When the 9 crosses below the 20, sellers have taken over — wait for the cross to flip back.
+          </div>
+        </div>
+
+        <h3>The 200 EMA — the regime filter on your whole signal</h3>
+        <p>The daily 200 EMA doesn't trigger a buy. It grades the trade before you even start. A stock trading <strong>above</strong> its 200 EMA is in a long-term bullish posture, so a buy signal at a level there has the larger current behind it. The same signal <strong>below</strong> the 200 EMA is fighting the tide — and your bar for taking it should be much higher.</p>
+        <div class="callout purple">
+          Treat it as a baseline vote that's already cast before price reaches your level: above the 200, your signals count for more; below it, demand far more confluence before acting. Plotting it as a light-blue dashed line on your intraday chart lets you keep that filter in view without switching timeframes.
+        </div>
+
+        <h3>MACD — the momentum second opinion</h3>
+        <p>MACD is the one indicator here that doesn't draw a price level. Its job is narrower and useful: it tells you whether the break of your level has real momentum, or is running on fumes.</p>
+        <p>When price clears a red line and MACD is crossing up with a rising histogram, momentum is confirming the break — the buy signal strengthens. The more important read is <strong>divergence:</strong> price pushes to a new high <em>at or through</em> your level, but MACD makes a <em>lower</em> high. That means the new high happened on weaker momentum than the last one — the move is tiring, and the level is more likely to reject than break. The trapped crowd isn't being overwhelmed; the buyers are getting thin.</p>
+        <div class="callout amber">
+          MACD lags, so it's never a reason to trade on its own. Use it as the second opinion on a break you're already considering: level breaks + MACD crossing up = fuel; level breaks + MACD diverging = be suspicious.
+        </div>
+
+        <h3>Stacking the signal — confluence in action</h3>
+        <p>Now put the votes together. The strongest buy signals aren't one indicator screaming — they're a level with <em>everything</em> quietly agreeing.</p>
+        <div class="two-col">
+          <div class="callout green">
+            <strong>A strong signal</strong><br />
+            A stock running hard approaches <strong>$5.00</strong> — already a triple-stacked level (round number, previous day's high, and the high of a major-volume candle from months ago). Now layer them on: price is <strong>above VWAP</strong>, <strong>holding the rising 9 EMA</strong>, <strong>above its daily 200 EMA</strong>, and <strong>MACD just crossed up</strong> as the break candle prints on a <strong>volume surge</strong>. Every vote is in. That's conviction — and that's where the biggest reactions happen.
+          </div>
+          <div class="callout red">
+            <strong>A weak signal</strong><br />
+            The exact same break of the exact same line — but price is <em>below</em> VWAP, the stock is <em>under</em> its 200 EMA, MACD is rolling over into divergence, and the break comes on quiet volume. Same level, no votes. You skip it. The line didn't get worse; the confluence never showed up.
+          </div>
+        </div>
+        <div class="callout teal">
+          <strong>The core read:</strong> The level is the trigger. The indicators are the vote count. When they stack, you act with size and a clean invalidation just below the level. When they split — price reclaims a line but stays under VWAP with MACD fading — the disagreement <em>is</em> the signal. Stand aside and let the votes come in.
+        </div>
+
+        <div class="visual">
+          <div class="visual-label">Chart placeholder</div>
+          <div class="visual-title">Confluence stack at a single price</div>
+          <p>A 5-min small-cap chart approaching a red dashed resistance line at $5.00. Below price: VWAP rising underneath, the 9 EMA hugging price, the 20 EMA just under it, and a light-blue dashed 200 EMA well below. A separate volume pane shows a surge on the break candle, and a MACD pane shows a fresh bullish cross. All signals are annotated as "votes" pointing at the same break. The line flips red→green on the successful retest.</p>
+          <p class="visual-note">Every independent factor — level, VWAP, EMAs, MACD, volume — agreeing on one price is the highest-conviction signal you'll find.</p>
+        </div>
+
+        <div class="visual">
+          <div class="visual-label">Chart placeholder</div>
+          <div class="visual-title">MACD confirmation vs. divergence at a level</div>
+          <p>Two stacked panels. Top: price breaks a red line on a strong candle while the MACD histogram expands upward — confirmation, the break has fuel. Bottom: price pushes to a marginally higher high at the same line while MACD prints a clearly lower high — divergence, the move is exhausting and the level rejects.</p>
+          <p class="visual-note">A new price high on weakening momentum is the tell that the level will hold against the break — even when the candle looks strong.</p>
+        </div>
+      </section>
+
+      <!-- PART 2 -->
+      <div class="part-header" style="border-left-color: var(--teal);">
+        <div class="part-num" style="color: var(--teal-text);">Part 2</div>
+        <h2>Trading the Levels: Setups &amp; Patterns</h2>
+        <p>The execution module. Part 1 built your level map and taught you to read the trend and the signal; Part 2 is what you do when live price reaches one of your lines.</p>
+      </div>
+
+      <!-- MODULE 7 -->
+      <section class="chapter ch-purple" id="m7">
+        <h2>Setups &amp; Patterns</h2>
+        <p class="ch-sub">Once your level map is drawn, your job during the live session is to wait for price to interact with your lines. We do not chase stocks in open space. We wait for high-probability setups where risk is clearly defined and the path of least resistance is established.</p>
 
         <h3>The Four Setups</h3>
         <p>A trade setup happens when live intraday momentum collides with one of your levels or trend rails. Each setup below has a clear entry trigger and a clear invalidation point. If you can't identify both before clicking buy, you don't have a setup — you have a guess.</p>
@@ -1194,7 +1584,7 @@
             <div class="visual-label">Chart placeholder</div>
             <div class="visual-title">Failed breakdown and reclaim</div>
             <p>5-min chart. A horizontal green line marks intraday support (PDL or a recent consolidation low). Price drops cleanly below the line on a heavy red "trap candle" — short sellers visibly piling in. The very next candle is a large green reversal that closes back above the line. Trapped shorts are forced to cover, fueling continuation higher.</p>
-            <p class="visual-note">Entry arrow at the close of the reclaim candle. Stop tick sits just below the low of the trap candle.</p>
+            <p class="visual-note">Entry at the close of the reclaim candle. Stop tick sits just below the low of the trap candle.</p>
           </div>
         </div>
 
@@ -1301,209 +1691,31 @@
         e.preventDefault();
         document.getElementById(id).scrollIntoView({ behavior: "smooth" });
       }
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              document
-                .querySelectorAll(".ch-link")
-                .forEach((l) => l.classList.remove("active"));
-              const link = document.querySelector(
-                `.ch-link[href="#${e.target.id}"]`,
-              );
-              if (link) link.classList.add("active");
-            }
-          });
-        },
-        { threshold: 0.15, rootMargin: "-72px 0px -60% 0px" },
-      );
-      document
-        .querySelectorAll(".chapter")
-        .forEach((ch) => observer.observe(ch));
 
-      function selPat(btn, id) {
+      function setActiveChapter(id) {
         document
-          .querySelectorAll("#m3 .sc-btn")
-          .forEach((b) => b.classList.remove("active"));
-        document
-          .querySelectorAll("#m3 .sc-panel")
-          .forEach((p) => p.classList.remove("active"));
-        btn.classList.add("active");
-        document.getElementById(id).classList.add("active");
-      }
-
-      const scoreItems = [
-        "Volume — formed on or anchored to a high-volume candle",
-        "Higher timeframe — visible on the daily or weekly chart",
-        "Confluence with the 200 EMA, VWAP, or a major moving average",
-        "Near a round or psychological number ($3.00, $5.00)",
-        "Structural pivot — the high or low of a power-shift candle",
-        "Fresh or only tested once — not exhausted",
-        "Aligns with previous day high, previous day low, or premarket high/low",
-        "Recent — formed within the last few months",
-        "Stock is in the right posture (above 200 EMA for longs)",
-      ];
-      function buildScorecard() {
-        document.getElementById("scorecard").innerHTML = scoreItems
-          .map(
-            (item, i) =>
-              `<label style="display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);cursor:pointer;">
-      <input type="checkbox" id="sc${i}" onchange="updateScore()" style="margin-top:3px;flex-shrink:0;width:18px;height:18px;accent-color:var(--green);">
-      <span style="font-size:14px;line-height:1.5;">${item}</span>
-    </label>`,
-          )
-          .join("");
-        updateScore();
-      }
-      function updateScore() {
-        let t = 0;
-        scoreItems.forEach((_, i) => {
-          if (document.getElementById("sc" + i)?.checked) t++;
-        });
-        const pct = Math.round((t / 10) * 100);
-        document.getElementById("totalScore").textContent = t + " / 10";
-        const bar = document.getElementById("scoreBar");
-        bar.style.width = pct + "%";
-        bar.style.background =
-          pct >= 70
-            ? "var(--green)"
-            : pct >= 40
-              ? "var(--amber)"
-              : "var(--red)";
-        const v = document.getElementById("scoreVerdict");
-        v.textContent =
-          pct >= 70
-            ? "A-grade level — high conviction, trade with full plan and proper size."
-            : pct >= 40
-              ? "B-grade level — tradable but reduce size and demand confirmation."
-              : "C-grade level — skip. Wait for better confluence.";
-      }
-      buildScorecard();
-
-      const questions = [
-        {
-          q: "A small-cap stock has a structural pivot at $3.28 (high of the biggest-volume candle on the daily). It's currently at $3.10. What's the most useful framing?",
-          opts: [
-            "It's below $3.28 so the stock is broken — avoid it",
-            "Posture is bearish below $3.28; above $3.28 the bias flips bullish. Plan a long entry on a clean reclaim with volume",
-            "Pivots from the daily don't matter intraday",
-            "Buy now at $3.10 because it's cheaper",
-          ],
-          correct: 1,
-          fb: "The structural pivot is the price where power last shifted hands. Below it, the trapped buyers are underwater — sellers in control. Above it, the chart's posture flips and new buyers step in. The plan isn't to predict — it's to wait for the reclaim on volume and trade what the chart confirms.",
-        },
-        {
-          q: "You spot a stock with higher lows tightening into a flat $2.96 resistance, and volume is INCREASING on each push. What pattern is this and what are you watching for?",
-          opts: [
-            "Compression — wait for volume to dry up further",
-            "A bear flag — short it",
-            "The Curl — watch for the break above $2.96 on a high-volume candle; buyers are escalating, sellers are being absorbed",
-            "A failed breakout — short the rejection",
-          ],
-          correct: 2,
-          fb: "Increasing volume on each push is the key tell that separates the Curl from random chop. Buyers are getting more aggressive while sellers hold the line. When the supply at resistance is finally absorbed, the break is usually fast. Entry: candle close above $2.96 on the highest volume of the sequence.",
-        },
-        {
-          q: "Price breaks above the premarket high at $4.10 on light volume, then immediately falls back below $4.10 on heavier volume. What should you be planning?",
-          opts: [
-            "Buy aggressively — the breakout will continue",
-            "Hold and hope",
-            "The failed break is a trap. Wait for the reclaim signal — if price goes back above $4.10 on volume, that reclaim is high-probability long. If it stays below, plan for further downside",
-            "There's no setup here",
-          ],
-          correct: 2,
-          fb: "Failed breakout + reclaim is one of the highest-probability setups in trading. The weak-volume break trapped buyers; their stops below $4.10 become fuel for the next move. The trick is to wait for confirmation in either direction — never anticipate. Whichever side reclaims on volume wins.",
-        },
-        {
-          q: "Your account is $15,000. You risk 1.5% per trade. You want to buy at $2.40 with a stop at $2.28. How many shares?",
-          opts: [
-            "6,250 shares (max your buying power)",
-            "1,875 shares ($225 risk ÷ $0.12 stop distance)",
-            "500 shares",
-            "There's not enough info",
-          ],
-          correct: 1,
-          fb: "Risk dollars = 1.5% of $15,000 = $225. Stop distance = $2.40 − $2.28 = $0.12. Shares = $225 ÷ $0.12 = 1,875. Position cost = $4,500 (30% of account). The stop distance ALWAYS determines size — never the other way around. This is the single most important habit in trading.",
-        },
-        {
-          q: "A small cap is trading below its daily 200 EMA. You see a clean intraday curl on the 5-min with VWAP reclaim. What's the right play?",
-          opts: [
-            "Full size — the intraday setup is clean",
-            "Skip the trade — long-term posture is bearish; you're fighting the current",
-            "Reduce size and demand extra confirmation — the intraday setup is real, but the higher-timeframe context is against you. Many traders skip these",
-            "Short it",
-          ],
-          correct: 2,
-          fb: "Either skipping or reducing size is defensible. The intraday curl + VWAP reclaim is a real bullish signal, but the daily 200 EMA is the institutional line — algorithms and funds use it as a benchmark. Trading longs below the daily 200 EMA puts you in the minority. If you take it, the bar for confirmation is much higher and the size much smaller.",
-        },
-        {
-          q: "You're scanning a chart and see a flat $1.50 area that's been tested 5 times in 6 weeks, with each bounce smaller than the last. What's likely happening?",
-          opts: [
-            "The level is bulletproof — five tests prove it's strong",
-            "Support exhaustion. Each test is consuming the orders sitting there. Smaller bounces = fewer buyers left. Expect the level to break, not bounce",
-            "The number of touches doesn't matter",
-            "Buy aggressively — sixth time's the charm",
-          ],
-          correct: 1,
-          fb: "This is textbook level exhaustion. The first two touches form a level; the third confirms it. After 4+ tests, especially with shrinking bounces, the pool of buyers is depleted. Plan for the break, not the bounce — or take a smaller bounce trade with a very tight stop and quick profit-taking.",
-        },
-        {
-          q: "A stock breaks above resistance at $5.00 on 3× average volume. You missed the initial entry at $5.00 and price is now at $5.30. What's the higher-quality entry?",
-          opts: [
-            "Chase it — buy market at $5.30",
-            "Wait for the first pullback to test $5.00 as new support — buy the retest with a stop below. Lower risk, tighter stop",
-            "Short it because it's gone too far",
-            "Buy at $5.30 with a stop at $4.50",
-          ],
-          correct: 1,
-          fb: "Role reversal in action — broken resistance becomes new support on the first retest. Chasing 6% above the breakout gives you a terrible reward-to-risk. Waiting for the retest gives you a tight, defined stop just below $5.00, and the role reversal at the level confirms buyers are stepping in again. This is one of the cleanest setups in the playbook.",
-        },
-        {
-          q: "You see a level on a small-cap with: structural pivot ✓, premarket high ✓, $3.00 round number ✓, only tested once ✓, above daily 200 EMA ✓. What's the conviction level?",
-          opts: [
-            "Average — all small-cap levels look like this",
-            "Five independent factors agreeing is exceptional confluence — an A-grade level worth trading with full conviction and proper risk management",
-            "Wait until you have 10 factors",
-            "Confluence is meaningless",
-          ],
-          correct: 1,
-          fb: 'When five independent analytical frameworks all point to the same price zone, you\'ve found a setup worth waiting for. Each factor draws from a different lens — structural, intraday, psychological, freshness, higher-timeframe posture. This is what traders mean when they say "I have to take this trade." Define entry, stop, target, and execute.',
-        },
-      ];
-      let currentQ = 0;
-      function buildQuiz() {
-        const area = document.getElementById("quizArea");
-        if (currentQ >= questions.length) {
-          area.innerHTML = `<div style="text-align:center;padding:20px 0;">
-      <h3 style="margin-bottom:8px;">Module complete</h3>
-      <p class="muted">You've worked through all the core concepts. The next step: pull up a real small-cap chart, build the level map using the five-step process from Module 4, and practice scoring levels before risking real money.</p>
-      <button class="quiz-next show" onclick="currentQ=0;buildQuiz();" style="margin-top:12px;">↩ Start over</button>
-    </div>`;
-          return;
+          .querySelectorAll(".ch-link")
+          .forEach((link) => link.classList.remove("active"));
+        const activeLink = document.querySelector(`.ch-link[href="#${id}"]`);
+        if (activeLink) {
+          activeLink.classList.add("active");
+          activeLink.scrollIntoView({ block: "nearest", inline: "center" });
         }
-        const q = questions[currentQ];
-        area.innerHTML = `
-    <div style="font-size:12px;color:var(--text3);font-weight:600;margin-bottom:8px;">QUESTION ${currentQ + 1} OF ${questions.length}</div>
-    <div class="quiz-q">${q.q}</div>
-    ${q.opts.map((o, i) => `<button class="quiz-opt" id="qo${i}" onclick="answerQuiz(${i})">${o}</button>`).join("")}
-    <div class="quiz-fb" id="qfb"></div>
-    <button class="quiz-next" id="qnx" onclick="currentQ++;buildQuiz();">${currentQ + 1 < questions.length ? "Next question →" : "See results"}</button>
-  `;
       }
-      function answerQuiz(idx) {
-        const q = questions[currentQ];
-        document.querySelectorAll(".quiz-opt").forEach((b, i) => {
-          b.disabled = true;
-          if (i === q.correct) b.classList.add("correct");
-          else if (i === idx) b.classList.add("wrong");
+
+      function updateActiveChapter() {
+        const scrollPoint = window.scrollY + 90;
+        let currentId = document.querySelector(".chapter")?.id;
+        document.querySelectorAll(".chapter").forEach((chapter) => {
+          if (chapter.offsetTop <= scrollPoint) {
+            currentId = chapter.id;
+          }
         });
-        const fb = document.getElementById("qfb");
-        fb.className = "quiz-fb show " + (idx === q.correct ? "ok" : "no");
-        fb.textContent =
-          (idx === q.correct ? "✓ Correct. " : "✗ Not quite. ") + q.fb;
-        document.getElementById("qnx").classList.add("show");
+        if (currentId) setActiveChapter(currentId);
       }
-      buildQuiz();
+
+      window.addEventListener("scroll", updateActiveChapter, { passive: true });
+      updateActiveChapter();
     </script>
   </body>
 </html>
