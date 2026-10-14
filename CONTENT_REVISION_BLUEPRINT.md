@@ -42,7 +42,7 @@
 ### Guide Introduction
 **Subtitle:** Finding your levels starts with understanding why certain prices deserve your attention. A prior high, a consolidation area, or a level reclaimed after a selloff can give you a reference for the next move. What matters is how price behaves when it gets there, how much participation accompanies the response, and what happens next.
 
-Learn to connect price structure and participation with the reasons traders buy, sell, or wait. Use those connections to build a focused level map. Using active momentum stocks, this guide connects daily context with intraday decisions. The goal is to explain which levels matter, recognize the response you're waiting for, and know what would strengthen or invalidate your read.
+Learn to connect price structure and participation with how traders respond at key levels. Use those connections to build a focused level map. Using active momentum stocks, this guide connects daily context with intraday decisions. The goal is to explain which levels matter, recognize the response you're waiting for, and know what would strengthen or invalidate your read.
 
 ---
 

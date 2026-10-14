@@ -87,6 +87,11 @@ h1, h2, h3, section, main { scroll-margin-top: calc(var(--header-height) + 24px)
 .toc-links { display: flex; flex-direction: column; border-left: 1px solid var(--hairline); }
 .toc-links a { display: block; margin-left: -1px; padding: 5px 0 5px 13px; border-left: 2px solid transparent; color: var(--muted); font-size: 13px; line-height: 1.45; }
 .toc-links a:hover { color: var(--foreground); text-decoration: none; }
+.toc-links a { transition: color var(--ease), border-color var(--ease); }
+.toc-links a:focus-visible { border-left-color: var(--muted); }
+@media (hover: hover) {
+  .toc-links a:hover { border-left-color: var(--muted); }
+}
 .toc-links a[aria-current] { color: var(--foreground); font-weight: 500; border-left-color: var(--accent); }
 .toc-links a.nested { padding-left: 25px; font-size: 12.5px; }
 .mobile-toc { display: none; margin: 20px 0 28px; padding: 4px 0; border-block: 1px solid var(--hairline); }
