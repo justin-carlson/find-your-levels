@@ -8,7 +8,7 @@ Open `http://127.0.0.1:4174/v3/` using the repository preview server. To serve o
 python3 -m http.server 4175 --bind 127.0.0.1 --directory v3
 ```
 
-The generated `index.html`, `styles.css`, and `app.js` work without a build server or runtime dependencies. The site loads the first chapter by default. `#overview`, `#m1` through `#m7`, and individual heading anchors support direct links and browser history.
+The generated `index.html`, `styles.css`, and `app.js` work without a build server or runtime dependencies. The site loads the first chapter by default. `#overview`, chapter anchors built from the chapter titles (for example `#mapping-your-levels`), and heading anchors built from the section headings support direct links and browser history. Links from before the title-based anchors (`#m1`–`#m7` and `#m5-…` section anchors) redirect to the matching chapter or heading; each page and heading carries its old anchor in `data-legacy`.
 
 ## Editing content
 
@@ -24,7 +24,7 @@ npm run build:live
 
 Build dependency: Marked 17.0.5, Node 20 or newer. No dependencies were downloaded for the initial build: it used the installed Codex runtime's Marked package with `NODE_PATH` pointed at that runtime's `node_modules`. A normal local installation uses the commands above.
 
-`build.mjs` removes author guidance, chart-capture briefs, and editorial labels from the reading copy. It keeps the lesson prose, examples, tables, setup variants, and callouts. Chapter and section navigation use the blueprint headings; existing section IDs are preserved for feedback links. Future chart briefs stay in the blueprint for the later illustration pass. John's private research package is not used or linked by this site.
+`build.mjs` removes author guidance, chart-capture briefs, and editorial labels from the reading copy. It keeps the lesson prose, examples, tables, setup variants, and callouts. Chapter and section navigation use the blueprint headings; earlier section links from feedback redirect to their headings. Future chart briefs stay in the blueprint for the later illustration pass. John's private research package is not used or linked by this site.
 
 ## Design and interaction
 
@@ -33,6 +33,10 @@ Build dependency: Marked 17.0.5, Node 20 or newer. No dependencies were download
 - System sans type: 16px prose / 28px line height, 38px desktop chapter titles, 24px section headings, and compact navigation. Readable line length is capped at 740px.
 - Section navigation on desktop; chapter drawer and an “In this chapter” disclosure on mobile. Links support keyboard focus, history, and reloads. Wide tables scroll inside their region.
 - Existing SVG illustrations are retained as labeled schematics. Supply/demand boxes span the full wick range of the selected base candles, matching the blueprint's drawing convention. Chapter 3 also includes Justin's unaltered FFAI screenshot, with a full-size image link.
+
+## Brand assets
+
+`assets/brand/` holds the logo mark and icons from the October 2026 design refresh handoff, copied unchanged (each SVG carries C2PA provenance metadata): `fyl-mark.svg` (light), `fyl-mark-dark.svg` (dark), `fyl-mark-inline.svg` (theme-following), `favicon.svg`, `favicon-16.png`, `favicon-32.png`, `apple-touch-icon.png` (180px) and `icon-512.png` (for social previews, not yet used). The header renders the mark inline from `build.mjs`, so it follows the light and dark themes; the header hides it below 375px wide, where it doesn't fit beside the Chapters button.
 
 ## FFAI example provenance
 

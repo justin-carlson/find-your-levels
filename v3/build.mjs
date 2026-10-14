@@ -8,12 +8,13 @@ import path from 'node:path';
 const require = createRequire(import.meta.url);
 const { marked } = await import(pathToFileURL(require.resolve('marked')).href);
 const here = path.dirname(fileURLToPath(import.meta.url));
-const read = name => readFile(path.join(here, name), 'utf8');
+// Normalize line endings so checkouts with core.autocrlf build identically.
+const read = async name => (await readFile(path.join(here, name), 'utf8')).replace(/\r\n/g, '\n');
 const source = await read('../CONTENT_REVISION_BLUEPRINT.md');
 const escape = text => text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 const slug = text => text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-// Keep existing section URLs stable when the displayed headings change.
-const sectionIds = new Map([
+// Section anchors from before links used titles (#m1-…); headings carry them as data-legacy so app.js can redirect old links.
+const legacySectionIds = new Map([
   ["Recognizing Selling Pressure", "ffai-when-the-pullback-gets-busy"],
   [
     "What Price and Volume Tell Us",
@@ -193,6 +194,9 @@ const sectionIds = new Map([
   ]
 ]);
 
+// Header logo mark (assets/brand/fyl-mark-inline.svg without its provenance metadata): ink follows currentColor, the key level uses the accent.
+const mark = '<svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="12" width="30" height="7" rx="3.5" fill="currentColor"/><rect x="8" y="28.5" width="48" height="7" rx="3.5" style="fill:var(--accent)"/><rect x="8" y="45" width="22" height="7" rx="3.5" fill="currentColor"/></svg>';
+
 const trendNames = ['uptrend', 'downtrend', 'range'];
 const trends = '<figure class="trend-figure"><div class="trend-grid">' + (await Promise.all(trendNames.map(async (name, i) =>
   `<div><h3>${['Uptrend', 'Downtrend', 'Sideways'][i]}</h3>${await read(`assets/${name}.svg`)}</div>`))).join('') +
@@ -200,7 +204,7 @@ const trends = '<figure class="trend-figure"><div class="trend-grid">' + (await 
 const zones = `<figure class="zone-figure">${await read('assets/zones.svg')}<figcaption>Illustrative examples · selected base candles shaded through their full wick range. These are schematics, not historical trades.</figcaption></figure>`;
 
 const chapters = [...source.matchAll(/^## Chapter (\d): (.+?) \(`(#m\d)`\)\n([\s\S]*?)(?=^## Chapter |$(?![\s\S]))/gm)].map(match => ({
-  id: match[3].slice(1), number: Number(match[1]), title: match[2], source: match[4],
+  id: slug(match[2].replaceAll('&', 'and')), legacyId: match[3].slice(1), number: Number(match[1]), title: match[2], source: match[4],
 }));
 if (chapters.length !== 7) throw new Error('Expected all seven blueprint chapters.');
 
@@ -222,9 +226,10 @@ function renderChapter(chapter) {
   const toc = [];
   const renderer = new marked.Renderer();
   renderer.heading = function ({ depth, text, tokens }) {
-    const id = `${chapter.id}-${sectionIds.get(text) || slug(text)}`;
+    const id = slug(text);
+    const legacy = `${chapter.legacyId}-${legacySectionIds.get(text) || id}`;
     toc.push({ id, text, depth });
-    return `<h${depth} id="${id}" tabindex="-1"><a class="heading-link" href="#${id}">${this.parser.parseInline(tokens)}</a></h${depth}>\n`;
+    return `<h${depth} id="${id}" data-legacy="${legacy}" tabindex="-1"><a class="heading-link" href="#${id}">${this.parser.parseInline(tokens)}</a></h${depth}>\n`;
   };
   let html = marked.parse(prepare(chapter.source), { renderer, gfm: true });
   html = html
@@ -232,7 +237,7 @@ function renderChapter(chapter) {
     .replace('<!--FYL-ZONES-->', zones)
     .replace(/(src|href)="v3\/assets\//g, '$1="assets/')
     .replace(/<blockquote>\s*<p><strong>\[(\w+) Callout\] ([\s\S]*?)<\/blockquote>/g,
-      (_, color, body) => `<aside class="callout ${color.toLowerCase()}"><p><strong>${body}</aside>`)
+      (_, color, body) => `<aside class="callout ${color.toLowerCase()}${body.startsWith('The Core Mental Model') ? ' summary' : ''}"><p><strong>${body}</aside>`)
     .replace(/<li><strong>\[(\w+) Callout\] /g, (_, color) => `<li class="callout ${color.toLowerCase()}"><strong>`)
     .replace(/<table>/g, '<div class="table-scroll" tabindex="0" role="region" aria-label="Comparison table, scroll horizontally"><table>')
     .replace(/<\/table>/g, '</table></div>')
@@ -244,20 +249,23 @@ function renderChapter(chapter) {
   const next = chapters[chapter.number];
   const pager = `<nav class="chapter-pager" aria-label="Chapter pagination"><a href="#${previous.id}"><span>Previous</span>${escape(previous.title)}</a>${next ? `<a class="next" href="#${next.id}"><span>Next chapter</span>${escape(next.title)}</a>` : '<a class="next" href="#overview"><span>Back to</span>Introduction</a>'}</nav>`;
   const tocLinks = toc.filter(item => item.depth === 2 || item.text.startsWith('Setup ')).map(item => `<a href="#${item.id}"${item.depth === 3 ? ' class="nested"' : ''}>${escape(item.text)}</a>`).join('');
-  return `<section class="page" id="${chapter.id}" data-title="${escape(chapter.title)}"${chapter.number === 1 ? ' data-active' : ''} aria-labelledby="${chapter.id}-title">
+  return `<section class="page" id="${chapter.id}" data-legacy="${chapter.legacyId}" data-title="${escape(chapter.title)}"${chapter.number === 1 ? ' data-active' : ''} aria-labelledby="${chapter.id}-title">
     <div class="reading-layout"><article class="article"><h1 id="${chapter.id}-title" tabindex="-1">${escape(chapter.title)}</h1><details class="mobile-toc"><summary>In this chapter</summary><nav aria-label="Sections in this chapter">${tocLinks}</nav></details>${html}${pager}</article>
-    <aside class="page-toc"><nav aria-label="On this page"><h2>On this page</h2>${tocLinks}</nav></aside></div></section>`;
+    <aside class="page-toc"><nav aria-label="On this page"><h2>On this page</h2><div class="toc-links">${tocLinks}</div></nav></aside></div></section>`;
 }
 
 const heroSubtitle = source.match(/^- \*\*Subtitle:\*\* (.+)$/m)?.[1];
 const introduction = source.match(/### Guide Introduction\n\*\*Subtitle:\*\* (.+)/)?.[1];
 if (!heroSubtitle || !introduction) throw new Error('Blueprint introduction missing.');
-const overview = `<section class="page" id="overview" data-title="Introduction" aria-labelledby="overview-title"><div class="reading-layout"><article class="article overview"><h1 id="overview-title" tabindex="-1">Find Your Levels</h1><p class="lead">${escape(heroSubtitle)}</p><h2>Finding your levels</h2><p>${escape(introduction)}</p><a class="start-link" href="#m1">Start reading <span aria-hidden="true">→</span></a><div class="chapter-index">${chapters.map(ch => `<a href="#${ch.id}"><span class="chapter-number">${String(ch.number).padStart(2, '0')}</span><span>${escape(ch.title)}</span><span aria-hidden="true">→</span></a>`).join('')}</div></article></div></section>`;
-const nav = `<a class="overview-link" href="#overview" data-chapter="overview">Introduction</a><p class="nav-group">Chapters</p>${chapters.map(ch => `<a href="#${ch.id}" data-chapter="${ch.id}"${ch.number === 1 ? ' aria-current="page"' : ''}><span class="chapter-number">${String(ch.number).padStart(2, '0')}</span><span>${escape(ch.title)}</span></a>`).join('')}`;
+const overview = `<section class="page" id="overview" data-title="Introduction" aria-labelledby="overview-title"><div class="reading-layout"><article class="article overview"><h1 id="overview-title" tabindex="-1">Find Your Levels</h1><p class="lead">${escape(heroSubtitle)}</p><h2>Finding your levels</h2><p>${escape(introduction)}</p><a class="start-link" href="#${chapters[0].id}">Start reading <span aria-hidden="true">→</span></a><div class="chapter-index">${chapters.map(ch => `<a href="#${ch.id}"><span class="chapter-number">${String(ch.number).padStart(2, '0')}</span><span>${escape(ch.title)}</span><span aria-hidden="true">→</span></a>`).join('')}</div></article></div></section>`;
+const nav = `<a class="overview-link" href="#overview" data-chapter="overview">Introduction</a><p class="nav-group">Chapters</p><div class="nav-chapters">${chapters.map(ch => `<a href="#${ch.id}" data-chapter="${ch.id}"${ch.number === 1 ? ' aria-current="page"' : ''}><span class="chapter-number">${String(ch.number).padStart(2, '0')}</span><span>${escape(ch.title)}</span></a>`).join('')}</div>`;
 const template = await read('template.html');
 const styleVersion = createHash('sha256').update(await read('styles.css')).digest('hex').slice(0, 12);
 const scriptVersion = createHash('sha256').update(await read('app.js')).digest('hex').slice(0, 12);
-const output = template.replace('./styles.css', `./styles.css?v=${styleVersion}`).replace('./app.js', `./app.js?v=${scriptVersion}`).replace('{{NAV}}', nav).replace('{{CONTENT}}', overview + chapters.map(renderChapter).join('\n'));
+const output = template.replace('./styles.css', `./styles.css?v=${styleVersion}`).replace('./app.js', `./app.js?v=${scriptVersion}`).replace('{{MARK}}', mark).replace('{{NAV}}', nav).replace('{{CONTENT}}', overview + chapters.map(renderChapter).join('\n'));
+const ids = [...output.matchAll(/\sid="([^"]+)"/g)].map(match => match[1]);
+const duplicates = ids.filter((id, i) => ids.indexOf(id) !== i);
+if (duplicates.length) throw new Error(`Duplicate anchors: ${[...new Set(duplicates)].join(', ')}`);
 await writeFile(path.join(here, 'index.html'), output);
 console.log(`Built ${chapters.length} chapters from CONTENT_REVISION_BLUEPRINT.md → v3/index.html`);
 if (process.argv.includes('--publish')) {

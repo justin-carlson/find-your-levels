@@ -5,8 +5,9 @@
   const backdrop = document.querySelector('.sidebar-backdrop');
   const themeButton = document.querySelector('.theme-toggle');
   const main = document.querySelector('main');
+  const progress = document.querySelector('.reading-progress');
   const chapterLinks = [...document.querySelectorAll('[data-chapter]')];
-  const mobile = matchMedia('(max-width: 800px)');
+  const mobile = matchMedia('(max-width: 899px)');
   let sectionLinks = [];
   let sectionHeadings = [];
   let scrollFramePending = false;
@@ -23,6 +24,11 @@
     });
   }
 
+  function updateProgress() {
+    const scrollable = document.documentElement.scrollHeight - innerHeight;
+    progress.style.width = `${scrollable > 0 ? Math.min(100, scrollY / scrollable * 100) : 0}%`;
+  }
+
   function closeMenu(restoreFocus = false) {
     sidebar.removeAttribute('data-open');
     document.body.classList.remove('menu-open');
@@ -32,12 +38,20 @@
     if (restoreFocus) menuButton.focus();
   }
 
+  // Links from before titles were used (#m5, #m5-section) point to the matching chapter or heading.
+  function legacyTarget(id) {
+    const chapter = /^(m\d)(?:-|$)/.exec(id)?.[1];
+    if (!chapter) return null;
+    return document.querySelector(`[data-legacy="${CSS.escape(id)}"]`) || document.querySelector(`.page[data-legacy="${chapter}"]`);
+  }
+
   function showPage(moveFocus = false) {
     let id;
     try { id = decodeURIComponent(location.hash.slice(1)); } catch { id = ''; }
     if (id === 'main') { main.focus({ preventScroll: true }); return; }
-    const target = document.getElementById(id);
-    const active = target?.closest('.page') || document.getElementById('m1');
+    let target = document.getElementById(id);
+    if (!target && (target = legacyTarget(id))) history.replaceState(null, '', `#${target.id}`);
+    const active = target?.closest('.page') || pages.find(page => page.id !== 'overview');
     pages.forEach(page => page.toggleAttribute('data-active', page === active));
     chapterLinks.forEach(link => {
       if (link.dataset.chapter === active.id) link.setAttribute('aria-current', 'page');
@@ -53,13 +67,15 @@
     sectionLinks = [...active.querySelectorAll('.page-toc a')];
     sectionHeadings = sectionLinks.map(link => document.getElementById(link.hash.slice(1))).filter(Boolean);
     updateSection();
+    updateProgress();
   }
 
   window.addEventListener('scroll', () => {
     if (scrollFramePending) return;
     scrollFramePending = true;
-    requestAnimationFrame(() => { updateSection(); scrollFramePending = false; });
+    requestAnimationFrame(() => { updateSection(); updateProgress(); scrollFramePending = false; });
   }, { passive: true });
+  window.addEventListener('resize', updateProgress, { passive: true });
 
   menuButton.addEventListener('click', () => {
     if (sidebar.hasAttribute('data-open')) return closeMenu(true);
