@@ -652,9 +652,9 @@ After clearing a major level, a stock may trend through the available room witho
 ## Chapter 7: Putting It Together (`#m2`)
 
 ### Chapter Lead
-A stock reaches a level you marked, and the setup you have been watching begins to take shape. Now bring the pieces together: the context, the entry you are waiting for, the risk, and the room ahead.
+The stock is approaching your level, and the setup you have been watching is beginning to take shape. This is the moment when your chart reading needs to become a plan.
 
-Let's walk through one example, including when the same setup is worth passing on.
+Bring together the participation, trend, level map, and setup rules before price asks you to act. Know what you are waiting for, where the next obstacle sits, and what ends the idea. A complete plan also leaves room to pass.
 
 ### Before You Enter
 It is human nature to want in on a surging green candle. When a stock is moving fast, stepping in right away feels like joining the winning side. Even experienced traders feel that pull.
@@ -666,16 +666,16 @@ Before price reaches your level, run through these five questions in your head. 
 
 | Part of the Plan | The Question It Answers |
 | :--- | :--- |
-| **Context** | Do participation and the trend fit the continuation or recovery setup you are considering? |
-| **Level and trigger** | Which mapped level matters, and has your setup's entry trigger appeared? |
-| **Stop** | Which price invalidates the setup, and what structure does it protect? |
-| **Room** | Where is the nearest overhead obstruction, and does the room justify the distance to your stop? |
-| **Exit** | Where will you sell into strength, and what would make you pass entirely? |
+| **Participation and trend** | Is the stock active, and is price making upward progress on the frontside or completing a defined reclaim, rather than printing a green bounce beneath broken support? |
+| **Level and trigger** | Which mapped level are you trading, and which observable **break, retest, or reclaim** triggers the entry? Has it appeared, or is it still developing? |
+| **Stop** | Which price ends the idea, and what structure does it protect? Choose it before entry and keep it tied to that structure. |
+| **Room** | Where is the nearest obstruction overhead: an intraday rejection, a daily level, or the **Daily 200 EMA**? Is the room to it worth the distance to your stop? |
+| **Exit** | Where will you sell into strength, and what would make you pass on the trade entirely? |
 
-If a piece is missing, keep watching. A developing setup does not create an obligation to trade it.
+If any part of the plan is missing, you can keep watching. A setup developing does not create an obligation to trade it.
 
 ### A Plan From Start to Finish
-Suppose an active stock reaches $5.00, breaks above it, then pulls back. You are watching for the old ceiling to hold as a floor. Here is how the **break-and-retest** from Chapter 6 becomes a plan:
+Let's follow a hypothetical **break-and-retest** around $5.00 from the first approach to the exit plan. The stock clears the ceiling, then pulls back. You are watching for the old resistance to hold as support. Here is how the pieces fit together:
 
 | Part of the Plan | What We Have Identified |
 | :--- | :--- |
@@ -686,18 +686,31 @@ Suppose an active stock reaches $5.00, breaks above it, then pulls back. You are
 | **Room** | After checking nearby intraday and Daily structure, the nearest mapped ceiling is $5.45. That leaves about $0.40 to the next test, compared with $0.08 per share to the planned stop from $5.05, before costs and slippage. |
 | **Exit plan** | Plan portions to sell into strength on the approach to $5.45. That level is a reference for the next test, not a promised destination. If support fails first, follow the planned stop. |
 
-Choose position size from the planned risk and the distance to the stop. In this example, $50 divided by $0.08 per share gives 625 shares before costs and slippage. The structure sets the stop; size the position around it. Fast moves and slippage can make the actual loss larger than planned.
+**Size the position from the stop.** Decide in advance how much a failed trade should cost. Say you choose $50 for this example. The $0.08 between the $5.05 entry and the $4.97 stop allows 625 shares ($50 ÷ $0.08). A stop $0.20 away would allow 250 shares for the same $50. The structure sets the stop, and the stop sets the size. Choose a smaller position when the structural stop is farther away, rather than changing the stop to suit the size you want. Fast moves and slippage can make the actual loss larger than planned, so treat the amount as a limit you plan around rather than a guarantee.
 
-Buyers who missed the initial break may join the retest, and shorts may buy to exit. That story helps explain the interaction. The evidence is the break, the quieter return, and renewed upward progress. Follow those observations as the trade develops.
+Here, the $0.40 to the next obstacle is five times the $0.08 to the stop, before costs. That compares the available room with the planned risk; it does not tell you how likely price is to reach $5.45.
+
+The participant story helps explain the response: buyers who missed the initial break may join the retest, and shorts may buy to exit. Our evidence is the break, the quieter return, and the renewed upward progress. If those observations change, the story does not overrule them.
 
 #### The Same Setup, Without Enough Room
 Now suppose the nearest mapped ceiling is $5.08, while the response still offers an entry near $5.05 and the planned stop remains $4.97. Only $0.03 separates the entry from the next test, compared with $0.08 to the stop. In this example, we pass. We do not skip the closer ceiling in favor of a more appealing distant target or tighten the stop away from its supporting structure.
 
-We also pass if the retest keeps falling through $5.00 instead of producing the setup's turn higher. A later recovery needs its own setup and plan.
+### Same Plan, Three Outcomes
+Now follow the original $5.00 plan beyond the entry decision. The trade may work, fail, or never trigger. Each outcome has a place in the plan.
 
-### Following the Exit Plan
-If price approaches $5.45, follow the planned scale-out, selling portions into strength before the next test. If price reaches $4.97 first, follow the planned stop. A convincing participant story does not override that exit.
+- **The trade works.** Price lifts from the retest and approaches $5.45. You sell part of the position into that strength, as planned. Manage any remaining shares according to the exit plan you chose before entering. If price clears $5.45 and holds, map the next obstruction before counting on more room.
+- **The trade fails.** Price slips back through $5.00 and reaches $4.97. You follow the planned stop. The attempt did not hold, and the exit keeps the decision tied to the original plan. The actual loss depends on the fill, including any slippage.
+- **The trigger never comes.** The retest keeps falling through $5.00 or never turns higher, so you never enter. A later recovery might create a different opportunity, but it needs its own setup and plan.
 
-When price reverses, wanting to get back to break-even can turn the trade into **Hold and Hope**. Keep the original invalidation in view. If you exit and price later recovers, assess it as a new trade with its own setup, trigger, and stop.
+### When a Trade Becomes “Hold and Hope”
+A familiar trap is chasing a vertical green candle into resistance, then switching from a trade plan to **Hold and Hope** when price reverses. The desire to get back to break-even can take over the decision. Recognizing that pressure in yourself is as important as considering it in other participants. Keep the exit tied to the setup you chose, even when the participant story still sounds convincing.
 
-Afterward, note what you planned, what price did, and whether you followed the plan. Separate that process from the profit or loss. The aim is to explain your decisions, recognize when the evidence changes, and know when to act or step aside.
+A second trap follows a stop. Price turns back up soon after you exit, and getting straight back in feels like fixing a mistake. Treat it as a new trade with its own setup, trigger, and stop. If none has formed yet, wait. If you notice yourself chasing the same stock again or forcing trades to win back a loss, that is a good time to step away from the screen.
+
+### Review the Trade
+While the trade is fresh, write down a few lines:
+- The level, setup, trigger, stop, and room you planned.
+- What price actually did at the level.
+- Whether you followed the plan at the entry, the stop, and the exit.
+
+Judge how well you followed the plan separately from the result. A planned exit can be the right decision even when it realizes a loss. A winner that ignored the stop is still a habit worth catching. Review your notes over time to look for recurring strengths and mistakes in how you read and trade each setup.
