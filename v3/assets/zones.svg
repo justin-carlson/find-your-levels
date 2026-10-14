@@ -1,0 +1,86 @@
+<svg class="chart-svg" viewBox="0 0 760 320" role="img" aria-labelledby="dbr-rbd-title dbr-rbd-desc" xmlns="http://www.w3.org/2000/svg">
+            <title id="dbr-rbd-title">Demand zone and supply zone chart example</title>
+            <desc id="dbr-rbd-desc">Two side-by-side candlestick charts. The left chart shows a drop, a small base highlighted as a demand zone, then a rally. The right chart shows a rally, a small base highlighted as a supply zone, then a drop.</desc>
+            <rect x="1" y="1" width="758" height="318" rx="8" fill="transparent" />
+            <text class="chart-title" x="40" y="34">Demand zone - Drop, Base, Rally</text>
+            <text class="chart-title" x="420" y="34">Supply zone - Rally, Base, Drop</text>
+
+            <rect x="24" y="50" width="332" height="216" rx="8" fill="transparent" stroke="rgba(0,0,0,0.08)" />
+            <rect x="404" y="50" width="332" height="216" rx="8" fill="transparent" stroke="rgba(0,0,0,0.08)" />
+
+            <g aria-hidden="true">
+              <line class="chart-grid" x1="40" y1="90" x2="340" y2="90" />
+              <line class="chart-grid" x1="40" y1="130" x2="340" y2="130" />
+              <line class="chart-grid" x1="40" y1="170" x2="340" y2="170" />
+              <line class="chart-grid" x1="40" y1="210" x2="340" y2="210" />
+              <text class="price-label" x="306" y="98">$4.10</text>
+              <text class="price-label" x="306" y="138">$3.90</text>
+              <text class="price-label" x="306" y="178">$3.70</text>
+              <text class="price-label" x="306" y="218">$3.50</text>
+
+              <line class="chart-grid" x1="420" y1="90" x2="720" y2="90" />
+              <line class="chart-grid" x1="420" y1="130" x2="720" y2="130" />
+              <line class="chart-grid" x1="420" y1="170" x2="720" y2="170" />
+              <line class="chart-grid" x1="420" y1="210" x2="720" y2="210" />
+              <text class="price-label" x="686" y="98">$4.10</text>
+              <text class="price-label" x="686" y="138">$3.90</text>
+              <text class="price-label" x="686" y="178">$3.70</text>
+              <text class="price-label" x="686" y="218">$3.50</text>
+            </g>
+
+            <rect class="zone-demand" x="128" y="150" width="76" height="48" rx="3" stroke="none" />
+            <text class="chart-label label-green" x="169" y="217" text-anchor="middle">Demand zone</text>
+
+            <line class="wick-down" x1="64" y1="78" x2="64" y2="124" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-down" x="57" y="88" width="14" height="28" />
+            <line class="wick-down" x1="82" y1="104" x2="82" y2="146" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-down" x="75" y="116" width="14" height="24" />
+            <line class="wick-down" x1="100" y1="122" x2="100" y2="172" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-down" x="93" y="132" width="14" height="34" />
+            <line class="wick-down" x1="118" y1="154" x2="118" y2="205" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-down" x="111" y="166" width="14" height="30" />
+            <line class="wick-up" x1="140" y1="156" x2="140" y2="198" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-up" x="133" y="172" width="14" height="16" />
+            <line class="wick-down" x1="158" y1="160" x2="158" y2="194" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-down" x="151" y="169" width="14" height="13" />
+            <line class="wick-up" x1="176" y1="154" x2="176" y2="192" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-up" x="169" y="164" width="14" height="20" />
+            <line class="wick-up" x1="194" y1="150" x2="194" y2="190" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-up" x="187" y="162" width="14" height="18" />
+            <line class="wick-up" x1="214" y1="130" x2="214" y2="184" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-up" x="207" y="146" width="14" height="30" />
+            <line class="wick-up" x1="232" y1="96" x2="232" y2="162" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-up" x="225" y="112" width="14" height="42" />
+            <line class="wick-up" x1="250" y1="76" x2="250" y2="132" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-up" x="243" y="88" width="14" height="34" />
+            <line class="wick-down" x1="268" y1="68" x2="268" y2="118" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-down" x="261" y="78" width="14" height="26" />
+
+            <rect class="zone-supply" x="506" y="94" width="76" height="48" rx="3" stroke="none" />
+            <text class="chart-label label-red" x="541" y="158" text-anchor="middle">Supply zone</text>
+
+            <line class="wick-up" x1="442" y1="178" x2="442" y2="222" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-up" x="435" y="190" width="14" height="24" />
+            <line class="wick-up" x1="460" y1="154" x2="460" y2="208" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-up" x="453" y="166" width="14" height="34" />
+            <line class="wick-up" x1="478" y1="124" x2="478" y2="188" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-up" x="471" y="140" width="14" height="40" />
+            <line class="wick-up" x1="496" y1="94" x2="496" y2="152" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-up" x="489" y="108" width="14" height="34" />
+            <line class="wick-down" x1="518" y1="94" x2="518" y2="138" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-down" x="511" y="104" width="14" height="24" />
+            <line class="wick-up" x1="536" y1="96" x2="536" y2="134" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-up" x="529" y="108" width="14" height="18" />
+            <line class="wick-down" x1="554" y1="98" x2="554" y2="136" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-down" x="547" y="108" width="14" height="18" />
+            <line class="wick-down" x1="572" y1="100" x2="572" y2="142" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-down" x="565" y="112" width="14" height="20" />
+            <line class="wick-down" x1="592" y1="112" x2="592" y2="168" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-down" x="585" y="124" width="14" height="34" />
+            <line class="wick-down" x1="610" y1="138" x2="610" y2="198" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-down" x="603" y="150" width="14" height="38" />
+            <line class="wick-down" x1="628" y1="170" x2="628" y2="224" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-down" x="621" y="182" width="14" height="34" />
+            <line class="wick-up" x1="646" y1="188" x2="646" y2="232" stroke-width="1.7" stroke-linecap="square" />
+            <rect class="candle-up" x="639" y="200" width="14" height="22" />
+          </svg>
