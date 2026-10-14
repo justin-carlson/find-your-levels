@@ -9,6 +9,8 @@
   const chapterLinks = [...document.querySelectorAll('[data-chapter]')];
   const mobile = matchMedia('(max-width: 899px)');
   const sectionAliases = new Map([
+    ['four-reasons-to-buy-or-sell', 'buying-and-selling-a-quick-recap'],
+    ['why-buyers-sell-into-a-recovery', 'one-price-different-decisions'],
     ['what-price-and-volume-tell-us', 'comparing-volume-with-price-progress'],
     ['m1-participation-leaves-a-footprint-reading-price-alongside-volume', 'comparing-volume-with-price-progress'],
     ['reading-volume-in-an-uptrend', 'comparing-pushes-and-pullbacks'],

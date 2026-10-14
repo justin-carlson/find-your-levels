@@ -22,11 +22,11 @@ const legacySectionIds = new Map([
     "m1-supply-and-demand-who-is-willing-to-trade-here"
   ],
   [
-    "Four Reasons to Buy or Sell",
+    "Buying and Selling: A Quick Recap",
     "m1-the-four-players-at-every-level-longs-vs-shorts-buyers-vs-sellers"
   ],
   [
-    "Why Buyers Sell Into a Recovery",
+    "One Price, Different Decisions",
     "m1-trapped-buyers-and-the-overhead-supply-ceiling"
   ],
   [

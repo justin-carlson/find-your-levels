@@ -49,14 +49,25 @@ Start with the reasons traders buy and sell, then learn to read price and volume
 ## Chapter 1: What Moves Price (`#m1`)
 
 ### Chapter Lead
-A chart is a record of transactions made by people and systems with different positions, plans, and pressures. One trader sees a chance to take profit. Another wants to get out near break-even. Someone else sees the beginning of a new move. This chapter helps you understand why traders may act differently around the same price, and how their responses help explain why levels matter.
+Imagine a stock making a strong morning run after news brings it into focus. It reaches **$6.00**, then starts falling. One trader bought near the high, expecting another leg up. Another bought earlier and still has a profit. Someone watching from the sidelines is wondering whether the move is over or just taking a breath.
 
-A previous high can bring those decisions together. A break changes the situation for buyers, holders, and short sellers. Start with a simple question: **what is price doing here, and how could that change who acts next?**
+Follow that stock through a retreat and a recovery. The same price can become an opportunity, a place to take profit, or a chance to exit. This chapter helps you understand those different decisions and why they matter when price returns to a level.
 
-### Four Reasons to Buy or Sell
-Some traders **go long**, buying shares they expect to rise. Others **sell borrowed shares short**, aiming to buy the shares back at a lower price. Buying back shares to close a short position is called **covering**. That means buying can open a long or close a short, just as selling can close a long or open a short.
+### One Price, Different Decisions
+The trader who bought near $6.00 expected the run to continue. Buying shares with that expectation is **going long**. As price falls toward $5.20, the position is losing money. The earlier buyer, who entered below $5.20, is watching some of a profit disappear instead. The same decline feels different to each of them.
 
-Separate the action from the reason behind it:
+Another trader sees a bounce fail during the retreat and **sells borrowed shares short**, expecting lower prices. A short seller aims to buy the shares back for less than they sold them for. That purchase closes the short position and is called **covering**. Buying can therefore be an exit from a bearish trade as well as the start of a bullish one.
+
+Now imagine the stock finding its footing near $5.20 and recovering toward $6.00. The trader who bought near the high sees a chance to get out close to break-even. The earlier buyer sees a chance to take profit before another rejection. Both consider selling, for different reasons.
+
+Their potential selling is one explanation for **overhead supply**: selling interest that a recovery encounters at higher prices. New short sellers might also take interest near $6.00, expecting the earlier ceiling to hold again. If some holders added shares lower down, their average cost and preferred exit may have changed. There is no single break-even price shared by everyone.
+
+For the short seller who entered during the decline, the recovery is now moving against the position. In this example, they choose to buy back the shares and exit. Another short might hold, reduce, or have entered at a higher price and still be profitable. Meanwhile, a trader who missed the morning run sees price challenging $6.00 and considers buying for the first time.
+
+**Same price, different decisions.** Some traders want out, some want in, and others are waiting to see whether the recovery can hold its ground. Their situations help us understand why a familiar area can matter again. The chart's response shows how the activity is resolving.
+
+### Buying and Selling: A Quick Recap
+The choices in that story fall into four common position changes:
 
 | Position Change | Action | A Participant Story at a Level |
 | :--- | :--- | :--- |
@@ -67,34 +78,29 @@ Separate the action from the reason behind it:
 
 These are position changes, so the same trader can appear in different rows over time. Someone buying is not necessarily making a fresh bullish bet; they might be closing a bearish trade. Someone selling might be taking a profit.
 
-Different reasons can produce orders in the same direction. **New long buying and short covering can reinforce an advance; long exits and new short selling can reinforce a decline.** Urgency can increase as price moves against a position. A trader choosing to exit, a triggered stop, and a broker-required liquidation are different situations. We use *forced* only when there is a specific trigger or requirement. Covering can also lock in a profit; it does not always mean a short is losing.
+Different reasons can produce orders in the same direction. **New long buying and short covering can reinforce an advance; long exits and new short selling can reinforce a decline.** Covering can also lock in a profit; it does not always mean a short is losing.
 
 ### Understanding Supply and Demand
 **Demand is willingness to buy a quantity of shares at a particular price. Supply is willingness to sell.** Both change as price moves and traders reconsider their plans. A trader waiting to buy a dip and a short seller buying to exit have different reasons to act, but both bring buying interest to the market.
 
-Every completed trade has a buyer and a seller. So why does price move? Look at **urgency and available liquidity**: who is willing to transact now, and how much can be bought or sold at nearby prices. A **bid** is a price someone offers to pay; an **offer** is a price someone offers to sell at.
+That raises a useful question: **if every completed trade has a buyer and a seller, why did our stock move down and then recover?** Look at **urgency and available liquidity**: who is willing to transact now, and how much can be bought or sold at nearby prices. A **bid** is a price someone offers to pay; an **offer** is a price someone offers to sell at.
 
 If buying keeps taking offered shares faster than selling interest replenishes, trades can move to higher offers. Sellers accepting lower bids can similarly move price down. Orders can also be withdrawn, leaving less interest in the way. Substantial trading can therefore produce little movement, while lighter trading can sometimes move price farther.
 
-You can begin to recognize that relationship on the chart. A decline stops making progress, price spends time in a small range, and then it rallies. That area gives us somewhere to watch if price returns. We will use supply and demand zones to mark some of these interactions in Chapter 4. For now, focus on the change in behavior: selling was moving price down, then it no longer did.
+Return to the stock finding its footing near $5.20. The decline stops making progress, price spends time in a small range, and then it rallies. That area gives us somewhere to watch if price returns. Some earlier holders may have exited during the pause, but the visible change is the structure. We will use supply and demand zones to mark some of these interactions in Chapter 4. For now, focus on the change in behavior: selling was moving price down, then it no longer did.
 
 > **[Blue Callout] Companies Can Add Supply Too:** A company can raise money by issuing and selling additional shares, including through an **at-the-market offering**, where a broker sells into the existing market on its behalf. Issuing new shares adds shares outstanding and can dilute existing shareholders' ownership percentage. Check company announcements and filings for that context; heavy selling on a chart alone does not identify the seller.
 
-### Why Buyers Sell Into a Recovery
-Imagine a stock making a strong morning run after news brings it into focus. One trader buys near **$6.00**, expecting continuation. The move reverses and the stock falls. A later recovery toward $6.00 may now look like a chance to get out near break-even. Another trader bought during the decline and sees that same price as a chance to take profit.
-
-Both might sell near $6.00, for different reasons. New short sellers might also enter there, expecting another rejection. This is one explanation for **overhead supply**: selling interest that a recovery encounters at higher prices. If earlier holders added shares lower down, their average cost and preferred exit may have changed too. There is no single break-even price shared by everyone.
-
-On a real chart, historical volume does not tell us how many earlier buyers remain. What we can see is the prior reaction and what happens on the return. If the next push stalls around that area and retreats, it supports the **resistance** read: the area is again limiting the advance.
-
-A long, quiet base adds a different piece of evidence. Price has stopped extending the decline and is spending time in a range. Some earlier holders may have exited during that period, but the visible change is the structure. Watch whether the eventual break holds outside the base.
-
 ### Support, Breakouts & Short Sellers
-A **support area** is where a decline has stopped and price has recovered. Buyers meeting continued selling is one explanation; selling losing urgency is another. The reaction gives us a reference. The next test shows whether it still matters.
+The recovery brings our stock back toward $6.00. The earlier retreat gives us a **resistance** reference: an area where the advance stalled or turned lower. The pause and recovery near $5.20 give us a **support** reference: an area where the decline stopped and price recovered. Buyers meeting continued selling is one explanation for that support; selling losing urgency is another.
 
-Now consider a trader shorting below a clear resistance ceiling, with a buy stop above it. A move through that stop's trigger activates the exit order. Another short seller may have entered much higher or use a different exit. The same breakout changes their situations differently.
+We know where price responded before. We do not know how many earlier buyers remain or which traders will act on the return. Watch what happens when price reaches the $6.00 ceiling again.
 
-When price returns to the ceiling, follow the test:
+Suppose a new short seller enters just below that ceiling and places a buy stop above it. A move through the stop's trigger activates the exit order. Another short seller may have entered much higher or use a different exit. The same breakout changes their situations differently.
+
+Urgency can increase as price moves against a position. A trader choosing to exit, a triggered stop, and a broker-required liquidation are different situations. We use *forced* only when there is a specific trigger or requirement.
+
+Follow the test at $6.00:
 
 1. **The Rejection:** Price tests the area, fails to sustain higher prices, and retreats. Sellers may be **absorbing buying** by continuing to supply shares as buy orders arrive, limiting upward progress. Buyers losing urgency can also produce a rejection. A later attempt that stalls again strengthens the resistance read.
 2. **The Breakout:** Price clears the ceiling. Shorts whose exits trigger buy back shares. Other shorts reconsider as the move eats into profits or deepens losses. At the same time, the visible new high can attract momentum buyers and encourage existing longs to add.
