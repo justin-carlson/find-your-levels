@@ -31,6 +31,7 @@ Build dependency: Marked 17.0.5, Node 20 or newer. No dependencies were download
 - An inset, fixed chapter navigation on the same white canvas as the focused reading column, following the trading journal playbook’s open layout. Navigation and the reading area form a centered group on wide screens with a 100px gap; there is no sidebar panel border. The header remains left-aligned.
 - White canvas, slate text, blue navigation, and restrained semantic callout rules. The header pairs Find Your Levels with “Read price action, understand participation, and plan around meaningful levels.” and a subtle bottom divider. Light is the default; the optional dark theme is saved locally.
 - System sans type: 16px prose / 28px line height, 38px desktop chapter titles, 24px section headings, and compact navigation. Readable line length is capped at 740px.
+- The main column fills at least the viewport below the header. Short pages push the footer to the bottom; long chapters keep it in normal flow after the content. Preserve this behavior when changing the page-group or main-column layout.
 - Section navigation on desktop; chapter drawer and an “In this chapter” disclosure on mobile. Links support keyboard focus, history, and reloads. Wide tables scroll inside their region.
 - Existing SVG illustrations are retained as labeled schematics. Supply/demand boxes span the full wick range of the selected base candles, matching the blueprint's drawing convention. Chapter 3 also includes Justin's unaltered FFAI screenshot, with a full-size image link.
 
