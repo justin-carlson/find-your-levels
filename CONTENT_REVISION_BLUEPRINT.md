@@ -181,7 +181,7 @@ On the timeframe you are examining, start with three basic descriptions:
 
 > **[Teal Callout] See the Shape, Then Read the Response:** Step back from individual candles and look at the shape of the move. An uptrend forms a rising staircase; a downtrend steps lower; consolidation clusters inside a range. These shapes help you see where price is making progress or struggling.
 >
-> A simple box can outline consolidation. A circle can highlight an important response, such as a second test of support, a reclaim, or a pullback that holds. Then connect it to the level and volume: **What changed here, and did price follow through?** The circle marks something to examine; it does not automatically confirm a trade.
+> One simple way to annotate a chart is to use light gray rectangles for consolidation areas and gray circles for pivots and important responses: a second test of a bottom, a bounce from support, a reclaim, or a push higher as volume picks up. Use whatever markings help you see the structure clearly. Then connect the response to the level and volume: **What changed here, and did price follow through?** A circle draws your attention to something worth examining; it does not automatically confirm a trade.
 
 **Not every sideways range is equal:** Overlapping candles far from a useful level give us little to work with. Higher lows beneath a flat ceiling show **compression against resistance**: price finds support progressively earlier, while the ceiling still holds. Watch whether price clears that ceiling or loses its higher lows. Chapter 7 covers trading this interaction.
 
