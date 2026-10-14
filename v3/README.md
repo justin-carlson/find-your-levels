@@ -8,7 +8,19 @@ Open `http://127.0.0.1:4174/v3/` using the repository preview server. To serve o
 python3 -m http.server 4175 --bind 127.0.0.1 --directory v3
 ```
 
-The generated `index.html`, `styles.css`, and `app.js` work without a build server or runtime dependencies. The site loads the first chapter by default. `#overview`, chapter anchors built from the chapter titles (for example `#mapping-your-levels`), and heading anchors built from the section headings support direct links and browser history. Links from before the title-based anchors (`#m1`–`#m7` and `#m5-…` section anchors) redirect to the matching chapter or heading; each page and heading carries its old anchor in `data-legacy`.
+The generated `index.html`, `styles.css`, and `app.js` work without a build server or runtime dependencies. The site loads the first chapter by default. `#overview`, chapter anchors built from the chapter titles (for example `#mapping-your-levels`), and heading anchors built from the section headings support direct links and browser history. Links from before the title-based anchors (`#m1`–`#m7` and `#m5-…` section anchors) redirect to the matching chapter or heading. Historical anchors remain stable when chapters are reordered or sections move; `data-legacy` records the original association, not the current chapter number. Renamed and consolidated headings use explicit aliases in `app.js`.
+
+## Chapter progression
+
+1. What Moves Price: participants, their reasons for acting, and the evidence behind a working story.
+2. Reading Price & Volume: activity versus progress, relative volume, and push/pullback comparisons.
+3. Understanding the Trend: swings, timeframes, trend lines, channels, compression, expansion, and recovery.
+4. Mapping Your Levels: support/resistance, holds and role changes, reference selection, zones, and room.
+5. Using Indicators for Context: VWAP, the 9/20 EMAs, the Daily 200 EMA, and supporting momentum context.
+6. Setups & Patterns: the four existing setups, with the curl first and trigger/stop definitions preserved.
+7. Planning the Trade: the decision checklist, session context, exits, and a hypothetical plan/pass comparison.
+
+Each concept has one home for its full explanation, with brief previews and applications elsewhere. This progression was approved for publication on October 14, 2026. Both the review and production pages are generated from the same blueprint; the production build adds the live asset paths and visitor analytics.
 
 ## Editing content
 
@@ -33,7 +45,7 @@ Build dependency: Marked 17.0.5, Node 20 or newer. No dependencies were download
 - System sans type: 16px prose / 28px line height, 38px desktop chapter titles, 24px section headings, and compact navigation. Readable line length is capped at 740px.
 - The main column fills at least the viewport below the header. Short pages push the footer to the bottom; long chapters keep it in normal flow after the content. Preserve this behavior when changing the page-group or main-column layout.
 - Section navigation on desktop; chapter drawer and an “In this chapter” disclosure on mobile. Links support keyboard focus, history, and reloads. Wide tables scroll inside their region.
-- Existing SVG illustrations are retained as labeled schematics. Supply/demand boxes span the full wick range of the selected base candles, matching the blueprint's drawing convention. Chapter 3 also includes Justin's unaltered FFAI screenshot, with a full-size image link.
+- Existing SVG illustrations are retained as labeled schematics. The trend illustrations are in Chapter 3; supply/demand boxes in Chapter 4 span the full wick range of the selected base candles, matching the blueprint's drawing convention. Chapter 2 includes Justin's unaltered FFAI screenshot, with a full-size image link.
 
 ## Brand assets
 

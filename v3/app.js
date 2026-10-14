@@ -9,6 +9,14 @@
   const chapterLinks = [...document.querySelectorAll('[data-chapter]')];
   const mobile = matchMedia('(max-width: 899px)');
   const sectionAliases = new Map([
+    ['what-price-and-volume-tell-us', 'comparing-volume-with-price-progress'],
+    ['m1-participation-leaves-a-footprint-reading-price-alongside-volume', 'comparing-volume-with-price-progress'],
+    ['reading-volume-in-an-uptrend', 'comparing-pushes-and-pullbacks'],
+    ['2-read-the-9-20-emas', 'reading-the-9-20-emas'],
+    ['1-follow-the-highs-and-lows', 'putting-a-bounce-in-context'],
+    ['m4-1-structure-swing-by-swing', 'putting-a-bounce-in-context'],
+    ['3-locate-price-relative-to-levels-and-vwap', 'putting-a-bounce-in-context'],
+    ['m4-3-location-above-support-or-under-a-broken-ceiling', 'putting-a-bounce-in-context'],
     ['setup-4-the-curl', 'setup-1-the-curl'],
     ['setup-1-break-and-retest', 'setup-2-break-and-retest'],
     ['setup-2-failed-breakdown-and-reclaim', 'setup-3-failed-breakdown-and-reclaim'],

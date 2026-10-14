@@ -13,184 +13,173 @@ const read = async name => (await readFile(path.join(here, name), 'utf8')).repla
 const source = await read('../CONTENT_REVISION_BLUEPRINT.md');
 const escape = text => text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 const slug = text => text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-// Section anchors from before links used titles (#m1-…); headings carry them as data-legacy so app.js can redirect old links.
+// Keep full historical anchors independent of current chapter placement. Headings carry
+// these as data-legacy so app.js can redirect old links after sections move.
 const legacySectionIds = new Map([
-  ["Recognizing Selling Pressure", "ffai-when-the-pullback-gets-busy"],
-  [
-    "What Price and Volume Tell Us",
-    "participation-leaves-a-footprint-reading-price-alongside-volume"
-  ],
+  ["Recognizing Selling Pressure", "m3-ffai-when-the-pullback-gets-busy"],
   [
     "Understanding Supply and Demand",
-    "supply-and-demand-who-is-willing-to-trade-here"
+    "m1-supply-and-demand-who-is-willing-to-trade-here"
   ],
   [
     "Four Reasons to Buy or Sell",
-    "the-four-players-at-every-level-longs-vs-shorts-buyers-vs-sellers"
+    "m1-the-four-players-at-every-level-longs-vs-shorts-buyers-vs-sellers"
   ],
   [
     "Why Buyers Sell Into a Recovery",
-    "trapped-buyers-and-the-overhead-supply-ceiling"
+    "m1-trapped-buyers-and-the-overhead-supply-ceiling"
   ],
   [
     "Support, Breakouts & Short Sellers",
-    "support-short-sellers-and-the-next-breakout-test"
+    "m1-support-short-sellers-and-the-next-breakout-test"
   ],
   [
     "When a Trade Becomes “Hold and Hope”",
-    "when-a-trade-turns-into-hold-and-hope"
+    "m1-when-a-trade-turns-into-hold-and-hope"
   ],
   [
     "Connecting the Bigger Picture to Today",
-    "multi-timeframe-participation-connecting-the-bigger-picture-to-today-s-move"
+    "m1-multi-timeframe-participation-connecting-the-bigger-picture-to-today-s-move"
   ],
   [
     "Before You Enter",
-    "pausing-before-the-button"
+    "m2-pausing-before-the-button"
   ],
   [
     "Three Principles for Planning a Trade",
-    "three-principles-guide-the-approach"
+    "m2-three-principles-guide-the-approach"
   ],
   [
     "Finding Active Stocks with Relative Volume",
-    "start-with-relative-volume-our-momentum-filter"
+    "m3-start-with-relative-volume-our-momentum-filter"
   ],
   [
     "Uptrends, Downtrends & Ranges",
-    "start-with-three-types-of-price-movement"
+    "m3-start-with-three-types-of-price-movement"
   ],
   [
     "Comparing Volume with Price Progress",
-    "reading-candle-volume-together-effort-vs-result"
+    "m3-reading-candle-volume-together-effort-vs-result"
   ],
   [
-    "Reading Volume in an Uptrend",
-    "volume-in-trends-what-a-healthy-bullish-trend-looks-like"
+    "Comparing Pushes and Pullbacks",
+    "m3-volume-in-trends-what-a-healthy-bullish-trend-looks-like"
   ],
   [
     "Putting a Bounce in Context",
-    "putting-the-bounce-in-context-the-three-part-read"
+    "m4-putting-the-bounce-in-context-the-three-part-read"
   ],
   [
     "Three Questions to Check the Trend",
-    "which-side-am-i-on-the-3-question-check-before-every-trade"
+    "m4-which-side-am-i-on-the-3-question-check-before-every-trade"
   ],
   [
-    "1. Follow the Highs and Lows",
-    "1-structure-swing-by-swing"
-  ],
-  [
-    "2. Read the 9 & 20 EMAs",
-    "2-the-9-20-emas-your-dynamic-trend-rails"
-  ],
-  [
-    "3. Locate Price Relative to Levels and VWAP",
-    "3-location-above-support-or-under-a-broken-ceiling"
+    "Reading the 9 & 20 EMAs",
+    "m4-2-the-9-20-emas-your-dynamic-trend-rails"
   ],
   [
     "Choosing Levels That Matter",
-    "choosing-useful-levels-start-with-volume-and-structure"
+    "m5-choosing-useful-levels-start-with-volume-and-structure"
   ],
   [
     "Key Levels Within the Trading Day",
-    "key-intraday-landmarks-the-4-interactions-break-retest-reclaim-reject"
+    "m5-key-intraday-landmarks-the-4-interactions-break-retest-reclaim-reject"
   ],
   [
     "When to Use a Line or a Zone",
-    "lines-and-zones-choosing-the-right-mark"
+    "m5-lines-and-zones-choosing-the-right-mark"
   ],
   [
     "Finding Supply and Demand Zones",
-    "supply-and-demand-zones-the-base-the-departure-and-the-return"
+    "m5-supply-and-demand-zones-the-base-the-departure-and-the-return"
   ],
   [
     "Finding Room to the Next Level",
-    "gaps-and-windows-finding-clean-air-and-room-to-run"
+    "m5-gaps-and-windows-finding-clean-air-and-room-to-run"
   ],
   [
     "Reading Repeated Tests of a Level",
-    "fresh-levels-vs-repeated-tests-reading-whether-a-line-is-weakening-or-coiling"
+    "m5-fresh-levels-vs-repeated-tests-reading-whether-a-line-is-weakening-or-coiling"
   ],
   [
     "Where References Overlap",
-    "confluence-trend-lines-and-channels"
+    "m5-confluence-trend-lines-and-channels"
   ],
   [
     "Chart Colors and Line Styles",
-    "the-charting-rulebook"
+    "m5-the-charting-rulebook"
   ],
   [
     "Building Your Map Across Timeframes",
-    "building-your-level-map-top-down-daily-context-to-intraday-detail"
+    "m5-building-your-level-map-top-down-daily-context-to-intraday-detail"
   ],
   [
     "Break, Retest, Reclaim & Rejection",
-    "the-landmark-action-matrix-four-common-interactions"
+    "m5-the-landmark-action-matrix-four-common-interactions"
   ],
   [
     "Drawing the Zone",
-    "a-consistent-way-to-draw-the-zone"
+    "m5-a-consistent-way-to-draw-the-zone"
   ],
   [
     "When Price Returns to a Zone",
-    "reading-the-return-a-demand-zone-example"
+    "m5-reading-the-return-a-demand-zone-example"
   ],
   [
     "1. Mapping Gaps",
-    "1-gaps-space-between-session-ranges"
+    "m5-1-gaps-space-between-session-ranges"
   ],
   [
     "2. Looking Inside Wide-Range Candles",
-    "2-wide-range-candles-check-the-trading-inside"
+    "m5-2-wide-range-candles-check-the-trading-inside"
   ],
   [
     "Volume at the Level",
-    "1-volume-participation-in-context"
+    "m6-1-volume-participation-in-context"
   ],
   [
     "VWAP: The Session Reference",
-    "2-vwap-a-reference-for-the-session"
+    "m6-2-vwap-a-reference-for-the-session"
   ],
   [
     "Where EMAs Meet Your Levels",
-    "3-stacking-the-9-20-ema-with-horizontal-levels"
+    "m6-3-stacking-the-9-20-ema-with-horizontal-levels"
   ],
   [
     "The Daily 200 EMA in Your Level Map",
-    "4-the-daily-200-ema-longer-term-context-room-ahead-and-breakout-reference"
+    "m6-4-the-daily-200-ema-longer-term-context-room-ahead-and-breakout-reference"
   ],
   [
     "MACD: Reading Momentum",
-    "5-macd-the-momentum-second-opinion"
+    "m6-5-macd-the-momentum-second-opinion"
   ],
   [
     "Putting It Together at $5.00",
-    "putting-it-together-reading-the-test-at-5-00"
+    "m6-putting-it-together-reading-the-test-at-5-00"
   ],
   [
     "Understanding Compression and Expansion",
-    "compression-and-expansion-the-cycle-behind-the-setups"
+    "m4-compression-and-expansion-the-cycle-behind-the-setups"
   ],
   [
     "Four Questions Before You Enter",
-    "the-pre-trade-checklist-four-questions-before-entry"
+    "m7-the-pre-trade-checklist-four-questions-before-entry"
   ],
   [
     "Setup 2: Break and Retest",
-    "setup-1-the-break-and-retest-hod-pmh-or-a-daily-level"
+    "m7-setup-1-the-break-and-retest-hod-pmh-or-a-daily-level"
   ],
   [
     "Setup 3: Failed Breakdown and Reclaim",
-    "setup-2-the-failed-breakdown-and-reclaim-the-bear-trap-level-reclaim"
+    "m7-setup-2-the-failed-breakdown-and-reclaim-the-bear-trap-level-reclaim"
   ],
   [
     "Setup 4: The EMA Pullback",
-    "setup-3-the-dynamic-trend-ride-the-9-20-ema-rail"
+    "m7-setup-3-the-dynamic-trend-ride-the-9-20-ema-rail"
   ],
   [
     "Setup 1: The Curl",
-    "setup-4-the-curl-reading-the-pullback-catching-the-second-leg"
+    "m7-setup-4-the-curl-reading-the-pullback-catching-the-second-leg"
   ]
 ]);
 
@@ -227,7 +216,7 @@ function renderChapter(chapter) {
   const renderer = new marked.Renderer();
   renderer.heading = function ({ depth, text, tokens }) {
     const id = slug(text);
-    const legacy = `${chapter.legacyId}-${legacySectionIds.get(text) || id}`;
+    const legacy = legacySectionIds.get(text) || `${chapter.legacyId}-${id}`;
     toc.push({ id, text, depth });
     return `<h${depth} id="${id}" data-legacy="${legacy}" tabindex="-1"><a class="heading-link" href="#${id}">${this.parser.parseInline(tokens)}</a></h${depth}>\n`;
   };
