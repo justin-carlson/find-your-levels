@@ -181,7 +181,7 @@ On the timeframe you are examining, start with three basic descriptions:
 
 > **[Teal Callout] See the Shape, Then Read the Response:** Step back from individual candles and look at the shape of the move. An uptrend forms a rising staircase; a downtrend steps lower; consolidation clusters inside a range. These shapes help you see where price is making progress or struggling.
 >
-> One simple way to annotate a chart is to use light gray rectangles for consolidation areas and gray circles for pivots and important responses: a second test of a bottom, a bounce from support, a reclaim, or a push higher as volume picks up. Use whatever markings help you see the structure clearly. Then connect the response to the level and volume: **What changed here, and did price follow through?** A circle draws your attention to something worth examining; it does not automatically confirm a trade.
+> Connect the shape to the level and volume: **What changed here, and did price follow through?** A shape gives you something to examine; it does not automatically confirm a trade.
 
 **Not every sideways range is equal:** Overlapping candles far from a useful level give us little to work with. Higher lows beneath a flat ceiling show **compression against resistance**: price finds support progressively earlier, while the ceiling still holds. Watch whether price clears that ceiling or loses its higher lows. Chapter 7 covers trading this interaction.
 
@@ -403,7 +403,7 @@ What happens when price tests the same level multiple times? Read **how price be
 - **Trend Lines & Channels:** A horizontal level marks a fixed price; a **trend line** tracks support or resistance on a slant. Connect at least two higher lows in an uptrend, or two lower highs in a downtrend; a later touch tests whether the line remains useful. Add a parallel line on the opposite side to frame a **channel**. A break with expanding volume and continued progress can signal a change in the rhythm. A brief overshoot followed by a return inside the channel is a different result.
 
 ### Chart Colors and Line Styles
-Use consistent colors and line styles so you can recognize each reference quickly during live trading:
+These are the chart markings we use throughout the guide. Use whatever colors and shapes help you read your charts clearly; consistency makes each reference easier to recognize.
 
 | Chart Mark | Timeframe & Role | What You Mark With It |
 | :--- | :--- | :--- |
@@ -411,6 +411,8 @@ Use consistent colors and line styles so you can recognize each reference quickl
 | **Green Solid Line** | **Macro Support** (Daily / Weekly / Monthly) | Major historical floors: bases from high-volume periods, multi-month bounce floors, and reclaimed boundaries that have held on a return test. |
 | **Red Dashed Line** | **Intraday Resistance** (15-Min / 5-Min / 1-Min) | Session references above price: Premarket High (PMH), prior High of Day (HOD), Opening Range High (ORH), and rejection peaks. |
 | **Green Dashed Line** | **Intraday Support** (15-Min / 5-Min / 1-Min) | Session references below price: Previous Day Low (PDL), Premarket Low (PML), Opening Range Low (ORL), and consolidation bases. |
+| **Gray Rectangle** | **Consolidation Area** | A sideways range where price clusters between a floor and ceiling. |
+| **Gray Circle** | **Pivot or Important Response** | A second test of a bottom, a bounce from support, a reclaim, or a push accompanied by increased volume. Watch what follows. |
 | **Green Shaded Zone** | **Candidate Demand** (Label the Chart Interval) | The full high-to-low range of the selected base before an upward departure. Keep relevant landmark lines visible within or beside it. |
 | **Red Shaded Zone** | **Candidate Supply** (Label the Chart Interval) | The full high-to-low range of the selected base before a downward departure. Watch the response on the return before assigning it a new role. |
 | **Light Blue Dashed Line** | **Daily 200 EMA** (Marked from the Daily Chart onto Intraday) | **In this guide, we use the 200 EMA on the Daily chart.** Find its current value (e.g., `$4.35`) and draw a light-blue dashed horizontal line on your 1-min and 5-min charts so you can see "room to the 200." This is a snapshot: refresh it as the Daily EMA changes. |
