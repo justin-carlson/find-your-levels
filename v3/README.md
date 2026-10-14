@@ -54,6 +54,12 @@ The design concept is a visual reference, not a copy source. The complete review
 
 ## Release status
 
+### Visitor analytics
+
+The published root page includes Cloudflare Web Analytics for `findyourlevels.com`. The `--publish` build adds Cloudflare's module snippet before the closing body tag; the `/v3/` review page does not include it. The beacon token in `build.mjs` is a public site identifier, not an API key. Reporting is available in the owner's Cloudflare dashboard under Observability → Analytics → Web analytics. Hosting and DNS remain on the existing setup.
+
+This is basic traffic measurement, not individual visitor tracking or custom chapter-read/completion events. The guide uses hash navigation, so do not interpret the default page report as a chapter readership report. After publishing, verify that the beacon loads on the live page and allow a few minutes for traffic to appear in Cloudflare.
+
 V3 is prepared for publication on October 14, 2026. Root `index.html` is generated with `npm run build:live`; it references the shared v3 assets and omits the review page’s `noindex` directive. CSS and JavaScript URLs include content hashes to refresh cached assets. GitHub Pages deploys root content from `main`.
 
 The release preserves the seven chapters, participant stories, setup triggers/stops, revised navigation and footer, responsive layout, and approved chart examples. Earlier exploratory drafts, prototypes, and private research are outside this release.

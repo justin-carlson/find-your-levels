@@ -269,10 +269,15 @@ if (duplicates.length) throw new Error(`Duplicate anchors: ${[...new Set(duplica
 await writeFile(path.join(here, 'index.html'), output);
 console.log(`Built ${chapters.length} chapters from CONTENT_REVISION_BLUEPRINT.md → v3/index.html`);
 if (process.argv.includes('--publish')) {
+  // The site token is a public identifier, not an account credential.
+  const analytics = `  <!-- Cloudflare Web Analytics -->
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7604b0536ad844b7b8beea8150533eef"}'></script>
+  <!-- End Cloudflare Web Analytics -->`;
   const published = output
     .replace('  <meta name="robots" content="noindex">\n', '')
     .replace(/(src|href)="\.\//g, '$1="v3/')
-    .replace(/(src|href)="assets\//g, '$1="v3/assets/');
+    .replace(/(src|href)="assets\//g, '$1="v3/assets/')
+    .replace('</body>', `${analytics}\n</body>`);
   await writeFile(path.join(here, '../index.html'), published);
   console.log('Built live root index.html with v3 assets.');
 }
