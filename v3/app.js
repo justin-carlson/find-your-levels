@@ -9,6 +9,24 @@
   const chapterLinks = [...document.querySelectorAll('[data-chapter]')];
   const mobile = matchMedia('(max-width: 899px)');
   const sectionAliases = new Map([
+    ['write-the-plan-first', 'know-your-plan'],
+    ['m2-write-the-plan-first', 'know-your-plan'],
+    ['planning-the-trade', 'putting-it-together'],
+    ['planning-the-trade-title', 'putting-it-together-title'],
+    ['four-questions-before-you-enter', 'know-your-plan'],
+    ['m7-the-pre-trade-checklist-four-questions-before-entry', 'know-your-plan'],
+    ['m2-four-questions-before-you-enter', 'know-your-plan'],
+    ['three-principles-for-planning-a-trade', 'know-your-plan'],
+    ['m2-three-principles-guide-the-approach', 'know-your-plan'],
+    ['when-a-trade-becomes-hold-and-hope', 'following-the-exit-plan'],
+    ['m1-when-a-trade-turns-into-hold-and-hope', 'following-the-exit-plan'],
+    ['m2-when-a-trade-becomes-hold-and-hope', 'following-the-exit-plan'],
+    ['same-plan-three-outcomes', 'following-the-exit-plan'],
+    ['m2-same-plan-three-outcomes', 'following-the-exit-plan'],
+    ['review-the-trade', 'following-the-exit-plan'],
+    ['m2-review-the-trade', 'following-the-exit-plan'],
+    ['putting-the-guide-to-work', 'following-the-exit-plan'],
+    ['m2-putting-the-guide-to-work', 'following-the-exit-plan'],
     ['four-reasons-to-buy-or-sell', 'buying-and-selling-a-quick-recap'],
     ['why-buyers-sell-into-a-recovery', 'one-price-different-decisions'],
     ['what-price-and-volume-tell-us', 'comparing-volume-with-price-progress'],
@@ -86,7 +104,6 @@
     });
     document.title = `${active.dataset.title} · Find Your Levels`;
     closeMenu();
-    document.querySelectorAll('.mobile-toc[open]').forEach(toc => { toc.open = false; });
     const heading = target && target !== active ? target : active.querySelector('h1');
     if (heading === active.querySelector('h1')) window.scrollTo(0, 0);
     else heading.scrollIntoView({ block: 'start' });

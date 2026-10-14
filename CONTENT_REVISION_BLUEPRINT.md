@@ -156,6 +156,14 @@ A stock suddenly becomes much busier than it usually is. Perhaps news has arrive
 
 > **[Teal Callout] Find the Activity, Then Read the Setup:** Relative volume helps us choose where to look. Price structure and the response at a level help us decide whether a trade is developing.
 
+### How the Trading Day Changes
+The same stock can feel very different at the open and over lunch. Participation and liquidity change through the day, affecting how much activity to expect around your levels. These are common planning tendencies across the US stock trading day; a catalyst can change the rhythm:
+- **Premarket (4:00 – 9:30 AM ET):** Often thinner liquidity and catalyst-driven spikes. Establishes **Premarket High / Low (PMH / PML)** within the session available on your chart and helps frame the potential opening gap.
+- **Opening Drive (9:30 – 10:00 AM ET):** Often heavy volume and wide ranges as overnight interest meets regular-hours liquidity. Establishes the **Opening Range** and initial **High / Low of Day (HOD / LOD)**.
+- **Mid-Morning (10:00 – 11:30 AM ET):** The opening structure has had time to develop. Look for whether trend continuations, HOD retests, VWAP reclaims, and curls are holding or repeatedly failing.
+- **Lunch Lull (11:30 AM – 1:30 PM ET):** Activity often slows. Judge smaller volume bars against that time of day, and step back when price repeatedly crosses levels without progress.
+- **Power Hour (3:00 – 4:00 PM ET):** Activity often increases toward the close. Intraday traders closing positions, swing traders positioning for the next session, and closing orders can all contribute. Read the direction and structure of that activity rather than assuming the buying is short covering.
+
 ### Comparing Pushes and Pullbacks
 Look beyond one candle and compare a push with the pullback that follows it:
 
@@ -641,57 +649,33 @@ After clearing a major level, a stock may trend through the available room witho
 
 ---
 
-## Chapter 7: Planning the Trade (`#m2`)
+## Chapter 7: Putting It Together (`#m2`)
 
 ### Chapter Lead
-The stock is approaching your level, and the setup you have been watching is beginning to take shape. This is the moment when your chart reading needs to become a plan.
+A stock reaches a level you marked, and the setup you have been watching begins to take shape. Now bring the pieces together: the context, the entry you are waiting for, the risk, and the room ahead.
 
-Bring together the participation, trend, level map, and setup rules before price asks you to act. Know what you are waiting for, where the next obstacle sits, and what ends the idea. A complete plan also leaves room to pass.
+Let's walk through one example, including when the same setup is worth passing on.
 
 ### Before You Enter
 It is human nature to want in on a surging green candle. When a stock is moving fast, stepping in right away feels like joining the winning side. Even experienced traders feel that pull.
 
-Give yourself a beat to reconnect the move with your map. Notice whether you are buying near support with room ahead or chasing directly into the next resistance test. Then check whether the push is keeping its gains and the pullback is holding where you expected. The checklist later in this chapter turns that pause into a repeatable plan.
+Give yourself a beat to reconnect the move with your map. Notice whether you are buying near support with room ahead or chasing directly into the next resistance test. Then check whether the push is keeping its gains and the pullback is holding where you expected. The plan in the next section turns that pause into a repeatable habit.
 
-> **[Blue Callout] Give Risk a Reference:** We look for an entry near a meaningful invalidation point, with room to the next level. A pullback, retest, or reclaim can provide that reference. Position size and execution determine the actual loss; proximity to a line is only one part of the plan.
+### Know Your Plan
+Before price reaches your level, run through these five questions in your head. Know what you are waiting for and how you will respond.
 
-### Three Principles for Planning a Trade
+| Part of the Plan | The Question It Answers |
+| :--- | :--- |
+| **Context** | Do participation and the trend fit the continuation or recovery setup you are considering? |
+| **Level and trigger** | Which mapped level matters, and has your setup's entry trigger appeared? |
+| **Stop** | Which price invalidates the setup, and what structure does it protect? |
+| **Room** | Where is the nearest overhead obstruction, and does the room justify the distance to your stop? |
+| **Exit** | Where will you sell into strength, and what would make you pass entirely? |
 
-Think of a trade you can explain before taking it: you know the area you are watching, the behavior you need to see, and where you plan to sell.
-
-**Give the entry a structural reference.** Support, retests, and reclaims help connect an entry to a defined invalidation. A freshly broken PMH, prior HOD, or daily boundary can provide that reference when it holds on a pullback. An extended spike can carry price far away from it.
-
-**Build conviction from progress.** A push that gains ground, a controlled pullback, and a renewed advance build the continuation case. Heavy trading without progress or a loss of the area calls for reassessment. Indicators help describe the context, while the behavior at the level guides the decision.
-
-**Plan to sell into strength before the next test.** Locate the next overhead reference before entering. Follow the planned **scale-out**, selling portions of the position as the move advances toward it. New supply can meet even a strong advance, so decide those exits while you have time to think.
-
-> **[Teal Callout] Conviction Includes an Exit:** A good explanation can still accompany a failed trade. State the read, define what would change it, and follow the plan when that evidence arrives. You can believe covering is contributing to a rally and still exit when the reclaimed level fails.
-
-### How the Trading Day Changes
-The same stock can feel very different at the open and over lunch. Participation and liquidity change through the day, affecting how much activity to expect around your levels. These are common planning tendencies across the US stock trading day; a catalyst can change the rhythm:
-- **Premarket (4:00 – 9:30 AM ET):** Often thinner liquidity and catalyst-driven spikes. Establishes **Premarket High / Low (PMH / PML)** within the session available on your chart and helps frame the potential opening gap.
-- **Opening Drive (9:30 – 10:00 AM ET):** Often heavy volume and wide ranges as overnight interest meets regular-hours liquidity. Establishes the **Opening Range** and initial **High / Low of Day (HOD / LOD)**.
-- **Mid-Morning (10:00 – 11:30 AM ET):** The opening structure has had time to develop. Look for whether trend continuations, HOD retests, VWAP reclaims, and curls are holding or repeatedly failing.
-- **Lunch Lull (11:30 AM – 1:30 PM ET):** Activity often slows. Judge smaller volume bars against that time of day, and step back when price repeatedly crosses levels without progress.
-- **Power Hour (3:00 – 4:00 PM ET):** Activity often increases toward the close. Intraday traders closing positions, swing traders positioning for the next session, and closing orders can all contribute. Read the direction and structure of that activity rather than assuming the buying is short covering.
-
-### When a Trade Becomes “Hold and Hope”
-A familiar trap is chasing a vertical green candle into resistance, then switching from a trade plan to **Hold and Hope** when price reverses. The desire to get back to break-even can take over the decision. Recognizing that pressure in yourself is as important as considering it in other participants.
-
-> **[Amber Callout] Keep the Exit Plan in View:** Decide what would **invalidate the trade**: the price or condition that tells you this setup has failed. If that condition occurs, follow the planned exit. Keep that decision tied to the setup you chose and the room you mapped before entering.
-
-### Four Questions Before You Enter
-Before you press the buy button, verify four things in order:
-
-1. **Is Participation Supporting the Price Response?** Is the stock active, and is price making upward progress on the frontside or completing a defined reclaim, rather than merely printing a green bounce beneath broken support?
-2. **What Level and Response Am I Trading?** Name the level and the observable **break, retest, or reclaim** that triggers the entry. Has the planned entry response appeared, or is it still developing?
-3. **Where is the Next Obstruction?** Mark the nearest overhead level, including an intraday rejection, a daily level, or the **Daily 200 EMA**. Does the room from the planned entry to that level justify the distance to the stop?
-4. **Where is my Exact Invalidation Point?** Name the stop price and the structure it protects. Choose that reference before entry and keep it tied to the original plan as the trade develops.
-
-If any part of the plan is missing, you can keep watching. A setup developing does not create an obligation to trade it.
+If a piece is missing, keep watching. A developing setup does not create an obligation to trade it.
 
 ### A Plan From Start to Finish
-Let's follow a hypothetical **break-and-retest** around $5.00 from the first approach to the exit plan. The stock clears the ceiling, then pulls back. You are watching for the old resistance to hold as support. Here is how the pieces fit together:
+Suppose an active stock reaches $5.00, breaks above it, then pulls back. You are watching for the old ceiling to hold as a floor. Here is how the **break-and-retest** from Chapter 6 becomes a plan:
 
 | Part of the Plan | What We Have Identified |
 | :--- | :--- |
@@ -702,16 +686,18 @@ Let's follow a hypothetical **break-and-retest** around $5.00 from the first app
 | **Room** | After checking nearby intraday and Daily structure, the nearest mapped ceiling is $5.45. That leaves about $0.40 to the next test, compared with $0.08 per share to the planned stop from $5.05, before costs and slippage. |
 | **Exit plan** | Plan portions to sell into strength on the approach to $5.45. That level is a reference for the next test, not a promised destination. If support fails first, follow the planned stop. |
 
-Before taking the entry, choose position size to fit the planned risk. The distance to the stop helps estimate that risk; execution and slippage can change the actual loss. Keep the chosen stop tied to the setup rather than moving it farther away to accommodate a position.
+Choose position size from the planned risk and the distance to the stop. In this example, $50 divided by $0.08 per share gives 625 shares before costs and slippage. The structure sets the stop; size the position around it. Fast moves and slippage can make the actual loss larger than planned.
 
-The participant story helps explain the response: buyers who missed the initial break may join the retest, and shorts may buy to exit. Our evidence is the break, the quieter return, and the renewed upward progress. If those observations change, the story does not overrule them.
+Buyers who missed the initial break may join the retest, and shorts may buy to exit. That story helps explain the interaction. The evidence is the break, the quieter return, and renewed upward progress. Follow those observations as the trade develops.
 
 #### The Same Setup, Without Enough Room
 Now suppose the nearest mapped ceiling is $5.08, while the response still offers an entry near $5.05 and the planned stop remains $4.97. Only $0.03 separates the entry from the next test, compared with $0.08 to the stop. In this example, we pass. We do not skip the closer ceiling in favor of a more appealing distant target or tighten the stop away from its supporting structure.
 
-We also pass if the retest keeps falling through $5.00 instead of producing the setup's turn higher. A later recovery might create a different opportunity; it needs its own setup and plan. Waiting for a response does not require taking it once the available room has changed.
+We also pass if the retest keeps falling through $5.00 instead of producing the setup's turn higher. A later recovery needs its own setup and plan.
 
-### Putting the Guide to Work
-For a new chart, start with the broader structure and the relevant levels. Then read participation and price progress as those references are tested. Use indicators to add context, choose the setup that fits the actual response, and define the entry, invalidation, and room before acting.
+### Following the Exit Plan
+If price approaches $5.45, follow the planned scale-out, selling portions into strength before the next test. If price reaches $4.97 first, follow the planned stop. A convincing participant story does not override that exit.
 
-You should be able to explain the plan in a few sentences: **what matters here, what response you need, where the next test is, and what would make you step aside.** As new evidence arrives, update the read and keep the decision tied to the plan.
+When price reverses, wanting to get back to break-even can turn the trade into **Hold and Hope**. Keep the original invalidation in view. If you exit and price later recovers, assess it as a new trade with its own setup, trigger, and stop.
+
+Afterward, note what you planned, what price did, and whether you followed the plan. Separate that process from the profit or loss. The aim is to explain your decisions, recognize when the evidence changes, and know when to act or step aside.

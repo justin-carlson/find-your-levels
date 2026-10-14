@@ -16,6 +16,7 @@ const slug = text => text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|
 // Keep full historical anchors independent of current chapter placement. Headings carry
 // these as data-legacy so app.js can redirect old links after sections move.
 const legacySectionIds = new Map([
+  ["How the Trading Day Changes", "m2-how-the-trading-day-changes"],
   ["Recognizing Selling Pressure", "m3-ffai-when-the-pullback-gets-busy"],
   [
     "Understanding Supply and Demand",
@@ -239,7 +240,7 @@ function renderChapter(chapter) {
   const pager = `<nav class="chapter-pager" aria-label="Chapter pagination"><a href="#${previous.id}"><span>Previous</span>${escape(previous.title)}</a>${next ? `<a class="next" href="#${next.id}"><span>Next chapter</span>${escape(next.title)}</a>` : '<a class="next" href="#overview"><span>Back to</span>Introduction</a>'}</nav>`;
   const tocLinks = toc.filter(item => item.depth === 2 || item.text.startsWith('Setup ')).map(item => `<a href="#${item.id}"${item.depth === 3 ? ' class="nested"' : ''}>${escape(item.text)}</a>`).join('');
   return `<section class="page" id="${chapter.id}" data-legacy="${chapter.legacyId}" data-title="${escape(chapter.title)}"${chapter.number === 1 ? ' data-active' : ''} aria-labelledby="${chapter.id}-title">
-    <div class="reading-layout"><article class="article"><h1 id="${chapter.id}-title" tabindex="-1">${escape(chapter.title)}</h1><details class="mobile-toc"><summary>In this chapter</summary><nav aria-label="Sections in this chapter">${tocLinks}</nav></details>${html}${pager}</article>
+    <div class="reading-layout"><article class="article"><h1 id="${chapter.id}-title" tabindex="-1">${escape(chapter.title)}</h1>${html}${pager}</article>
     <aside class="page-toc"><nav aria-label="On this page"><h2>On this page</h2><div class="toc-links">${tocLinks}</div></nav></aside></div></section>`;
 }
 
