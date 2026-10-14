@@ -437,18 +437,21 @@ On the Daily chart, you may find a blank stretch between two candles after news,
 - **Reading a Gap Fill:** When price returns into a historical gap-down area, the upper edge is a reference for a possible *gap fill*. There may be fewer nearby regular-session pivots inside it, but check extended-hours trading, older structure, and activity since the gap formed. Holders from other periods can still sell there, and new sellers can enter. A break and hold above the lower edge gives you a working continuation read; stalling inside the gap or falling back below that edge weakens it.
 
 #### 2. Looking Inside Wide-Range Candles
-A **wide-range candle** on the Daily or higher-timeframe chart can look like open room between two areas of consolidation. One example is a large red day spanning $12.00 down to $7.00.
-- **How to check the room ahead:** Mark the low ($7.00) and high ($12.00) as references. If price later reclaims $7.00 from below, inspect the route toward $12.00 before treating that entire distance as available room. The candle summarizes a full session; it can hide meaningful pauses and reversals inside its range.
-- **The Multi-Timeframe Check Inside a Wide-Range Candle:**
-  1. **Zoom into the 5-minute or 15-minute chart** of that historical candle to check whether the stock built a heavy intraday consolidation shelf halfway down (say, around $9.50) before flushing the rest of the way. That shelf is another area to watch on the return trip. Check later trading through the same prices, too.
-  2. **Check for Moving Average Traffic (especially our Daily 200 EMA reference):** If the **Daily 200 EMA** sits at $9.20 inside that range, mark it as a potential reaction point before the $9.50 shelf. Watch whether price stalls there or continues through.
+A large red Daily candle can make the distance from its low to its high look like open room. But that single candle summarizes an entire session, including any pauses, bounces, and consolidation within it.
 
-A holder from the earlier decline may see a recovery into that space as a chance to exit. New longs and shorts covering can contribute buying along the way. Keep the intervening shelves visible so you can follow where the advance makes progress and where it struggles.
+If price later reclaims the candle's low, check what lies ahead before looking toward its high:
+- **Look inside the historical session.** On its 5-minute or 15-minute chart, find shelves where price paused or consolidated before continuing lower. Check later trading through those prices, too. A shelf inside the candle may be the next test on a recovery.
+- **Add nearby references.** The Daily 200 EMA or another mapped level may sit before that shelf. Keep the nearest relevant obstacle visible instead of treating the whole candle's range as available room.
+
+A holder from the earlier decline may see a recovery into that space as a chance to exit. New longs and shorts covering can contribute buying along the way. Follow where the advance makes progress and where it struggles.
+
+> **[Chart Example] Chart example to come**
+> A Daily candle paired with its historical intraday chart, showing an internal consolidation shelf and the next test on a later recovery.
 
 > **[Image Placeholder: Chapter 4A: Daily Gap vs. Wide-Range Candle (Plus the 200 EMA Check)]**
 > *What to show:* Two side-by-side daily chart examples, with session settings identified:
 > 1. **Left Panel (Daily Gap Fill):** A stock with a historical regular-session gap down between $5.20 and $7.50. Show the corresponding extended-hours view or note whether trades occurred inside that daily gap. Annotate the actual revisit: the break above $5.20, the pullback, and whether price held or fell back below it. Label any later move toward $7.50 as the subsequent outcome.
-> 2. **Right Panel (Wide-Range Candle + 200 EMA Check):** A stock with a long red daily candle spanning $8.50 down to $4.80. Mark its high and low, add a small view of the historical 5-minute structure inside it, and mark the light-blue dashed **Daily 200 EMA** at $6.60 as *"Potential Reaction Point: $1.80 Above $4.80."* Identify any nearer shelf before labeling the room available.
+> 2. **Right Panel (Wide-Range Candle + 200 EMA Check):** Use a real wide-range red Daily candle. Mark its high and low, pair it with the historical 5-minute structure, and identify an internal consolidation shelf. Show a later recovery with the Daily 200 EMA value from that revisit, if relevant. Mark the nearest obstacle using actual prices and show the subsequent response separately from the initial read.
 
 ### Chart Colors and Line Styles
 These are the chart markings we use throughout the guide. Use whatever colors and shapes help you read your charts clearly; consistency makes each reference easier to recognize.
@@ -531,31 +534,32 @@ An intraday rally can look clear until you check the Daily chart and find the 20
 The Daily 200 EMA gives this playbook a consistent longer-term reference. It has **three practical uses** in your level map:
 
 1. **Longer-Term Context (Position and Slope):** Price holding above a **rising** Daily 200 EMA fits a bullish longer-term backdrop. Price below a **falling** Daily 200 EMA fits a bearish one. A stock crossing above a still-falling average may be attempting a transition; check the daily highs and lows before declaring the whole trend changed.
-2. **"Room to the 200" (Potential Overhead Reaction):** If a stock breaks out at `$3.20` and the Daily 200 EMA sits at `$4.50`, the distance is `$1.30`. Call that **room to the 200 EMA** only after checking for nearer swing highs, consolidation shelves, and gap boundaries. If a shelf sits at `$3.60`, that is your first mapped test. Conversely, a 200 EMA at `$3.30` leaves only ten cents from `$3.20`; account for that nearby reaction point before planning a long trade. You can wait to see whether it rejects or breaks and holds.
+2. **"Room to the 200" (Potential Overhead Reaction):** A stock can break above an intraday level with the Daily 200 EMA still overhead. Before treating the distance to that average as available room, check for nearer swing highs, consolidation shelves, and gap boundaries. If a shelf comes first, it is the next mapped test. If the 200 EMA sits just above the breakout, account for that nearby obstacle in the plan; watch whether price rejects there or breaks and holds.
 3. **Breaking and Holding the Daily 200 EMA:** When an active stock crosses above the Daily 200 EMA with expanding volume and **holds its area on a retest**, it has passed a useful test in this playbook. Fresh longs may join and shorts may exit as price holds higher ground. Map the next obstacle and watch for continued progress; falling back below the average weakens the continuation read.
+
+> **[Chart Example] Chart example to come**
+> An intraday breakout with the Daily 200 EMA marked overhead and a nearer shelf identified as the first obstacle.
 
 ### MACD: Reading Momentum
 Price reaches a fresh high, but the push looks less forceful than the last one. MACD offers an optional way to examine that change in momentum. **MACD (Moving Average Convergence Divergence)** compares a faster and slower EMA, commonly the **12-period and 26-period EMAs**, with a **9-period EMA of MACD** as its signal line. Its histogram measures the gap between MACD and that signal. Read its crosses and divergence alongside price structure:
 - **Supporting Momentum:** Price breaks resistance while MACD crosses above its signal and the histogram turns positive and expands. The recent price momentum fits the bullish read; staying above the broken level is still the practical test.
 - **Bearish Divergence (Warning Sign):** Price pushes to a higher high at resistance, but MACD prints a *lower* high. The move is showing less momentum by this measure. Watch for a failed hold or lower high in price before treating it as a rejection; divergence alone does not end a trend.
 
-### Putting It Together at $5.00
+### Reading the Evidence Together
 
-These hypothetical examples test **$5.00**, where Premarket High, a selected high from an active Daily candle, and a whole-dollar price overlap.
+Price breaks above a prior high, and the pullback returns to that area as a rising EMA catches up. The overlap gives you a place to watch. Now compare the response with the surrounding context:
 
-| Check | Aligned Context | Conflicting Context |
-| :--- | :--- | :--- |
-| **Trend and location** | Frontside, above rising VWAP and the rising 9 EMA. | Below VWAP, with the 9 EMA below the 20 EMA. |
-| **Volume and momentum** | Volume expands on the break; MACD is turning up. | Volume fades on the push; MACD shows divergence. |
-| **Price response** | The retest stops near $5.00 and turns higher. | The push stalls without holding above $5.00. |
-| **Room ahead** | After checking intervening structure, the next mapped level is the Daily 200 EMA at $6.20. | The Daily 200 EMA at $5.08 leaves little room before another test. |
-| **Decision** | The response supports continuation. Losing the hold weakens the idea even if indicators remain bullish. | Pass on this break-and-hold trade and reassess if the structure changes. |
+- **The level holds, but momentum looks weaker.** Price stops falling near the reclaimed level and turns higher while MACD shows less momentum than the earlier push. Keep watching whether the renewed advance makes progress. The mixed readings give you a question to follow rather than a simple count of bullish indicators.
+- **Indicators look supportive, but the hold fails.** VWAP and the EMAs may still be rising as price falls back through the level. Those readings do not replace the hold the setup requires. Return to the setup's trigger and invalidation rules.
+- **The response looks constructive, but the next obstacle is close.** A nearby daily level, shelf, or Daily 200 EMA can leave little room before another test. Compare that room with the planned stop before treating the setup as a trade.
 
-> **[Image Placeholder: Chapter 5: Confluence, the Actual Response & "Room to the 200 EMA"]**
-> *What to show:* A real 5-minute chart with Volume and MACD panes below:
-> - Price forms higher lows above VWAP and the rising 9/20 EMAs beneath a Red Dashed PMH or prior HOD at $5.00, overlapping a selected Solid Red Daily level.
-> - Mark the Light Blue Dashed **Daily 200 EMA at $6.20** and label the distance *"$1.20 to the Daily 200 EMA: Check for Nearer Levels."* Include any nearer obstacle so the example shows the actual room available.
-> - Annotate the volume increase on the break, the observed MACD change, and the retest's low and subsequent response. Flip $5.00 from Red to Green only after the hold appears. Show the next candles, including a loss of the level if that is the actual outcome, so readers can separate the initial read from what followed.
+A trader who bought the earlier high may use the recovery to exit, while a new buyer may be waiting for the retest to hold. Follow what price and volume do at the level; the indicators help describe the context around that response.
+
+> **[Chart Example] Chart example to come**
+> A real level test with mixed indicator readings, the nearest obstacle, and the candles that show whether the hold lasts.
+
+> **[Image Placeholder: Chapter 5: Mixed Evidence at a Level]**
+> *What to show:* A real intraday chart where price response and at least one indicator do not give an immediately tidy, aligned picture. Mark the level's basis, relevant VWAP/EMA readings, volume, and the nearest overhead obstacle. Include MACD only if it clarifies the disagreement. Use the actual prices and session settings. Separate what was visible at the test from the subsequent outcome; do not select only a successful continuation or alter data to fit the prose.
 
 > **[Teal Callout] Explain the Reference Before Using It:** Know what each indicator measures and which chart or session supplies its data. Read its agreement or disagreement with the swings and level response. Chapter 6 combines that context with specific setup triggers and stops.
 
@@ -666,46 +670,32 @@ Before price reaches your level, run through these five questions in your head. 
 
 | Part of the Plan | The Question It Answers |
 | :--- | :--- |
-| **Participation and trend** | Is the stock active, and is price making upward progress on the frontside or completing a defined reclaim, rather than printing a green bounce beneath broken support? |
-| **Level and trigger** | Which mapped level are you trading, and which observable **break, retest, or reclaim** triggers the entry? Has it appeared, or is it still developing? |
-| **Stop** | Which price ends the idea, and what structure does it protect? Choose it before entry and keep it tied to that structure. |
-| **Room** | Where is the nearest obstruction overhead: an intraday rejection, a daily level, or the **Daily 200 EMA**? Is the room to it worth the distance to your stop? |
-| **Exit** | Where will you sell into strength, and what would make you pass on the trade entirely? |
+| **Participation and trend** | Is the stock active, and does its structure fit the continuation or recovery setup you are considering? |
+| **Level and entry** | Which mapped level matters, and has the entry trigger for your setup appeared? A price reaching a level gives you a place to watch; the setup defines what you wait for. |
+| **Invalidation and stop** | What would tell you the setup has failed, and where is your planned stop? Keep it tied to the structure and stop rule for the setup you chose. |
+| **Room** | Where is the nearest potential obstacle above your entry? Does the distance to it justify the distance to your stop? |
+| **Taking profit and exiting** | Where will you sell into strength as price approaches the next level? Know how you will manage any remaining shares and when the planned stop calls for an exit. |
 
-If any part of the plan is missing, you can keep watching. A setup developing does not create an obligation to trade it.
+**Connect the room to your profit-taking plan.** Look ahead for a prior high, an intraday rejection, a daily level, or the Daily 200 EMA. Whole-dollar and half-dollar prices, ending in **.00** or **.50**, can also draw attention. Consider them alongside the surrounding structure and earlier reactions. The nearest relevant level gives you an area to plan around, rather than a promised destination or an automatic exit just because the price is round.
 
-### A Plan From Start to Finish
-Let's follow a hypothetical **break-and-retest** around $5.00 from the first approach to the exit plan. The stock clears the ceiling, then pulls back. You are watching for the old resistance to hold as support. Here is how the pieces fit together:
+Room is the distance to that next potential obstacle. Your profit-taking plan describes what you will do as price approaches it, such as selling part of the position into strength. A holder may use the same rally to take profits or get out near break-even, which is why an advancing stock can encounter selling at the next level.
 
-| Part of the Plan | What We Have Identified |
-| :--- | :--- |
-| **Context** | An active stock is building higher highs and higher lows, above VWAP and rising 9/20 EMAs. The advance has reached a mapped $5.00 resistance level. |
-| **Level and response** | Price breaks $5.00 on expanding volume, then pulls back on lighter volume. The retest slows near the old ceiling and begins turning higher with volume picking up. |
-| **Entry** | For this example, the observable turn occurs around $5.05. That is the break-and-retest trigger from Chapter 6; the first crossing of $5.00 alone was not this entry. |
-| **Invalidation** | We selected $4.97, just below the flipped $5.00 support, before entry. Reaching that planned stop calls for the exit; we do not wait for a later candle close. |
-| **Room** | After checking nearby intraday and Daily structure, the nearest mapped ceiling is $5.45. That leaves about $0.40 to the next test, compared with $0.08 per share to the planned stop from $5.05, before costs and slippage. |
-| **Exit plan** | Plan portions to sell into strength on the approach to $5.45. That level is a reference for the next test, not a promised destination. If support fails first, follow the planned stop. |
+**A good-looking setup can still leave too little room.** If the next resistance is close compared with the distance to your stop, pass. Do not skip a nearer obstacle to make a distant target look attractive, or tighten the stop away from the structure just to make the trade fit.
 
-**Size the position from the stop.** Decide in advance how much a failed trade should cost. Say you choose $50 for this example. The $0.08 between the $5.05 entry and the $4.97 stop allows 625 shares ($50 ÷ $0.08). A stop $0.20 away would allow 250 shares for the same $50. The structure sets the stop, and the stop sets the size. Choose a smaller position when the structural stop is farther away, rather than changing the stop to suit the size you want. Fast moves and slippage can make the actual loss larger than planned, so treat the amount as a limit you plan around rather than a guarantee.
-
-Here, the $0.40 to the next obstacle is five times the $0.08 to the stop, before costs. That compares the available room with the planned risk; it does not tell you how likely price is to reach $5.45.
-
-The participant story helps explain the response: buyers who missed the initial break may join the retest, and shorts may buy to exit. Our evidence is the break, the quieter return, and the renewed upward progress. If those observations change, the story does not overrule them.
-
-#### The Same Setup, Without Enough Room
-Now suppose the nearest mapped ceiling is $5.08, while the response still offers an entry near $5.05 and the planned stop remains $4.97. Only $0.03 separates the entry from the next test, compared with $0.08 to the stop. In this example, we pass. We do not skip the closer ceiling in favor of a more appealing distant target or tighten the stop away from its supporting structure.
+Choose position size to fit the planned risk and the distance to the stop. A wider structural stop calls for a smaller position for the same planned risk. Costs and slippage can make the actual loss larger than expected. If the trigger or risk is unclear, you can keep watching.
 
 ### Same Plan, Three Outcomes
-Now follow the original $5.00 plan beyond the entry decision. The trade may work, fail, or never trigger. Each outcome has a place in the plan.
+Once you know the plan, you can respond to what happens next. The trade may work, fail, or never trigger. Each outcome has a place in the plan.
 
-- **The trade works.** Price lifts from the retest and approaches $5.45. You sell part of the position into that strength, as planned. Manage any remaining shares according to the exit plan you chose before entering. If price clears $5.45 and holds, map the next obstruction before counting on more room.
-- **The trade fails.** Price slips back through $5.00 and reaches $4.97. You follow the planned stop. The attempt did not hold, and the exit keeps the decision tied to the original plan. The actual loss depends on the fill, including any slippage.
-- **The trigger never comes.** The retest keeps falling through $5.00 or never turns higher, so you never enter. A later recovery might create a different opportunity, but it needs its own setup and plan.
+- **The trade works.** Price follows through after your entry and approaches the next mapped level. Take profit into strength according to your plan, and manage any remaining shares using the exit rules you chose before entering. If price clears the level and holds, identify the next obstacle before counting on more room.
+- **The trade fails.** Price reaches the stop that invalidates your setup. Follow the planned exit rather than waiting for the trade to recover. The actual loss depends on the fill, including any slippage.
+- **The trigger never comes.** Price reaches the area you are watching, but the setup's entry condition does not appear. You stay out. A later opportunity needs its own setup and plan.
 
-### When a Trade Becomes “Hold and Hope”
-A familiar trap is chasing a vertical green candle into resistance, then switching from a trade plan to **Hold and Hope** when price reverses. The desire to get back to break-even can take over the decision. Recognizing that pressure in yourself is as important as considering it in other participants. Keep the exit tied to the setup you chose, even when the participant story still sounds convincing.
+### When Emotions Change the Plan
+Knowing the possible outcomes is easier than accepting them in the moment. Price reaches your stop, but you want to give it another chance. Or you exit, watch it bounce, and feel the urge to jump straight back in. This is where a clear plan can turn into a different trade without you noticing.
 
-A second trap follows a stop. Price turns back up soon after you exit, and getting straight back in feels like fixing a mistake. Treat it as a new trade with its own setup, trigger, and stop. If none has formed yet, wait. If you notice yourself chasing the same stock again or forcing trades to win back a loss, that is a good time to step away from the screen.
+- **Holding and hoping:** The setup has failed, but wanting to get back to break-even replaces the planned exit. Keep the exit tied to the setup you chose, even when the participant story still sounds convincing.
+- **Jumping back in:** Price turns up after your exit, and re-entering feels like fixing a mistake. Treat it as a new trade with its own setup, trigger, and stop. If none has formed yet, wait. If you notice yourself chasing the same stock or forcing trades to win back a loss, take a step away from the screen.
 
 ### Review the Trade
 While the trade is fresh, write down a few lines:

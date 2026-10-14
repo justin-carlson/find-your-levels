@@ -9,7 +9,13 @@
   const chapterLinks = [...document.querySelectorAll('[data-chapter]')];
   const mobile = matchMedia('(max-width: 899px)');
   const sectionAliases = new Map([
-    ['m2-when-a-trade-becomes-hold-and-hope', 'when-a-trade-becomes-hold-and-hope'],
+    ['putting-it-together-at-5-00', 'reading-the-evidence-together'],
+    ['a-plan-from-start-to-finish', 'know-your-plan'],
+    ['m2-a-plan-from-start-to-finish', 'know-your-plan'],
+    ['the-same-setup-without-enough-room', 'know-your-plan'],
+    ['m2-the-same-setup-without-enough-room', 'know-your-plan'],
+    ['when-a-trade-becomes-hold-and-hope', 'when-emotions-change-the-plan'],
+    ['m2-when-a-trade-becomes-hold-and-hope', 'when-emotions-change-the-plan'],
     ['following-the-exit-plan', 'same-plan-three-outcomes'],
     ['m2-following-the-exit-plan', 'same-plan-three-outcomes'],
     ['write-the-plan-first', 'know-your-plan'],

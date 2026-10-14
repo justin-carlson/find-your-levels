@@ -35,7 +35,7 @@ const legacySectionIds = new Map([
     "m1-support-short-sellers-and-the-next-breakout-test"
   ],
   [
-    "When a Trade Becomes “Hold and Hope”",
+    "When Emotions Change the Plan",
     "m1-when-a-trade-turns-into-hold-and-hope"
   ],
   [
@@ -155,7 +155,7 @@ const legacySectionIds = new Map([
     "m6-5-macd-the-momentum-second-opinion"
   ],
   [
-    "Putting It Together at $5.00",
+    "Reading the Evidence Together",
     "m6-putting-it-together-reading-the-test-at-5-00"
   ],
   [
@@ -226,6 +226,8 @@ function renderChapter(chapter) {
     .replace('<!--FYL-TRENDS-->', trends)
     .replace('<!--FYL-ZONES-->', zones)
     .replace(/(src|href)="v3\/assets\//g, '$1="assets/')
+    .replace(/<blockquote>\s*<p><strong>\[Chart Example\] ([\s\S]*?)<\/blockquote>/g,
+      (_, body) => `<aside class="example-placeholder"><p><strong>${body}</aside>`)
     .replace(/<blockquote>\s*<p><strong>\[(\w+) Callout\] ([\s\S]*?)<\/blockquote>/g,
       (_, color, body) => `<aside class="callout ${color.toLowerCase()}${body.startsWith('The Core Mental Model') ? ' summary' : ''}"><p><strong>${body}</aside>`)
     .replace(/<li><strong>\[(\w+) Callout\] /g, (_, color) => `<li class="callout ${color.toLowerCase()}"><strong>`)

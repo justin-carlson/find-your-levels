@@ -95,6 +95,9 @@ h1, h2, h3, section, main { scroll-margin-top: calc(var(--header-height) + 24px)
 .toc-links a[aria-current] { color: var(--foreground); font-weight: 500; border-left-color: var(--accent); }
 .toc-links a.nested { padding-left: 25px; font-size: 12.5px; }
 
+.example-placeholder { margin: 24px 0; padding: 14px 18px; border: 1px dashed var(--border); border-radius: 6px; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.example-placeholder p { margin: 0; }
+.example-placeholder strong { display: block; margin-bottom: 3px; color: var(--foreground); font-size: 13px; font-weight: 600; }
 .callout { margin: 32px 0; padding: 22px 26px; background: var(--background); border: 1px solid var(--hairline); border-radius: 8px; font-size: 15.5px; line-height: 1.7; --dot: var(--accent); }
 .callout p { margin: 0 0 12px; }
 .callout p:last-child { margin-bottom: 0; }
