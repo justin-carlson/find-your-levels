@@ -255,9 +255,9 @@ function renderChapter(chapter) {
 }
 
 const heroSubtitle = source.match(/^- \*\*Subtitle:\*\* (.+)$/m)?.[1];
-const introduction = source.match(/### Guide Introduction\n\*\*Subtitle:\*\* (.+)/)?.[1];
+const introduction = source.match(/### Guide Introduction\n\*\*Subtitle:\*\* ([\s\S]+?)(?=\n---)/)?.[1].trim();
 if (!heroSubtitle || !introduction) throw new Error('Blueprint introduction missing.');
-const overview = `<section class="page" id="overview" data-title="Introduction" aria-labelledby="overview-title"><div class="reading-layout"><article class="article overview"><h1 id="overview-title" tabindex="-1">Find Your Levels</h1><p class="lead">${escape(heroSubtitle)}</p><p>${escape(introduction)}</p><div class="chapter-index">${chapters.map(ch => `<a href="#${ch.id}"><span class="chapter-number">${String(ch.number).padStart(2, '0')}</span><span>${escape(ch.title)}</span><span aria-hidden="true">→</span></a>`).join('')}</div></article></div></section>`;
+const overview = `<section class="page" id="overview" data-title="Introduction" aria-labelledby="overview-title"><div class="reading-layout"><article class="article overview"><h1 id="overview-title" tabindex="-1">Find Your Levels</h1><p class="lead">${escape(heroSubtitle)}</p>${introduction.split(/\n\s*\n/).map(paragraph => `<p>${escape(paragraph)}</p>`).join('')}<div class="chapter-index">${chapters.map(ch => `<a href="#${ch.id}"><span class="chapter-number">${String(ch.number).padStart(2, '0')}</span><span>${escape(ch.title)}</span><span aria-hidden="true">→</span></a>`).join('')}</div></article></div></section>`;
 const nav = `<a class="overview-link" href="#overview" data-chapter="overview">Introduction</a><p class="nav-group">Chapters</p><div class="nav-chapters">${chapters.map(ch => `<a href="#${ch.id}" data-chapter="${ch.id}"${ch.number === 1 ? ' aria-current="page"' : ''}><span class="chapter-number">${String(ch.number).padStart(2, '0')}</span><span>${escape(ch.title)}</span></a>`).join('')}</div>`;
 const template = await read('template.html');
 const styleVersion = createHash('sha256').update(await read('styles.css')).digest('hex').slice(0, 12);
