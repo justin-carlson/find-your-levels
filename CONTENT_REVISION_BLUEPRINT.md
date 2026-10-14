@@ -36,10 +36,10 @@
 
 - **Badge:** `Technical Analysis · Participation, Volume & Structure`
 - **Title:** `Find Your Levels`
-- **Subtitle:** A practical field guide to reading charts through participation and volume: learn why certain prices matter, build a focused level map, and understand the response when price gets there.
+- **Subtitle:** A practical guide to reading price action, understanding participation, and planning around meaningful levels.
 
 ### Guide Introduction
-**Subtitle:** Learn to connect price structure, participation, and participant incentives. By the end, you should be able to mark the levels that matter, explain your choices, and identify what would strengthen or invalidate your read. The examples focus on active momentum stocks, with daily context alongside the intraday chart.
+**Subtitle:** Learn to connect price structure, participation, and participant incentives as you practice finding your levels. You'll learn to mark the prices that matter, explain your choices, and recognize what strengthens or invalidates your read. The examples focus on active momentum stocks, connecting daily context with the intraday chart.
 
 ---
 
@@ -156,7 +156,7 @@ When the response supports the plan and the risk is defined, you have a basis to
 ## Chapter 3: Reading Price & Volume (`#m3`)
 
 ### Chapter Lead
-Before looking for a setup, establish whether price is advancing, declining, or rotating inside a range. Then read volume alongside that movement: **How much trading took place, and what did it accomplish?**
+Before looking for a setup, establish whether price is advancing, declining, or rotating inside a range. Then read volume alongside that movement to understand how much trading took place and what it accomplished.
 
 ### Finding Active Stocks with Relative Volume
 For our momentum approach, we look for a **stock in play**: unusual trading activity, often around news, earnings, or sector interest.
