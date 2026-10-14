@@ -177,19 +177,19 @@ const legacySectionIds = new Map([
     "the-pre-trade-checklist-four-questions-before-entry"
   ],
   [
-    "Setup 1 — Break and Retest",
+    "Setup 1: Break and Retest",
     "setup-1-the-break-and-retest-hod-pmh-or-a-daily-level"
   ],
   [
-    "Setup 2 — Failed Breakdown and Reclaim",
+    "Setup 2: Failed Breakdown and Reclaim",
     "setup-2-the-failed-breakdown-and-reclaim-the-bear-trap-level-reclaim"
   ],
   [
-    "Setup 3 — The EMA Pullback",
+    "Setup 3: The EMA Pullback",
     "setup-3-the-dynamic-trend-ride-the-9-20-ema-rail"
   ],
   [
-    "Setup 4 — The Curl",
+    "Setup 4: The Curl",
     "setup-4-the-curl-reading-the-pullback-catching-the-second-leg"
   ]
 ]);
