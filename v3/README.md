@@ -36,7 +36,13 @@ Build dependency: Marked 17.0.5, Node 20 or newer. No dependencies were download
 
 ## Brand assets
 
-`assets/brand/` holds the logo mark and icons from the October 2026 design refresh handoff, copied unchanged (each SVG carries C2PA provenance metadata): `fyl-mark.svg` (light), `fyl-mark-dark.svg` (dark), `fyl-mark-inline.svg` (theme-following), `favicon.svg`, `favicon-16.png`, `favicon-32.png`, `apple-touch-icon.png` (180px) and `icon-512.png` (for social previews, not yet used). The header renders the mark inline from `build.mjs`, so it follows the light and dark themes; the header hides it below 375px wide, where it doesn't fit beside the Chapters button.
+`assets/brand/` holds the logo mark and icons from the October 2026 design refresh handoff, copied unchanged (each SVG carries C2PA provenance metadata): `fyl-mark.svg` (light), `fyl-mark-dark.svg` (dark), `fyl-mark-inline.svg` (theme-following), `favicon.svg`, `favicon-16.png`, `favicon-32.png`, `apple-touch-icon.png` (180px) and `icon-512.png`. `og-image.png` is the 1200×630 link-preview banner used by the Open Graph tags in `template.html`; its source is `og-image.html`. After editing the source, regenerate it from `v3/`:
+
+```sh
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --hide-scrollbars --force-device-scale-factor=1 --window-size=1200,630 --virtual-time-budget=5000 --screenshot="$PWD/assets/brand/og-image.png" "file://$PWD/og-image.html"
+```
+
+Chat apps cache previews, so a changed image can take a while to appear where the link was already shared. The header renders the mark inline from `build.mjs`, so it follows the light and dark themes; the header hides it below 375px wide, where it doesn't fit beside the Chapters button.
 
 ## FFAI example provenance
 
