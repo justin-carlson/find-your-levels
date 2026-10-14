@@ -9,10 +9,19 @@
   const chapterLinks = [...document.querySelectorAll('[data-chapter]')];
   const mobile = matchMedia('(max-width: 899px)');
   const sectionAliases = new Map([
+    ['setup-4-the-curl', 'setup-1-the-curl'],
+    ['setup-1-break-and-retest', 'setup-2-break-and-retest'],
+    ['setup-2-failed-breakdown-and-reclaim', 'setup-3-failed-breakdown-and-reclaim'],
+    ['setup-3-the-ema-pullback', 'setup-4-the-ema-pullback'],
     ['confluence-trend-lines-channels', 'where-references-overlap'],
     ['m5-confluence-trend-lines-and-channels', 'where-references-overlap'],
     ['m7-compression-and-expansion-the-cycle-behind-the-setups', 'understanding-compression-and-expansion'],
     ['m7-understanding-compression-and-expansion', 'understanding-compression-and-expansion'],
+    ['m5-ascending-and-descending-trend-lines', 'ascending-and-descending-trend-lines'],
+    ['m5-reading-a-channel', 'reading-a-channel'],
+    ['m5-compression-and-expansion-the-cycle-behind-the-setups', 'understanding-compression-and-expansion'],
+    ['m5-understanding-compression-and-expansion', 'understanding-compression-and-expansion'],
+    ['m5-how-the-trading-day-changes', 'how-the-trading-day-changes'],
   ]);
   let sectionLinks = [];
   let sectionHeadings = [];
