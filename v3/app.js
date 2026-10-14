@@ -8,6 +8,12 @@
   const progress = document.querySelector('.reading-progress');
   const chapterLinks = [...document.querySelectorAll('[data-chapter]')];
   const mobile = matchMedia('(max-width: 899px)');
+  const sectionAliases = new Map([
+    ['confluence-trend-lines-channels', 'where-references-overlap'],
+    ['m5-confluence-trend-lines-and-channels', 'where-references-overlap'],
+    ['m7-compression-and-expansion-the-cycle-behind-the-setups', 'understanding-compression-and-expansion'],
+    ['m7-understanding-compression-and-expansion', 'understanding-compression-and-expansion'],
+  ]);
   let sectionLinks = [];
   let sectionHeadings = [];
   let scrollFramePending = false;
@@ -38,8 +44,10 @@
     if (restoreFocus) menuButton.focus();
   }
 
-  // Links from before titles were used (#m5, #m5-section) point to the matching chapter or heading.
+  // Preserve renamed or moved sections before falling back to legacy chapter links.
   function legacyTarget(id) {
+    const alias = sectionAliases.get(id);
+    if (alias) return document.getElementById(alias);
     const chapter = /^(m\d)(?:-|$)/.exec(id)?.[1];
     if (!chapter) return null;
     return document.querySelector(`[data-legacy="${CSS.escape(id)}"]`) || document.querySelector(`.page[data-legacy="${chapter}"]`);

@@ -113,7 +113,7 @@ const legacySectionIds = new Map([
     "fresh-levels-vs-repeated-tests-reading-whether-a-line-is-weakening-or-coiling"
   ],
   [
-    "Confluence, Trend Lines & Channels",
+    "Where References Overlap",
     "confluence-trend-lines-and-channels"
   ],
   [

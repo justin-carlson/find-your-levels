@@ -183,7 +183,7 @@ On the timeframe you are examining, start with three basic descriptions:
 >
 > Connect the shape to the level and volume: **What changed here, and did price follow through?** A shape gives you something to examine; it does not automatically confirm a trade.
 
-**Not every sideways range is equal:** Overlapping candles far from a useful level give us little to work with. Higher lows beneath a flat ceiling show **compression against resistance**: price finds support progressively earlier, while the ceiling still holds. Watch whether price clears that ceiling or loses its higher lows. Chapter 7 covers trading this interaction.
+Alongside direction, notice whether movement is tightening or covering more ground. **Compression** describes narrowing movement; **expansion** describes broader price movement. Read volume alongside both to see how much activity accompanies the change. Chapter 5 explains how these behaviors develop around support, resistance, and trend lines.
 
 ### Comparing Volume with Price Progress
 A candle shows the **result**: its price range and close. Volume measures the **activity**: shares traded during that interval. **Effort vs. result** is shorthand for comparing the two.
@@ -260,7 +260,7 @@ If the evidence is mixed, call it a **transition** and identify the next test.
 Read three things together: **Structure**, the **9 & 20 EMAs**, and **Location (Levels & VWAP)**. Structure leads; the other two help describe its pace and position.
 
 #### 1. Follow the Highs and Lows
-Mark the last meaningful swing high and low before the bounce. Has price cleared the lower high that capped the previous rally? On the next pullback, does it preserve the ground regained or return to the lows? Those comparisons show whether the bounce is changing the structure.
+Mark the last meaningful swing high and low before the bounce. Has price cleared the lower high that capped the previous rally? On the next pullback, does it preserve the ground regained or return to the lows? Those comparisons show whether the bounce is changing the structure. A trend line can help you follow the path through selected swings. Chapter 5 explains how to draw and read ascending and descending lines alongside the horizontal levels.
 
 #### 2. Read the 9 & 20 EMAs
 The **9 EMA** and **20 EMA** summarize recent price direction. The 9 responds faster; the 20 smooths a longer stretch. Repeated pullback responses near them make them useful rails for following a move.
@@ -297,7 +297,16 @@ If the structure or next test is unclear, give the chart more time to develop be
 ### Chapter Lead
 When an active stock hits your scanner, or when you sit down to prepare a chart, start with a few useful references. Marking every minor bump makes the important areas harder to see. A focused map helps you follow the next interaction.
 
-The goal of level mapping is to find the **handful of prices across timeframes where meaningful activity or a decisive reaction gives you a reason to watch**, then measure the room between them. Keeping your **Daily (or Weekly/Monthly)** chart alongside your **5-Minute and 1-Minute** charts helps you connect the broader structure with today's interaction.
+The goal of level mapping is to choose a **handful of references across timeframes**, explain why they matter, and read the response when price reaches them. The space between those references shows where the next test may come. Keeping your **Daily (or Weekly/Monthly)** chart alongside your **5-Minute and 1-Minute** charts helps you connect the broader structure with today's interaction.
+
+### Understanding Support and Resistance
+**Support** is an area where a decline has stopped and price has held or turned higher. **Resistance** is an area where an advance has stalled or turned lower. Think of them as floors and ceilings that price has responded to. Marking those areas gives you a reference for the next visit.
+
+Why might price respond again? Someone who missed a rally may welcome a pullback toward its starting point. A holder who watched a gain disappear may sell when price returns to the earlier high. New shorts might also take interest near that ceiling. These are possible reasons for buying or selling at a familiar area; the current response shows whether price is holding its ground or moving through it.
+
+On the next test, look for the decline to slow and turn up at support, or the advance to stall and retreat at resistance. If price crosses the area, watch whether it stays on the other side or returns. That helps you recognize a hold, a failed break, or a change in the area's role.
+
+You can organize these references with **horizontal lines**, **broader zones**, and **sloping trend lines**. The mark shows where to pay attention. Support and resistance describe how price has behaved there. Choose the chart interval and the reference before judging its next test.
 
 ### Choosing Levels That Matter
 Across a **year of Daily candles**, a broader **Weekly or Monthly** view, and today's **1-Minute chart**, you will find more possible levels than you need. Use these three checks to narrow the map:
@@ -314,20 +323,8 @@ Alongside the broader structure, the live session creates its own landmarks that
 - **Opening Range High & Low (ORH / ORL):** The high and low of your chosen opening interval after 9:30 AM ET, commonly the first 5 or 15 minutes. Choose the interval consistently so you know which range you are testing.
 - **VWAP (Volume-Weighted Average Price):** The session's volume-weighted benchmark (covered in depth in Chapter 6).
 
-#### Break, Retest, Reclaim & Rejection
-You will constantly hear traders call out phrases like **"HOD Break," "HOD Retest," "HOD Reclaim,"** or **"VWAP Reclaim."** Those phrases combine a **Key Landmark** (like HOD, VWAP, PMH, or a Daily level) with one of these **four common interactions** at a level:
-
-A **reclaim** describes price regaining a level. A later pullback that holds adds evidence. A **retest** is a return to a level; the response determines whether it holds or fails. Chapter 7 specifies which response we use for entry in each setup.
-
-| The Interaction | What Price Does at the Line | The Working Participation Read | Examples to Recognize |
-| :--- | :--- | :--- | :--- |
-| **1. The Break** | Price pushes *through* a level; in this momentum playbook, we look for expanding volume and progress beyond it. | Buying is making progress against available sell interest. Fresh longs and short exits can reinforce the move; a quick return below the line weakens that read. | **Break of HOD / Break of PMH / Break of a Daily Level:** Price clears the ceiling on heavy volume with room to the next mapped level. |
-| **2. The Retest** | After breaking above a level, price returns to its area. Watch whether it holds or falls back through. | If price stops falling and turns higher, buyers are supporting the old ceiling as a new floor. Further progress supports the role flip; sustained trading back below it challenges the hold. | **Retest of HOD:** Price breaks the morning high, returns toward the old HOD on lighter volume, then bounces. |
-| **3. The Reclaim** | Price drops *below* a key level, then crosses back *above* it. | Shorts entered below the line now face an adverse move, so their exits could add to new long buying. Holding above the reclaimed level keeps that pressure in play; losing it again weakens the reclaim. | **Reclaim of VWAP / Reclaim of HOD:** Stock dips below VWAP or loses an earlier HOD breakout, builds a higher low, and crosses back above on expanding volume. |
-| **4. The Rejection** | Price tests a level and retreats, perhaps leaving an upper wick or stalling on heavy volume before turning down. | Sell interest may be meeting the advance, buying may be fading, or both. Profit-takers, holders exiting near break-even, and new shorts are possible contributors. A lower high and renewed decline strengthen the rejection read. | **Rejection at HOD / Rejection at Daily 200 EMA:** Price tests the reference, fails to hold above it, and rolls over. |
-
 ### When to Use a Line or a Zone
-A **line** identifies a precise reference; a **zone** marks an area of related price structure. They can work together. A $5.00 Premarket High line might sit inside a supply zone spanning $4.95–$5.05. Keep the line to recognize the landmark and the zone to follow the surrounding reaction.
+A **horizontal line** identifies a precise price reference; a **zone** marks an area of related price structure. They can work together. A $5.00 Premarket High line might sit inside a supply zone spanning $4.95–$5.05. Keep the line to recognize the landmark and the zone to follow the surrounding reaction.
 
 PMH, a prior close, a round number, and a wick extreme give you exact prices for different reasons. The Daily 200 EMA gives you a calculated reference whose value changes. Drawing a precise line does not require price to react to the penny. The useful reaction area depends on spread, volatility, and the structure nearby.
 
@@ -335,6 +332,8 @@ For a rejection high or low, start with the **wick extreme** and examine the sur
 
 ### Finding Supply and Demand Zones
 A **base** is a compact cluster of overlapping candles where price pauses. The move away from it, called the **departure**, helps explain why that area deserves attention. A strong upward departure makes the base a candidate demand zone; a strong downward departure makes it a candidate supply zone.
+
+A gray consolidation rectangle simply outlines a sideways area. A supply or demand zone adds a reason to revisit a selected base: the meaningful move that departed from it. A range can remain sideways for some time before a departure gives us that context. The color records our working interpretation, which we check when price returns.
 
 These patterns give us a simple vocabulary for both reversals and continuations:
 
@@ -368,6 +367,64 @@ For a supply zone, reverse the read: watch whether a rally into the base stalls 
 > **[Image Placeholder: Chapter 5: Marking a Zone and Reading Its Return]**
 > *What to show:* A real chart with the chosen interval, date, session, and aligned volume visible. Identify the base candles and shade their full high-to-low range before showing the revisit. Label the departure, the return into the area, and the subsequent response. Include a hold and a failed test across the examples, keeping the original zone boundaries visible. Explain how each response changes the read; do not label the base as proof of institutional orders or guaranteed absorption. If the example shows a role flip, include the break and the test from the other side.
 
+### Ascending and Descending Trend Lines
+Price does not always return to the same horizontal floor or ceiling. Sometimes pullbacks find support progressively higher, or each recovery meets resistance lower. A **trend line** connects selected swing points to make that changing path easier to see. Its price reference slopes with time.
+
+- **Ascending Trend Line:** Connect at least two rising swing lows. The line slopes upward beneath price, showing where successive pullbacks have found support. Buyers may be willing to enter sooner instead of waiting for the previous low. Extend the line to give the next pullback a reference, then watch whether price responds near it and preserves the higher-low structure.
+- **Descending Trend Line:** Connect at least two falling swing highs. The line slopes downward above price, showing where successive recoveries have met resistance. Sellers may be accepting lower prices on each bounce. Watch whether the next recovery stalls near the line or moves through it, and whether it also clears a meaningful prior swing high.
+
+Choose clear swings on the same chart interval. Using their wick lows or highs gives you a consistent starting point; avoid forcing the line through every small fluctuation. Keep the original reference visible while assessing the next test. A later response helps you judge whether the line is useful.
+
+Crossing a trend line shows that price has moved beyond the path you drew. Compare that change with the surrounding swings and horizontal levels. Price can slow or move sideways before reversing, and a recovery can cross a descending line while still sitting beneath an important lower high. Chapter 4's trend check helps you judge how much the structure has changed.
+
+#### Reading a Channel
+A **channel** adds a roughly parallel boundary on the other side of the swings. In an ascending channel, the lower line follows rising lows and the upper line frames the highs. In a descending channel, the upper line follows falling highs and the lower line frames the lows. Together they help you see the path and the space price has been moving through.
+
+Name the boundary being tested. An upward move through the top of a rising channel takes price beyond its earlier path; a move below its lower boundary challenges the rising support. A brief overshoot followed by a return inside is another response to examine. In each case, look at the next swings and nearby horizontal references before deciding what has changed.
+
+### Break, Retest, Reclaim & Rejection
+You will constantly hear traders call out phrases like **"HOD Break," "HOD Retest," "HOD Reclaim,"** or **"VWAP Reclaim."** Those phrases combine a **Key Landmark** (like HOD, VWAP, PMH, or a Daily level) with one of these **four common interactions** at a level:
+
+A **reclaim** describes price regaining a level. A later pullback that holds adds evidence. A **retest** is a return to a level; the response determines whether it holds or fails. Chapter 7 specifies which response we use for entry in each setup.
+
+| The Interaction | What Price Does at the Line | The Working Participation Read | Examples to Recognize |
+| :--- | :--- | :--- | :--- |
+| **1. The Break** | Price pushes *through* a level; in this momentum playbook, we look for expanding volume and progress beyond it. | Buying is making progress against available sell interest. Fresh longs and short exits can reinforce the move; a quick return below the line weakens that read. | **Break of HOD / Break of PMH / Break of a Daily Level:** Price clears the ceiling on heavy volume with room to the next mapped level. |
+| **2. The Retest** | After breaking above a level, price returns to its area. Watch whether it holds or falls back through. | If price stops falling and turns higher, buyers are supporting the old ceiling as a new floor. Further progress supports the role flip; sustained trading back below it challenges the hold. | **Retest of HOD:** Price breaks the morning high, returns toward the old HOD on lighter volume, then bounces. |
+| **3. The Reclaim** | Price drops *below* a key level, then crosses back *above* it. | Shorts entered below the line now face an adverse move, so their exits could add to new long buying. Holding above the reclaimed level keeps that pressure in play; losing it again weakens the reclaim. | **Reclaim of VWAP / Reclaim of HOD:** Stock dips below VWAP or loses an earlier HOD breakout, builds a higher low, and crosses back above on expanding volume. |
+| **4. The Rejection** | Price tests a level and retreats, perhaps leaving an upper wick or stalling on heavy volume before turning down. | Sell interest may be meeting the advance, buying may be fading, or both. Profit-takers, holders exiting near break-even, and new shorts are possible contributors. A lower high and renewed decline strengthen the rejection read. | **Rejection at HOD / Rejection at Daily 200 EMA:** Price tests the reference, fails to hold above it, and rolls over. |
+
+### Understanding Compression and Expansion
+A level tells you where to watch. **Compression and expansion describe how price is moving as it approaches, tests, or leaves that area.** They help you notice changes in the pace and shape of the move.
+
+- **Compression:** Price swings or candle ranges become smaller relative to the preceding movement. Higher lows beneath a flat ceiling, for example, leave less room between the pullbacks and resistance. The narrowing space draws attention to the boundaries and how price responds there.
+- **Expansion:** Price begins covering more ground, through wider candles or larger swings. Expansion can move upward or downward. Watch whether it carries price beyond nearby structure and how much of that progress is retained.
+
+A **consolidation** is a period of overlapping or sideways trading within an area. It can stay about the same width; compression specifically describes movement tightening. Volume supplies a separate comparison: increasing volume means more trading activity. Ask whether that activity accompanies progress, a stall, or a retreat, using Chapter 3's price-and-volume approach.
+
+#### Reading Repeated Tests of a Level
+When price returns to a boundary several times, pay attention to **what happens between the touches**. The distance of each bounce or pullback tells you more than the count alone.
+
+Consider a hypothetical stock repeatedly testing **$5.00**, with pullbacks stopping at **$4.60, $4.75, and $4.88**. Read the same chart one step at a time:
+
+1. **Mark the ceiling.** The repeated stalls near $5.00 make it a horizontal resistance reference. Selling continues to limit the advance in that area.
+2. **Follow the rising lows.** An ascending trend line through the pullback lows helps you see where support is developing higher. Buyers are sustaining higher prices between attempts; some may be entering earlier because they do not want to miss a break.
+3. **Notice the compression.** The space between the rising lows and the flat ceiling is narrowing. Together, those boundaries form an **ascending triangle**, also described as a flat-top pattern. The ascending trend line is one side of that structure. Price still has to resolve the test at the ceiling.
+4. **Read the move out.** Wider candles through $5.00, accompanied by increasing volume and retained progress, show upward expansion beyond resistance. A quick return into the range challenges the break. Losing the rising lows shows that the earlier support is weakening.
+5. **Watch the next visit.** If price returns toward $5.00, holds, and turns higher, the old ceiling is beginning to act as support. If it falls back below and struggles to regain the area, the response tells a different story. Chapter 7 defines the entry and invalidation for trading the break-and-retest setup; here we are learning what the sequence means.
+
+Now consider **lower highs above a flat support floor**. Price bounces from $5.00 to $5.60, then only $5.35, then $5.15. A descending trend line through those highs and the $5.00 floor outline a **descending triangle**. The bounces are making less upward progress as price compresses toward support. Repeated selling may be working through the bids, but fresh buying can also arrive. A break below the floor that fails to reclaim it strengthens the weakening-support read; a recovery through the latest lower high challenges it.
+
+> **[Amber Callout] Give the Boundaries Your Attention:** The middle of a tight range leaves little room before the next edge. Watch how price reaches that edge, whether it moves through, and what happens afterward. The shape helps you locate the important test. The response helps you decide whether the read is strengthening or failing.
+
+> **[Image Placeholder: Chapter 5: Reading One Level Test from Start to Finish]**
+> *What to show:* A clearly labeled illustrative sequence, or a real chart with its actual prices, linking a flat resistance ceiling, rising swing lows, an ascending trend line, compression, and expansion through the ceiling. Mark the subsequent return and show two possible responses from the same illustrative starting structure: a hold with renewed progress, and a failed break back into the range. Keep price and volume aligned. Labels should describe observations, with participant explanations in the caption. This illustrates chart reading; retain Chapter 7's existing setup trigger and stop definitions.
+
+### Where References Overlap
+**Confluence** means that different references meet in the same area. A high-volume daily candle high at **$5.00** might also be the **Premarket High**, a **whole-dollar number**, and where a rising **intraday trend line** arrives. Knowing how each reference was selected helps you explain why the area deserves attention.
+
+That overlap makes the area easy to recognize and useful to plan around. It can attract traders using different references, but the chart does not count those groups. Daily and intraday views may describe the same price event. Give the area attention, then let its response earn conviction. Chapter 6 applies this approach to VWAP, EMAs, and momentum indicators.
+
 ### Finding Room to the Next Level
 Marking support and resistance tells you where to watch for a response. **Mapping the space between those levels tells you how much room a move has before the next known obstacle.**
 
@@ -385,22 +442,12 @@ A **wide-range candle** on the Daily or higher-timeframe chart can look like ope
   1. **Zoom into the 5-minute or 15-minute chart** of that historical candle to check whether the stock built a heavy intraday consolidation shelf halfway down (say, around $9.50) before flushing the rest of the way. That shelf is another area to watch on the return trip. Check later trading through the same prices, too.
   2. **Check for Moving Average Traffic (especially our Daily 200 EMA reference):** If the **Daily 200 EMA** sits at $9.20 inside that range, mark it as a potential reaction point before the $9.50 shelf. Watch how price behaves there; the line itself does not establish that sellers will defend it.
 
-> **[Teal Callout] Trading Toward the Next Level:** At the lower boundary, watch how price responds before choosing an entry. Our preferred sequence is a **break above the boundary with expanding volume, a pullback that holds the area from above, and renewed progress toward the next mapped level**. New longs may buy the hold, shorts may exit, and holders from below may take profits. The next price response tells you whether that mix is producing continuation or a failed break.
+> **[Teal Callout] Reading the Move Toward the Next Level:** As price moves beyond a boundary, compare the initial break, any return to the area, and the subsequent progress toward the next mapped level. A pullback that holds supports the continuation read. New longs may buy the hold, shorts may exit, and holders from below may take profits. The next price response tells you whether that mix is producing continuation or a failed break.
 
 > **[Image Placeholder: Chapter 5A: Daily Gap vs. Wide-Range Candle (Plus the 200 EMA Check)]**
 > *What to show:* Two side-by-side daily chart examples, with session settings identified:
 > 1. **Left Panel (Daily Gap Fill):** A stock with a historical regular-session gap down between $5.20 and $7.50. Show the corresponding extended-hours view or note whether trades occurred inside that daily gap. Annotate the actual revisit: the break above $5.20, the pullback, and whether price held or fell back below it. Label any later move toward $7.50 as the subsequent outcome.
 > 2. **Right Panel (Wide-Range Candle + 200 EMA Check):** A stock with a long red daily candle spanning $8.50 down to $4.80. Mark its high and low, add a small view of the historical 5-minute structure inside it, and mark the light-blue dashed **Daily 200 EMA** at $6.60 as *"Potential Reaction Point: $1.80 Above $4.80."* Identify any nearer shelf before labeling the room available.
-
-### Reading Repeated Tests of a Level
-What happens when price tests the same level multiple times? Read **how price behaves between the touches**, rather than assigning the line an expiration date:
-
-- **Shrinking Bounces = Less Upward Progress:** Suppose price drops to a $5.00 support floor four times. The first bounce rallies to $5.60, the second only reaches $5.35, the third barely reaches $5.15, and the fourth hugs $5.00. Buyers are getting less distance away from support while selling appears at lower highs: **bearish compression**. Repeated selling may be wearing through the bids, but fresh bids can also replenish. A break below $5.00 that fails to reclaim it strengthens the weakening-floor read; a strong bounce that clears the latest lower high challenges it.
-- **Higher Lows into a Flat Ceiling = Bullish Pressure Building:** Now flip it around. Price pushes up to a $5.00 resistance ceiling three or four times, and after each rejection, **the pullback stops at a higher low than the last one** ($4.60 → $4.75 → $4.88) while volume builds on the pushes. Buyers are sustaining higher prices between tests, potentially working through the overhead offers. A break that holds above $5.00 supports that read; heavy activity with no upward progress, followed by loss of the latest higher low, shows that resistance is still holding.
-
-### Confluence, Trend Lines & Channels
-- **Confluence (Stacking Reasons to Watch One Area):** A high-volume daily candle high at **$5.00** might also be the **Premarket High**, a **whole-dollar number**, and where a rising **intraday trendline** arrives. That overlap makes the area easy to recognize and useful to plan around. It can attract traders using different references, but the chart does not count those groups. Daily and intraday views may describe the same price event. Give the area attention, then let its response earn conviction.
-- **Trend Lines & Channels:** A horizontal level marks a fixed price; a **trend line** tracks support or resistance on a slant. Connect at least two higher lows in an uptrend, or two lower highs in a downtrend; a later touch tests whether the line remains useful. Add a parallel line on the opposite side to frame a **channel**. A break with expanding volume and continued progress can signal a change in the rhythm. A brief overshoot followed by a return inside the channel is a different result.
 
 ### Chart Colors and Line Styles
 These are the chart markings we use throughout the guide. Use whatever colors and shapes help you read your charts clearly; consistency makes each reference easier to recognize.
@@ -512,18 +559,6 @@ Both examples test **$5.00**, where Premarket High, a selected high from an acti
 
 ### Chapter Lead
 **Subtitle:** You now have a level map and a way to read participation, trend structure, and room to the next level. This chapter puts that map to work: what to wait for, where the idea fails, and when to pass.
-
-### Understanding Compression and Expansion
-Price often moves between two phases:
-- **Expansion:** Price covers ground quickly in wider candles, often with a surge in volume.
-- **Compression:** The range tightens, candles overlap, and price makes less progress while buyers and sellers contest a level.
-
-The setups in this guide share a practical idea: **wait for compression or a controlled pullback at a meaningful level, then look for renewed progress with room to the next mapped obstruction.** A quiet patch becomes interesting when price starts responding differently at the boundary.
-
-- **[Green Callout] Bullish Compression (Flat-Top / Ascending Coil):** Use Chapter 5's pattern of higher lows beneath resistance to locate the test. A break with expanding volume needs progress beyond the ceiling; a quick return into the range or loss of the higher lows challenges it.
-- **[Red Callout] Bearish Compression (Descending Triangle):** With lower highs above support, watch whether price breaks the floor or reclaims it. A reclaim and a break of the lower-high sequence challenge the bearish read and can lead into the recovery setups below.
-
-> **[Amber Callout] Focus on the Edges of the Coil:** The middle of a tight range gives you little room before the next opposing edge. Wait for a break and hold, or a response at a clearly defined support edge. The shape tells you where to watch; the response tells you whether the trade is developing.
 
 ### The Four Core Setups
 A trade setup needs a **mapped level**, an observable **entry trigger**, a defined **invalidation stop**, and **enough room to the next obstruction to justify that risk**.
