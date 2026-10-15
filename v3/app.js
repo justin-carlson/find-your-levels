@@ -35,7 +35,12 @@
     ['what-attracts-attention', 'comparing-volume-with-price-progress'],
     ['what-price-and-volume-tell-us', 'comparing-volume-with-price-progress'],
     ['m1-participation-leaves-a-footprint-reading-price-alongside-volume', 'comparing-volume-with-price-progress'],
-    ['reading-volume-in-an-uptrend', 'comparing-pushes-and-pullbacks'],
+    ['reading-volume-in-an-uptrend', 'volume-patterns-to-recognize'],
+    ['three-volume-patterns-to-recognize', 'volume-patterns-to-recognize'],
+    ['comparing-pushes-and-pullbacks', 'volume-patterns-to-recognize'],
+    ['how-the-trading-day-changes', 'how-volume-changes-through-the-day'],
+    ['finding-active-stocks-with-relative-volume', 'how-volume-changes-through-the-day'],
+    ['m3-start-with-relative-volume-our-momentum-filter', 'how-volume-changes-through-the-day'],
     ['2-read-the-9-20-emas', 'reading-the-9-20-emas'],
     ['1-follow-the-highs-and-lows', 'putting-a-bounce-in-context'],
     ['m4-1-structure-swing-by-swing', 'putting-a-bounce-in-context'],
@@ -53,7 +58,7 @@
     ['m5-reading-a-channel', 'reading-a-channel'],
     ['m5-compression-and-expansion-the-cycle-behind-the-setups', 'understanding-compression-and-expansion'],
     ['m5-understanding-compression-and-expansion', 'understanding-compression-and-expansion'],
-    ['m5-how-the-trading-day-changes', 'how-the-trading-day-changes'],
+    ['m5-how-the-trading-day-changes', 'how-volume-changes-through-the-day'],
   ]);
   let sectionLinks = [];
   let sectionHeadings = [];
