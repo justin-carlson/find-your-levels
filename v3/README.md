@@ -18,7 +18,7 @@ The generated `index.html`, `styles.css`, and `app.js` work without a build serv
 4. Mapping Your Levels: support/resistance, holds and role changes, reference selection, zones, and room.
 5. Using Indicators for Context: VWAP, the 9/20 EMAs, the Daily 200 EMA, and supporting momentum context.
 6. Setups & Patterns: the four existing setups, with the curl first and trigger/stop definitions preserved.
-7. Planning the Trade: the decision checklist, session context, exits, and a hypothetical plan/pass comparison.
+7. Putting It Together: the decision checklist, buyer location and patience, outcomes, and trade review.
 
 Each concept has one home for its full explanation, with brief previews and applications elsewhere. This progression was approved for publication on October 14, 2026. Both the review and production pages are generated from the same blueprint; the production build adds the live asset paths and visitor analytics.
 
@@ -37,6 +37,17 @@ npm run build:live
 Build dependency: Marked 17.0.5, Node 20 or newer. No dependencies were downloaded for the initial build: it used the installed Codex runtime's Marked package with `NODE_PATH` pointed at that runtime's `node_modules`. A normal local installation uses the commands above.
 
 `build.mjs` removes author guidance, chart-capture briefs, and editorial labels from the reading copy. It keeps the lesson prose, examples, tables, setup variants, and callouts. Chapter and section navigation use the blueprint headings; earlier section links from feedback redirect to their headings. Future chart briefs stay in the blueprint for the later illustration pass. John's private research package is not used or linked by this site.
+
+### Examples in progress
+
+Use a small visible card where a concrete example would make an explanation easier to understand. Give it a plain-text title and a short brief in the blueprint:
+
+```md
+> **[Example Card] What changes around VWAP?**
+> Follow a real reclaim attempt and the next pullback, with volume and session settings visible.
+```
+
+The builder supplies the **Example to develop** label. The guide currently has 18 cards, each recording a teaching comparison still to illustrate. Use actual stock-session charts for all new worked examples, selecting the chart before writing case-specific observations or outcomes. Retain ticker, full date including year, interval, session/timezone and indicator settings, source, volume, and preceding context. Do not invent chart data or alternate outcomes. Existing SVG schematics and explicitly hypothetical participant stories serve separate explanatory purposes. Detailed image briefs can remain below the card, hidden from the reading copy. Start with the concept's purpose rather than assuming the reader is already in a particular trade. Related cards may share a real case with different annotations.
 
 ## Design and interaction
 
@@ -73,6 +84,6 @@ The published root page includes Cloudflare Web Analytics for `findyourlevels.co
 
 This is basic traffic measurement, not individual visitor tracking or custom chapter-read/completion events. The guide uses hash navigation, so do not interpret the default page report as a chapter readership report. After publishing, verify that the beacon loads on the live page and allow a few minutes for traffic to appear in Cloudflare.
 
-V3 is prepared for publication on October 14, 2026. Root `index.html` is generated with `npm run build:live`; it references the shared v3 assets and omits the review page’s `noindex` directive. CSS and JavaScript URLs include content hashes to refresh cached assets. GitHub Pages deploys root content from `main`.
+V3 was first published on October 14, 2026. Root `index.html` is generated with `npm run build:live`; it references the shared v3 assets and omits the review page’s `noindex` directive. CSS and JavaScript URLs include content hashes to refresh cached assets. GitHub Pages deploys root content from `main`.
 
-The release preserves the seven chapters, participant stories, setup triggers/stops, revised navigation and footer, responsive layout, and approved chart examples. Earlier exploratory drafts, prototypes, and private research are outside this release.
+The October 14 editorial checkpoint adds concept-first openings, 18 visible example-development cards, clearer swing/VWAP vocabulary, timeframe alignment, buyer-location reasoning, explicit volume comparisons, and the corrected FFAI date. Participant stories, setup stop definitions, and the distinction between crossing and candle-close entries are preserved. Real-chart selection and annotation remain unfinished; selected cases will resolve the example-specific execution details and overlapping VWAP plans. The source reference map also needs a later refresh. Earlier exploratory drafts, prototypes, and private research are outside this release.

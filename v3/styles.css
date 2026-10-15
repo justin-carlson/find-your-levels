@@ -95,6 +95,12 @@ h1, h2, h3, section, main { scroll-margin-top: calc(var(--header-height) + 24px)
 .toc-links a[aria-current] { color: var(--foreground); font-weight: 500; border-left-color: var(--accent); }
 .toc-links a.nested { padding-left: 25px; font-size: 12.5px; }
 
+.example-card { margin: 28px 0; padding: 18px 20px; border: 1px dashed var(--border); border-radius: 8px; background: color-mix(in srgb, var(--accent) 3%, var(--surface)); font-size: 14px; line-height: 1.6; }
+.example-card .example-card-label { margin: 0 0 7px; color: var(--accent); font-size: 12px; font-weight: 500; }
+.example-card .example-card-title { margin: 0 0 6px; color: var(--foreground); font-size: 16px; line-height: 1.4; font-weight: 600; }
+.example-card-body p { margin: 0; }
+.example-card-body p + p { margin-top: 10px; }
+
 .example-placeholder { margin: 24px 0; padding: 14px 18px; border: 1px dashed var(--border); border-radius: 6px; color: var(--muted); font-size: 14px; line-height: 1.6; }
 .example-placeholder p { margin: 0; }
 .example-placeholder strong { display: block; margin-bottom: 3px; color: var(--foreground); font-size: 13px; font-weight: 600; }

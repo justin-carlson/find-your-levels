@@ -226,6 +226,8 @@ function renderChapter(chapter) {
     .replace('<!--FYL-TRENDS-->', trends)
     .replace('<!--FYL-ZONES-->', zones)
     .replace(/(src|href)="v3\/assets\//g, '$1="assets/')
+    .replace(/<blockquote>\s*<p><strong>\[Example Card\] ([^<]+)<\/strong>\s*([\s\S]*?)<\/p>\s*<\/blockquote>/g,
+      (_, title, body) => `<aside class="example-card" aria-label="Example to develop"><p class="example-card-label">Example to develop</p><p class="example-card-title">${title}</p><div class="example-card-body"><p>${body}</p></div></aside>`)
     .replace(/<blockquote>\s*<p><strong>\[Chart Example\] ([\s\S]*?)<\/blockquote>/g,
       (_, body) => `<aside class="example-placeholder"><p><strong>${body}</aside>`)
     .replace(/<blockquote>\s*<p><strong>\[(\w+) Callout\] ([\s\S]*?)<\/blockquote>/g,
@@ -234,7 +236,7 @@ function renderChapter(chapter) {
     .replace(/<table>/g, '<div class="table-scroll" tabindex="0" role="region" aria-label="Comparison table, scroll horizontally"><table>')
     .replace(/<\/table>/g, '</table></div>')
     .replace(/<th>/g, '<th scope="col">');
-  if (/Image Placeholder|\[\w+ Callout\]|Chapter Lead|Editorial Note|Keep the existing|FYL-TRENDS|FYL-ZONES|<pre>/.test(html)) {
+  if (/Image Placeholder|\[Example Card\]|\[\w+ Callout\]|Chapter Lead|Editorial Note|Keep the existing|FYL-TRENDS|FYL-ZONES|<pre>/.test(html)) {
     throw new Error(`Editorial instructions leaked into ${chapter.id}`);
   }
   const previous = chapter.number === 1 ? { id: 'overview', title: 'Introduction' } : chapters[chapter.number - 2];
