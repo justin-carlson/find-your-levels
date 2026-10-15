@@ -16,7 +16,7 @@ const slug = text => text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|
 // Keep full historical anchors independent of current chapter placement. Headings carry
 // these as data-legacy so app.js can redirect old links after sections move.
 const legacySectionIds = new Map([
-  ["How the Trading Day Changes", "m2-how-the-trading-day-changes"],
+  ["How Volume Changes Through the Day", "m2-how-the-trading-day-changes"],
   ["Recognizing Selling Pressure", "m3-ffai-when-the-pullback-gets-busy"],
   [
     "Understanding Supply and Demand",
@@ -51,10 +51,6 @@ const legacySectionIds = new Map([
     "m2-three-principles-guide-the-approach"
   ],
   [
-    "Finding Active Stocks with Relative Volume",
-    "m3-start-with-relative-volume-our-momentum-filter"
-  ],
-  [
     "Uptrends, Downtrends & Ranges",
     "m3-start-with-three-types-of-price-movement"
   ],
@@ -63,7 +59,7 @@ const legacySectionIds = new Map([
     "m3-reading-candle-volume-together-effort-vs-result"
   ],
   [
-    "Comparing Pushes and Pullbacks",
+    "Volume Patterns to Recognize",
     "m3-volume-in-trends-what-a-healthy-bullish-trend-looks-like"
   ],
   [
