@@ -236,6 +236,15 @@ The FFAI chart below shows it on the push to the high. After the first advance a
 
 New longs and short covering are possible contributors; the chart does not separate them. What it shows is increasing activity carrying price higher. A quieter pullback that holds above the old high would keep that bullish read intact. The next candles test it, and the next section follows what happened.
 
+> **[Example Card] Buying pressure on a second stock**
+> Find a real 1- or 5-minute chart from a different stock where volume expands on the pushes higher and quiets on the pullbacks while price holds above a broken high or reclaimed level. Choose it for those features rather than for how the session ended, and show what happened next either way. Once it is selected, this section reads that chart and FFAI stays with Recognizing Selling Pressure.
+
+> **[Image Placeholder: Chapter 2: Buying Pressure on a Second Stock]**
+> *What to capture:* A screenshot like the FFAI one: candles with the volume pane aligned below, and enough preceding context to see the base or prior high. Record the ticker, full date including year, interval, timezone, session settings, and source in the blueprint even if the image hides them.
+> 1. Mark the push where the green volume bars grow as price clears the level, and how much of the advance the candles keep.
+> 2. Mark the pullback candles and compare their volume and depth with the push.
+> 3. Include the next attempt and describe whether the bullish read held or failed, separating what was visible at the decision point from the outcome.
+
 ### Recognizing Selling Pressure
 
 Selling pressure can show up near a high, before a larger decline develops. It is the reverse of the quieter pullback: compare the volume on the pullback candles with the volume on the preceding push higher.
