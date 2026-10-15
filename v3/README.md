@@ -64,7 +64,7 @@ Chapter 2 opens with **Comparing Volume with Price Progress**: volume usually in
 
 The teaching goal is to notice these changes in participation while the move develops. Profit-taking, long exits, and new short positions are possible contributors; ordinary candle volume does not identify them. Keep the observations concrete and the interpretation conditional, without repeating a disclaimer after every sentence.
 
-For real-chart examples, pair a quieter pullback that preserves the advance with a heavier-volume pullback that challenges it. Use completed candles on the same chart interval, retain time-of-day context, and distinguish what was visible at the decision point from what happened afterward. Chapter 2's comparison table, Comparing Pushes and Pullbacks, and Recognizing Selling Pressure should teach these complementary readings consistently.
+For real-chart examples, pair a quieter pullback that preserves the advance with a heavier-volume pullback that challenges it. Use completed candles on the same chart interval, retain time-of-day context, and distinguish what was visible at the decision point from what happened afterward. Chapter 2's signal tables, Comparing Pushes and Pullbacks, Recognizing Buying Pressure, and Recognizing Selling Pressure should teach these complementary readings consistently. Both pressure sections read the same FFAI chart: the push through the earlier high, then the three red candles at the high.
 
 [Fidelity's volume discussion](https://www.fidelity.com/viewpoints/active-investor/stock-volume) supports comparing relative volume alongside price direction. The frontside/backside distinction here remains an interpretation of the developing structure, not a predictive rule established by that source.
 
