@@ -16,7 +16,7 @@ The generated `index.html`, `styles.css`, and `app.js` work without a build serv
 2. Reading Price & Volume: activity versus progress, relative volume, and push/pullback comparisons.
 3. Understanding the Trend: swings, timeframes, trend lines, channels, compression, expansion, and recovery.
 4. Mapping Your Levels: support/resistance, holds and role changes, reference selection, zones, and room.
-5. Using Indicators for Context: VWAP, the 9/20 EMAs, the Daily 200 EMA, and supporting momentum context.
+5. Using Indicators for Context: the 9/20 EMAs, the Daily 200 EMA, VWAP, then MACD.
 6. Setups & Patterns: the four existing setups, with the curl first and trigger/stop definitions preserved.
 7. Putting It Together: the decision checklist, buyer location and patience, outcomes, and trade review.
 
@@ -47,10 +47,11 @@ Use a small visible card where a concrete example would make an explanation easi
 > Follow a real reclaim attempt and the next pullback, with volume and session settings visible.
 ```
 
-The builder supplies the **Example to develop** label. The guide currently has 18 cards, each recording a teaching comparison still to illustrate. Use actual stock-session charts for all new worked examples, selecting the chart before writing case-specific observations or outcomes. Retain ticker, full date including year, interval, session/timezone and indicator settings, source, volume, and preceding context. Do not invent chart data or alternate outcomes. Existing SVG schematics and explicitly hypothetical participant stories serve separate explanatory purposes. Detailed image briefs can remain below the card, hidden from the reading copy. Start with the concept's purpose rather than assuming the reader is already in a particular trade. Related cards may share a real case with different annotations.
+The builder supplies the **Example to develop** label. The guide currently has 19 cards, each recording a teaching comparison still to illustrate. Use actual stock-session charts for all new worked examples, selecting the chart before writing case-specific observations or outcomes. Retain ticker, full date including year, interval, session/timezone and indicator settings, source, volume, and preceding context. Do not invent chart data or alternate outcomes. Existing SVG schematics and explicitly hypothetical participant stories serve separate explanatory purposes. Detailed image briefs can remain below the card, hidden from the reading copy. Start with the concept's purpose rather than assuming the reader is already in a particular trade. Related cards may share a real case with different annotations.
 
 ## Design and interaction
 
+- Each chapter shows a numbered label above its title only below 900px, where the desktop sidebar is hidden. On mobile, the sticky chapter-menu button displays the active chapter number (for example, Chapter 5) and still opens the chapter drawer. Introduction uses Chapters. The number follows the current chapter order, independently of historical URL aliases.
 - An inset, fixed chapter navigation on the same white canvas as the focused reading column, following the trading journal playbook’s open layout. Navigation and the reading area form a centered group on wide screens with a 100px gap; there is no sidebar panel border. The header remains left-aligned.
 - White canvas, slate text, blue navigation, and restrained semantic callout rules. The header pairs Find Your Levels with “Read price action, understand participation, and plan around meaningful levels.” and a subtle bottom divider. Light is the default; the optional dark theme is saved locally.
 - System sans type: 16px prose / 28px line height, 38px desktop chapter titles, 24px section headings, and compact navigation. Readable line length is capped at 740px.

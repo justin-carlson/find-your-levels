@@ -243,8 +243,8 @@ function renderChapter(chapter) {
   const next = chapters[chapter.number];
   const pager = `<nav class="chapter-pager" aria-label="Chapter pagination"><a href="#${previous.id}"><span>Previous</span>${escape(previous.title)}</a>${next ? `<a class="next" href="#${next.id}"><span>Next chapter</span>${escape(next.title)}</a>` : '<a class="next" href="#overview"><span>Back to</span>Introduction</a>'}</nav>`;
   const tocLinks = toc.filter(item => item.depth === 2 || item.text.startsWith('Setup ')).map(item => `<a href="#${item.id}"${item.depth === 3 ? ' class="nested"' : ''}>${escape(item.text)}</a>`).join('');
-  return `<section class="page" id="${chapter.id}" data-legacy="${chapter.legacyId}" data-title="${escape(chapter.title)}"${chapter.number === 1 ? ' data-active' : ''} aria-labelledby="${chapter.id}-title">
-    <div class="reading-layout"><article class="article"><h1 id="${chapter.id}-title" tabindex="-1">${escape(chapter.title)}</h1>${html}${pager}</article>
+  return `<section class="page" id="${chapter.id}" data-legacy="${chapter.legacyId}" data-number="${chapter.number}" data-title="${escape(chapter.title)}"${chapter.number === 1 ? ' data-active' : ''} aria-labelledby="${chapter.id}-title">
+    <div class="reading-layout"><article class="article"><p class="chapter-label">Chapter ${chapter.number}</p><h1 id="${chapter.id}-title" tabindex="-1">${escape(chapter.title)}</h1>${html}${pager}</article>
     <aside class="page-toc"><nav aria-label="On this page"><h2>On this page</h2><div class="toc-links">${tocLinks}</div></nav></aside></div></section>`;
 }
 

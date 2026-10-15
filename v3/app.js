@@ -106,6 +106,8 @@
       else link.removeAttribute('aria-current');
     });
     document.title = `${active.dataset.title} · Find Your Levels`;
+    menuButton.textContent = active.dataset.number ? `Chapter ${active.dataset.number}` : 'Chapters';
+    menuButton.setAttribute('aria-label', active.dataset.number ? `Chapters, current chapter: Chapter ${active.dataset.number}` : 'Chapters');
     closeMenu();
     const heading = target && target !== active ? target : active.querySelector('h1');
     if (heading === active.querySelector('h1')) window.scrollTo(0, 0);

@@ -59,6 +59,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 .sidebar .overview-link[aria-current], .nav-chapters a[aria-current] { color: var(--foreground); font-weight: 600; border-left-color: var(--foreground); }
 .chapter-number { font-family: var(--font-mono); font-size: 11.5px; font-weight: 400; color: var(--faint); font-variant-numeric: tabular-nums; }
+.article > .chapter-label { display: none; margin: 0 0 12px; font-family: var(--font-mono); font-size: 12px; line-height: 1.5; color: var(--muted); }
 
 main { flex: 1; min-width: 0; min-height: calc(100svh - var(--header-height)); display: flex; flex-direction: column; padding: 72px 0 0; }
 /* Fill the viewport on short pages without pinning the footer over chapter content. */
@@ -173,6 +174,7 @@ figcaption { margin-top: 14px; color: var(--muted); font-size: 12.5px; line-heig
 }
 @media (max-width: 1099px) { .header-description { display: none; } }
 @media (max-width: 899px) {
+  .article > .chapter-label { display: block; }
   .menu-toggle { display: inline-flex; }
   .page-group { display: block; }
   .sidebar { position: fixed; inset: var(--header-height) auto 0 0; margin: 0; max-height: none; width: min(300px, 85vw); padding: 24px; border-right: 1px solid var(--border); transform: translateX(-100%); visibility: hidden; }

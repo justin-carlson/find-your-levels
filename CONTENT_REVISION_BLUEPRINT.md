@@ -537,7 +537,7 @@ Build the map in three passes: find the historical references, check where price
 ## Chapter 5: Using Indicators for Context (`#m6`)
 
 ### Chapter Lead
-Indicators help answer different questions about a move. VWAP provides a volume-weighted session benchmark, moving averages help describe trend direction and pullbacks, and MACD tracks changes in momentum.
+Indicators help answer different questions about a move. Start with the 9 and 20 EMAs to follow trend direction and pullbacks, then put them in context with the Daily 200 EMA. Next, use VWAP as a volume-weighted session benchmark and MACD to compare changes in momentum.
 
 These readings add context to the level map. A VWAP hold or reclaim, for example, can be examined alongside the swings, volume, and room to the next obstacle. Several indicators can reflect the same price move, so agreement does not necessarily supply independent evidence.
 
@@ -545,24 +545,6 @@ These readings add context to the level map. A VWAP hold or reclaim, for example
 When price reaches a marked level, start with the comparison you learned in Chapter 2: how much trading took place, and what did it accomplish? Follow the push, pullback, and renewed attempt before adding other indicators.
 
 **When a catalyst changes the picture:** Breaking news can bring a surge of activity and send price through previously useful minor levels. Let the first impulse and pullback establish fresh structure, then revisit the older references as price tests them.
-
-### VWAP: The Session Reference
-**VWAP (Volume-Weighted Average Price)** is a benchmark of traded prices weighted by volume over a chosen session. Traders can use it to put a pullback or recovery in context, alongside the swings and levels already on the chart. Chart indicators may approximate it using a selected price for each bar, such as the average of its high, low, and close, weighted by that bar's volume. Check the price source, calculation timeframe, and whether the session includes premarket or only regular hours:
-
-- **Above a Rising VWAP (Bullish Context):** Price is holding above the session benchmark while that benchmark rises. That fits our frontside long playbook when higher lows and level holds support the same read. Repeatedly losing VWAP despite a rising line weakens that context.
-- **Below VWAP (A Benchmark Overhead):** Price is below the session's volume-weighted benchmark. This does not mean all those shares remain held overhead. The practical question is whether rallies keep failing beneath it or begin recovering ground.
-- **VWAP Hold, Reclaim & Rejection:** Three interactions we watch at the line:
-  1. **VWAP Bounce (Hold):** In an uptrend, price pulls back toward VWAP and a nearby horizontal support level, then bounces from that area. Renewed progress supports the hold; sustained trading beneath both references challenges it.
-  2. **VWAP Reclaim:** Price breaks back above VWAP after trading below it. For this playbook's reclaim entry, look for volume to increase as price clears the line. A curl with higher lows is one way that recovery can develop. New longs and shorts exiting adverse positions can add buying pressure. A pullback that holds above VWAP strengthens the reclaim; a quick loss of the line warns that it has not stuck.
-  3. **VWAP Rejection from Below:** A recovery reaches VWAP but fails to sustain a move above it, then retreats. A lower high followed by a break of the bounce's support adds evidence of continued weakness. A later reclaim changes that read.
-
-> **[Example Card] What changes around VWAP?**
-> Find real stock sessions showing a rejection from below, a break back above VWAP with acceleration, and a hold from above. Label the VWAP price source, calculation timeframe, and session. Compare volume at the crossing with the preceding base or pullback, using what was visible at the decision point. Keep the 1-minute and 5-minute views available. Compare the distance below VWAP and the market/sector context at the time. Does that context help explain the different responses? Separate observations from possible participant motives.
-
-> **[Image Placeholder: Chapter 5: VWAP Responses in Actual Sessions]**
-> *What to show:* Capture each selected interaction with ticker, full date, timeframe, session settings, and volume visible. Mark the relevant swings before the VWAP test, the crossing or rejection, and the subsequent response. Compare completed volume bars on the same interval and identify the comparison used. For an entry during an unfinished candle, identify the volume visible at that moment; keep the candle’s eventual total separate. If discussing stronger or weaker market conditions, retain the contemporaneous market or sector chart used for that judgment. Treat the proposed context/response relationship as a question these cases explore, not a rule established by selected outcomes. Preserve failed reclaims too; do not imply every break above VWAP accelerates.
-
-> **[Blue Callout] Anchored VWAP (Multi-Day Context):** While session VWAP resets at the chosen session boundary, an **Anchored VWAP (AVWAP)** starts from a selected historical point, like a major catalyst day, earnings gap, or high-volume event. It shows the volume-weighted benchmark from that point forward. Choose the anchor because the event matters to the chart you are studying.
 
 ### Reading the 9 & 20 EMAs
 An **exponential moving average (EMA)** averages prices while giving more weight to recent values. Its direction and relationship to price provide references for following a trend and comparing its pullbacks.
@@ -601,6 +583,24 @@ It has **three practical uses** in the level map:
 
 > **[Example Card] Room to the Daily 200 EMA**
 > Show an intraday breakout with the Daily 200 EMA overhead and a nearer shelf identified as the first obstacle.
+
+### VWAP: The Session Reference
+**VWAP (Volume-Weighted Average Price)** is a benchmark of traded prices weighted by volume over a chosen session. Traders can use it to put a pullback or recovery in context, alongside the swings and levels already on the chart. Chart indicators may approximate it using a selected price for each bar, such as the average of its high, low, and close, weighted by that bar's volume. Check the price source, calculation timeframe, and whether the session includes premarket or only regular hours:
+
+- **Above a Rising VWAP (Bullish Context):** Price is holding above the session benchmark while that benchmark rises. That fits our frontside long playbook when higher lows and level holds support the same read. Repeatedly losing VWAP despite a rising line weakens that context.
+- **Below VWAP (A Benchmark Overhead):** Price is below the session's volume-weighted benchmark. This does not mean all those shares remain held overhead. The practical question is whether rallies keep failing beneath it or begin recovering ground.
+- **VWAP Hold, Reclaim & Rejection:** Three interactions we watch at the line:
+  1. **VWAP Bounce (Hold):** In an uptrend, price pulls back toward VWAP and a nearby horizontal support level, then bounces from that area. Renewed progress supports the hold; sustained trading beneath both references challenges it.
+  2. **VWAP Reclaim:** Price breaks back above VWAP after trading below it. For this playbook's reclaim entry, look for volume to increase as price clears the line. A curl with higher lows is one way that recovery can develop. New longs and shorts exiting adverse positions can add buying pressure. A pullback that holds above VWAP strengthens the reclaim; a quick loss of the line warns that it has not stuck.
+  3. **VWAP Rejection from Below:** A recovery reaches VWAP but fails to sustain a move above it, then retreats. A lower high followed by a break of the bounce's support adds evidence of continued weakness. A later reclaim changes that read.
+
+> **[Example Card] What changes around VWAP?**
+> Find real stock sessions showing a rejection from below, a break back above VWAP with acceleration, and a hold from above. Label the VWAP price source, calculation timeframe, and session. Compare volume at the crossing with the preceding base or pullback, using what was visible at the decision point. Keep the 1-minute and 5-minute views available. Compare the distance below VWAP and the market/sector context at the time. Does that context help explain the different responses? Separate observations from possible participant motives.
+
+> **[Image Placeholder: Chapter 5: VWAP Responses in Actual Sessions]**
+> *What to show:* Capture each selected interaction with ticker, full date, timeframe, session settings, and volume visible. Mark the relevant swings before the VWAP test, the crossing or rejection, and the subsequent response. Compare completed volume bars on the same interval and identify the comparison used. For an entry during an unfinished candle, identify the volume visible at that moment; keep the candle’s eventual total separate. If discussing stronger or weaker market conditions, retain the contemporaneous market or sector chart used for that judgment. Treat the proposed context/response relationship as a question these cases explore, not a rule established by selected outcomes. Preserve failed reclaims too; do not imply every break above VWAP accelerates.
+
+> **[Blue Callout] Anchored VWAP (Multi-Day Context):** While session VWAP resets at the chosen session boundary, an **Anchored VWAP (AVWAP)** starts from a selected historical point, like a major catalyst day, earnings gap, or high-volume event. It shows the volume-weighted benchmark from that point forward. Choose the anchor because the event matters to the chart you are studying.
 
 ### MACD: Reading Momentum
 MACD offers another way to compare momentum across successive price moves. It can help examine whether momentum is strengthening or weakening as price approaches or moves through a level.
