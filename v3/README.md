@@ -40,7 +40,7 @@ Build dependency: Marked 17.0.5, Node 20 or newer. No dependencies were download
 
 ### Teaching briefs
 
-Each chapter can open with a hidden `> **[Teaching Brief] …**` blockquote directly under its `## Chapter` heading. It records what the chapter teaches (its core question and what a reader can do afterward), how the chapter teaches it, common misreadings to address, the evidence base, and what later chapters assume. `build.mjs` removes these blocks from the reading copy and fails the build if one leaks. Keep every line of the brief, including blank ones, prefixed with `>` so the whole block is removed. Chapter 2 has the first brief; review the remaining chapters against the same structure.
+Each chapter can open with a hidden `> **[Teaching Brief] …**` blockquote directly under its `## Chapter` heading. It records what the chapter teaches (its core question and what a reader can do afterward), how the chapter teaches it, how it connects to levels (the guide's organizing idea), common misreadings to address, the evidence base, and what later chapters assume. `build.mjs` removes these blocks from the reading copy and fails the build if one leaks. Keep every line of the brief, including blank ones, prefixed with `>` so the whole block is removed. Chapter 2 has the first brief; review the remaining chapters against the same structure.
 
 ### Examples in progress
 
