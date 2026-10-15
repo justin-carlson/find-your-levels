@@ -32,6 +32,7 @@
     ['m2-putting-the-guide-to-work', 'review-the-trade'],
     ['four-reasons-to-buy-or-sell', 'buying-and-selling-a-quick-recap'],
     ['why-buyers-sell-into-a-recovery', 'one-price-different-decisions'],
+    ['what-attracts-attention', 'comparing-volume-with-price-progress'],
     ['what-price-and-volume-tell-us', 'comparing-volume-with-price-progress'],
     ['m1-participation-leaves-a-footprint-reading-price-alongside-volume', 'comparing-volume-with-price-progress'],
     ['reading-volume-in-an-uptrend', 'comparing-pushes-and-pullbacks'],

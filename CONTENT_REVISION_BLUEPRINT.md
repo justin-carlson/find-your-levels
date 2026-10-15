@@ -139,11 +139,9 @@ Price and volume describe different parts of the same trading activity. Candles 
 Reading them together helps distinguish an advance that keeps its gains from a busy stall or a pullback that gives ground back. The comparison follows the push, the pullback, and the next attempt, with the chart interval and time of day in view.
 
 ### Comparing Volume with Price Progress
-A candle summarizes price movement over an interval. Its body spans the opening and closing prices; its wicks extend to the interval's high and low. The **volume** bar below it records how many shares traded during that interval.
+Reading price and volume helps us notice when the character of a move is changing. Compare an advance with the pullback that follows: how much ground does price give back, and is the pullback lighter in volume than the advance? **For a bullish continuation, we want higher volume on the push up and lighter volume on the pullback.** A quieter pullback that gives back little ground and holds support strengthens that bullish read. Comparing Pushes and Pullbacks below develops this comparison.
 
-**Effort vs. result** compares that activity with price progress. A **large green body** means the close is well above the open; compare its size with nearby candle bodies on the same interval. Closing near the high retains most of the advance, while a long upper wick shows that price gave some of that advance back. Compare the volume behind each response.
-
-**Available liquidity** helps explain why similar activity can produce different results. Buying can stall when sellers keep offering shares, while lighter trading can move price farther when little opposing interest stands in the way.
+Around a mapped level, ask what the activity accomplished. Increased trading may accompany a break through the area, or repeated attempts that make little progress. Then follow the next response: does price hold the ground it gained, recover after a pullback, or fall back through the level? The table below connects those observations with what to watch next.
 
 Read the volume bar alongside its candle. The bar shows how many shares traded; its color follows a price rule, rather than counting buyers and sellers separately. A standard volume bar totals the whole interval; it does not show how much traded at a particular price within it. Compare completed candles of the same duration, with the time of day in mind.
 
@@ -154,6 +152,15 @@ Read the volume bar alongside its candle. The bar shows how many shares traded; 
 | **Long Lower Wick at Support** | **Potential Bullish Response:** Price traded down into support, then recovered before the candle closed, leaving a “bottoming wick.” Buyers stepping in or shorts covering can contribute to that recovery. The candle can be red or green. | Does support hold on the next test? A higher low and recovery above the nearby swing high with increasing volume strengthen the bullish read. A move below the wick's low weakens it. |
 | **Small Red Pullback Candles + Lower Volume per Candle** | **A Quieter Pullback:** Completed pullback candles have smaller high-to-low ranges and lower volume than those in the preceding push. Preserving much of the advance or holding a reclaimed level fits a controlled pause. | Watch for renewed price progress away from the area. A deeper decline through the level weakens the read, even if volume remains light. |
 | **Push to a New High + Fading Volume + Little Follow-Through** | **A Quieter New High:** Less trading accompanies the new high. Interest may be fading, or price may be moving through limited opposing liquidity. | Does price hold the new area and advance again, or fall below the prior high? Lost progress and a failed retest strengthen the exhaustion read. |
+
+### Range and Liquidity
+**A candle's range is the distance between its high and low.** Its body measures the distance between the open and close; wicks mark movement beyond the body. Compare ranges across candles of the same duration to see whether price is covering more or less ground.
+
+**Available liquidity helps explain how far orders move price.** When buyers seeking immediate execution take the shares offered at one price, continued buying can reach higher offers if sellers do not replenish those shares. When sellers take the available bids, continued selling can reach lower bids if buyers do not replenish them. Orders being withdrawn can also leave less available interest at nearby prices.
+
+With less opposing liquidity, a similar amount of trading can move price farther. More aggressive buying or selling can also expand the range as it consumes available offers or bids faster than they are replenished. Conversely, substantial volume can produce little movement when fresh bids or offers keep absorbing incoming orders. The candle shows the movement; it does not reveal the available liquidity throughout the interval.
+
+**Range expansion draws attention; retained progress helps us assess momentum.** A larger range can include movement in both directions. After an upward push, a close near the high retains most of that advance, while a long upper wick shows that some was given back. Follow whether subsequent candles extend the move, hold the gained ground, or reverse through it.
 
 ### Finding Active Stocks with Relative Volume
 **Relative volume** compares current volume with a historical baseline. It helps identify a stock trading more actively than usual. Intraday, compare cumulative volume with what the stock normally trades by the **same time of day**, using consistent lookback and session settings.
@@ -187,7 +194,7 @@ A trader who missed the first push may welcome a pullback, while an earlier buye
 > **[Amber Callout] Give an Unclear Setup More Time:** If the level response is unclear or rallies repeatedly lose their progress, wait for a more readable interaction. Declines that gain ground through support, followed by failed recoveries, weaken the case for buying another leg higher.
 
 > **[Example Card] What did the activity accomplish?**
-> Use actual stock charts to compare an upper-wick rejection at resistance with a lower-wick response at support. Mark the bodies and full high-to-low ranges, keeping volume aligned. Identify the completed candles used to compare volume during the push and pullback; use the same chart interval. Include a lower-wick response that later fails. Separate the observations at each test from the later outcome.
+> Use actual stock charts to compare an upper-wick rejection at resistance with a lower-wick response at support. Mark bodies and full high-to-low ranges, keeping volume aligned. Include intervals with similar volume but different ranges, then show how much of each move the following candles retain. Identify the completed candles used to compare the push and pullback on the same chart interval. Include a lower-wick response that later fails. Treat liquidity as a possible explanation unless matching order-book or tape evidence supports the specific claim. Separate the observations at each test from the later outcome.
 
 ### Recognizing Selling Pressure
 
