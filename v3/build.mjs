@@ -201,6 +201,7 @@ if (chapters.length !== 7) throw new Error('Expected all seven blueprint chapter
 function prepare(text) {
   return text
     .replace(/^> \*\*\[Image Placeholder[^\n]*\n(?:>[^\n]*(?:\n|$))*/gm, '')
+    .replace(/^> \*\*\[Teaching Brief\][^\n]*\n(?:>[^\n]*(?:\n|$))*/gm, '')
     .replace(/^\*\(Keep the 3 existing[^\n]*$/gm, '<!--FYL-TRENDS-->')
     .replace(/^\*\(Keep the existing DBR[^\n]*$/gm, '<!--FYL-ZONES-->')
     .replace(/^\*\(Editorial Note:[^\n]*\n/gm, '')
@@ -236,7 +237,7 @@ function renderChapter(chapter) {
     .replace(/<table>/g, '<div class="table-scroll" tabindex="0" role="region" aria-label="Comparison table, scroll horizontally"><table>')
     .replace(/<\/table>/g, '</table></div>')
     .replace(/<th>/g, '<th scope="col">');
-  if (/Image Placeholder|\[Example Card\]|\[\w+ Callout\]|Chapter Lead|Editorial Note|Keep the existing|FYL-TRENDS|FYL-ZONES|<pre>/.test(html)) {
+  if (/Image Placeholder|Teaching Brief|\[Example Card\]|\[\w+ Callout\]|Chapter Lead|Editorial Note|Keep the existing|FYL-TRENDS|FYL-ZONES|<pre>/.test(html)) {
     throw new Error(`Editorial instructions leaked into ${chapter.id}`);
   }
   const previous = chapter.number === 1 ? { id: 'overview', title: 'Introduction' } : chapters[chapter.number - 2];

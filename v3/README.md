@@ -38,6 +38,10 @@ Build dependency: Marked 17.0.5, Node 20 or newer. No dependencies were download
 
 `build.mjs` removes author guidance, chart-capture briefs, and editorial labels from the reading copy. It keeps the lesson prose, examples, tables, setup variants, and callouts. Chapter and section navigation use the blueprint headings; earlier section links from feedback redirect to their headings. Future chart briefs stay in the blueprint for the later illustration pass. John's private research package is not used or linked by this site.
 
+### Teaching briefs
+
+Each chapter can open with a hidden `> **[Teaching Brief] …**` blockquote directly under its `## Chapter` heading. It records what the chapter teaches (its core question and what a reader can do afterward), how the chapter teaches it, common misreadings to address, the evidence base, and what later chapters assume. `build.mjs` removes these blocks from the reading copy and fails the build if one leaks. Keep every line of the brief, including blank ones, prefixed with `>` so the whole block is removed. Chapter 2 has the first brief; review the remaining chapters against the same structure.
+
 ### Examples in progress
 
 Use a small visible card where a concrete example would make an explanation easier to understand. Give it a plain-text title and a short brief in the blueprint:
@@ -51,7 +55,7 @@ The builder supplies the **Example to develop** label. The guide currently has 1
 
 ### Editorial principle: compare the push with the pullback
 
-Chapter 2 opens with **Comparing Volume with Price Progress**, comparing changes in movement and volume with the next candles' response. **Range and Liquidity** gives high-to-low range its own explanation: movement depends on incoming orders relative to available and replenishing bids/offers. Body size, full range, and retained directional progress serve different observations. Chapter 3 applies compression/expansion to the larger sequence. The general order-flow/depth mechanism is supported by [Cont, Kukanov and Stoikov's US equity study](https://arxiv.org/abs/1011.6402); it does not let us infer the order book from a candle. The existing real-chart comparison card now requests similar volume with different ranges and subsequent retained progress. Historical section links, including What Attracts Attention, redirect to Comparing Volume with Price Progress.
+Chapter 2 opens with **Reading a Candle and Its Volume Bar**, which defines body, range, wicks, close location, and what a volume bar records, and names the three baselines for calling volume heavy or light (nearby candles, time of day, the stock's usual activity). **Comparing Volume with Price Progress** then reads the four activity/progress combinations and the level table. **Range and Liquidity** explains why similar volume can move price different distances: movement depends on incoming orders relative to available and replenishing bids/offers. Body size, full range, and retained directional progress serve different observations. Chapter 3 applies compression/expansion to the larger sequence. The general order-flow/depth mechanism is supported by [Cont, Kukanov and Stoikov's US equity study](https://arxiv.org/abs/1011.6402); it does not let us infer the order book from a candle. The existing real-chart comparison card now requests similar volume with different ranges and subsequent retained progress. Historical section links, including What Attracts Attention, redirect to Comparing Volume with Price Progress.
 
 **Compare the volume on the pullback candles with the volume on the preceding push higher, then assess how much ground price gives back.** A small pullback in price and a pullback on light volume describe different things. A pullback can be small in price but heavy in activity.
 
