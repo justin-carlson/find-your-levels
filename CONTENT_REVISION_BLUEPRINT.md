@@ -137,7 +137,7 @@ A **reclaim**, for example, happens when price regains a level it had lost. Shor
 > **[Teaching Brief] Chapter 2: Reading Price & Volume**
 > *Author guidance for planning and review. The build removes this block from the reading copy.*
 >
-> **What we are teaching.** How to identify bullish and bearish signals by reading price and volume together. In a healthy advance, volume increases with the push and quiets on the pullback. The signals come from where volume increases and what it accomplishes: heavy volume that carries price higher and keeps the gain is bullish; heavy volume that produces a stall, or arrives as price gives ground back, is bearish. The chapter's durable question is **“What did the activity accomplish?”** Each section supports one part of it: the four activity/progress combinations, the paired bullish and bearish signals, why similar activity can move price different distances, the push, pullback, and next attempt, why heavy-volume candles become levels, and where and when to look.
+> **What we are teaching.** How to identify bullish and bearish signals by reading price and volume together. In a healthy advance, volume increases with the push and quiets on the pullback. The signals come from where volume increases and what it accomplishes: heavy volume that carries price higher and keeps the gain is bullish; heavy volume that produces a stall, or arrives as price gives ground back, is bearish. The chapter's durable question is **“What did the activity accomplish?”** The chapter puts the comparisons first and the sequences last: the four activity/progress combinations and paired bullish and bearish signals, why heavy-volume candles become levels, relative volume, why similar activity can move price different distances, how activity changes through the day, then the push, pullback, and next attempt with three patterns to recognize.
 >
 > **By the end of the chapter, a reader can:**
 > 1. Place a candle or push in one of four combinations (more or less activity, more or less progress), naming the comparison behind “heavy” or “light”: nearby candles on the same interval, the time of day, or the stock's usual activity.
@@ -151,7 +151,7 @@ A **reclaim**, for example, happens when price regains a level it had lost. Shor
 > - *Assume candle literacy.* The reader recognizes candles. Skip candle anatomy; define only the measurements a comparison depends on (such as range) where it is used.
 > - *One home per idea.* The bullish-continuation comparison lives in Comparing Pushes and Pullbacks. Session landmarks (PMH/PML, opening range, HOD/LOD) live in Chapter 4; this chapter covers how activity changes through the day.
 > - *Contrasting cases.* Teach each reading as a pair that differs in one feature. The signal tables mirror each bullish signal with its bearish counterpart row by row: a high-volume break up or down, a quieter pullback or a heavier one, a lower wick at support or an upper wick at resistance, a quieter new low or new high. Example cards should request similar pairs, including a lower-wick response that holds beside one that fails. Noticing the difference before the explanation helps the explanation stick ([Schwartz & Bransford, 1998](https://www.wright.edu/sites/www.wright.edu/files/uploads/2017/Feb/event/Schwartz_Bransford_1998_TimeForTelling.pdf)). The example cards should request these pairs.
-> - *Three short patterns, not separate topics.* Three Volume Patterns to Recognize keeps the examples brief and side by side: a healthy pullback, selling pressure, and volume returning in a curl. FFAI illustrates selling pressure (each red volume bar near the high is taller than the biggest green bar on the chart). The other two need real charts from other stocks (example cards pending). The curl's setup rules stay in Chapter 6. Obvious buying pressure needs no section of its own; the bullish table covers it.
+> - *Three short patterns, not separate topics.* Comparing Pushes and Pullbacks ends with three brief subsections side by side: a healthy pullback, selling pressure, and volume returning in a curl. FFAI illustrates selling pressure (each red volume bar near the high is taller than the biggest green bar on the chart). The other two need real charts from other stocks (example cards pending). The curl's setup rules stay in Chapter 6. Obvious buying pressure needs no section of its own; the bullish table covers it.
 > - *Conditional reads with a named next test.* Each interpretation ends with the observation that would strengthen or weaken it.
 >
 > **Common misreadings to address.** Volume color identifies buyers or sellers (it follows a price rule). A tall volume bar is bullish (activity is not progress). Small candles mean little happened (in FFAI, small red candles on heavy volume are the warning). Every old level matters equally (heavy volume and higher timeframes add weight; repeated trading through an area can wear it out). A heavy-volume candle proves traders are trapped (it supports an assumption; the return tests it). Light volume makes any pullback healthy (depth and structure still matter). A bounce or curl resets a damaged advance (the context remains until price recovers and holds the resistance area). A morning bar and a lunch bar can be compared directly (time of day changes the baseline).
@@ -195,69 +195,8 @@ Around a mapped level, follow the next response too: does price hold the ground 
 | **Long Upper Wick or Small Body at Resistance + Tall Volume Bar** | **Heavy Trading, a Stall or Retreat:** The push gave back ground or failed to advance much. Sellers repeatedly meeting incoming buy orders could explain that response. This is an absorption interpretation. | Does another push stall, followed by a lower high or lost support? Or does price recover and hold above resistance? |
 | **Push to a New High + Fading Volume + Little Follow-Through** | **A Quieter New High:** Less trading accompanies the new high. Interest may be fading, or price may be moving through limited opposing liquidity. | Does price hold the new area and advance again, or fall below the prior high? Lost progress and a failed retest strengthen the exhaustion read. |
 
-### Range and Liquidity
-Similar volume can produce very different **ranges**, the distance from a candle's high to its low. Compare ranges across candles of the same duration to see whether price is covering more or less ground for the activity involved.
-
-**Available liquidity helps explain how far orders move price.** When buyers seeking immediate execution take the shares offered at one price, continued buying can reach higher offers if sellers do not replenish those shares. When sellers take the available bids, continued selling can reach lower bids if buyers do not replenish them. Orders being withdrawn can also leave less available interest at nearby prices.
-
-With less opposing liquidity, a similar amount of trading can move price farther. More aggressive buying or selling can also expand the range as it consumes available offers or bids faster than they are replenished. Conversely, substantial volume can produce little movement when fresh bids or offers keep absorbing incoming orders. That is why small candles on heavy volume deserve attention: a lot changed hands without much progress. The candle shows the movement; it does not reveal the available liquidity throughout the interval.
-
-**Range expansion draws attention; retained progress helps us assess momentum.** A larger range can include movement in both directions, so check where the candle closed. Then follow whether subsequent candles extend the move, hold the gained ground, or reverse through it.
-
-### Comparing Pushes and Pullbacks
-Comparing a push, its pullback, and the next attempt shows whether an advance is preserving ground or repeatedly giving it back. **For a bullish continuation, we want higher volume on the push up and lighter volume on the pullback.** A quieter pullback that gives back little ground and holds support strengthens that bullish read.
-
-- **During the push:** Does increased activity carry price higher, and do the candles retain their gains? Several tall volume bars with little progress tell a different story from a steady advance.
-- **During the pullback:** Does activity quiet down, and how much ground does price give back? A shallow retreat on lighter volume can fit a pause. Heavier volume than the push is a warning, even when the candles are small. A deep retreat still matters even when its volume is low.
-- **On the next attempt:** Does price regain ground as participation returns, or does the bounce stall below the earlier high? The response helps you judge whether the advance is continuing or losing strength.
-
-A trader who missed the first push may welcome a pullback, while an earlier buyer may use the next bounce to take profit. Watch the result of that interaction: are pullbacks preserving the advance, or are rallies repeatedly giving it back?
-
-> **[Amber Callout] Give an Unclear Setup More Time:** If the level response is unclear or rallies repeatedly lose their progress, wait for a more readable interaction. Declines that gain ground through support, followed by failed recoveries, weaken the case for buying another leg higher.
-
 > **[Example Card] What did the activity accomplish?**
 > Use actual stock charts to compare an upper-wick rejection at resistance with a lower-wick response at support. Mark bodies and full high-to-low ranges, keeping volume aligned. Include intervals with similar volume but different ranges, then show how much of each move the following candles retain. Identify the completed candles used to compare the push and pullback on the same chart interval. Include a lower-wick response that later fails. Treat liquidity as a possible explanation unless matching order-book or tape evidence supports the specific claim. Separate the observations at each test from the later outcome.
-
-> **[Image Placeholder: Chapter 2: Productive Pushes vs. a Stall at Resistance]**
-> *What to show:* A real 5-minute chart with aligned volume bars below. Identify the ticker, date, session, and the resistance level visible before the approach.
-> 1. Highlight a staircase where upward pushes have larger volume bars and 1–2 candle pullbacks have lighter volume while preserving ground (*"Volume expands with upward progress; quieter pullbacks retain the advance"*).
-> 2. At a marked red macro resistance line, highlight substantial volume alongside a small body or long upper wick (*"High activity, little retained progress: examine the next response"*).
-> 3. Include subsequent candles and explain whether they support the stall interpretation or overturn it.
-
-### Three Volume Patterns to Recognize
-Three patterns come up again and again. Each one is a comparison from the signal tables, seen as a sequence on the chart.
-
-#### Recognizing a Healthy Pullback
-The basic bullish sequence: a push on increasing volume, a pullback on lighter volume that gives back little ground, then another leg higher as volume picks up again. The pullback is the part that is easy to misread. A string of red candles can look like trouble even when volume is light and price is holding support. Compare the pullback's volume and depth with the push before it.
-
-> **[Example Card] A quiet pullback, then another leg higher**
-> We will add a real chart from another stock: volume growing on the push, quieting on the pullback while price holds above a broken high or reclaimed level, then the next attempt. The example will show whether that attempt continued or failed.
-
-> **[Image Placeholder: Chapter 2: A Healthy Pullback on a Real Chart]**
-> *What to capture:* A screenshot like the FFAI one: candles with the volume pane aligned below, and enough preceding context to see the base or prior high. Record the ticker, full date including year, interval, timezone, session settings, and source in the blueprint even if the image hides them.
-> 1. Mark the push where the green volume bars grow as price clears the level, and how much of the advance the candles keep.
-> 2. Mark the pullback candles and compare their volume and depth with the push.
-> 3. Include the next attempt and describe whether the bullish read held or failed, separating what was visible at the decision point from the outcome.
-
-#### Recognizing Selling Pressure
-Selling pressure is the reverse: the pullback carries more volume than the push. It is easy to miss near a high, because the candles can stay small while price is still close to the top.
-
-In the FFAI chart below, three consecutive red candles follow the first push to the high. **Their bodies are small compared with the green push candles, yet each has a larger volume bar than any green candle on the chart, including the biggest one in the push.** More shares changed hands while price slipped than while it climbed, and all that trading produced no upward progress. That is a bearish signal: a reason not to re-enter for another leg higher while price is still near the high.
-
-<figure class="chart-example">
-<a href="v3/assets/ffai-2026-10-14-clean.png" target="_blank" rel="noopener" aria-label="Open the full-size chart"><img src="v3/assets/ffai-2026-10-14-clean.png" alt="Three consecutive red candles near the first high each have more volume than any green candle on the chart, including the biggest push candle. Price later declines, and subsequent bounces fail to recover the highs." width="766" height="1134" loading="lazy"></a>
-<figcaption>FFAI 1-minute chart, October 14, 2026.</figcaption>
-</figure>
-
-The warning came before the larger decline; the later selloff and bounces that fail to recover the highs strengthened it. Profitable longs taking gains, late buyers exiting, and new shorts are possible contributors. Recovering the high and holding it would be the reason to reassess.
-
-#### Recognizing Volume Returning in a Curl
-After a selloff, a **curl** shows the opposite change. The red volume bars shrink as the decline slows and price starts holding higher lows; then volume increases as price turns up and clears a nearby high. Quiet selling by itself is only quiet trading. The read improves when the returning volume produces upward progress.
-
-Context still matters. In FFAI, price later rounds upward while still below the high and within the damaged advance. The shape improved, but the selling pressure above had not been recovered, so it was not a reason to buy another leg higher. Chapter 6 covers the curl as a setup, with its own trigger and invalidation.
-
-> **[Example Card] Volume returning in a curl**
-> We will add a real chart showing red volume shrinking through a rounded base, then volume increasing as price clears a nearby high. Show what the next pullback did, whether the recovery held or failed.
 
 ### Why Heavy Volume Creates Levels
 Levels matter because many traders watch the same prices and act on similar habits: taking profit at a prior high, buying a reclaim, getting out near break-even. Volume shows where those decisions were concentrated. When a candle trades unusually heavy volume, many shares changed hands inside its range, and a return to that range can bring those traders' decisions back into play.
@@ -288,6 +227,15 @@ News, earnings, or a sector move can attract unusual activity. For our momentum 
 > **[Example Card] Unusual volume compared with what?**
 > Show a stock's cumulative volume at a stated time alongside its historical average at that same point. Label the lookback and session settings, using completed intervals. Pair the reading with the price chart to distinguish unusually active trading from upward progress.
 
+### Range and Liquidity
+Similar volume can produce very different **ranges**, the distance from a candle's high to its low. Compare ranges across candles of the same duration to see whether price is covering more or less ground for the activity involved.
+
+**Available liquidity helps explain how far orders move price.** When buyers seeking immediate execution take the shares offered at one price, continued buying can reach higher offers if sellers do not replenish those shares. When sellers take the available bids, continued selling can reach lower bids if buyers do not replenish them. Orders being withdrawn can also leave less available interest at nearby prices.
+
+With less opposing liquidity, a similar amount of trading can move price farther. More aggressive buying or selling can also expand the range as it consumes available offers or bids faster than they are replenished. Conversely, substantial volume can produce little movement when fresh bids or offers keep absorbing incoming orders. That is why small candles on heavy volume deserve attention: a lot changed hands without much progress. The candle shows the movement; it does not reveal the available liquidity throughout the interval.
+
+**Range expansion draws attention; retained progress helps us assess momentum.** A larger range can include movement in both directions, so check where the candle closed. Then follow whether subsequent candles extend the move, hold the gained ground, or reverse through it.
+
 ### How the Trading Day Changes
 Participation and liquidity change through the trading day, so the same volume bar can be heavy at lunch and ordinary at the open. In US stocks, activity is typically highest near the open, quieter through midday, and rising again toward the close. Compare a bar with what is normal for that time of day; a catalyst can change the rhythm:
 - **Premarket (4:00 – 9:30 AM ET):** Often thinner liquidity and catalyst-driven spikes. With fewer shares available, a small amount of trading can move price farther. The premarket high and low become session landmarks, and the move into the open frames the potential opening gap.
@@ -297,6 +245,57 @@ Participation and liquidity change through the trading day, so the same volume b
 - **Power Hour (3:00 – 4:00 PM ET):** Activity often increases toward the close. Intraday traders closing positions, swing traders positioning for the next session, and closing orders can all contribute. Read the direction and structure of that activity rather than assuming the buying is short covering.
 
 Chapter 4 maps the session landmarks this rhythm creates: the premarket high and low, the opening range, and the high and low of day.
+
+### Comparing Pushes and Pullbacks
+Comparing a push, its pullback, and the next attempt shows whether an advance is preserving ground or repeatedly giving it back. **For a bullish continuation, we want higher volume on the push up and lighter volume on the pullback.** A quieter pullback that gives back little ground and holds support strengthens that bullish read.
+
+- **During the push:** Does increased activity carry price higher, and do the candles retain their gains? Several tall volume bars with little progress tell a different story from a steady advance.
+- **During the pullback:** Does activity quiet down, and how much ground does price give back? A shallow retreat on lighter volume can fit a pause. Heavier volume than the push is a warning, even when the candles are small. A deep retreat still matters even when its volume is low.
+- **On the next attempt:** Does price regain ground as participation returns, or does the bounce stall below the earlier high? The response helps you judge whether the advance is continuing or losing strength.
+
+A trader who missed the first push may welcome a pullback, while an earlier buyer may use the next bounce to take profit. Watch the result of that interaction: are pullbacks preserving the advance, or are rallies repeatedly giving it back?
+
+Three patterns come up again and again. Each is one of the signal-table comparisons, seen as a sequence on the chart.
+
+#### Recognizing a Healthy Pullback
+This is the bullish version of the sequence above. The pullback is the part that is easy to misread. A string of red candles can look like trouble even when volume is light and price is holding support. Compare the pullback's volume and depth with the push before it.
+
+> **[Example Card] A quiet pullback, then another leg higher**
+> We will add a real chart from another stock: volume growing on the push, quieting on the pullback while price holds above a broken high or reclaimed level, then the next attempt. The example will show whether that attempt continued or failed.
+
+> **[Image Placeholder: Chapter 2: A Healthy Pullback on a Real Chart]**
+> *What to capture:* A screenshot like the FFAI one: candles with the volume pane aligned below, and enough preceding context to see the base or prior high. Record the ticker, full date including year, interval, timezone, session settings, and source in the blueprint even if the image hides them.
+> 1. Mark the push where the green volume bars grow as price clears the level, and how much of the advance the candles keep.
+> 2. Mark the pullback candles and compare their volume and depth with the push.
+> 3. Include the next attempt and describe whether the bullish read held or failed, separating what was visible at the decision point from the outcome.
+
+#### Recognizing Selling Pressure
+Selling pressure is the reverse: the pullback carries more volume than the push. It is easy to miss near a high, because the candles can stay small while price is still close to the top.
+
+In the FFAI chart below, three consecutive red candles follow the first push to the high. **Their bodies are small compared with the green push candles, yet each has a larger volume bar than any green candle on the chart, including the biggest one in the push.** More shares changed hands while price slipped than while it climbed, and all that trading produced no upward progress. That is a bearish signal: a reason not to re-enter for another leg higher while price is still near the high.
+
+<figure class="chart-example">
+<a href="v3/assets/ffai-2026-10-14-clean.png" target="_blank" rel="noopener" aria-label="Open the full-size chart"><img src="v3/assets/ffai-2026-10-14-clean.png" alt="Three consecutive red candles near the first high each have more volume than any green candle on the chart, including the biggest push candle. Price later declines, and subsequent bounces fail to recover the highs." width="766" height="1134" loading="lazy"></a>
+<figcaption>FFAI 1-minute chart, October 14, 2026.</figcaption>
+</figure>
+
+The warning came before the larger decline; the later selloff and bounces that fail to recover the highs strengthened it. Profitable longs taking gains, late buyers exiting, and new shorts are possible contributors. Recovering the high and holding it would be the reason to reassess.
+
+#### Recognizing Volume Returning in a Curl
+After a selloff, a **curl** shows the opposite change. The red volume bars shrink as the decline slows and price starts holding higher lows; then volume increases as price turns up and clears a nearby high. Quiet selling by itself is only quiet trading. The read improves when the returning volume produces upward progress.
+
+Context still matters. In FFAI, price later rounds upward while still below the high and within the damaged advance. The shape improved, but the selling pressure above had not been recovered, so it was not a reason to buy another leg higher. Chapter 6 covers the curl as a setup, with its own trigger and invalidation.
+
+> **[Example Card] Volume returning in a curl**
+> We will add a real chart showing red volume shrinking through a rounded base, then volume increasing as price clears a nearby high. Show what the next pullback did, whether the recovery held or failed.
+
+> **[Amber Callout] Give an Unclear Setup More Time:** If the level response is unclear or rallies repeatedly lose their progress, wait for a more readable interaction. Declines that gain ground through support, followed by failed recoveries, weaken the case for buying another leg higher.
+
+> **[Image Placeholder: Chapter 2: Productive Pushes vs. a Stall at Resistance]**
+> *What to show:* A real 5-minute chart with aligned volume bars below. Identify the ticker, date, session, and the resistance level visible before the approach.
+> 1. Highlight a staircase where upward pushes have larger volume bars and 1–2 candle pullbacks have lighter volume while preserving ground (*"Volume expands with upward progress; quieter pullbacks retain the advance"*).
+> 2. At a marked red macro resistance line, highlight substantial volume alongside a small body or long upper wick (*"High activity, little retained progress: examine the next response"*).
+> 3. Include subsequent candles and explain whether they support the stall interpretation or overturn it.
 
 > **[Teal Callout] Carry This Forward:** For any push, pullback, or test of a level, ask: How much traded, compared with what? How much ground did price gain or give back, and where did it close? What did the next candles do with that ground? Chapter 3 puts those movements into a larger sequence so you can distinguish an established trend from a bounce or a range.
 

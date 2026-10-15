@@ -36,6 +36,7 @@
     ['what-price-and-volume-tell-us', 'comparing-volume-with-price-progress'],
     ['m1-participation-leaves-a-footprint-reading-price-alongside-volume', 'comparing-volume-with-price-progress'],
     ['reading-volume-in-an-uptrend', 'comparing-pushes-and-pullbacks'],
+    ['three-volume-patterns-to-recognize', 'comparing-pushes-and-pullbacks'],
     ['2-read-the-9-20-emas', 'reading-the-9-20-emas'],
     ['1-follow-the-highs-and-lows', 'putting-a-bounce-in-context'],
     ['m4-1-structure-swing-by-swing', 'putting-a-bounce-in-context'],
