@@ -9,6 +9,7 @@
   const chapterLinks = [...document.querySelectorAll('[data-chapter]')];
   const mobile = matchMedia('(max-width: 899px)');
   const sectionAliases = new Map([
+    ['2-looking-inside-wide-range-candles', '2-looking-inside-a-daily-candle'],
     ['putting-it-together-at-5-00', 'reading-the-evidence-together'],
     ['a-plan-from-start-to-finish', 'know-your-plan'],
     ['m2-a-plan-from-start-to-finish', 'know-your-plan'],

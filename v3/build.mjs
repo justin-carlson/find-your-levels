@@ -131,7 +131,7 @@ const legacySectionIds = new Map([
     "m5-1-gaps-space-between-session-ranges"
   ],
   [
-    "2. Looking Inside Wide-Range Candles",
+    "2. Looking Inside a Daily Candle",
     "m5-2-wide-range-candles-check-the-trading-inside"
   ],
   [
