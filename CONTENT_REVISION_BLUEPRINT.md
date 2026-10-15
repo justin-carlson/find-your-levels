@@ -191,16 +191,16 @@ A trader who missed the first push may welcome a pullback, while an earlier buye
 
 ### Recognizing Selling Pressure
 
-Selling pressure is easier to assess across a sequence than from a single red candle. Connect three things: **where price struggles, how much activity accompanies the retreat, and what the next bounce recovers.**
+Selling pressure can show up near a high, before a larger decline develops. Compare the volume on the pullback candles with the volume on the preceding push higher.
 
-Whole- and half-dollar levels, such as $1.00 and $1.50, give us areas to watch. Price does not have to reject at the exact penny. Here, two pushes into roughly $1.50–$1.57 form a double-top area: price reaches a similar ceiling twice, then loses ground. The repeated rejection matters more than a perfectly matching pair of highs.
+In the FFAI chart below, **three consecutive red candles follow the first push to the high. Each has a larger volume bar than the green candles in that push.** Price is still near the high, but it is giving back ground on heavier volume. That is the early warning of selling pressure.
 
 <figure class="chart-example">
-<a href="v3/assets/ffai-2026-10-14-clean.png" target="_blank" rel="noopener" aria-label="Open the full-size chart"><img src="v3/assets/ffai-2026-10-14-clean.png" alt="Two pushes into resistance followed by heavy-volume declines; later bounces fail to recover the highs." width="766" height="1134" loading="lazy"></a>
+<a href="v3/assets/ffai-2026-10-14-clean.png" target="_blank" rel="noopener" aria-label="Open the full-size chart"><img src="v3/assets/ffai-2026-10-14-clean.png" alt="Three consecutive red candles near the first high each have more volume than the preceding green push candles. Price later declines, and subsequent bounces fail to recover the highs." width="766" height="1134" loading="lazy"></a>
 <figcaption>FFAI 1-minute chart, October 14, 2026.</figcaption>
 </figure>
 
-**Volume gives the rejection more weight.** The largest red volume bars exceed those on the preceding advance while price gives back ground. This is a bearish combination: heavier activity accompanies the retreat, and buyers are not retaining their upward progress. Profitable longs may be taking gains, late buyers may be exiting, and shorts may be pressing the failed push. We read selling pressure from the activity and price response together; red volume is not a separate count of shares sold versus bought.
+**The selling pressure appears before the larger decline.** Profitable longs may be taking gains, late buyers may be exiting, and shorts may be entering against the advance. The price and volume response gives us reason to question another leg higher while price is still near the high. The later decline and bounces that fail to recover the highs strengthen that initial read.
 
 **A small curl does not erase that context.** Price can round upward while still sitting below resistance and within a damaged advance. For a continuation long, that is a reason to pass on the curl: the shape has improved, but the surrounding structure has not. A recovery setup needs its own trigger and invalidation, as covered in Chapter 6.
 
@@ -370,6 +370,8 @@ Session landmarks include price extremes, opening ranges, and calculated benchma
 - **Opening Range High & Low (ORH / ORL):** The highest and lowest prices during a chosen interval after the 9:30 AM ET regular-session open, such as the first 5 or 15 minutes. Use the same interval consistently. The range continues developing until that interval ends.
 - **VWAP (Volume-Weighted Average Price):** The session's volume-weighted benchmark (covered in depth in Chapter 5).
 
+> **[Blue Callout] Psychological Levels: Whole and Half Dollars:** In this momentum-stock map, we also watch nearby prices ending in **.00** or **.50**. These recognizable prices can become reference points for entries, profit-taking, and stops, bringing different traders' decisions into the same area. Check earlier reactions and any overlap with a swing high, session extreme, or other mapped level. The current price and volume response shows whether the area is holding, breaking, or being reclaimed.
+
 ### When to Use a Line or a Zone
 A **horizontal line** identifies a precise price reference, while a **zone** marks an area of related structure. A premarket high can sit within a broader cluster of candles. The line preserves the exact landmark; the zone shows the surrounding area being tested.
 
@@ -521,7 +523,7 @@ Build the map in three passes: find the historical references, check where price
 > **[Amber Callout] Check the Bigger Picture Before the Entry:** A promising 1-minute breakout may sit just below a daily resistance level or the Daily 200 EMA. Check the **room to the next mapped level** so you know how soon the move could face another test. A strong move can clear that area; your plan should account for the approach.
 
 > **[Example Card] Carry the map from Daily to intraday**
-> Use the same stock and date to show the three mapping passes. Explain the origin of each retained level, where references overlap, and which obstacle comes next. State the opening-range window when that reference is used. Carry the historical marks onto the intraday chart so repeated views of the same event are recognizable.
+> Use the same stock and date to show the three mapping passes. Explain the origin of each retained level, where references overlap, and which obstacle comes next. Include a real test of a whole- or half-dollar price, distinguishing that psychological reference from any overlapping swing or session level. State the opening-range window when that reference is used. Carry the historical marks onto the intraday chart so repeated views of the same event are recognizable.
 
 > **[Image Placeholder: Chapter 4B: Top-Down Multi-Timeframe Level Map (Daily + 5-Min Side-by-Side)]**
 > *What to show:* A real two-panel chart of the same stock on the same day:
