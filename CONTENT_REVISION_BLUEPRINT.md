@@ -58,22 +58,18 @@ A chart is a record of transactions made by people and systems with different po
 
 A previous high can bring those decisions together. A break changes the situation for buyers, holders, and short sellers. Start with a simple question: **what is price doing here, and how could that change who acts next?**
 
-### One Price, Different Decisions
-Price doesn't move in a straight line. It pushes up toward resistance, pulls back toward support, pauses, and pushes again. That back-and-forth is the rhythm of a chart. Trading it well is less like predicting the future and more like jumping into a turning rope: you don't leap at a random moment. You watch the rope come around until the timing is clear, and then you step in. Each push and pullback also changes the situation for the people trading it.
+### Same Price, Different Decisions
+Price doesn't move in a straight line. It pushes up, pulls back, pauses, and pushes again. Trading that rhythm is like jumping into a turning rope: you don't leap at a random moment. You watch the rope come around until the timing is clear, then step in. Each push and pullback also changes the situation for the people trading it.
 
-Imagine a stock making a strong morning run on news. It reaches **$6.00**, then retreats toward **$5.20**. One trader bought near $6.00, expecting another leg up. Buying with that expectation is **going long**. Another entered earlier, below $5.20. One is watching a loss; the other is watching some of a profit disappear.
+Imagine a stock running on morning news. It reaches **$6.00**, then pulls back to **$5.20**. One trader bought near $6.00, expecting another leg up; buying with that expectation is **going long**. Another bought earlier, below $5.20. One is now watching a loss; the other is watching part of a profit disappear.
 
-Another trader sees a bounce fail during the retreat and **sells borrowed shares short**, expecting lower prices. A short seller aims to buy the shares back for less than they sold them for. That purchase closes the short position and is called **covering**. Buying can therefore be an exit from a bearish trade as well as the start of a bullish one.
+A third trader sees a bounce fail on the way down and **sells borrowed shares short**, expecting lower prices. To close the trade, they buy the shares back, which is called **covering**. So buying can end a bearish trade as well as start a bullish one.
 
-While price sat near $5.20, the trader who bought near $6.00 stopped reading the chart and started bargaining with it: *"If it ever gets back to my entry, I'm out."* Plenty of traders make that same promise to themselves after buying a high that didn't hold.
+While price sits near $5.20, the trader who bought at $6.00 starts bargaining: *"If it ever gets back to my entry, I'm out."* Then the stock finds its footing and climbs back toward $6.00. That trader sees a chance to get out near break-even, and the earlier buyer sees a chance to take profit. Both consider selling, for different reasons. That potential selling is one explanation for **overhead supply**: selling interest a recovery meets at higher prices.
 
-Now imagine the stock finding its footing near $5.20 and recovering toward $6.00. The trader who bought near the high sees a chance to get out close to break-even. The earlier buyer sees a chance to take profit before another rejection. Both consider selling, for different reasons.
+Meanwhile, the recovery is moving against the short seller, who may buy back shares to exit. And a trader who missed the morning run sees price challenging $6.00 and considers buying for the first time.
 
-Their potential selling is one explanation for **overhead supply**: selling interest that a recovery encounters at higher prices. New short sellers might also take interest near $6.00, expecting the earlier ceiling to hold again. If some holders added shares lower down, their average cost and preferred exit may have changed. There is no single break-even price shared by everyone.
-
-For the short seller who entered during the decline, the recovery is now moving against the position. In this example, they choose to buy back the shares and exit. Another short might hold, reduce, or have entered at a higher price and still be profitable. Meanwhile, a trader who missed the morning run sees price challenging $6.00 and considers buying for the first time.
-
-**Same price, different decisions.** Some traders want out, some want in, and others are waiting. Watch the response at $6.00 to see how that activity resolves.
+**Same price, different decisions.** Some traders want out, some want in, and others are waiting. Watch the response at $6.00 to see how it resolves.
 
 ### Buying and Selling: A Quick Recap
 The choices in that story fall into four common position changes:
