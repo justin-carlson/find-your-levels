@@ -61,9 +61,9 @@ A previous high can bring those decisions together. A break changes the situatio
 ### Same Price, Different Decisions
 Price doesn't move in a straight line. It pushes up, pulls back, pauses, and pushes again. Trading that rhythm is like jumping into a turning rope: you don't leap at a random moment. You watch the rope come around until the timing is clear, then step in. Each push and pullback also changes the situation for the people trading it.
 
-Imagine a stock running on morning news. It reaches **$6.00**, then pulls back to **$5.20**. One trader bought near $6.00, expecting another leg up; buying with that expectation is **going long**. Another bought earlier, below $5.20. One is now watching a loss; the other is watching part of a profit disappear.
+Imagine a stock running on morning news. It reaches $6.00, then pulls back to $5.20. One trader bought near $6.00, expecting another leg up; buying with that expectation is **going long**. Another bought earlier, below $5.20. One is now watching a loss; the other is watching part of a profit disappear.
 
-A third trader sees a bounce fail on the way down and **sells borrowed shares short**, expecting lower prices. To close the trade, they buy the shares back, which is called **covering**. So buying can end a bearish trade as well as start a bullish one.
+A third trader sees a bounce fail on the way down and **takes a short position**, expecting lower prices. A short seller profits by buying the shares back for less than they sold them for; that buyback is called **covering**. So buying can end a bearish trade as well as start a bullish one.
 
 While price sits near $5.20, the trader who bought at $6.00 starts bargaining: *"If it ever gets back to my entry, I'm out."* Then the stock finds its footing and climbs back toward $6.00. That trader sees a chance to get out near break-even, and the earlier buyer sees a chance to take profit. Both consider selling, for different reasons. That potential selling is one explanation for **overhead supply**: selling interest a recovery meets at higher prices.
 
