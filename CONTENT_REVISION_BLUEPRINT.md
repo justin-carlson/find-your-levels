@@ -54,6 +54,15 @@ Start with the reasons traders buy and sell, then learn to read price and volume
 ## Chapter 1: What Moves Price (`#m1`)
 
 ### Chapter Lead
+Price doesn't move in a straight line. It pushes up toward resistance, pulls back toward support, pauses, and pushes again. That back-and-forth is the rhythm of a chart. Trading it well is less like predicting the future and more like jumping into a turning rope: you don't leap at a random moment. You watch the rope come around until the timing is clear, and then you step in.
+
+It's human nature to want in on the green candle. The stock is running, it feels alive, and stepping in feels like joining the winning side. That pull isn't a flaw; experienced traders feel it too. The skill is pausing for one beat to ask two questions:
+
+- **Am I buying into supply or off support?** Is price heading straight into a ceiling where holders may want out, or pulling back to a level that has held?
+- **Is the evidence lined up behind me?** Is volume picking up on the push and price keeping its gains, or am I reacting to a single green candle?
+
+When the answers line up, step in with a plan. When they don't, let the rope keep turning and wait for the next pass.
+
 A chart is a record of transactions made by people and systems with different positions, plans, and pressures. One trader sees a chance to take profit. Another wants to get out near break-even. Someone else sees the beginning of a new move. This chapter helps you understand why traders may act differently around the same price, and how their responses help explain why levels matter.
 
 A previous high can bring those decisions together. A break changes the situation for buyers, holders, and short sellers. Start with a simple question: **what is price doing here, and how could that change who acts next?**
@@ -62,6 +71,8 @@ A previous high can bring those decisions together. A break changes the situatio
 Imagine a stock making a strong morning run on news. It reaches **$6.00**, then retreats toward **$5.20**. One trader bought near $6.00, expecting another leg up. Buying with that expectation is **going long**. Another entered earlier, below $5.20. One is watching a loss; the other is watching some of a profit disappear.
 
 Another trader sees a bounce fail during the retreat and **sells borrowed shares short**, expecting lower prices. A short seller aims to buy the shares back for less than they sold them for. That purchase closes the short position and is called **covering**. Buying can therefore be an exit from a bearish trade as well as the start of a bullish one.
+
+While price sat near $5.20, the trader who bought near $6.00 stopped reading the chart and started bargaining with it: *"If it ever gets back to my entry, I'm out."* Plenty of traders make that same promise to themselves after buying a high that didn't hold.
 
 Now imagine the stock finding its footing near $5.20 and recovering toward $6.00. The trader who bought near the high sees a chance to get out close to break-even. The earlier buyer sees a chance to take profit before another rejection. Both consider selling, for different reasons.
 
@@ -105,22 +116,38 @@ Suppose a new short seller enters just below that ceiling and places a buy stop 
 
 For that short seller, a rising price can make the decision feel more urgent. They might choose to exit, have their stop triggered, or face a broker-required liquidation. Keep those situations distinct: an uncomfortable position alone does not require an immediate exit.
 
+An experienced trader watching this might say, *"It gets interesting over $6."* That isn't a prediction. It names the price where the situation changes for shorts, holders, and new buyers.
+
 Follow the test at $6.00:
 
 1. **The Rejection:** Price tests the area, fails to sustain higher prices, and retreats. Sellers may be **absorbing buying** by continuing to supply shares as buy orders arrive, limiting upward progress. Buyers losing urgency can also produce a rejection. A later attempt that stalls again strengthens the resistance read.
-2. **The Breakout:** Price clears the ceiling. Shorts whose exits trigger buy back shares. Other shorts reconsider as the move eats into profits or deepens losses. At the same time, the visible new high can attract momentum buyers and encourage existing longs to add.
+2. **The Breakout:** Price clears the ceiling, and three things can happen close together:
+    - **Stops trigger.** Shorts with buy stops above the ceiling are bought out automatically; each exit is a purchase.
+    - **Scanners light up.** The new high puts the ticker on momentum scanners, in front of traders who weren't watching it.
+    - **Momentum buyers join.** New buyers arrive while shorts are still covering, and existing longs may add. With little overhead supply above the old ceiling, price can move quickly.
+
+    Not every short has a stop there; others reconsider as the move eats into profits or deepens losses.
 3. **The Return:** A pullback that holds above the broken level and begins moving higher supports the read that the old ceiling is acting as a new floor. New longs have somewhere to assess the response, while shorts must reconsider another failed downward attempt. A return below the level followed by a failed recovery weakens that read.
 
 When rising price pressures shorts to cover and that buying helps drive price higher, the feedback can become a **short squeeze**. A fast green move alone does not identify how much buying came from covering. Even a move fueled by covering can stall when fresh selling meets it.
 
 > **[Green Callout] The Response Gives the Level Meaning:** An old ceiling becoming a floor is a change in how price responds around the same area. The reverse can happen when support breaks and a recovery stalls underneath it. Chapter 4 develops these role changes and what we mean by a level holding. The break gives us a reason to watch; the response helps us judge what is developing.
 
+### How We Trade: Find the Rhythm
+Back to the turning rope. Now that you have seen who might act at a level and why, here is how this guide trades it. Three principles carry the approach:
+
+1. **We buy support, not breakouts.** We would rather buy a pullback to a level we trust, with a stop just beneath it, than chase price into the highs. Support includes a freshly flipped level: a former ceiling that price cleared and then held on the retest. That is why the Break and Retest setup in Chapter 6 enters on the retest, not the first break. The chaser and the support buyer may be watching the same level; one is paying up near the high, the other has a nearby reference for risk.
+2. **We let the evidence build conviction.** A level alone is a reason to watch. A level that holds, with volume picking up on the next push and price keeping its gains, is a reason to act. We don't buy because price is near support; we buy because the response shows support is holding.
+3. **We sell into strength.** Mark the next level up before you enter, and plan to take profit as price approaches it, while buyers are eager. Selling to late buyers on the way up is the opposite of selling in a panic at the low.
+
+> **[Teal Callout] You Don't Need Every Jump to Land:** No level holds every time, which is why the stop exists. Keep the loss small when the rhythm breaks, and let the clean ones work. Find the rhythm, buy the pullback into support you trust, sell into the push, and wait for the rope to come back around.
+
 ### Keep the Story Tied to the Chart
 The stories help us consider who might act next. Candles and volume show the result of the activity, without identifying each trader's position or reason for acting.
 
 A **reclaim**, for example, happens when price regains a level it had lost. Shorts who entered below it now face an adverse move, so their exits could add buying. The next pullback and push tell us whether the recovery is holding up. If price loses the level again, update the read even if the covering story still sounds convincing.
 
-> **[Teal Callout] The Core Mental Model:** **A level is a reference for reading the next interaction.** Consider why someone might see that price as an opportunity, a profit, or an exit. Then follow what price actually does. The next chapter builds on this by comparing how much trading took place with what that activity accomplished.
+> **[Teal Callout] The Core Mental Model:** **A level is a reference for reading the next interaction.** Consider why someone might see that price as an opportunity, a profit, or an exit. Then follow what price actually does. One question carries through the rest of the guide: **who could be under pressure at this level, and what would make them act?** The chart won't name them, but the response at the level shows whether that pressure is showing up. The next chapter builds on this by comparing how much trading took place with what that activity accomplished.
 
 > **[Example Card] One level, several reasons to act**
 > Show an earlier reaction and a later return to the same level on a real chart. Mark the price response, then explain how a holder, a new buyer, and a short seller might respond. Keep those possible motives separate from what the candles show.
@@ -141,7 +168,7 @@ A **reclaim**, for example, happens when price regains a level it had lost. Shor
 >
 > **By the end of the chapter, a reader can:**
 > 1. Place a candle or push in one of four combinations (more or less activity, more or less progress), naming the comparison behind “heavy” or “light”: nearby candles on the same interval, the time of day, or the stock's usual activity (relative volume).
-> 2. Explain why a heavy-volume candle can make its price area a level worth mapping, treating possible trapped buyers (bag holders) or shorts as a working assumption: stronger on Daily, Weekly, Monthly, and Yearly charts than on 1- or 5-minute charts, and tested by the response on a return.
+> 2. Explain why a heavy-volume candle can make its price area a level worth mapping, treating possible trapped longs (bag holders) or trapped shorts as a working assumption: stronger on Daily, Weekly, Monthly, and Yearly charts than on 1- or 5-minute charts, and tested by the response on a return.
 > 3. Explain why similar volume can produce different ranges, without claiming to see the order book from a candle.
 > 4. Recognize three volume patterns in a push, pullback, and next attempt: a healthy pullback (lighter volume, little ground given back, then another leg higher), selling pressure (small red candles on heavier volume than the push, a reason not to re-enter, as in FFAI), and volume returning in a curl after selling dries up.
 > 5. Use the signal tables to name four bullish signals and their bearish mirrors, and state what to watch next for each.
@@ -183,10 +210,12 @@ Levels matter because many traders watch the same prices and act on similar habi
 
 The chart does not show who still holds a position, so we work from a reasonable assumption and let the return test it:
 
-- **Possible trapped buyers:** When a heavy-volume candle is followed by a selloff, many traders who bought inside it may still be holding at a loss. Traders often call them **bag holders**. A recovery into that range can meet selling from holders getting out near break-even, adding **overhead supply**.
-- **Possible trapped shorts:** When price rises above a heavy-volume candle, shorts who entered there may be holding losses. Their covering can support a pullback toward the area or add fuel to a push higher.
+- **Possible trapped longs:** When a heavy-volume candle is followed by a selloff, many traders who bought inside it may still be holding at a loss. You'll also hear them called trapped buyers, as in a bull trap, or **bag holders**. Their next move is to sell: a recovery into that range can meet selling from holders getting out near break-even, adding **overhead supply**.
+- **Possible trapped shorts:** When price rises above a heavy-volume candle, shorts who entered there may be holding losses, as in a bear trap. Their next move is to buy: covering can support a pullback toward the area or add fuel to a push higher.
 
-**The timeframe changes how much weight the assumption carries.** On a 1- or 5-minute chart, heavy volume often reflects traders moving in and out quickly, and many of those positions close the same day. On a Daily, Weekly, Monthly, or Yearly chart, heavy volume followed by a selloff is more likely to leave traders still holding. That makes the trapped-holder assumption more reasonable there, and it is why this guide's level map starts on the higher timeframes.
+Not everyone near a level is trapped. Buyers waiting at support or a demand zone want in; they help support hold, rather than adding selling.
+
+**The timeframe changes how much weight the assumption carries.** On a 1- or 5-minute chart, heavy volume often reflects traders moving in and out quickly, and many of those positions close the same day. On a Daily, Weekly, Monthly, or Yearly chart, heavy volume followed by a selloff is more likely to leave traders still holding. That makes the trapped-trader assumption more reasonable there, and it is why this guide's level map starts on the higher timeframes.
 
 A practical question follows: **is price above or below the heavy-volume candle?** Above its high, most of that candle's buyers are likely profitable. Below its low, many may be underwater, and a recovery has their potential selling to work through.
 
@@ -337,7 +366,9 @@ Keep the same level and swing references visible across both views. They summari
 
 If price stops extending its highs but has not established a decline, it may be consolidating or in **transition**. Name what has changed and identify the next test instead of forcing a frontside or backside label.
 
-> **[Amber Callout] Why Declines Still Have Green Candles:** Profitable shorts may cover and dip-buyers may test a level, producing a green candle with a large body. Regaining a meaningful lower high or broken level is evidence of recovery; a later pullback that holds adds support to that read. Chapter 6 specifies the entry trigger for each recovery setup.
+The costly mistake here rarely feels like one. A trader doesn't think, *"I'm buying into a decline."* They think, *"It's green, it's going up, I'm in."* One rising candle fills in a trend that isn't there. When price rolls back over, they become one of the trapped longs from Chapter 2.
+
+> **[Amber Callout] A Green Candle Is Not a Trend:** The backside is full of green candles. A stock sliding off its highs still bounces, and for a minute a bounce can look exactly like the frontside did. Profitable shorts may cover and dip-buyers may test a level, producing a green candle with a large body. Regaining a meaningful lower high or broken level is evidence of recovery; a later pullback that holds adds support to that read. Chapter 6 specifies the entry trigger for each recovery setup.
 
 > **[Teal Callout] Trade with the Trend:** For our trend-following long setups, we look for an established advance, pullbacks that preserve its structure, and entries with room to the next level. Recovery setups can develop before an uptrend is re-established. Keep that distinction clear when choosing a setup and following its rules.
 
@@ -812,9 +843,7 @@ A trade plan connects the level map with entry, risk, and exit decisions. Differ
 Trend, participation, and price response give those decisions context. Bringing them together also means recognizing when the trigger is unclear or the available room does not justify the risk.
 
 ### Before You Enter
-It is human nature to want in when a stock is moving quickly higher. Stepping in right away can feel like joining the winning side. Even experienced traders feel that pull.
-
-Give yourself a beat to reconnect the move with your map. Notice whether you are buying near support with room ahead or chasing directly into the next resistance test. Then check whether the push is keeping its gains and the pullback is holding where you expected. The plan in the next section turns that pause into a repeatable habit.
+Chapter 1 described the pull to want in on the green candle and the rope you wait to step into. Before entering, give yourself a beat to reconnect the move with your map. Notice whether you are buying near support with room ahead or chasing directly into the next resistance test. Then check whether the push is keeping its gains and the pullback is holding where you expected. The plan in the next section turns that pause into a repeatable habit.
 
 > **[Blue Callout] Do I Want to Be a Buyer Here?** “I want to be a buyer here” identifies a location to evaluate. What makes this price worth considering, what response would justify an entry, and where would the idea fail? A buyer waiting for support to hold may have a nearby reference for risk; chasing after price has moved toward resistance can leave less room before the next test. Patience means waiting for the chosen setup response.
 >
