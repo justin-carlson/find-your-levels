@@ -54,20 +54,13 @@ Start with the reasons traders buy and sell, then learn to read price and volume
 ## Chapter 1: What Moves Price (`#m1`)
 
 ### Chapter Lead
-Price doesn't move in a straight line. It pushes up toward resistance, pulls back toward support, pauses, and pushes again. That back-and-forth is the rhythm of a chart. Trading it well is less like predicting the future and more like jumping into a turning rope: you don't leap at a random moment. You watch the rope come around until the timing is clear, and then you step in.
-
-It's human nature to want in on the green candle. The stock is running, it feels alive, and stepping in feels like joining the winning side. That pull isn't a flaw; experienced traders feel it too. The skill is pausing for one beat to ask two questions:
-
-- **Am I buying into supply or off support?** Is price heading straight into a ceiling where holders may want out, or pulling back to a level that has held?
-- **Is the evidence lined up behind me?** Is volume picking up on the push and price keeping its gains, or am I reacting to a single green candle?
-
-When the answers line up, step in with a plan. When they don't, let the rope keep turning and wait for the next pass.
-
 A chart is a record of transactions made by people and systems with different positions, plans, and pressures. One trader sees a chance to take profit. Another wants to get out near break-even. Someone else sees the beginning of a new move. This chapter helps you understand why traders may act differently around the same price, and how their responses help explain why levels matter.
 
 A previous high can bring those decisions together. A break changes the situation for buyers, holders, and short sellers. Start with a simple question: **what is price doing here, and how could that change who acts next?**
 
 ### One Price, Different Decisions
+Price doesn't move in a straight line. It pushes up toward resistance, pulls back toward support, pauses, and pushes again. That back-and-forth is the rhythm of a chart. Trading it well is less like predicting the future and more like jumping into a turning rope: you don't leap at a random moment. You watch the rope come around until the timing is clear, and then you step in. Each push and pullback also changes the situation for the people trading it.
+
 Imagine a stock making a strong morning run on news. It reaches **$6.00**, then retreats toward **$5.20**. One trader bought near $6.00, expecting another leg up. Buying with that expectation is **going long**. Another entered earlier, below $5.20. One is watching a loss; the other is watching some of a profit disappear.
 
 Another trader sees a bounce fail during the retreat and **sells borrowed shares short**, expecting lower prices. A short seller aims to buy the shares back for less than they sold them for. That purchase closes the short position and is called **covering**. Buying can therefore be an exit from a bearish trade as well as the start of a bullish one.
@@ -134,7 +127,16 @@ When rising price pressures shorts to cover and that buying helps drive price hi
 > **[Green Callout] The Response Gives the Level Meaning:** An old ceiling becoming a floor is a change in how price responds around the same area. The reverse can happen when support breaks and a recovery stalls underneath it. Chapter 4 develops these role changes and what we mean by a level holding. The break gives us a reason to watch; the response helps us judge what is developing.
 
 ### How We Trade: Find the Rhythm
-Back to the turning rope. Now that you have seen who might act at a level and why, here is how this guide trades it. Three principles carry the approach:
+Back to the turning rope. Now that you have seen who might act at a level and why, here is how this guide trades it.
+
+It's human nature to want in on the green candle. The stock is running, it feels alive, and stepping in feels like joining the winning side. That pull isn't a flaw; experienced traders feel it too. The skill is pausing for one beat to ask two questions:
+
+- **Am I buying into supply or off support?** Is price heading straight into a ceiling where holders may want out, or pulling back to a level that has held?
+- **Is the evidence lined up behind me?** Is volume picking up on the push and price keeping its gains, or am I reacting to a single green candle?
+
+When the answers line up, step in with a plan. When they don't, let the rope keep turning and wait for the next pass.
+
+Three principles carry the approach:
 
 1. **We buy support, not breakouts.** We would rather buy a pullback to a level we trust, with a stop just beneath it, than chase price into the highs. Support includes a freshly flipped level: a former ceiling that price cleared and then held on the retest. That is why the Break and Retest setup in Chapter 6 enters on the retest, not the first break. The chaser and the support buyer may be watching the same level; one is paying up near the high, the other has a nearby reference for risk.
 2. **We let the evidence build conviction.** A level alone is a reason to watch. A level that holds, with volume picking up on the next push and price keeping its gains, is a reason to act. We don't buy because price is near support; we buy because the response shows support is holding.
