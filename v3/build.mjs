@@ -27,7 +27,7 @@ const legacySectionIds = new Map([
     "m1-the-four-players-at-every-level-longs-vs-shorts-buyers-vs-sellers"
   ],
   [
-    "One Price, Different Decisions",
+    "Same Price, Different Decisions",
     "m1-trapped-buyers-and-the-overhead-supply-ceiling"
   ],
   [
