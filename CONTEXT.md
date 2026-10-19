@@ -1,5 +1,23 @@
 # Project Context — Find Your Levels
 
+Updated: October 19, 2026
+
+## Current guide and release
+
+The current guide has seven chapters. `CONTENT_REVISION_BLUEPRINT.md` is its content source; `v3/build.mjs` generates the review page and, with `npm run build:live`, root `index.html`. GitHub Pages publishes `main` at https://findyourlevels.com/. Shared assets live in `v3/`; the review page retains `noindex` and omits visitor analytics.
+
+Justin authorized this release on October 19. It layers the approved Chapter 6 momentum integration and Chapter 7 capstone refinements onto published revision `1bf3610`. Chapters 1–5 and Chapter 7's newer introduction are preserved exactly. Chapter 6 keeps Read the Sequence Before the Name, the linked setup index, then curl/pullback continuation, micro pullbacks, breakouts, consolidation/continuation, and failure/recovery. Chapter 7 expands the existing real-chart walkthrough card, acknowledges stalled follow-through under the chosen management plan, and asks what the next level response strengthened or weakened in the original read. Existing entry/stop distinctions remain intact.
+
+There are 24 visible Example to develop cards in the combined guide. Actual stock-session chart selection and annotation remain pending. Preserve the current voice, use the placement cards, and distinguish decision-time evidence from later outcomes. Do not invent chart data or alternate outcomes.
+
+Release checks passed: production/review builds; app and builder syntax; whitespace; duplicate IDs, internal links, legacy alias targets, and local assets; production/review metadata separation; exact preservation of Chapters 1–5; and desktop/mobile browser checks at 1360×1000 and 390×844. Browser plugin not available; bundled Playwright with installed Chrome checked all seven chapters, setup index order and navigation, five historical routes, capstone additions, theme controls, the mobile menu, overflow, overlays, and console/page errors. Screenshots were inspected. Local analytics was stubbed to avoid sending preview telemetry. No new dependencies or full unrelated test suites.
+
+The original checkout contains separate local editorial research, older explorations, and unrelated changes. They are outside this release. A release worktree was used to preserve them while integrating the latest published chapters.
+
+## Historical context
+
+The notes below describe the earlier v2 site and do not govern the current seven-chapter guide.
+
 ## What this is
 An educational HTML guide for beginner traders focused on reading small-cap stock charts and finding meaningful levels. Single-file, self-contained, deployable via GitHub Pages.
 

@@ -163,19 +163,19 @@ const legacySectionIds = new Map([
     "m7-the-pre-trade-checklist-four-questions-before-entry"
   ],
   [
-    "Setup 2: Break and Retest",
+    "Break and Retest",
     "m7-setup-1-the-break-and-retest-hod-pmh-or-a-daily-level"
   ],
   [
-    "Setup 3: Failed Breakdown and Reclaim",
+    "Failed Breakdown and Reclaim",
     "m7-setup-2-the-failed-breakdown-and-reclaim-the-bear-trap-level-reclaim"
   ],
   [
-    "Setup 4: The EMA Pullback",
+    "The EMA Pullback",
     "m7-setup-3-the-dynamic-trend-ride-the-9-20-ema-rail"
   ],
   [
-    "Setup 1: The Curl",
+    "The Curl and Pullback Continuation",
     "m7-setup-4-the-curl-reading-the-pullback-catching-the-second-leg"
   ]
 ]);
@@ -206,7 +206,7 @@ function prepare(text) {
     .replace(/^### Part 2 Header[^\n]*\n/gm, '')
     .replace(/^\*\*Subtitle:\*\* /gm, '')
     .replace(/^---\s*$/gm, '')
-    .replace(/^(#{3,4}) /gm, (_, hashes) => `${'#'.repeat(hashes.length - 1)} `);
+    .replace(/^(#{3,6}) /gm, (_, hashes) => `${'#'.repeat(hashes.length - 1)} `);
 }
 
 function renderChapter(chapter) {

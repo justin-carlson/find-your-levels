@@ -742,94 +742,128 @@ A trader who bought the earlier high may use the recovery to exit, while a new b
 ## Chapter 6: Setups & Patterns (`#m7`)
 
 ### Chapter Lead
-When a stock reaches a mapped level, its response can take different forms: a hold, a break, a reclaim, or a rejection. A setup connects a developing sequence with the context for a trade, an entry trigger, and an invalidation point.
+Levels give participants a shared reference for decisions. An earlier ceiling may be a place to take profit, consider a short, or wait for a breakout. What happens there shows whether the advance is meeting resistance or beginning to make progress beyond it.
 
-The four setups below cover continuations of an established advance and recoveries after weakness. Each pairs the entry with its stop and the nearest overhead obstacle.
+This chapter connects those decisions with the developing sequence: a pullback that holds, a breakout that gains momentum, a pause that continues, or a failed move that recovers. Follow why the response matters before naming the setup.
 
-### The Four Core Setups
-A trade setup needs a **mapped level**, an observable **entry trigger**, a defined **invalidation stop**, and **enough room to the next obstruction to justify that risk**.
+### Read the Sequence Before the Name
+Start with the level and what price is attempting there. Is an advance pausing while support holds? Is price pushing through resistance? Has it lost a level and begun recovering it? Follow the approach, the interaction, and the next response before choosing a name.
 
-**Continuation or recovery?** Our break-and-retest and EMA-pullback examples trade with an established uptrend. The failed-breakdown reclaim trades a recovery of lost support; it does not require an established uptrend. A curl can be a continuation when the broader uptrend remains intact, or a recovery after that structure has broken. Identify which situation you are trading on your chosen timeframe.
+These responses can change participants' decisions. A held pullback may attract buyers who were waiting for a return. A break above resistance may bring new buying and exits from shorts. Momentum develops when that activity keeps producing progress against the liquidity it meets. Watch how much ground the next pause gives back and whether the renewed attempt advances.
 
-The entry and exit examples below illustrate this guide’s approach; they are not validated rules for every chart. Choose the trigger and invalidation on your execution chart before entering. A price-based stop and a candle-close condition work differently. If you choose a price stop, reaching that price triggers the planned exit; keep that rule in place rather than waiting for a candle close.
+The setup names help describe that sequence. **Curl** describes a rounded base, **EMA pullback** adds an indicator reference, and **break and retest** describes two interactions with a level. The same move can contain several of them. Read each within the surrounding swings: continuation preserves an advance; recovery regains ground after weakness.
 
-For each setup, the first target is the **nearest mapped overhead obstruction**. That might be a recent intraday rejection, PMH, the morning HOD, a daily level, or the Daily 200 EMA. HOD is only the next target when the map gives you room to reach it. If confirmation leaves too little room relative to the stop, let the trade go.
+Use the examples below to connect the level, participation, and price response. Each trade still needs a chosen entry, stop, and room to the next obstacle; Chapter 7 brings those into the plan.
 
-*Chart examples should mark the actual price response used for entry, the exact planned stop and its structural reference, the next obstruction, and the later outcome. Identify the volume-comparison bars and whether the entry candle was still developing. For an entry before the close, show the price and accumulated volume available at that moment; keep the candle's final volume separate. Flag any decision-time detail the available chart cannot establish. Include a failed interaction among the examples.*
+### Setups at a Glance
+Use this index to find the sequence you are examining. Some names describe different parts of the same move, so keep the surrounding context in view.
 
----
+| Setup or Sequence | What Is Developing | What to Watch |
+| :--- | :--- | :--- |
+| **[The Curl and Pullback Continuation](#the-curl-and-pullback-continuation)** | An advance retraces or a rounded base develops. | Supporting swings, VWAP context, and renewed upward progress. |
+| **[Micro Pullbacks](#micro-pullbacks)** | A strong advance briefly retreats while retaining much of its gain. | The pause's low, volume comparison, and whether the next push advances. |
+| **[Breakouts](#breakouts)** | Price attempts to clear HOD, a flat ceiling, or VWAP. | Participation, progress beyond the reference, and room overhead. |
+| **[Consolidation and Continuation](#consolidation-and-continuation)** | Price pauses sideways near its high. | The range boundaries and whether the next attempt retains progress. |
+| **[Failure and Recovery](#failure-and-recovery)** | Price loses a level and then attempts to regain it. | The reclaim, subsequent hold or loss, and the chosen risk reference. |
 
-#### Setup 1: The Curl
-A **curl** describes a rounded recovery after a pullback or decline. In this playbook's morning-spike example, successive declines make less downward progress, higher lows emerge, and a fresh push begins to clear the nearby levels that stopped earlier bounces.
-1. **The Spike & Pullback:** Price makes an initial run, meets resistance, and retreats. Profit-taking, exits from late buyers, and new short selling can all contribute. Mark the levels lost on the way down; they are the first tests of any recovery.
-2. **The Rounded Base:** The pullback candles' high-to-low ranges become smaller as the base develops, volume declines, and successive dips hold higher lows. That combination suggests downward pressure is easing. Quiet volume by itself is only quiet trading. The stronger evidence is that price stops making downside progress and then responds when participation returns.
+### The Curl and Pullback Continuation
+A **curl** is a rounded base and recovery after a pullback or decline. Successive dips make less downward progress, higher lows emerge, and price begins clearing the levels that stopped earlier bounces.
 
-**The Curl Above VWAP**
+Within an intact advance, this can be **pullback continuation**. The supporting swings hold while the stock gives back some ground and attempts another push. If those swings have broken, the curl is a recovery attempt; identify what it has regained before calling it continuation.
 
-- **Context:** The rounded base stays **above VWAP** and holds an intraday support zone.
+Profit-taking, long exits, and new short selling can contribute to the retreat. Compare its price giveback and volume with the preceding advance. Quieter trading and smaller candle ranges show the pause developing. The next upward progress tells us whether the base is producing a response.
+
+#### The Curl Above VWAP
+The rounded base stays above VWAP and holds an intraday support zone. For continuation, the surrounding advance also needs to preserve its supporting swings.
+
 - **Entry:** As price advances from the curl’s base with increasing volume. Reclaiming the 9/20 EMAs can support the recovery.
 - **Stop:** Below the base low, or below the latest higher low if that is the support chosen for this entry; select the reference before entering.
 - **First target:** The next mapped ceiling; the morning HOD is a candidate only if no closer obstruction intervenes.
 
-**The Curl & VWAP Reclaim**
+#### The Curl & VWAP Reclaim
+The base forms below VWAP, leaving the benchmark overhead. The curl shows the recovery developing; the break back above VWAP is the next level interaction.
 
-- **Context:** The base forms **below VWAP**.
 - **Entry:** As price crosses back above VWAP on expanding volume.
 - **Stop:** Back below VWAP at the preselected price that invalidates this reclaim entry. A quick return below the line weakens the recovery read. Keep this entry's exit tied to the chosen VWAP reference; a distant base-low stop belongs to a different setup.
 - **First target:** The nearest overhead level, which may be an earlier bounce high before HOD.
 
-> **[Blue Callout] An Earlier Entry Below VWAP:** An earlier entry from a higher-low base underneath VWAP is a different trade: the selected base low or higher low defines its risk, while VWAP remains an overhead test rather than already reclaimed support. Take account of any closer resistance first.
-
-**What Changes the Read:** If the developing curl keeps losing its higher lows, or each recovery stalls beneath the same broken level, the rounded shape has not yet produced renewed upward progress. Look for the structure to improve before planning a second-leg trade.
+An earlier entry from a higher-low base below VWAP is a different plan: the selected base low or higher low defines its risk, while VWAP remains an overhead test. Keep the entry, stop, and next obstacle tied to the version being considered.
 
 > **[Example Card] Two curls, different VWAP context**
-> Find actual above-VWAP and below-VWAP bases. Mark the higher lows, the price response used for entry, and whether that candle was still developing. Show the volume available at that decision, its comparison bars, and the nearest obstacle. Pair each variant's trigger with its exact stop, and include a failed or unresolved attempt. If the VWAP reclaim also fits Setup 3, show how its candle-close trigger and breakdown-low stop differ from the curl's VWAP-crossing plan.
+> Compare actual above-VWAP and below-VWAP bases. Mark the supporting swings, volume, the response used for entry, the chosen stop, and the nearest obstacle. Show what was visible at the decision, then the actual outcome, including a failed or unresolved attempt. Identify how the above-VWAP continuation differs from the recovery through VWAP. Retain ticker, full date, interval, session/timezone, indicator settings, and source.
 
-> **[Image Placeholder: Setup 1: Curl, VWAP Reclaim, and the Next Obstruction]**
-> *What to show:* A 1-minute or 5-minute chart of a morning spike and a pullback below VWAP. Mark the smaller high-to-low candle ranges, higher lows, and subsequent VWAP reclaim. Show the reclaim entry, its planned invalidation below VWAP, and the nearest overhead resistance, even if it lies below HOD. Show how price responds at that next level; do not assume the second leg reaches or breaks the morning high.
+#### The EMA Pullback
+A pullback does not need to form a rounded curl. Price can retrace toward a rising 9 or 20 EMA while the supporting higher low holds. Compare the retreat with the preceding push, then watch for renewed upward progress.
 
----
+In our EMA-pullback application, entry follows a touch and hold of the rising EMA, then an advance with increasing volume. The stop is a preselected price below the pullback low supporting that entry. An EMA overlapping mapped support helps locate the test; the price response still matters. Chapter 5 develops the EMA context and its real-chart comparison.
 
-#### Setup 2: Break and Retest
-The same sequence can develop at the morning **HOD**, **PMH**, the **Daily 200 EMA**, or a mapped **gap boundary**: price clears resistance, returns to it, and shows whether that old ceiling can hold as a floor.
-1. **The Context:** The stock is on the frontside, above VWAP and rising 9/20 EMAs, with active participation and room to the next major level overhead.
-2. **The Break:** Price pushes through the Red Resistance line on expanding volume. Watch what happens next; the first burst establishes a test of the level from the other side.
-3. **The Retest & Color Flip:** Price pulls back toward the broken level on lighter volume. Early profit-taking can contribute to that retreat. If the pullback stops at the zone and price bounces, the response supports the read that former resistance is acting as support. New buyers and shorts covering could contribute to that bounce. **Flip the line from Red to Green once the retest holds.**
-4. **Entry Trigger:** Price advances from the newly flipped support zone with volume picking up. A brief pullback just above the line can serve the same purpose if it leaves a clear support low to trade against.
-5. **Invalidation Point (Stop):** Set the stop at a preselected price just below the newly flipped support line or the zone's lower boundary. Reaching that stop invalidates this retest entry, so keep the exit tied to the planned price. A close back below the zone adds evidence of a failed break; an already-triggered price stop calls for the planned exit before that later confirmation.
+### Micro Pullbacks
+Sometimes the advance gives back very little before another push begins. A **micro pullback** is that brief, shallow retreat within strong momentum, including just after a breakout. It gives the move less time to form the rounded base of a curl.
 
-> **[Image Placeholder: Setup 2: Breakout, Retest, and Red-to-Green Flip]**
-> *What to show:* A 1-minute or 5-minute chart breaking a Red Dashed morning HOD line on increased volume, then pulling back toward it. Mark the retest, the bounce response used for entry, the stop below support, and the next overhead obstruction. Show the subsequent response, including whether price holds above the retest zone or loses it.
+Follow the push, the limited giveback, and the renewed advance. Quieter volume during the retreat followed by increasing activity as price clears the pause supports the continuation read. Buying that resumes before a deeper retracement develops can help the move retain its ground.
 
----
+Keep the breakout level, the pause's low, and the next obstacle visible. A loss of that support challenges continuation. These pauses develop quickly, so the useful question is whether the renewed buying produces progress from a clear reference. A pause that returns to the broken boundary also gives it a retest.
 
-#### Setup 3: Failed Breakdown and Reclaim
-A break below support can draw in new shorts and trigger exits from longs. If price quickly returns above the level, those new shorts face an adverse move just as other buyers see a failed breakdown. Covering and fresh buying can reinforce the rebound, but the reclaim has to show up in price first.
-1. **The Setup:** Price dips below a marked support level, such as a consolidation floor, PDL, a prior HOD shelf, or VWAP. Note how far it travels and how much volume accompanies the move.
-2. **The Stall:** Downward progress slows or stops. Heavy volume with little further decline is consistent with buyers absorbing sell orders; falling volume with little progress suggests the selling itself may be fading. Both can precede a reclaim, but neither is the reclaim.
-3. **The Reclaim:** Price moves back above the support zone on expanding volume. Shorts who entered below it now have a reason to reconsider, while buyers have evidence that the attempted breakdown failed.
-4. **Entry Trigger:** A candle closes back above the reclaimed level. A wick above it followed by a close underneath has not completed this trigger.
-5. **Invalidation Point (Stop):** Set the stop at a preselected price below the low of the failed breakdown. A fresh break of that low shows the recovery has lost that ground; reaching the planned stop calls for the exit.
+> **[Example Card] A brief pause while momentum persists**
+> Find an actual strong advance with a shallow micro pullback near a mapped level. Show the preceding push, the pause's price giveback and volume, its supporting low, and the next attempt. Retain the chart interval and the evidence available before that attempt. Compare a pause followed by renewed progress with a separate one that loses support. Identify ticker, full date, session settings, and source; the breakout example can share this case.
 
-> **[Example Card] A retest hold and a failed-breakdown reclaim**
-> Compare actual sequences at marked levels: a break above resistance followed by a return, and a loss of support followed by recovery. Mark the advance used for the retest entry and the candle close required for the reclaim entry. Show the volume available at each decision and its comparison bars, each exact planned stop below its structural reference, and the next obstacle. Keep the rules paired with the setup they belong to.
+### Breakouts
+A **breakout** moves through a meaningful boundary and begins making progress beyond it. The earlier ceiling gives us a reference for that change. Read the approach, volume, and room to the next obstacle. The same kind of break can occur at different references:
 
-> **[Image Placeholder: Setup 3: Failed Breakdown and Reclaim]**
-> *What to show:* A 5-minute chart dipping below a Green Support line, then returning above it. Label the low, the reclaim close, the stop, and the next overhead level. Use observable volume labels such as *"Heavy volume, little further downside"* rather than identifying shorts or declaring a squeeze from the candles alone.
+- **High-of-day breakout:** Price clears the session high established so far. Compare the approach with the earlier attempt at that high.
+- **Flat-top breakout:** Repeated rallies have stalled near the same ceiling. Follow the pullbacks beneath it and the next attempt to clear it. A flat top can also be the high of day.
+- **Break above VWAP:** Price moves from below the session benchmark to above it. When it regains VWAP after losing it, we describe the move as a reclaim. A curl is one way that recovery can develop.
 
----
+#### Why a Break Can Gain Momentum
+At resistance, incoming buy orders meet available offers. If buying continues to take those offers, or sellers withdraw them, trading can reach higher prices. Crossing the boundary shows that the earlier ceiling is no longer containing that attempt.
 
-#### Setup 4: The EMA Pullback
-After clearing a major level, a stock may trend through the available room without building a new horizontal shelf after every push. The **rising 9 EMA and 20 EMA** give you references for judging its pullbacks; watch whether price continues to respond around them.
-1. **The Context:** The stock has cleared resistance with expanding volume and is in a frontside uptrend above VWAP. The next mapped obstruction still leaves room for another leg.
-2. **The Pullback:** After an impulse higher, price retreats toward the rising **9 EMA**, or deeper toward the **20 EMA**. The pullback candles have smaller high-to-low ranges and lower volume than those in the impulse. Compare how much of the advance the pullback gives back and whether the supporting swing low holds.
-3. **Entry Trigger:** Price touches and holds the rising EMA, then advances from that area with increasing volume. The location is especially useful when the EMA also meets a freshly flipped horizontal support zone.
-4. **Invalidation Point (Stop):** Set the stop at a preselected price below the pullback low that supports this entry. Reaching that stop invalidates this continuation attempt. Separately, repeated closes beneath the 20 EMA and failed attempts to regain it tell you the rail is no longer being respected. Look for a fresh support response before considering another entry.
+The break can bring further decisions into play. Buyers waiting for price to clear the level may enter, existing longs may add, and some shorts may buy to exit. Buy stops can also trigger where participants have placed them. These purchases can reinforce the advance if they continue making progress against the sell interest they meet. The level helps focus that response; news, fresh demand, and changes in liquidity can also start or accelerate a move.
 
-> **[Image Placeholder: Setup 4: Following the 9 & 20 EMA Trend Rails]**
-> *What to show:* A 5-minute uptrend with the 9 and 20 EMAs visible. Compare volume and price progress on an impulse, a pullback, and the response from the EMA. Mark the pullback low and the next overhead level. Include a later pullback that fails to regain the rail, showing how the behavior changes.
+Attention can also spread from a leading stock to related names, often called **sympathy momentum**. That gives a reason to examine another stock; its own participation, liquidity, and level response still need to support the read.
 
-> **[Teal Callout] Take One Setup Into the Plan:** Identify the setup and its context before choosing an entry. Keep its trigger and stop paired with the structure they describe. Chapter 7 brings those rules together with participation, room, and your exit plan.
+In this playbook, we look for increasing volume as price clears the reference, compared with the preceding base or pullback on the same chart interval. Then assess what the activity accomplishes. Retained progress supports the break. A return to the broken level gives that progress another test.
+
+#### Break and Retest
+After a breakout, price may return to the broken level. A bounce from that area supports the read that the old ceiling is acting as a floor. New buyers and shorts covering could contribute; the next advance shows whether the response retains its progress.
+
+Our retest entry follows an advance from the support zone with volume picking up. The stop is a preselected price just below the support line or the zone's lower boundary. A later close back below adds evidence of failure, but a triggered price stop already calls for the planned exit. The initial break and the retest are separate decisions within the same sequence.
+
+#### Why a Break Can Fail
+A break can also lose its progress before or after a retest. Buying can fade, while profit-taking, new short selling, or replenishing offers meet the next push. Price may also reach a nearby overhead level where additional sell interest appears.
+
+Increasing volume with little further progress shows activity meeting resistance. A quick return beneath the broken level, followed by a failed attempt to regain it, strengthens the failed-break read. A fast move through limited available liquidity can also reverse quickly when the next orders change. Judge the break by the progress it retains, not the initial burst alone.
+
+> **[Example Card] Different references, the same breakout question**
+> Use actual stock sessions to show a HOD break, a flat-top break, and a crossing above VWAP. Cases may overlap. Mark why the reference mattered before the attempt, compare volume with the preceding base or pullback, and show the next obstacle. Separate the initial break from a later micro pullback or retest. Contrast progress beyond the level with heavy activity that stalls or a break that returns below it. If discussing sympathy momentum, retain the related leader's chart with matching timestamps and identify the relationship and known news. Keep participant explanations distinct from the observed response; the curl and recovery examples can share a VWAP case.
+
+### Consolidation and Continuation
+The pause can also last longer while the stock retains much of its advance. During **consolidation**, price moves sideways within a range near its high. Compare the time spent there with how much ground it gives back.
+
+Buyers may be willing to enter on small dips while sellers continue meeting the ceiling. The pause can keep a similar range or develop smaller swings. Shrinking movement is compression; it does not determine which boundary will break.
+
+Mark the ceiling and floor, then follow the next attempt. Increasing volume with progress above the ceiling supports a continuation read. A return into the range weakens that attempt, while loss of the floor challenges the support behind it. The pause can also continue without a clear entry appearing.
+
+A curl, micro pullback, and sideways pause can all occur within a continuing trend. Each gives the next push a support reference. If that support fails, the next question is whether the stock can recover it.
+
+> **[Example Card] Two ways an advance can pause**
+> Compare actual sequences on the same chart interval: an advance followed by a price pullback, and an advance followed by sideways trading near its high. Keep the preceding push, supporting low or range floor, ceiling, volume, and next obstacle visible. First show what was known during the pause, then reveal renewed progress, continued sideways trading, or lost support. Reuse a curl or breakout case where it makes the comparison clearer.
+
+### Failure and Recovery
+A loss of support weakens the continuation idea. It can also begin a different sequence: the stock trades below the level, makes little further downward progress, and recovers it. The useful change is the failed attempt to move lower, followed by recovery of the reference.
+
+A **reclaim** recovers that lost reference, whether VWAP, a consolidation floor, or an earlier support shelf. Retaining the recovered ground strengthens the read; renewed trade below it challenges it. The curl below VWAP is one example of recovery; a failed breakdown gives us another sequence to examine.
+
+#### Failed Breakdown and Reclaim
+A break below support can attract new shorts and trigger exits from longs. If price returns above the level, shorts entered below it face an adverse move. Their covering can join fresh buying, although the candles do not identify who is acting.
+
+Heavy trading with little additional decline is consistent with buying meeting the sell orders. Quieter trading with little progress can suggest that selling is fading. Neither observation alone establishes recovery; price still needs to regain the reference.
+
+For this failed-breakdown application, **entry requires a candle close back above the reclaimed level**, with expanding volume on the reclaim. The stop is a preselected price below the failed-breakdown low. This differs from the curl/VWAP plan above, which enters on the crossing and ties its stop to VWAP. Keep each entry and stop together.
+
+> **[Example Card] A hold, a failure, and a recovery**
+> Compare actual sequences at marked levels: a breakout and held retest, and a loss of support followed by a reclaim. Show the preceding structure, volume comparisons, entry response, planned stop, and next obstacle. Distinguish a crossing from a candle close and a later retest. Include an attempt that remains below the lost level or loses it again, so the example shows what weakens the recovery read.
+
+> **[Teal Callout] Take the Sequence Into the Plan:** Be able to explain what price attempted, which level matters, and what response supports or challenges the idea. Keep the chosen entry and stop paired, and identify the nearest overhead obstacle. Chapter 7 brings those observations into the trade plan.
 
 ---
 
@@ -866,15 +900,17 @@ Room is the distance to that next potential obstacle. Your profit-taking plan de
 
 Choose position size to fit the planned risk and the distance to the stop. A greater distance from entry to the structural stop calls for a smaller position for the same planned risk. Costs and slippage can make the actual loss larger than expected. If the trigger or risk is unclear, you can keep watching.
 
-> **[Example Card] Different levels, different decisions**
-> Use one real chart and a defined setup to connect the level, entry trigger, exact planned stop and its structural reference, and next resistance. Compare the reasons to consider buying at the planned location with the risk and room after price has moved farther. Show what justified acting, waiting, or passing at each point, then reveal the later outcome.
+> **[Example Card] From the level map to the trade review**
+> Follow one actual curl or pullback sequence from Chapter 6, from the initial read through the review. Show the preceding trend and participation, mapped levels, chosen trigger, exact planned stop and its structural reference, and nearest resistance. Pause at the key decisions to explain what the available price and volume supported: acting, waiting, or passing. Compare risk and room at the planned location with a later decision point. Then reveal the actual outcome, including any stalled progress, and review what changed the read and how the decisions fit the plan. Retain ticker, full date, interval, session/timezone, indicator settings, and source.
 
 ### Same Plan, Three Outcomes
-A complete plan accounts for three possibilities: the trade works, it fails, or the entry never triggers. Each calls for a different response.
+Plan for what you will do if the trade follows through, reaches its stop, or never gives an entry. Each calls for a different response.
 
 - **The trade works.** Price follows through after your entry and approaches the next mapped level. Take profit into strength according to your plan, and manage any remaining shares using the exit rules you chose before entering. If price clears the level and holds, identify the next obstacle before counting on more room.
 - **The trade fails.** Price reaches the stop that invalidates your setup. Follow the planned exit rather than waiting for the trade to recover. The actual loss depends on the fill, including any slippage.
 - **The trigger never comes.** Price reaches the area you are watching, but the setup's entry condition does not appear. You stay out. A later opportunity needs its own setup and plan.
+
+Sometimes the entry triggers, but the next push makes little progress. Price can remain between your stop and the next level while the expected momentum fails to develop. Plan for that possibility before entering. Compare the developing response with what you expected from the setup, and follow your chosen management rules. The planned stop still applies.
 
 ### When Emotions Change the Plan
 Emotional pressure can change a plan after the trade begins. When price reaches a stop, wanting to recover the loss can replace the planned exit. After an exit, a bounce can make immediate re-entry feel like correcting a mistake. Recognizing those pressures helps keep each decision tied to the setup and plan.
@@ -884,8 +920,10 @@ Emotional pressure can change a plan after the trade begins. When price reaches 
 
 ### Review the Trade
 While the trade is fresh, write down a few lines:
+
 - The level, setup, trigger, stop, and room you planned.
 - What price actually did at the level.
+- What the next response at the level strengthened or weakened in your original read.
 - Whether you followed the plan at the entry, the stop, and the exit.
 
 Judge how well you followed the plan separately from the result. A planned exit can be the right decision even when it realizes a loss. A winner that ignored the stop is still a habit worth catching. Review your notes over time to look for recurring strengths and mistakes in how you read and trade each setup.
