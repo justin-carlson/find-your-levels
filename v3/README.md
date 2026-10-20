@@ -51,7 +51,7 @@ Use a small visible card where a concrete example would make an explanation easi
 > Follow a real reclaim attempt and the next pullback, with volume and session settings visible.
 ```
 
-The builder supplies the **Example to develop** label. The guide currently has 24 cards, each recording a teaching comparison still to illustrate. Use actual stock-session charts for all new worked examples, selecting the chart before writing case-specific observations or outcomes. Retain ticker, full date including year, interval, session/timezone and indicator settings, source, volume, and preceding context. Do not invent chart data or alternate outcomes. Existing SVG schematics and explicitly hypothetical participant stories serve separate explanatory purposes. Detailed image briefs can remain below the card, hidden from the reading copy. Start with the concept's purpose rather than assuming the reader is already in a particular trade. Related cards may share a real case with different annotations.
+The builder supplies the **Example to develop** label. The local review guide currently has 28 cards, each recording a teaching comparison still to illustrate. Use actual stock-session charts for all worked examples, selecting the chart before writing case-specific observations or outcomes. Retain ticker, full date including year, interval, session/timezone and indicator settings, source, volume, and preceding context. Do not invent chart data or alternate outcomes. The earlier trend and zone schematics are replaced by real-chart placement cards; explicitly hypothetical participant stories remain labeled in the prose. Detailed image briefs can remain below the card, hidden from the reading copy. Start with the concept's purpose rather than assuming the reader is already in a particular trade. Related cards may share a real case with different annotations.
 
 ### Editorial principle: compare the push with the pullback
 
@@ -76,7 +76,7 @@ For real-chart examples, pair a quieter pullback that preserves the advance with
 - System sans type: 16px prose / 28px line height, 38px desktop chapter titles, 24px section headings, and compact navigation. Readable line length is capped at 740px.
 - The main column fills at least the viewport below the header. Short pages push the footer to the bottom; long chapters keep it in normal flow after the content. Preserve this behavior when changing the page-group or main-column layout.
 - Section navigation on desktop; chapter drawer and an “In this chapter” disclosure on mobile. Links support keyboard focus, history, and reloads. Wide tables scroll inside their region.
-- Existing SVG illustrations are retained as labeled schematics. The trend illustrations are in Chapter 3; supply/demand boxes in Chapter 4 span the full wick range of the selected base candles, matching the blueprint's drawing convention. Chapter 2 includes Justin's unaltered FFAI screenshot, with a full-size image link.
+- Chapter 3's uptrend, downtrend, and sideways schematics and Chapter 4's demand/supply diagram are replaced in the local review with real-chart placement cards. Legacy SVG files remain in the repository but the builder no longer inserts them. Chapter 2 retains Justin's unaltered real FFAI screenshot and its full-size image link; it is a candidate for the downtrend comparison if the swing sequence is clear enough in the selected view.
 
 ## Brand assets
 

@@ -10,7 +10,7 @@
 >
 > **Editorial approach (October 13, 2026):** State chart observations directly. Use participant stories to explain incentives and form a working read; distinguish a losing position from a triggered stop or required liquidation. Strengthen or weaken that read with specific subsequent evidence. Explain the evidence boundary where it matters, then keep the prose moving. Do not attach unsupported probabilities to an interpretation or repeat generic caveats in every paragraph.
 >
-> All new worked chart examples must come from actual stock sessions. Select the source chart first, then write the case-specific copy using its real prices and observed sequence. Do not generate synthetic candles, invent alternate outcomes, or reshape data to fit a textbook pattern. Record the ticker, full date including year, chart interval, session/timezone and indicator settings, and source; retain volume and enough preceding context to understand the test. Separate what was visible at the decision point from the subsequent outcome. `[Example Card]` and hidden `[Image Placeholder]` briefs identify cases still to find, including failed or unresolved tests. Existing SVG schematics remain explanatory illustrations. Numeric participant stories remain explicitly hypothetical; chart observations do not establish participant identities or motives.
+> All worked chart examples must come from actual stock sessions. Select the source chart first, then write the case-specific copy using its real prices and observed sequence. Do not generate synthetic candles, invent alternate outcomes, or reshape data to fit a textbook pattern. Record the ticker, full date including year, chart interval, session/timezone and indicator settings, and source; retain volume and enough preceding context to understand the test. Separate what was visible at the decision point from the subsequent outcome. `[Example Card]` and hidden `[Image Placeholder]` briefs identify cases still to find, including failed or unresolved tests, and replace the earlier trend and zone schematics. Numeric participant stories remain explicitly hypothetical; chart observations do not establish participant identities or motives.
 
 ## Voice & Tone: Author Guidance
 
@@ -337,7 +337,14 @@ A **pivot** or **pivot point**, as used here, is one of those turning points: a 
 - **Downtrend (Lower Highs & Lower Lows):** Downward attempts are making progress. Recoveries stall below earlier peaks, and declines reach below earlier lows. Existing longs may sell into a bounce to reduce their positions, while short sellers may add. The lower highs show that these recoveries have not regained the lost ground.
 - **Sideways (Range / Consolidation):** Neither direction is making sustained progress. Price rotates between a ceiling and floor. A rally within that range may simply be moving toward the next boundary.
 
-*(Keep the 3 existing inline mini-SVG cards for Uptrend, Downtrend, and Sideways here.)*
+> **[Example Card] An uptrend on a real chart**
+> Find an actual stock sequence with successive higher highs and higher lows on one chart interval. Mark the swing highs and lows, the pullbacks between advances, and a nearby level that gives the next test context. Keep volume and enough preceding price action visible to distinguish the trend from a single strong candle. Retain ticker, full date, interval, session/timezone, indicator settings, and source.
+
+> **[Example Card] A downtrend on a real chart**
+> Find an actual sequence with lower highs and lower lows. Mark where each bounce stalls and where the next decline loses the preceding low, keeping nearby broken support visible. The existing FFAI case is a candidate if the selected view makes those swings clear. Show what distinguishes a bounce from recovery of the broader structure. Retain the same chart details and volume as the uptrend example.
+
+> **[Example Card] A sideways range on a real chart**
+> Find an actual stock rotating between a recognizable ceiling and floor on the same interval used for the trend comparisons. Mark the repeated turns at each boundary and show why a rally inside the range has not yet established an uptrend. Keep the preceding move, volume, and the next test visible; reveal only what actually followed. Retain ticker, full date, interval, session/timezone, indicator settings, and source.
 
 > **[Teal Callout] See the Shape, Then Read the Response:** Step back from individual candles and look at the shape of the move. An uptrend forms a rising staircase; a downtrend steps lower; consolidation clusters inside a range. These shapes help you see where price is making progress or struggling.
 >
@@ -520,10 +527,11 @@ If price instead moves below **$4.90** and subsequent rallies fail to regain the
 
 For a supply zone, reverse the read: watch whether a rally into the base stalls and turns lower, or clears the area and begins holding above it. Apply the role-change sequence from earlier in this chapter to the whole area: break, return, hold, and renewed progress. Keep the original box visible while assessing the response.
 
-*(Keep the existing DBR / RBD SVG as a schematic introduction. In the later visual pass, add RBR / DBD examples to show continuation bases; label the selected base candles and their full-range boundaries consistently.)*
+> **[Example Card] A demand zone on a real chart**
+> Find an actual decline or advance that pauses in a base before an upward departure clears nearby structure. Identify the base candles and shade their full high-to-low range before showing the return. Keep those boundaries fixed and show whether the revisit holds, loses the area, or recovers it. Retain any exact landmark inside the zone, aligned volume, ticker, full date, interval, session/timezone, indicator settings, and source.
 
-> **[Example Card] Choose the base, then examine the return**
-> Show which candles define a real base and why its departure made the area worth marking. Keep the full-range boundaries fixed during the return. Compare a hold with a failed test, and retain any exact landmark inside the zone so the line and the area have distinct purposes.
+> **[Example Card] A supply zone on a real chart**
+> Find an actual rally or decline that pauses in a base before a downward departure clears nearby structure. Mark the selected candles and their full high-to-low range before showing a later rally into the area. Follow whether price rejects, clears the zone, or returns without a decisive response. Compare with the demand example without choosing a successful outcome in advance. Keep the same chart details, volume, and preceding context visible; the base alone does not identify orders still waiting there.
 
 > **[Image Placeholder: Chapter 4: Marking a Zone and Reading Its Return]**
 > *What to show:* A real chart with the chosen interval, date, session, and aligned volume visible. Identify the base candles and shade their full high-to-low range before showing the revisit. Label the departure, the return into the area, and the subsequent response. Include a hold and a failed test across the examples, keeping the original zone boundaries visible. Explain how each response changes the read; do not label the base as proof of institutional orders or guaranteed absorption. If the example shows a role flip, include the break and the test from the other side.
@@ -888,9 +896,11 @@ The five questions below connect the setup with entry, risk, and exit decisions.
 | :--- | :--- |
 | **Participation and trend** | Is the stock active, and does its structure fit the continuation or recovery setup you are considering? How do the 1-minute and 5-minute views support or challenge that read? |
 | **Level and entry** | Which mapped level matters, and has the entry trigger for your setup appeared? A price reaching a level gives you a place to watch; the setup defines what you wait for. |
-| **Invalidation and stop** | What would tell you the setup has failed, and where is your planned stop? Keep it tied to the structure and stop rule for the setup you chose. |
+| **Invalidation and stop** | What would tell you the setup has failed, and how will you set your stop? Decide before you enter. |
 | **Room** | Where is the nearest potential obstacle above your entry? Does the distance to it justify the distance to your stop? |
 | **Taking profit and exiting** | Where will you sell into strength as price approaches the next level? Know how you will manage any remaining shares and when the planned stop calls for an exit. |
+
+**Choose your stop method before you enter.** Traders set stops in different ways: a fixed amount per share, such as 10 cents, a percentage of the entry price, the total dollar amount you're willing to lose on the position, or a distance based on the range of the recent candles. The method is up to you. What matters is knowing it going in, so the decision is already made when price gets there. Whichever method you use, check it against the chart. A stop inside the normal range of the last few candles can be hit by ordinary movement, while one just beyond the setup's structure gives the idea room to work.
 
 **Connect the room to your profit-taking plan.** Look ahead for a prior high, an intraday rejection, a daily level, or the Daily 200 EMA. Whole-dollar and half-dollar prices, ending in **.00** or **.50**, can also draw attention. Consider them alongside the surrounding structure and earlier reactions. The nearest relevant level gives you an area to plan around, rather than a promised destination or an automatic exit just because the price is round.
 
@@ -898,7 +908,7 @@ Room is the distance to that next potential obstacle. Your profit-taking plan de
 
 **A good-looking setup can still leave too little room.** If the next resistance is close compared with the distance to your stop, pass. Do not skip a nearer obstacle to make a distant target look attractive, or tighten the stop away from the structure just to make the trade fit.
 
-Choose position size to fit the planned risk and the distance to the stop. A greater distance from entry to the structural stop calls for a smaller position for the same planned risk. Costs and slippage can make the actual loss larger than expected. If the trigger or risk is unclear, you can keep watching.
+Choose position size to fit the planned risk and the distance to the stop. A greater distance from entry to your stop calls for a smaller position for the same planned risk. Costs and slippage can make the actual loss larger than expected. If the trigger or risk is unclear, you can keep watching.
 
 > **[Example Card] From the level map to the trade review**
 > Follow one actual curl or pullback sequence from Chapter 6, from the initial read through the review. Show the preceding trend and participation, mapped levels, chosen trigger, exact planned stop and its structural reference, and nearest resistance. Pause at the key decisions to explain what the available price and volume supported: acting, waiting, or passing. Compare risk and room at the planned location with a later decision point. Then reveal the actual outcome, including any stalled progress, and review what changed the read and how the decisions fit the plan. Retain ticker, full date, interval, session/timezone, indicator settings, and source.

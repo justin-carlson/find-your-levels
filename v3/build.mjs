@@ -183,12 +183,6 @@ const legacySectionIds = new Map([
 // Header logo mark (assets/brand/fyl-mark-inline.svg without its provenance metadata): ink follows currentColor, the key level uses the accent.
 const mark = '<svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="12" width="30" height="7" rx="3.5" fill="currentColor"/><rect x="8" y="28.5" width="48" height="7" rx="3.5" style="fill:var(--accent)"/><rect x="8" y="45" width="22" height="7" rx="3.5" fill="currentColor"/></svg>';
 
-const trendNames = ['uptrend', 'downtrend', 'range'];
-const trends = '<figure class="trend-figure"><div class="trend-grid">' + (await Promise.all(trendNames.map(async (name, i) =>
-  `<div><h3>${['Uptrend', 'Downtrend', 'Sideways'][i]}</h3>${await read(`assets/${name}.svg`)}</div>`))).join('') +
-  '</div><figcaption>Illustrative candle sequences · higher highs and lows, lower highs and lows, and a range.</figcaption></figure>';
-const zones = `<figure class="zone-figure">${await read('assets/zones.svg')}<figcaption>Illustrative examples · selected base candles shaded through their full wick range. These are schematics, not historical trades.</figcaption></figure>`;
-
 const chapters = [...source.matchAll(/^## Chapter (\d): (.+?) \(`(#m\d)`\)\n([\s\S]*?)(?=^## Chapter |$(?![\s\S]))/gm)].map(match => ({
   id: slug(match[2].replaceAll('&', 'and')), legacyId: match[3].slice(1), number: Number(match[1]), title: match[2], source: match[4],
 }));
@@ -198,8 +192,6 @@ function prepare(text) {
   return text
     .replace(/^> \*\*\[Image Placeholder[^\n]*\n(?:>[^\n]*(?:\n|$))*/gm, '')
     .replace(/^> \*\*\[Teaching Brief\][^\n]*\n(?:>[^\n]*(?:\n|$))*/gm, '')
-    .replace(/^\*\(Keep the 3 existing[^\n]*$/gm, '<!--FYL-TRENDS-->')
-    .replace(/^\*\(Keep the existing DBR[^\n]*$/gm, '<!--FYL-ZONES-->')
     .replace(/^\*\(Editorial Note:[^\n]*\n/gm, '')
     .replace(/^\*Chart examples should[^\n]*\n/gm, '')
     .replace(/^### Chapter Lead\n/gm, '')
@@ -220,8 +212,6 @@ function renderChapter(chapter) {
   };
   let html = marked.parse(prepare(chapter.source), { renderer, gfm: true });
   html = html
-    .replace('<!--FYL-TRENDS-->', trends)
-    .replace('<!--FYL-ZONES-->', zones)
     .replace(/(src|href)="v3\/assets\//g, '$1="assets/')
     .replace(/<blockquote>\s*<p><strong>\[Example Card\] ([^<]+)<\/strong>\s*([\s\S]*?)<\/p>\s*<\/blockquote>/g,
       (_, title, body) => `<aside class="example-card" aria-label="Example to develop"><p class="example-card-label">Example to develop</p><p class="example-card-title">${title}</p><div class="example-card-body"><p>${body}</p></div></aside>`)
